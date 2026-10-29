@@ -1,0 +1,9 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(rush())
+      {
+         _parent.gotoAndPlay("瞬步");
+      }
+   }
+}

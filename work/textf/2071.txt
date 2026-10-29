@@ -1,0 +1,26 @@
+[
+xmin 180
+ymin 15
+xmax 1800
+ymax 566
+translatex 160
+][
+font 657
+height 320
+letterspacing 160
+color #000000
+y 340
+]更多游戏[
+font 519
+height 160
+letterspacing 0
+x 100
+y 540
+spacing "M" -6
+spacing "E" 17
+spacingpair "R" "E" 16
+spacingpair " " "G" 7
+spacingpair "G" "A" 18
+spacingpair "A" "M" 3
+spacingpair "S" "" 23
+]MORE GAMES

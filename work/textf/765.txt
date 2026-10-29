@@ -1,0 +1,19 @@
+[
+xmin -40
+ymin -40
+xmax 1404
+ymax 602
+multiline 1
+readonly 1
+noselect 1
+wasstatic 1
+html 1
+font 764
+height 440
+color #ff000000
+align left
+leftmargin 0
+rightmargin 0
+indent 0
+leading 0
+]<p align="left"><font face="_sans" size="22" color="#000000" letterSpacing="8.000000" kerning="0">右行</font></p>

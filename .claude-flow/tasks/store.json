@@ -1,0 +1,90 @@
+{
+  "tasks": {
+    "task-1793309259567-bo3zgi": {
+      "taskId": "task-1793309259567-bo3zgi",
+      "type": "feature",
+      "description": "L10N: build zh→ko translation dictionary for game.swf (names, quotes, maps, tutorial, menus, credits) → work/l10n/game.json [agent: bvn-localizer]",
+      "priority": "high",
+      "status": "completed",
+      "progress": 100,
+      "assignedTo": [],
+      "tags": [
+        "l10n",
+        "bvn26"
+      ],
+      "createdAt": "2026-10-29T21:27:39.567Z",
+      "startedAt": null,
+      "completedAt": "2026-10-29T21:42:21.580Z",
+      "result": {
+        "strings": 191,
+        "text_tags": 76,
+        "applied_in": "tools/build.py",
+        "runtime_verified": "Ruffle: loading/tutorial/select/assist names render in NanumGothic",
+        "evidence": "ev_99329b58d2cf"
+      }
+    },
+    "task-1793309259643-seu1t8": {
+      "taskId": "task-1793309259643-seu1t8",
+      "type": "feature",
+      "description": "UI: new splash (replace 5DPlay), Korean title logo, Korean menu label bitmaps, remove 4399 logo → work/design/out [agent: game-ui-designer]",
+      "priority": "high",
+      "status": "completed",
+      "progress": 100,
+      "assignedTo": [],
+      "tags": [
+        "ui",
+        "bvn26"
+      ],
+      "createdAt": "2026-10-29T21:27:39.643Z",
+      "startedAt": null,
+      "completedAt": "2026-10-29T21:50:35.047Z",
+      "result": {
+        "assets": 30,
+        "applied": "splash (loader 534 + fade 552, scale-compensated), title logos 586/588, 4399 logo removed (647), 24 menu labels",
+        "runtime_verified": "ev_48ccbce9ca0a / ev_539c8017d1e8"
+      }
+    },
+    "task-1793309259704-dlnpca": {
+      "taskId": "task-1793309259704-dlnpca",
+      "type": "feature",
+      "description": "SPONGE-ART: procedural SpongeBob-style sprite renderer (37 actions, effects, portraits) → work/sponge [agent: game-ui-designer #2]",
+      "priority": "high",
+      "status": "cancelled",
+      "progress": 0,
+      "assignedTo": [],
+      "tags": [
+        "character",
+        "spongebob",
+        "bvn26"
+      ],
+      "createdAt": "2026-10-29T21:27:39.704Z",
+      "startedAt": "2026-10-29T21:54:48.439Z",
+      "completedAt": "2026-10-29T22:10:16.806Z",
+      "result": {
+        "reason": "user stopped SpongeBob work and asked to delete all related files"
+      }
+    },
+    "task-1793309259767-n1sdxk": {
+      "taskId": "task-1793309259767-n1sdxk",
+      "type": "feature",
+      "description": "SPONGE-BUILD: Kakashi bitmap→action mapping, SWF bitmap/sound replacement, register fighter in game.swf (registry, select slot, portraits), runtime verify [lead]",
+      "priority": "high",
+      "status": "cancelled",
+      "progress": 60,
+      "assignedTo": [],
+      "tags": [
+        "character",
+        "spongebob",
+        "swf",
+        "bvn26"
+      ],
+      "createdAt": "2026-10-29T21:27:39.767Z",
+      "startedAt": "2026-10-29T21:42:21.641Z",
+      "completedAt": "2026-10-29T22:10:16.898Z",
+      "result": {
+        "reason": "user stopped SpongeBob work; files deleted, sponge code removed from tools/build.py, dist rebuilt without it (ev_6fdc6c9ece30)"
+      }
+    }
+  },
+  "version": "3.0.0"
+}

@@ -1,0 +1,16 @@
+[
+xmin 9
+ymin 69
+xmax 5534
+ymax 622
+][
+font 517
+height 500
+letterspacing 234
+color #ffffff
+y 520
+]这游戏需要用键盘玩哦[
+resetspacing
+spacingpair "~" "!" 83
+spacingpair "!" "" 21
+]~!

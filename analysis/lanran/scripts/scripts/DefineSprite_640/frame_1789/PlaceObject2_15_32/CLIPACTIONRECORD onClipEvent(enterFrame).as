@@ -1,0 +1,18 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(defence())
+      {
+         _parent.gotoAndPlay("防御ww");
+      }
+      if(skill1())
+      {
+         _parent.gotoAndPlay("砍技1w");
+      }
+      if(magichit2())
+      {
+         _parent.gotoAndPlay("招2");
+      }
+      doDropDown();
+   }
+}

@@ -1,0 +1,13 @@
+[
+xmin 3
+ymin 108
+xmax 1410
+ymax 681
+][
+font 519
+height 720
+color #3ba6d3
+y 660
+spacingpair "V" "S" 23
+spacingpair "S" "" 103
+]VS

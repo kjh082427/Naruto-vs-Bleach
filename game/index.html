@@ -1,0 +1,10 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>BVN 2.6 local</title>
+<style>html,body{margin:0;background:#000}#c{width:600px;height:400px}</style></head>
+<body><div id="c"></div>
+<script>window.RufflePlayer={config:{autoplay:"on",unmuteOverlay:"hidden",splashScreen:false,letterbox:"on",logLevel:"warn"}};</script>
+<script src="ruffle/ruffle.js"></script>
+<script>
+const p=window.RufflePlayer.newest().createPlayer();p.style.width="600px";p.style.height="400px";
+document.getElementById("c").appendChild(p);p.load({url:"game.swf",base:"./"}).then(()=>{window.__loaded=true});
+</script></body></html>

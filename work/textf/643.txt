@@ -1,0 +1,11 @@
+[
+xmin 4
+ymin 52
+xmax 625
+ymax 400
+][
+font 640
+height 320
+color #ffffff
+y 340
+]取消

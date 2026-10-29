@@ -1,0 +1,9 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(skill1())
+      {
+         _parent.gotoAndPlay("砍技1");
+      }
+   }
+}

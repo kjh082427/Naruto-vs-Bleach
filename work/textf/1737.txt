@@ -1,0 +1,13 @@
+[
+xmin 307
+ymin 3
+xmax 1006
+ymax 238
+][
+font 519
+height 240
+letterspacing -2
+color #ed8398
+x 300
+y 220
+]4399

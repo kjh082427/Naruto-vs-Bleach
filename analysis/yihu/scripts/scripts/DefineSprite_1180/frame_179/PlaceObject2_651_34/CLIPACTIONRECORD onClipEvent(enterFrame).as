@@ -1,0 +1,13 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(nornalhit(true))
+      {
+         _parent.gotoAndPlay("砍2");
+      }
+      if(bisha())
+      {
+         _parent.gotoAndPlay("必杀");
+      }
+   }
+}

@@ -1,0 +1,1 @@
+onBeHit(true);

@@ -1,0 +1,17 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(skill1())
+      {
+         _parent.gotoAndPlay("砍技1");
+      }
+      if(nornalhit())
+      {
+         _parent.gotoAndPlay("砍3");
+      }
+      if(bisha())
+      {
+         _parent.gotoAndPlay("必杀");
+      }
+   }
+}

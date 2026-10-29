@@ -1,0 +1,2 @@
+play();
+kcplayed = 1;

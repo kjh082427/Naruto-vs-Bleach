@@ -1,0 +1,26 @@
+[
+xmin 340
+ymin 15
+xmax 1640
+ymax 566
+translatex 320
+][
+font 657
+height 320
+letterspacing 160
+color #ffffff
+y 340
+]主菜单[
+font 519
+height 160
+letterspacing 0
+x 20
+y 540
+spacing "M" -6
+spacing "N" 2
+spacingpair "A" "I" 3
+spacingpair "I" "N" 3
+spacingpair " " "M" 7
+spacingpair "E" "N" 17
+spacingpair "U" "" 7
+]MAIN MENU

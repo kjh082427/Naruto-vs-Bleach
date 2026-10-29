@@ -1,0 +1,10 @@
+onClipEvent(keyDown){
+   if(Key.isDown(_root.j))
+   {
+      _root.gotoAndStop("游戏场景");
+   }
+   if(Key.isDown(_root.N1))
+   {
+      _root.gotoAndStop("游戏场景");
+   }
+}

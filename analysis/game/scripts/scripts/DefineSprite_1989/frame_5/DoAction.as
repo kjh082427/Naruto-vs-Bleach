@@ -1,0 +1,1 @@
+clearInterval(_root.wzset);

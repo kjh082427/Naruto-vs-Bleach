@@ -1,0 +1,9 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(bishaSuper(true,0))
+      {
+         _parent.gotoAndPlay("kzbs4");
+      }
+   }
+}

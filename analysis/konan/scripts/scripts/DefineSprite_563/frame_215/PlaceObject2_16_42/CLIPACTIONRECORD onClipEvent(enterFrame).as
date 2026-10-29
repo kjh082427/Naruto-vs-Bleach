@@ -1,0 +1,13 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(nornalhit())
+      {
+         _parent.gotoAndPlay("砍2");
+      }
+      if(rush())
+      {
+         _parent.gotoAndPlay("瞬步");
+      }
+   }
+}

@@ -1,0 +1,13 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(bishaUP())
+      {
+         _parent.gotoAndPlay("上必杀");
+      }
+      if(jump())
+      {
+         _parent.gotoAndPlay("跳");
+      }
+   }
+}

@@ -1,0 +1,13 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(magichit3())
+      {
+         _parent.gotoAndPlay("招32");
+      }
+      if(bishaSuper())
+      {
+         _parent.gotoAndPlay("地爆JB");
+      }
+   }
+}

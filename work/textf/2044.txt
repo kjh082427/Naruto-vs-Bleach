@@ -1,0 +1,14 @@
+[
+xmin 24
+ymin 51
+xmax 805
+ymax 466
+][
+font 519
+height 400
+color #ffffff
+y 360
+spacingpair "(" "N" 7
+spacingpair "N" ")" 3
+spacingpair ")" "" 7
+](N)

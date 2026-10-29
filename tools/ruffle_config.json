@@ -1,0 +1,23 @@
+{
+  "autoplay": "on",
+  "unmuteOverlay": "hidden",
+  "splashScreen": false,
+  "letterbox": "on",
+  "logLevel": "warn",
+  "fontSources": [
+    "fonts/NanumGothic-Regular.ttf",
+    "fonts/NanumGothic-Bold.ttf"
+  ],
+  "defaultFonts": {
+    "sans": [
+      "NanumGothic"
+    ],
+    "serif": [
+      "NanumGothic"
+    ],
+    "typewriter": [
+      "NanumGothic"
+    ]
+  },
+  "quality": "low"
+}

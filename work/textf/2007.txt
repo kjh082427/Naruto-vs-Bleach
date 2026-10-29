@@ -1,0 +1,11 @@
+[
+xmin 0
+ymin -40
+xmax 1420
+ymax 240
+][
+font 2005
+height 240
+color #ffffff
+y 200
+]放招通用方法

@@ -1,0 +1,11 @@
+[
+xmin 7
+ymin 42
+xmax 1278
+ymax 354
+][
+font 640
+height 280
+color #ffffff
+y 300
+]去看攻略：

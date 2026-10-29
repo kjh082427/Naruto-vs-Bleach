@@ -1,0 +1,17 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(nornalhit(true))
+      {
+         _parent.gotoAndPlay("砍5");
+      }
+      if(bishaSuper())
+      {
+         _parent.gotoAndPlay("超必杀");
+      }
+      if(magichit2())
+      {
+         _parent.gotoAndPlay("招2");
+      }
+   }
+}

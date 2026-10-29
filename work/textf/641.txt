@@ -1,0 +1,11 @@
+[
+xmin 4
+ymin 53
+xmax 636
+ymax 399
+][
+font 640
+height 320
+color #ffffff
+y 340
+]选择

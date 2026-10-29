@@ -1,0 +1,15 @@
+[
+xmin 0
+ymin 28
+xmax 647
+ymax 251
+][
+font 1995
+height 240
+letterspacing -17
+color #cccccc
+y 220
+spacingpair "i" "t" 18
+spacingpair "l" "e" 13
+spacingpair "e" "" 11
+]Title

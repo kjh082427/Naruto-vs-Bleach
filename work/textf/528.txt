@@ -1,0 +1,16 @@
+[
+xmin 626
+ymin 21
+xmax 2226
+ymax 354
+translatex 618
+][
+font 517
+height 280
+letterspacing 171
+color #000000
+y 300
+]正在加载[
+resetspacing
+spacing "." 42
+]...

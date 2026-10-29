@@ -1,0 +1,13 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(magichit1())
+      {
+         _parent.gotoAndPlay("跳招");
+      }
+      if(nornalhit(true))
+      {
+         _parent.gotoAndPlay("跳砍2");
+      }
+   }
+}

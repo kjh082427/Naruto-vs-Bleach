@@ -1,0 +1,17 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(bisha())
+      {
+         _parent.gotoAndPlay("必杀");
+      }
+      if(airhit())
+      {
+         _parent.gotoAndPlay("跳砍");
+      }
+      if(airMagichit())
+      {
+         _parent.gotoAndPlay("跳招");
+      }
+   }
+}

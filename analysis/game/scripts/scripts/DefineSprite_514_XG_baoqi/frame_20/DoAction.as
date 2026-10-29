@@ -1,0 +1,2 @@
+this.unloadMovie();
+this.removeMovieClip();

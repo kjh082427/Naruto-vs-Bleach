@@ -1,0 +1,25 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(bishaUP())
+      {
+         _parent.gotoAndPlay("上必杀");
+      }
+      if(magichit3())
+      {
+         _parent.gotoAndPlay("招31");
+      }
+      if(skill1())
+      {
+         _parent.gotoAndPlay("砍技12");
+      }
+      if(nornalhit(true))
+      {
+         _parent.gotoAndPlay("砍技12");
+      }
+      if(jump())
+      {
+         _parent.gotoAndPlay("跳");
+      }
+   }
+}

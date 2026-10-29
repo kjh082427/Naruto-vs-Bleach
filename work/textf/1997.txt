@@ -1,0 +1,20 @@
+[
+xmin 18
+ymin 28
+xmax 1182
+ymax 251
+][
+font 1995
+height 240
+color #cccccc
+y 220
+spacingpair "M" "o" -17
+spacingpair "o" "v" -16
+spacingpair "v" "e" -12
+spacingpair "e" " " -6
+spacingpair " " "L" 5
+spacingpair "L" "i" -2
+spacingpair "i" "s" 1
+spacingpair "s" "t" 5
+spacingpair "t" "" -17
+]Move List

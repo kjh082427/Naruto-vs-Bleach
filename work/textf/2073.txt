@@ -1,0 +1,23 @@
+[
+xmin 832
+ymin 13
+xmax 2182
+ymax 241
+translatex 821
+][
+font 519
+height 200
+color #cccccc
+y 180
+spacing "e" 1
+spacing " " 10
+spacingpair "S" "e" 28
+spacingpair "y" "o" 4
+spacingpair "o" "u" -6
+spacingpair "u" " " -3
+spacingpair "l" "a" -8
+spacingpair "a" "t" 8
+spacingpair "t" "e" -23
+spacingpair "r" "!" -9
+spacingpair "!" "" 1
+]See you later!

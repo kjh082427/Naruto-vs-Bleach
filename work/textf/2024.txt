@@ -1,0 +1,19 @@
+[
+xmin 673
+ymin -40
+xmax 2207
+ymax 525
+multiline 1
+readonly 1
+noselect 1
+wasstatic 1
+html 1
+font 640
+height 320
+color #ffffff00
+align center
+leftmargin 0
+rightmargin 0
+indent 0
+leading 40
+]<p align="center"><font face="Microsoft YaHei" size="16" color="#ffff00" letterSpacing="0.000000" kerning="0">更多游戏</font></p>

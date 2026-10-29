@@ -1,0 +1,33 @@
+[
+xmin -601
+ymin 13
+xmax 3606
+ymax 241
+translatex -603
+][
+font 519
+height 200
+letterspacing -23
+color #cccccc
+y 180
+spacing "o" 17
+spacing "u" 20
+spacing " " 33
+spacing "h" 20
+spacing "a" 31
+spacing "e" 24
+spacing "f" 3
+spacing "i" 18
+spacing "n" 20
+spacing "s" 36
+spacing "d" 17
+spacing "!" 24
+spacing "c" 30
+spacing "l" 15
+spacingpair "Y" "o" 40
+spacingpair "v" "e" 25
+spacingpair "L" "e" 32
+spacingpair "'" "s" 13
+spacingpair "g" "e" 19
+spacingpair "y" "!" 27
+]You have finished! Let's challenge to difficulty!

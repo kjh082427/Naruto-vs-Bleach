@@ -1,0 +1,25 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(bishaUP())
+      {
+         _parent.gotoAndPlay("上必杀");
+      }
+      if(magichit3(true))
+      {
+         _parent.gotoAndPlay("招32");
+      }
+      if(magichit1(true))
+      {
+         _parent.gotoAndPlay("招32");
+      }
+      if(jump())
+      {
+         _parent.gotoAndPlay("跳");
+      }
+      if(rush())
+      {
+         _parent.gotoAndPlay("瞬步");
+      }
+   }
+}

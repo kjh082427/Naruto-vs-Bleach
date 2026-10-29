@@ -1,0 +1,20 @@
+[
+xmin 969
+ymin 23
+xmax 2076
+ymax 286
+translatex 952
+][
+font 519
+height 240
+color #666666
+y 220
+spacing "." 8
+spacingpair "l" "o" -10
+spacingpair "o" "a" -7
+spacingpair "a" "d" 10
+spacingpair "d" "i" -7
+spacingpair "i" "n" -5
+spacingpair "n" "g" -4
+spacingpair "g" "." -5
+]loading...

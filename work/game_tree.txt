@@ -1,0 +1,2082 @@
+== sprite 22
+   place 1 - 4 0.0 0.0 Shape
+   place 2 - 7 None None Shape
+   place 4 - 9 None None Shape
+   place 6 - 11 None None Shape
+   place 8 - 13 None None Shape
+   place 10 - 15 None None Shape
+   place 12 - 17 None None Shape
+   place 14 - 19 None None Shape
+   place 16 - 21 None None Shape
+== sprite 71
+   place 1 - 24 0.0 0.0 Shape
+   place 2 - 26 None None Shape
+   place 3 - 28 None None Shape
+   place 4 - 30 None None Shape
+   place 5 - 32 None None Shape
+   place 6 - 34 None None Shape
+   place 7 - 36 None None Shape
+   place 8 - 38 None None Shape
+   place 9 - 40 None None Shape
+   place 10 - 42 None None Shape
+   place 11 - 44 None None Shape
+   place 12 - 46 None None Shape
+   place 13 - 48 None None Shape
+   place 14 - 50 None None Shape
+   place 15 - 52 None None Shape
+   place 16 - 54 None None Shape
+   place 17 - 56 None None Shape
+   place 18 - 58 None None Shape
+   place 19 - 60 None None Shape
+   place 20 - 62 None None Shape
+   place 21 - 64 None None Shape
+   place 22 - 66 None None Shape
+   place 23 - 68 None None Shape
+   place 24 - 70 None None Shape
+== sprite 94
+   place 1 - 75 0.0 -29.0 Shape
+   place 2 - 77 None None Shape
+   place 3 - 79 None None Shape
+   place 4 - 81 None None Shape
+   place 6 - 83 None None Shape
+   place 9 - 85 None None Shape
+   place 11 - 87 None None Shape
+   place 13 - 89 None None Shape
+   place 15 - 91 None None Shape
+   place 17 - 93 None None Shape
+== sprite 98
+   place 1 - 75 0.0 -29.0 Shape
+   place 2 - 77 None None Shape
+   place 3 - 96 -12.5 -44.55 Shape
+   place 3 - 79 0.0 -29.0 Shape
+   place 4 - 81 None None Shape
+   place 6 - 83 None None Shape
+   place 9 - 85 None None Shape
+   place 11 - 87 None None Shape
+   place 13 - 89 None None Shape
+   place 15 - 91 None None Shape
+   place 17 - 93 None None Shape
+   place 30 - 96 -12.5 -32.55 Shape
+   place 32 - 96 -12.5 -32.55 Shape
+   place 34 - 96 -12.5 -32.55 Shape
+== sprite 113
+   place 1 - 100 0.0 0.0 Shape
+   place 3 - 102 None None Shape
+   place 5 - 104 None None Shape
+   place 7 - 106 None None Shape
+   place 9 - 108 None None Shape
+   place 11 - 110 None None Shape
+   place 13 - 112 None None Shape
+== sprite 125
+   place 2 - 116 -3.0 -1.0 Shape
+   place 4 - 118 None None Shape
+   place 6 - 120 None None Shape
+   place 8 - 122 None None Shape
+   place 10 - 124 None None Shape
+== sprite 159
+   place 1 - 127 -155.95 -16.9 Shape
+   place 2 - 130 None None Shape
+   place 2 - 132 -62.9 -1.95 Shape
+   place 3 - 134 None None Shape
+   place 3 - 136 None None Shape
+   place 4 - 138 None None Shape
+   place 5 - 140 None None Shape
+   place 6 - 142 None None Shape
+   place 7 - 144 None None Shape
+   place 8 - 146 None None Shape
+   place 9 - 148 None None Shape
+   place 10 - 150 None None Shape
+   place 11 - 152 None None Shape
+   place 13 - 154 -62.9 -1.95 Shape
+   place 15 - 156 None None Shape
+   place 17 - 158 None None Shape
+== sprite 174
+   place 1 - 161 0.0 0.0 Shape
+   place 3 - 163 None None Shape
+   place 5 - 165 None None Shape
+   place 7 - 167 None None Shape
+   place 9 - 169 None None Shape
+   place 11 - 171 None None Shape
+   place 13 - 173 None None Shape
+== sprite 176
+   place 1 - 174 -95.0 -116.0 Sprite
+== sprite 196
+   place 1 - 178 -39.5 -37.55 Shape
+   place 2 - 181 None None Shape
+   place 3 - 183 None None Shape
+   place 5 - 185 None None Shape
+   place 7 - 187 None None Shape
+   place 9 - 189 None None Shape
+   place 11 - 191 None None Shape
+   place 13 - 193 None None Shape
+   place 15 - 195 None None Shape
+== sprite 200
+   place 1 - 178 -39.5 -37.55 Shape
+   place 2 - 181 None None Shape
+   place 3 - 199 None None Shape
+   place 4 - 183 None None Shape
+   place 5 - 185 None None Shape
+   place 6 - 187 None None Shape
+   place 7 - 189 None None Shape
+   place 8 - 191 None None Shape
+   place 9 - 193 None None Shape
+   place 10 - 195 None None Shape
+== sprite 214
+   place 1 - 202 53.0 -39.0 Shape
+   place 5 - 205 0.0 0.0 Shape
+   place 7 - 207 None None Shape
+   place 9 - 209 None None Shape
+   place 11 - 211 None None Shape
+   place 13 - 213 None None Shape
+== sprite 216
+   place 1 - 202 53.0 -39.0 Shape
+   place 3 - 205 0.0 0.0 Shape
+   place 5 - 207 None None Shape
+   place 7 - 209 None None Shape
+   place 9 - 211 None None Shape
+   place 10 - 213 None None Shape
+== sprite 236
+   place 1 - 218 -54.0 -53.0 Shape
+   place 3 - 221 None None Shape
+   place 5 - 223 None None Shape
+   place 7 - 225 None None Shape
+   place 9 - 227 None None Shape
+   place 11 - 229 None None Shape
+   place 13 - 231 None None Shape
+   place 15 - 233 None None Shape
+   place 17 - 235 None None Shape
+== sprite 256
+   place 1 - 238 0.0 0.0 Shape
+   place 3 - 241 None None Shape
+   place 5 - 243 None None Shape
+   place 7 - 245 -32.0 -45.0 Shape
+   place 9 - 247 0.0 0.0 Shape
+   place 11 - 249 None None Shape
+   place 13 - 251 None None Shape
+   place 15 - 253 None None Shape
+   place 17 - 255 None None Shape
+== sprite 279
+   place 1 - 258 93.1 -81.6 Shape
+   place 3 - 260 None None Shape
+   place 5 - 262 None None Shape
+   place 7 - 264 None None Shape
+   place 9 - 266 None None Shape
+   place 11 - 268 None None Shape
+   place 13 - 270 None None Shape
+   place 15 - 272 None None Shape
+   place 17 - 274 None None Shape
+   place 19 - 276 None None Shape
+   place 21 - 278 None None Shape
+== sprite 280
+   place 1 - 258 93.1 -81.6 Shape
+   place 2 - 260 None None Shape
+   place 3 - 262 None None Shape
+   place 4 - 264 None None Shape
+   place 5 - 266 None None Shape
+   place 6 - 268 None None Shape
+   place 7 - 270 None None Shape
+   place 8 - 272 None None Shape
+   place 9 - 274 None None Shape
+   place 10 - 276 None None Shape
+   place 11 - 278 None None Shape
+== sprite 297
+   place 1 - 282 0.0 0.0 Shape
+   place 3 - 284 None None Shape
+   place 5 - 286 None None Shape
+   place 7 - 288 None None Shape
+   place 9 - 290 None None Shape
+   place 11 - 292 None None Shape
+   place 13 - 294 None None Shape
+   place 15 - 296 None None Shape
+== sprite 314
+   place 1 - 300 214.45 141.6 Shape
+   place 3 - 303 None None Shape
+   place 5 - 305 None None Shape
+   place 7 - 307 None None Shape
+   place 9 - 309 None None Shape
+   place 11 - 311 None None Shape
+   place 13 - 313 None None Shape
+== sprite 334
+   place 1 - 316 0.0 -0.05 Shape
+   place 3 - 319 None None Shape
+   place 5 - 321 None None Shape
+   place 7 - 323 None None Shape
+   place 9 - 325 None None Shape
+   place 11 - 327 None None Shape
+   place 13 - 329 None None Shape
+   place 15 - 331 None None Shape
+   place 17 - 333 None None Shape
+== sprite 358
+   place 1 - 336 -85.0 -118.25 Shape
+   place 3 - 339 None None Shape
+   place 5 - 341 None None Shape
+   place 7 - 343 None None Shape
+   place 9 - 345 None None Shape
+   place 11 - 347 None None Shape
+   place 13 - 349 None None Shape
+   place 15 - 351 None None Shape
+   place 17 - 353 None None Shape
+   place 19 - 355 None None Shape
+   place 21 - 357 None None Shape
+== sprite 379
+   place 1 - 360 -32.55 -59.5 Shape
+   place 2 - 362 None None Shape
+   place 3 - 364 None None Shape
+   place 4 - 366 None None Shape
+   place 5 - 368 None None Shape
+   place 6 - 370 None None Shape
+   place 7 - 372 None None Shape
+   place 8 - 374 None None Shape
+   place 9 - 376 None None Shape
+   place 10 - 378 None None Shape
+== sprite 393
+   place 1 - 381 -26.15 -96.15 Shape
+   place 3 - 384 None None Shape
+   place 5 - 386 None None Shape
+   place 7 - 388 None None Shape
+   place 9 - 390 None None Shape
+   place 11 - 392 None None Shape
+== sprite 423
+   place 1 - 395 -89.0 -81.25 Shape
+   place 2 - 398 None None Shape
+   place 4 - 400 None None Shape
+   place 6 - 402 None None Shape
+   place 8 - 404 None None Shape
+   place 10 - 406 None None Shape
+   place 11 - 408 None None Shape
+   place 12 - 410 None None Shape
+   place 13 - 412 None None Shape
+   place 14 - 414 None None Shape
+   place 15 - 416 None None Shape
+   place 16 - 418 None None Shape
+   place 17 - 420 None None Shape
+   place 18 - 422 None None Shape
+== sprite 441
+   place 1 - 425 0.0 0.0 Shape
+   place 3 - 428 None None Shape
+   place 5 - 430 None None Shape
+   place 7 - 432 None None Shape
+   place 9 - 434 None None Shape
+   place 11 - 436 None None Shape
+   place 13 - 438 None None Shape
+   place 15 - 440 None None Shape
+== sprite 459
+   place 1 - 443 0.0 0.0 Shape
+   place 3 - 446 None None Shape
+   place 5 - 448 None None Shape
+   place 7 - 450 None None Shape
+   place 9 - 452 None None Shape
+   place 11 - 454 None None Shape
+   place 13 - 456 None None Shape
+   place 15 - 458 None None Shape
+== sprite 493
+   place 1 - 461 -83.95 -80.0 Shape
+   place 2 - 464 None None Shape
+   place 3 - 466 None None Shape
+   place 4 - 468 None None Shape
+   place 5 - 470 None None Shape
+   place 6 - 472 None None Shape
+   place 7 - 474 None None Shape
+   place 8 - 476 None None Shape
+   place 9 - 478 None None Shape
+   place 10 - 480 None None Shape
+   place 11 - 482 None None Shape
+   place 12 - 484 None None Shape
+   place 13 - 486 None None Shape
+   place 14 - 488 None None Shape
+   place 15 - 490 None None Shape
+   place 16 - 492 None None Shape
+== sprite 510
+   place 1 - 495 0.0 0.0 Shape
+   place 2 - 497 None None Shape
+   place 4 - 499 None None Shape
+   place 6 - 501 None None Shape
+   place 8 - 503 None None Shape
+   place 10 - 505 None None Shape
+   place 12 - 507 None None Shape
+   place 14 - 509 None None Shape
+== sprite 513
+   place 1 - 512 0.0 0.0 Shape3
+== sprite 514
+   place 3 mian 513 -156.8 -388.05 Sprite
+== sprite 0
+   label 1 版本
+   place 1 - 516 0.0 0.0 Shape
+   place 1 - 518 227.05 170.65 Text
+   place 1 - 520 218.7 208.95 Text
+   place 2 logoplay 534 116.8 48.5 Sprite
+   place 3 logoplay 552 65.0 52.1 Sprite
+   label 6 初始
+   place 6 - 516 0.0 0.0 Shape
+   label 10 MENU
+   place 10 - 666 0.0 0.0 Sprite
+   place 10 vertxt 667 5.35 361.15 EditText
+   place 10 downtxts 672 0.0 381.5 Sprite
+   label 16 游戏设置
+   place 16 - 675 0.0 0.0 Sprite
+   place 16 - 837 48.0 -47.0 Sprite
+   label 26 游戏说明
+   place 26 - 840 47.45 40.0 Sprite
+   place 26 - 723 515.0 345.7 Sprite
+   label 36 HOWTOPLAY
+   place 36 - 535 0.0 0.0 Shape
+   place 36 - 1267 310.8 211.2 Sprite
+   label 46 选人画面
+   place 46 - 1276 0.0 0.0 Sprite
+   place 46 p1bst 1348 2.2 8.4 Sprite
+   place 46 p2bst 1348 599.6 8.4 Sprite
+   place 46 xure 1506 7.6 233.15 Sprite
+   label 56 游戏场景
+   place 56 bg 1501 0.0 0.0 Sprite
+   place 56 blackMu 1510 -16.0 -6.0 Sprite
+   place 56 ts_face 1678 -3.9 69.95 Sprite
+   place 56 game 1738 -205.0 318.8 Sprite
+   place 56 Arw_1P 1741 386.5 515.45 Sprite
+   place 56 Arw_2P 1744 459.0 515.45 Sprite
+   place 56 xuetiao 1815 -1.1 2.0 Sprite
+   place 56 p1hits 1833 5.0 37.4 Sprite
+   place 56 p2hits 1833 455.0 37.4 Sprite
+   place 56 timeover 1848 18.75 122.5 Sprite
+   place 56 KO 1858 96.35 115.6 Sprite
+   place 56 ready 1882 90.05 141.2 Sprite
+   place 56 qjxg 1885 -2.0 -5.0 Sprite
+   place 56 loadingmc 1989 -14.0 40.9 Sprite
+   place 56 - 1991 -117.8 439.9 Sprite
+   place 56 game_menu 2010 88.0 159.85 Sprite
+   label 86 YOUWIN
+   place 86 - 2032 158.05 49.05 Sprite
+   place 86 - 2033 0.0 0.0 Shape2
+   label 106 继续
+   place 106 - 675 0.0 0.0 Sprite
+   place 106 - 2050 -4.5 -31.0 Sprite
+   place 106 - 1991 59.5 439.9 Sprite
+   label 127 gameover
+   place 127 - 2055 -2.0 -31.0 Sprite
+   label 147 congratution
+   place 147 - 2075 0.0 69.95 Sprite
+== sprite 525
+   place 1 - 524 -46.9 47.15 Text
+== sprite 530
+   place 1 - 529 -46.9 47.15 Text
+== sprite 533
+   place 1 - 532 0.0 0.0 Shape
+== sprite 534
+   place 1 - 521 0.0 0.0 Shape2
+   place 1 - 522 -1.45 0.2 Shape2
+   place 1 startBtn 527 145.35 233.75 Button2
+   place 1 loading 530 153.1 233.75 Sprite
+   place 1 - 531 0.0 0.0 Shape4
+   place 1 bar 533 -94.0 319.95 Sprite
+== sprite 541
+   place 1 - 540 0.0 0.0 Shape
+== sprite 544
+   place 1 - 516 0.0 0.0 Shape
+== sprite 546
+   place 1 - 545 0.0 0.0 Shape2
+== sprite 552
+   place 1 - 516 -144.7 -103.05 Shape
+   place 1 - 522 40.4 0.1 Shape2
+   place 1 - 535 -165.75 -123.15 Shape
+   place 4 - 535 -165.75 -123.15 Shape
+   place 9 - 535 -165.75 -123.15 Shape
+   place 39 - 537 -212.25 -126.8 Shape2
+   place 39 logoBtn 538 -182.35 -126.65 Button2
+   place 43 - 539 75.6 67.3 Shape
+   place 43 - 541 64.7 126.05 Sprite
+   place 43 - 542 88.45 100.9 Shape
+   place 53 - 544 -182.35 -126.65 Sprite
+   place 74 - 547 0.0 0.0 Shape
+   place 75 - 549 None None Shape
+   place 76 - 550 None None Shape
+   place 205 - 516 -70.85 -64.1 Shape
+== sprite 577
+   place 1 - 560 0.0 0.0 Shape
+   place 3 - 562 None None Shape
+   place 5 - 564 None None Shape
+   place 7 - 566 None None Shape
+   place 9 - 568 None None Shape
+   place 11 - 570 None None Shape
+   place 13 - 572 None None Shape
+   place 15 - 574 None None Shape
+   place 17 - 576 None None Shape
+== sprite 578
+   place 1 - 577 80.4 79.4 Sprite
+== sprite 579
+   place 1 - 558 0.0 0.0 Shape
+== sprite 582
+   place 1 - 581 42.0 42.0 Shape3
+== sprite 583
+   place 1 - 582 -9.75 -9.75 Sprite
+   place 10 - 582 -9.75 -9.75 Sprite
+   place 20 - 582 -9.75 -9.75 Sprite
+   place 30 - 582 -9.75 -9.75 Sprite
+== sprite 584
+   place 1 - 556 0.0 0.0 Shape
+== sprite 585
+   place 1 - 558 0.0 0.0 Shape
+== sprite 594
+   place 1 - 593 0.0 0.0 Shape
+== sprite 597
+   place 1 - 596 0.0 0.0 Shape
+== sprite 600
+   place 1 - 599 0.0 0.0 Shape
+== sprite 603
+   place 1 - 602 0.0 0.0 Shape
+== sprite 606
+   place 1 - 605 0.0 0.0 Shape
+== sprite 609
+   place 1 - 608 0.0 0.0 Shape
+== sprite 612
+   place 1 - 611 0.0 0.0 Shape
+== sprite 615
+   place 1 - 614 0.0 0.0 Shape
+== sprite 619
+   place 1 - 618 0.0 0.0 Shape4
+== sprite 620
+   place 1 - 591 252.95 -53.35 Shape
+   place 1 btm1 594 0.4 -0.1 Sprite
+   place 1 btm2 597 -8.6 55.8 Sprite
+   place 1 btm3 600 -28.9 111.7 Sprite
+   place 1 btm4 603 -12.9 167.6 Sprite
+   place 1 btm5 606 2.1 229.5 Sprite
+   place 1 btm6 609 -39.9 291.4 Sprite
+   place 1 btm7 612 -47.9 347.3 Sprite
+   place 1 btm8 615 22.1 403.2 Sprite
+   place 1 btm10 612 -47.9 -112.8 Sprite
+   place 1 btm9 615 22.1 -56.9 Sprite
+   place 1 btm11 594 0.4 459.5 Sprite
+   place 1 btm12 597 -8.6 515.4 Sprite
+   place 1 - 617 0.0 0.0 Shape
+   place 1 - 619 -64.5 212.6 Sprite
+== sprite 621
+   place 1 - 590 2.0 2.0 Text
+== sprite 623
+   place 1 - 622 0.0 0.0 Shape3
+== sprite 637
+   place 1 - 626 30.0 4.2 Shape
+   place 1 - 626 30.0 34.2 Shape
+   place 1 - 626 0.0 34.2 Shape
+   place 1 - 626 60.0 34.2 Shape
+   place 1 - 627 38.0 8.0 EditText
+   place 1 - 628 39.25 38.1 EditText
+   place 1 - 629 7.75 38.1 EditText
+   place 1 - 630 69.25 38.1 EditText
+   place 1 - 626 127.4 0.0 Shape
+   place 1 - 626 200.45 0.0 Shape
+   place 1 - 626 275.55 0.0 Shape
+   place 1 - 626 127.4 34.0 Shape
+   place 1 - 626 200.45 34.0 Shape
+   place 1 - 626 275.55 34.0 Shape
+   place 1 - 631 213.95 7.3 EditText
+   place 1 - 632 133.15 7.3 EditText
+   place 1 - 633 281.6 7.3 EditText
+   place 1 - 634 206.45 41.3 EditText
+   place 1 - 635 133.15 41.3 EditText
+   place 1 - 636 281.6 41.3 EditText
+== sprite 645
+   place 1 - 624 0.0 0.0 Shape4
+   place 1 - 637 807.1 512.1 Sprite
+   place 1 - 637 807.1 580.55 Sprite
+   place 1 - 626 857.4 649.1 Shape
+   place 1 - 626 947.4 648.85 Shape
+   place 1 - 641 894.1 654.25 Text
+   place 1 - 642 981.35 654.25 Text
+   place 1 - 626 1018.3 648.85 Shape
+   place 1 - 643 1050.65 654.25 Text
+== sprite 646
+   place 1 bb 623 0.0 0.0 Sprite
+   place 2 - 645 -153.2 -341.0 Sprite
+== sprite 662
+   place 1 - 661 0.0 0.0 Shape
+== sprite 665
+   place 1 - 656 0.0 0.0 Shape4
+   place 1 - 658 83.45 25.6 Text
+   place 1 - 659 20.0 81.55 Text
+   place 1 - 664 431.2 318.55 Button2
+== sprite 666
+   place 1 - 554 0.0 0.0 Shape
+   place 1 - 556 440.0 343.0 Shape
+   place 1 - 579 -477.0 -86.0 Sprite
+   place 30 - 583 214.05 166.05 Sprite
+   place 35 - 584 100.0 123.0 Sprite
+   place 35 - 585 -97.0 34.0 Sprite
+   place 45 - 587 616.0 10.05 Shape
+   place 47 - 589 -286.0 112.05 Shape
+   place 49 - 590 276.95 90.95 Text
+   place 63 - 620 242.95 309.65 Sprite
+   place 64 - 589 204.0 112.05 Shape
+   place 65 - 587 146.0 10.05 Shape
+   place 66 - 589 204.0 112.05 Shape
+   place 66 - 590 265.0 80.95 Text
+   place 67 - 587 146.0 10.05 Shape
+   place 68 - 589 204.0 112.05 Shape
+   place 68 - 590 265.0 80.95 Text
+   place 69 - 587 146.0 10.05 Shape
+   place 70 - 589 204.0 112.05 Shape
+   place 70 - 590 265.0 80.95 Text
+   place 71 - 587 146.0 10.05 Shape
+   place 72 - 621 263.0 78.95 Sprite
+   place 72 - 646 0.0 0.0 Sprite
+   place 72 - 648 0.0 0.0 Shape
+   place 72 - 652 499.55 13.5 Button2
+   place 72 - 655 499.55 49.15 Button2
+   place 72 updatemc 665 45.1 22.85 Sprite
+== sprite 672
+   place 1 - 668 0.0 0.0 Shape
+== sprite 675
+   place 1 - 674 0.0 0.0 Shape
+== sprite 682
+   place 1 - 681 0.0 0.0 Shape
+== sprite 691
+   place 1 - 679 0.0 0.0 Shape
+   place 1 right 682 179.0 6.0 Sprite
+   place 2 - 684 None None Shape
+   place 2 left 682 -2.0 5.5 Sprite
+   place 3 - 686 None None Shape
+   place 4 - 688 None None Shape
+   place 5 - 690 None None Shape
+== sprite 698
+   place 1 - 693 0.0 0.0 Shape
+   place 1 right 682 87.0 5.5 Sprite
+   place 2 - 695 None None Shape
+   place 2 left 682 0.0 5.5 Sprite
+   place 3 - 697 None None Shape
+== sprite 709
+   place 1 - 700 0.0 0.0 Shape
+   place 1 right 682 100.0 5.5 Sprite
+   place 2 - 702 None None Shape
+   place 2 left 682 0.5 5.5 Sprite
+   place 3 - 704 None None Shape
+   place 4 - 706 None None Shape
+   place 5 - 708 None None Shape
+== sprite 712
+   place 1 - 711 0.0 0.0 Shape
+== sprite 715
+   place 1 - 714 0.0 0.0 Shape
+== sprite 718
+   place 1 - 717 0.0 0.0 Shape
+== sprite 721
+   place 1 - 720 0.0 0.0 Shape
+== sprite 723
+   place 1 - 722 0.0 0.0 Shape
+== sprite 726
+   place 1 - 725 0.0 0.0 Shape
+== sprite 735
+   place 1 - 728 0.0 0.0 Shape
+   place 1 right 682 74.5 5.5 Sprite
+   place 2 - 730 None None Shape
+   place 2 left 682 -4.0 5.5 Sprite
+   place 3 - 732 None None Shape
+   place 4 - 734 None None Shape
+== sprite 738
+   place 1 - 737 0.0 0.0 Shape
+== sprite 739
+   place 1 - 738 4.0 19.0 Sprite
+== sprite 743
+   place 1 - 742 0.0 0.0 Shape
+== sprite 787
+   place 1 - 741 0.0 0.0 Shape4
+   place 1 - 743 -65.1 -50.6 Sprite
+   place 1 - 743 -65.1 -21.05 Sprite
+   place 1 - 743 -65.1 8.5 Sprite
+   place 1 - 743 -65.1 38.05 Sprite
+   place 1 - 743 -65.1 67.6 Sprite
+   place 1 - 743 -65.1 97.15 Sprite
+   place 1 - 743 -65.1 126.7 Sprite
+   place 1 - 743 -65.1 156.25 Sprite
+   place 1 - 743 -65.1 185.8 Sprite
+   place 1 - 743 -65.1 215.35 Sprite
+   place 1 - 744 45.35 -42.9 EditText
+   place 1 - 745 45.35 -13.45 EditText
+   place 1 - 746 45.35 16.0 EditText
+   place 1 - 747 45.35 45.45 EditText
+   place 1 - 748 45.35 74.9 EditText
+   place 1 - 749 45.35 104.35 EditText
+   place 1 - 750 45.35 133.8 EditText
+   place 1 - 751 45.35 163.25 EditText
+   place 1 - 752 45.35 192.7 EditText
+   place 1 - 753 45.35 222.15 EditText
+   place 1 - 754 49.35 -47.8 Button2
+   place 1 - 755 50.1 -17.3 Button2
+   place 1 - 756 49.85 12.45 Button2
+   place 1 - 757 50.4 43.25 Button2
+   place 1 - 758 50.35 71.65 Button2
+   place 1 - 759 50.35 100.9 Button2
+   place 1 - 760 50.35 131.8 Button2
+   place 1 - 761 50.35 161.75 Button2
+   place 1 - 762 50.4 189.75 Button2
+   place 1 - 763 50.4 220.75 Button2
+   place 1 - 765 -43.25 45.75 EditText
+   place 1 - 766 -43.25 16.45 EditText
+   place 1 - 767 -43.25 -12.85 EditText
+   place 1 - 768 -43.25 -42.15 EditText
+   place 1 - 769 -43.25 75.05 EditText
+   place 1 - 770 -43.25 104.35 EditText
+   place 1 - 771 -43.25 133.65 EditText
+   place 1 - 772 -43.25 162.95 EditText
+   place 1 - 773 -43.25 192.25 EditText
+   place 1 - 774 -43.25 221.55 EditText
+   place 1 - 775 -44.7 44.3 EditText
+   place 1 - 776 -44.7 15.0 EditText
+   place 1 - 777 -44.7 -14.3 EditText
+   place 1 - 778 -44.7 -43.6 EditText
+   place 1 - 779 -44.7 73.6 EditText
+   place 1 - 780 -44.7 102.9 EditText
+   place 1 - 781 -44.7 132.2 EditText
+   place 1 - 782 -44.7 161.5 EditText
+   place 1 - 783 -44.7 190.8 EditText
+   place 1 - 784 -44.7 220.1 EditText
+   place 1 - 785 -67.65 -70.4 EditText
+   place 1 - 786 -66.1 -69.25 EditText
+== sprite 830
+   place 1 - 741 0.0 0.0 Shape4
+   place 1 - 743 -65.1 -50.6 Sprite
+   place 1 - 743 -65.1 -21.05 Sprite
+   place 1 - 743 -65.1 8.5 Sprite
+   place 1 - 743 -65.1 38.05 Sprite
+   place 1 - 743 -65.1 67.6 Sprite
+   place 1 - 743 -65.1 97.15 Sprite
+   place 1 - 743 -65.1 126.7 Sprite
+   place 1 - 743 -65.1 156.25 Sprite
+   place 1 - 743 -65.1 185.8 Sprite
+   place 1 - 743 -65.1 215.35 Sprite
+   place 1 - 788 45.35 -42.9 EditText
+   place 1 - 789 45.35 -13.45 EditText
+   place 1 - 790 45.35 16.0 EditText
+   place 1 - 791 45.35 45.45 EditText
+   place 1 - 792 45.35 74.9 EditText
+   place 1 - 793 45.35 104.35 EditText
+   place 1 - 794 45.35 133.8 EditText
+   place 1 - 795 45.35 163.25 EditText
+   place 1 - 796 45.35 192.7 EditText
+   place 1 - 797 45.35 222.15 EditText
+   place 1 - 798 49.35 -47.8 Button2
+   place 1 - 799 50.1 -17.3 Button2
+   place 1 - 800 49.85 12.45 Button2
+   place 1 - 801 50.4 43.25 Button2
+   place 1 - 802 50.35 71.65 Button2
+   place 1 - 803 50.35 100.9 Button2
+   place 1 - 804 50.35 131.8 Button2
+   place 1 - 805 50.35 161.75 Button2
+   place 1 - 806 50.4 189.75 Button2
+   place 1 - 807 50.4 220.75 Button2
+   place 1 - 808 -43.25 45.75 EditText
+   place 1 - 809 -43.25 16.45 EditText
+   place 1 - 810 -43.25 -12.85 EditText
+   place 1 - 811 -43.25 -42.15 EditText
+   place 1 - 812 -43.25 75.05 EditText
+   place 1 - 813 -43.25 104.35 EditText
+   place 1 - 814 -43.25 133.65 EditText
+   place 1 - 815 -43.25 162.95 EditText
+   place 1 - 816 -43.25 192.25 EditText
+   place 1 - 817 -43.25 221.55 EditText
+   place 1 - 818 -44.7 44.3 EditText
+   place 1 - 819 -44.7 15.0 EditText
+   place 1 - 820 -44.7 -14.3 EditText
+   place 1 - 821 -44.7 -43.6 EditText
+   place 1 - 822 -44.7 73.6 EditText
+   place 1 - 823 -44.7 102.9 EditText
+   place 1 - 824 -44.7 132.2 EditText
+   place 1 - 825 -44.7 161.5 EditText
+   place 1 - 826 -44.7 190.8 EditText
+   place 1 - 827 -44.7 220.1 EditText
+   place 1 - 828 -67.05 -70.2 EditText
+   place 1 - 829 -65.35 -69.05 EditText
+== sprite 833
+   place 1 - 832 0.0 0.0 Shape
+== sprite 835
+   label 5 enterKey
+   place 5 - 833 0.0 0.0 Sprite
+   place 5 - 834 0.0 0.0 Shape2
+== sprite 836
+   place 1 cmlv 691 168.7 38.35 Sprite
+   place 1 qulity 698 168.7 75.65 Sprite
+   place 1 plife 709 168.7 155.55 Sprite
+   place 1 cbtm1 712 -37.85 -4.25 Sprite
+   place 1 cbtm2 715 -37.85 38.35 Sprite
+   place 1 cbtm3 718 -37.85 75.65 Sprite
+   place 1 cbtm5 721 -37.85 155.55 Sprite
+   place 1 cbtm6 723 -37.85 192.85 Sprite
+   place 1 cbtm4 726 -34.4 118.25 Sprite
+   place 1 gtime 735 160.45 118.25 Sprite
+   place 1 - 739 -61.6 -2.95 Sprite
+   label 5 键位设置
+   place 5 - 740 308.05 216.15 Button2
+   place 5 - 787 216.35 6.55 Sprite
+   place 5 - 830 -4.5 6.55 Sprite
+   place 5 kck 835 -11.6 63.35 Sprite
+== sprite 837
+   place 1 - 677 0.0 0.0 Shape
+   place 1 - 836 78.05 157.05 Sprite
+== sprite 849
+   place 1 - 842 0.0 0.0 Shape
+   place 3 - 844 None None Shape
+   place 5 - 846 None None Shape
+   place 7 - 848 None None Shape
+== sprite 858
+   place 1 - 851 0.0 0.0 Shape
+   place 3 - 853 None None Shape
+   place 5 - 855 None None Shape
+   place 7 - 857 None None Shape
+== sprite 875
+   place 1 - 874 0.0 0.0 Shape4
+== sprite 879
+   place 1 - 878 0.0 0.0 Shape
+== sprite 880
+   place 1 - 879 -42.25 -15.95 Sprite
+== sprite 897
+   place 1 - 882 0.0 0.0 Shape
+   place 3 - 884 None None Shape
+   place 5 - 886 None None Shape
+   place 7 - 888 None None Shape
+   place 9 - 890 None None Shape
+   place 11 - 892 None None Shape
+   place 13 - 894 None None Shape
+   place 15 - 896 None None Shape
+== sprite 1027
+   place 1 - 1024 0.0 0.0 Shape
+   place 3 - 1026 None None Shape
+== sprite 1102
+   place 1 - 1101 2.25 0.0 Shape
+== sprite 1124
+   place 1 - 1109 0.0 0.0 Shape
+   place 3 - 1111 None None Shape
+   place 5 - 1113 None None Shape
+   place 7 - 1115 None None Shape
+   place 9 - 1117 None None Shape
+   place 11 - 1119 None None Shape
+   place 13 - 1121 None None Shape
+   place 15 - 1123 None None Shape
+== sprite 1266
+   place 2 - 1172 15.0 -11.5 Shape
+   place 2 - 1174 -31.55 -63.5 Shape
+   place 3 - 1176 None None Shape
+   place 4 - 1178 None None Shape
+   place 4 - 1180 None None Shape
+   place 5 - 1182 None None Shape
+   place 6 - 1184 None None Shape
+   place 6 - 1186 None None Shape
+   place 7 - 1188 None None Shape
+   place 8 - 1190 None None Shape
+   place 8 - 1192 None None Shape
+   place 9 - 1194 None None Shape
+   place 10 - 1172 None None Shape
+   place 10 - 1196 None None Shape
+   place 11 - 1198 None None Shape
+   place 12 - 1178 None None Shape
+   place 14 - 1184 None None Shape
+   place 15 - 1172 None None Shape
+   place 16 - 1200 -41.15 -90.15 Shape
+   place 17 - 1203 None None Shape
+   place 18 - 1205 None None Shape
+   place 19 - 1207 None None Shape
+   place 20 - 1209 None None Shape
+   place 21 - 1211 None None Shape
+   place 22 - 1213 None None Shape
+   place 23 - 1215 None None Shape
+   place 24 - 1217 None None Shape
+   place 25 - 1219 None None Shape
+   place 26 - 1221 None None Shape
+   place 27 - 1223 None None Shape
+   place 28 - 1225 None None Shape
+   place 32 - 1227 -14.15 -58.65 Shape
+   place 34 - 1229 None None Shape
+   place 36 - 1231 None None Shape
+   place 38 - 1233 None None Shape
+   place 40 - 1236 None None Shape
+   place 42 - 1238 None None Shape
+   place 44 - 1240 None None Shape
+   place 46 - 1242 None None Shape
+   place 48 - 1244 None None Shape
+   place 50 - 1246 None None Shape
+   place 52 - 1248 None None Shape
+   place 54 - 1250 None None Shape
+   place 56 - 1252 None None Shape
+   place 58 - 1254 None None Shape
+   place 60 - 1256 None None Shape
+   place 62 - 1258 None None Shape
+   place 64 - 1261 None None Shape
+   place 66 - 1263 None None Shape
+   place 68 - 1265 None None Shape
+   place 70 - 1172 15.0 -11.5 Shape
+   place 72 - 1178 None None Shape
+   place 74 - 1184 None None Shape
+   place 76 - 1190 None None Shape
+   place 78 - 1172 None None Shape
+   place 80 - 1178 None None Shape
+   place 82 - 1184 None None Shape
+   place 84 - 1190 None None Shape
+   place 86 - 1172 None None Shape
+   place 88 - 1178 None None Shape
+   place 90 - 1184 None None Shape
+   place 92 - 1190 None None Shape
+   place 94 - 1172 None None Shape
+   place 96 - 1178 None None Shape
+   place 98 - 1184 None None Shape
+   place 100 - 1190 None None Shape
+   place 102 - 1172 None None Shape
+   place 103 - 1174 -46.55 -52.0 Shape
+   place 104 - 1176 None None Shape
+   place 105 - 1180 None None Shape
+   place 106 - 1182 None None Shape
+   place 107 - 1186 None None Shape
+   place 108 - 1188 None None Shape
+   place 109 - 1192 None None Shape
+   place 110 - 1194 None None Shape
+   place 111 - 1196 None None Shape
+   place 112 - 1198 None None Shape
+== sprite 1267
+   place 1 - 849 111.85 -14.8 Sprite
+   place 1 - 858 -135.45 -10.95 Sprite
+   place 1 - 859 -184.0 51.0 Shape3
+   place 1 - 626 -147.0 56.0 Shape
+   place 1 - 626 -147.0 86.0 Shape
+   place 1 - 626 -177.0 86.0 Shape
+   place 1 - 626 -117.0 86.0 Shape
+   place 1 - 626 58.95 57.8 Shape
+   place 1 - 626 94.95 57.8 Shape
+   place 1 - 626 131.95 57.8 Shape
+   place 1 - 626 58.95 91.8 Shape
+   place 1 - 626 94.95 91.8 Shape
+   place 1 - 626 131.95 91.8 Shape
+   place 1 - 860 -139.0 59.8 EditText
+   place 1 - 861 -137.75 89.9 EditText
+   place 1 - 862 -169.25 89.9 EditText
+   place 1 - 863 -107.75 89.9 EditText
+   place 1 - 864 103.2 62.8 EditText
+   place 1 - 865 68.2 62.8 EditText
+   place 1 - 866 141.7 62.3 EditText
+   place 1 - 867 103.2 96.3 EditText
+   place 1 - 868 68.2 96.3 EditText
+   place 1 - 869 141.7 95.8 EditText
+   place 1 - 871 -238.95 -146.5 Shape
+   place 1 - 516 -269.8 -159.2 Shape
+   place 15 - 873 -179.05 128.35 EditText
+   place 15 - 875 -249.0 247.4 Sprite
+   place 80 - 876 -179.05 128.35 EditText
+   place 80 - 880 -74.75 143.75 Sprite
+   place 80 - 880 -203.7 128.3 Sprite
+   place 140 - 897 -152.45 -8.7 Sprite
+   place 176 - 858 54.55 -10.95 Sprite
+   place 220 - 898 -179.05 128.35 EditText
+   place 220 - 880 -115.75 143.75 Sprite
+   place 280 - 900 3.55 -22.25 Shape
+   place 291 - 902 102.85 -17.6 Shape
+   place 293 - 904 None None Shape
+   place 295 - 906 None None Shape
+   place 295 - 908 23.95 -14.75 Shape
+   place 296 - 911 None None Shape
+   place 297 - 913 None None Shape
+   place 298 - 915 None None Shape
+   place 299 - 917 None None Shape
+   place 300 - 919 None None Shape
+   place 300 - 921 None None Shape
+   place 301 - 923 None None Shape
+   place 302 - 925 None None Shape
+   place 303 - 927 None None Shape
+   place 304 - 929 None None Shape
+   place 307 - 849 111.85 -14.8 Sprite
+   place 321 - 858 -5.45 -10.95 Sprite
+   place 356 - 930 -179.05 128.35 EditText
+   place 356 - 880 99.8 153.25 Sprite
+   place 415 - 932 -24.95 -8.7 Shape
+   place 417 - 934 None None Shape
+   place 419 - 937 None None Shape
+   place 421 - 939 None None Shape
+   place 423 - 941 None None Shape
+   place 425 - 943 None None Shape
+   place 432 - 945 -21.45 -44.25 Shape
+   place 434 - 947 None None Shape
+   place 436 - 949 None None Shape
+   place 437 - 951 116.5 -12.6 Shape
+   place 437 - 953 221.15 -77.2 Shape
+   place 438 - 956 -21.45 -44.25 Shape
+   place 438 - 958 221.15 -77.2 Shape
+   place 438 - 960 140.25 -29.15 Shape
+   place 439 - 962 None None Shape
+   place 439 - 964 None None Shape
+   place 439 - 966 None None Shape
+   place 440 - 968 None None Shape
+   place 440 - 970 None None Shape
+   place 441 - 972 None None Shape
+   place 441 - 974 None None Shape
+   place 442 - 976 None None Shape
+   place 443 - 978 None None Shape
+   place 444 - 980 None None Shape
+   place 445 - 982 140.25 -29.15 Shape
+   place 446 - 984 221.15 -77.2 Shape
+   place 447 - 951 None None Shape
+   place 447 - 986 -21.45 -44.25 Shape
+   place 447 - 988 None None Shape
+   place 449 - 990 140.25 -29.15 Shape
+   place 450 - 849 111.85 -14.8 Sprite
+   place 451 - 992 None None Shape
+   place 452 - 994 -37.45 -61.75 Shape
+   place 453 - 996 None None Shape
+   place 453 - 998 None None Shape
+   place 454 - 1000 None None Shape
+   place 455 - 953 221.15 -77.2 Shape
+   place 456 - 951 116.5 -12.6 Shape
+   place 456 - 1004 -37.45 -61.75 Shape
+   place 456 - 958 221.15 -77.2 Shape
+   place 456 - 960 140.25 -29.15 Shape
+   place 457 - 964 None None Shape
+   place 457 - 966 None None Shape
+   place 458 - 962 None None Shape
+   place 458 - 1006 None None Shape
+   place 458 - 970 None None Shape
+   place 459 - 974 None None Shape
+   place 460 - 972 None None Shape
+   place 460 - 1008 None None Shape
+   place 460 - 976 None None Shape
+   place 461 - 978 None None Shape
+   place 462 - 980 None None Shape
+   place 463 - 982 None None Shape
+   place 464 - 984 None None Shape
+   place 465 - 988 None None Shape
+   place 466 - 951 None None Shape
+   place 466 - 1010 None None Shape
+   place 467 - 990 None None Shape
+   place 468 - 849 111.85 -14.8 Sprite
+   place 468 - 1012 -37.45 -61.75 Shape
+   place 469 - 992 None None Shape
+   place 471 - 998 None None Shape
+   place 474 - 858 -5.45 -10.95 Sprite
+   place 509 - 1013 -179.05 128.35 EditText
+   place 509 - 880 137.2 151.05 Sprite
+   place 569 - 1015 -9.45 -69.8 Shape
+   place 571 - 1017 -9.45 -74.45 Shape
+   place 573 - 1020 -9.45 -91.6 Shape
+   place 575 - 1017 -9.45 -108.8 Shape
+   place 577 - 1020 -9.45 -125.95 Shape
+   place 579 - 1022 -9.45 -143.15 Shape
+   place 585 - 1027 -9.45 -113.15 Sprite
+   place 595 - 1029 -9.45 -68.15 Shape
+   place 596 - 1032 None None Shape
+   place 598 - 1029 None None Shape
+   place 606 - 858 -5.45 -10.95 Sprite
+   place 636 - 1033 -179.05 128.35 EditText
+   place 636 - 880 173.7 151.05 Sprite
+   place 711 - 1035 54.55 -8.7 Shape
+   place 712 - 1037 42.25 -8.7 Shape
+   place 715 - 1039 5.3 -8.7 Shape
+   place 720 - 1041 -56.2 -8.7 Shape
+   place 723 - 1035 -93.15 -8.7 Shape
+   place 724 - 858 -105.45 -10.95 Sprite
+   place 770 - 1042 -179.05 128.35 EditText
+   place 770 - 880 100.75 116.55 Sprite
+   place 830 - 1044 -178.95 -32.75 Shape
+   place 831 - 1046 None None Shape
+   place 832 - 1048 None None Shape
+   place 834 - 1050 None None Shape
+   place 836 - 1053 None None Shape
+   place 837 - 1055 None None Shape
+   place 837 - 1057 -116.75 -32.75 Shape
+   place 838 - 1059 None None Shape
+   place 839 - 1061 None None Shape
+   place 840 - 1063 None None Shape
+   place 841 - 1065 None None Shape
+   place 842 - 1067 None None Shape
+   place 843 - 1068 None None Shape
+   place 849 - 951 116.5 -12.6 Shape
+   place 849 - 953 221.15 -77.2 Shape
+   place 850 - 958 221.15 -77.2 Shape
+   place 850 - 960 140.25 -29.15 Shape
+   place 851 - 962 None None Shape
+   place 851 - 964 None None Shape
+   place 851 - 966 None None Shape
+   place 852 - 970 None None Shape
+   place 853 - 972 None None Shape
+   place 853 - 974 None None Shape
+   place 854 - 976 None None Shape
+   place 855 - 978 None None Shape
+   place 856 - 980 None None Shape
+   place 857 - 982 None None Shape
+   place 858 - 984 None None Shape
+   place 859 - 951 None None Shape
+   place 859 - 988 None None Shape
+   place 861 - 1070 -178.95 -32.75 Shape
+   place 861 - 990 None None Shape
+   place 862 - 849 111.85 -14.8 Sprite
+   place 862 - 858 -165.45 -10.95 Sprite
+   place 863 - 992 None None Shape
+   place 865 - 998 None None Shape
+   place 890 - 1071 -179.05 128.35 EditText
+   place 890 - 880 136.25 116.55 Sprite
+   place 950 - 1073 -214.95 -72.3 Shape
+   place 951 - 1075 None None Shape
+   place 952 - 1077 None None Shape
+   place 953 - 1079 None None Shape
+   place 953 - 443 -151.3 -54.55 Shape
+   place 954 - 446 None None Shape
+   place 955 - 1081 None None Shape
+   place 955 - 448 None None Shape
+   place 956 - 450 None None Shape
+   place 957 - 1083 None None Shape
+   place 957 - 452 None None Shape
+   place 958 - 454 None None Shape
+   place 959 - 1086 None None Shape
+   place 959 - 456 None None Shape
+   place 960 - 458 None None Shape
+   place 961 - 1088 None None Shape
+   place 963 - 1090 None None Shape
+   place 965 - 1092 None None Shape
+   place 967 - 1094 None None Shape
+   place 969 - 1096 None None Shape
+   place 971 - 1098 None None Shape
+   place 971 - 1100 -144.75 -108.55 Shape
+   place 971 - 1102 -168.55 36.2 Sprite
+   place 971 - 1102 -148.95 -54.65 Sprite
+   place 971 - 1102 -178.45 -6.1 Sprite
+   place 971 - 1102 -159.65 -30.15 Sprite
+   place 971 - 1102 -217.1 16.4 Sprite
+   place 974 - 1103 None None Shape
+   place 976 - 1105 175.35 -44.95 Shape
+   place 976 - 1107 -214.95 -72.3 Shape
+   place 978 - 1127 None None Shape
+   place 978 - 1129 None None Shape
+   place 980 - 1131 None None Shape
+   place 980 - 1133 None None Shape
+   place 981 - 1105 None None Shape
+   place 982 - 1129 None None Shape
+   place 983 - 1127 None None Shape
+   place 984 - 1133 None None Shape
+   place 985 - 1131 None None Shape
+   place 986 - 1129 None None Shape
+   place 987 - 1135 None None Shape
+   place 988 - 1137 174.0 26.95 Shape
+   place 988 - 1139 175.35 -25.95 Shape
+   place 988 - 1133 -214.95 -72.3 Shape
+   place 989 - 1141 None None Shape
+   place 990 - 1143 None None Shape
+   place 990 - 1145 None None Shape
+   place 990 - 1129 None None Shape
+   place 991 - 1147 None None Shape
+   place 992 - 1149 None None Shape
+   place 992 - 1151 None None Shape
+   place 992 - 1133 None None Shape
+   place 993 - 1153 None None Shape
+   place 994 - 1155 None None Shape
+   place 994 - 1129 None None Shape
+   place 995 - 1157 None None Shape
+   place 996 - 1159 None None Shape
+   place 996 - 1133 None None Shape
+   place 998 - 1161 None None Shape
+   place 1000 - 1129 None None Shape
+   place 1002 - 1133 None None Shape
+   place 1004 - 1129 None None Shape
+   place 1006 - 1133 None None Shape
+   place 1008 - 1129 None None Shape
+   place 1010 - 1133 None None Shape
+   place 1011 - 1163 175.35 -25.95 Shape
+   place 1011 - 858 -165.45 -10.95 Sprite
+   place 1013 - 1165 None None Shape
+   place 1015 - 1167 None None Shape
+   place 1017 - 1169 None None Shape
+   place 1019 - 849 111.85 -14.8 Sprite
+   place 1053 - 1170 -179.05 128.35 EditText
+   place 1053 - 880 173.75 116.55 Sprite
+   place 1113 - 1266 -109.05 13.5 Sprite
+   label 1249 skip
+   place 1249 - 516 -269.8 -159.2 Shape
+== sprite 1276
+   place 1 - 1269 0.0 0.0 Shape
+   place 2 - 1271 None None Shape
+   place 3 - 1273 None None Shape
+   place 4 - 1275 None None Shape
+== sprite 1283
+   place 1 - 1282 0.0 0.0 Shape
+== sprite 1346
+   label 1 一护
+   place 1 - 1278 0.0 0.0 Shape
+   label 2 一护万解
+   label 3 一护2
+   label 4 露其雅
+   place 4 - 1280 None None Shape
+   label 5 露其雅始解
+   label 6 恋次
+   place 6 - 1283 0.0 76.2 Sprite
+   label 7 日番谷
+   place 7 - 1285 0.0 0.0 Shape
+   label 8 日番谷万解
+   label 9 白哉
+   place 9 - 1287 None None Shape
+   label 10 茶渡
+   place 10 - 1289 None None Shape
+   label 11 小乌
+   place 11 - 1291 None None Shape
+   label 12 石田
+   place 12 - 1293 None None Shape
+   label 13 银
+   place 13 - 1295 None None Shape
+   label 14 鼬
+   place 14 - 1297 None None Shape
+   label 15 蓝染
+   place 15 - 1299 None None Shape
+   label 16 奇拉比
+   place 16 - 1301 None None Shape
+   label 17 涅茧利
+   place 17 - 1303 None None Shape
+   label 20 鸣人
+   place 20 - 1305 None None Shape
+   label 21 鸣人九尾
+   label 22 仙鸣
+   place 22 - 1307 None None Shape
+   label 23 樱
+   place 23 - 1309 None None Shape
+   label 24 佐助
+   place 24 - 1311 None None Shape
+   label 25 佐助须佐
+   label 26 佐助咒怨
+   label 27 卡卡西
+   place 27 - 1313 None None Shape
+   label 28 小李
+   place 28 - 1315 None None Shape
+   label 29 宁次
+   place 29 - 1317 None None Shape
+   label 30 手鞠
+   place 30 - 1319 None None Shape
+   label 31 我爱罗
+   place 31 - 1321 None None Shape
+   label 32 大蛇丸
+   place 32 - 1323 None None Shape
+   label 36 剑心
+   place 36 - 1325 None None Shape
+   place 37 - 1327 None None Shape
+   label 40 佩恩
+   place 40 - 1329 None None Shape
+   label 41 小南
+   place 41 - 1331 None None Shape
+   label 42 剑八
+   place 42 - 1333 None None Shape
+   label 43 带土
+   place 43 - 1335 None None Shape
+   label 44 一角
+   place 44 - 1337 None None Shape
+   label 45 迪达拉
+   place 45 - 1339 None None Shape
+   label 46 自来也
+   place 46 - 1341 None None Shape
+   label 50 重吾
+   place 50 - 1343 None None Shape
+   label 51 香磷
+   place 51 - 1345 None None Shape
+== sprite 1347
+   place 1 - 591 214.3 8.95 Shape
+   place 1 - 1346 150.05 0.0 Sprite
+== sprite 1348
+   place 1 - 1347 -1.7 -0.4 Sprite
+== sprite 1465
+   label 1 一护
+   place 1 - 1350 0.0 0.0 Shape
+   label 2 一护2
+   label 3 一护万解
+   place 3 - 1352 None None Shape
+   label 4 露其雅
+   place 4 - 1354 None None Shape
+   label 5 露其雅始解
+   place 5 - 1356 None None Shape
+   label 6 恋次
+   place 6 - 1358 None None Shape
+   label 7 日番谷
+   place 7 - 1360 None None Shape
+   label 8 日番谷万解
+   place 8 - 1362 None None Shape
+   label 9 鸣人
+   place 9 - 1364 None None Shape
+   label 10 鸣人九尾
+   place 10 - 1366 None None Shape
+   label 11 樱
+   place 11 - 1368 None None Shape
+   label 12 佐助
+   place 12 - 1370 None None Shape
+   label 13 佐助须佐
+   label 14 佐助咒怨
+   place 14 - 1372 None None Shape
+   label 15 卡卡西
+   place 15 - 1374 None None Shape
+   label 16 剑心
+   place 16 - 1376 None None Shape
+   label 17 魂
+   place 17 - 1378 None None Shape
+   label 18 织姬
+   place 18 - 1380 None None Shape
+   label 19 夜一
+   place 19 - 1382 None None Shape
+   label 20 石田
+   place 20 - 1384 None None Shape
+   label 21 我爱罗
+   place 21 - 1386 None None Shape
+   label 22 松本
+   place 22 - 1388 None None Shape
+   label 23 手鞠
+   place 23 - 1390 None None Shape
+   label 24 鼬
+   place 24 - 1392 None None Shape
+   label 25 白哉
+   place 25 - 1394 None None Shape
+   label 26 茶渡
+   place 26 - 1396 None None Shape
+   label 27 小李
+   place 27 - 1398 None None Shape
+   label 28 宁次
+   place 28 - 1400 None None Shape
+   label 29 仙鸣
+   place 29 - 1402 None None Shape
+   label 30 小乌
+   place 30 - 1404 None None Shape
+   label 31 银
+   place 31 - 1406 None None Shape
+   label 32 剑八
+   place 32 - 1408 None None Shape
+   label 33 天天
+   place 33 - 1410 None None Shape
+   label 34 大蛇丸
+   place 34 - 1412 None None Shape
+   label 35 自来也
+   place 35 - 1414 None None Shape
+   label 36 志志雄
+   place 36 - 1416 None None Shape
+   label 37 蓝染
+   place 37 - 1418 None None Shape
+   label 38 葛力姆乔
+   place 38 - 1420 None None Shape
+   label 39 蒂雅
+   place 39 - 1422 None None Shape
+   label 40 佩恩
+   place 40 - 1424 None None Shape
+   label 41 小南
+   place 41 - 1426 None None Shape
+   label 42 土影
+   place 42 - 1428 None None Shape
+   label 43 四代
+   place 43 - 1430 None None Shape
+   label 44 史塔克
+   place 44 - 1432 None None Shape
+   label 45 纲手
+   place 45 - 1434 None None Shape
+   label 46 牛头白一护
+   place 46 - 1436 None None Shape
+   label 47 带土
+   place 47 - 1438 None None Shape
+   label 48 一角
+   place 48 - 1440 None None Shape
+   label 49 迪达拉
+   place 49 - 1442 None None Shape
+   label 50 八千流
+   place 50 - 1444 None None Shape
+   label 51 雏田
+   place 51 - 1446 None None Shape
+   label 52 重吾
+   place 52 - 1448 None None Shape
+   label 53 香磷
+   place 53 - 1450 None None Shape
+   label 54 水月
+   place 54 - 1452 None None Shape
+   label 55 碎蜂
+   place 55 - 1454 None None Shape
+   label 56 涅茧利
+   place 56 - 1456 None None Shape
+   label 57 奇拉比
+   place 57 - 1458 None None Shape
+   label 58 涅音梦
+   place 58 - 1460 None None Shape
+   label 59 佐井
+   place 59 - 1462 None None Shape
+   label 60 斑
+   place 60 - 1464 None None Shape
+== sprite 1468
+   place 1 - 1467 0.0 0.0 Shape
+== sprite 1469
+   place 1 namemc 1465 0.0 0.0 Sprite
+   place 1 - 1468 -3.0 -2.5 Sprite
+== sprite 1472
+   place 1 - 516 24.8 32.7 Shape
+== sprite 1473
+   place 1 - 1471 0.0 0.0 Shape
+   place 3 - 1472 -22.7 -30.0 Sprite
+== sprite 1476
+   place 1 - 1475 0.0 0.0 Shape
+   place 3 - 1472 -22.7 -30.0 Sprite
+== sprite 1477
+   place 1 一护 1469 174.95 235.5 Sprite
+   place 1 露其雅 1469 119.3 235.5 Sprite
+   place 1 恋次 1469 63.65 235.5 Sprite
+   place 1 日番谷 1469 8.0 235.5 Sprite
+   place 1 鸣人 1469 230.6 235.5 Sprite
+   place 1 佐助 1469 341.9 235.5 Sprite
+   place 1 卡卡西 1469 397.55 235.5 Sprite
+   place 1 樱 1469 286.25 235.5 Sprite
+   place 1 一护万解 1469 174.95 181.5 Sprite
+   place 1 日番谷万解 1469 8.0 181.5 Sprite
+   place 1 露其雅始解 1469 119.3 181.5 Sprite
+   place 1 剑心 1469 453.3 -70.05 Sprite
+   place 1 鸣人九尾 1469 230.6 181.5 Sprite
+   place 1 白哉 1469 -48.0 235.5 Sprite
+   place 1 佐助咒怨 1469 341.9 181.5 Sprite
+   place 1 茶渡 1469 -48.0 181.5 Sprite
+   place 1 小李 1469 453.3 234.5 Sprite
+   place 1 宁次 1469 397.55 181.5 Sprite
+   place 1 仙鸣 1469 397.55 -70.05 Sprite
+   place 1 一护2 1469 -48.0 -70.05 Sprite
+   place 1 小乌 1469 -48.0 128.5 Sprite
+   place 1 手鞠 1469 286.3 181.5 Sprite
+   place 1 石田 1469 63.65 181.5 Sprite
+   place 1 银 1469 8.0 128.5 Sprite
+   place 1 鼬 1469 453.3 181.5 Sprite
+   place 1 大蛇丸 1469 453.3 128.5 Sprite
+   place 1 我爱罗 1469 286.3 128.5 Sprite
+   place 1 佐助须佐 1469 341.9 -70.05 Sprite
+   place 1 蓝染 1469 8.0 -70.05 Sprite
+   place 1 佩恩 1469 341.9 128.5 Sprite
+   place 1 小南 1469 397.55 128.5 Sprite
+   place 1 剑八 1469 174.95 128.5 Sprite
+   place 1 带土 1469 286.3 -70.05 Sprite
+   place 1 一角 1469 119.3 128.5 Sprite
+   place 1 迪达拉 1469 230.6 128.5 Sprite
+   place 1 自来也 1469 453.3 76.0 Sprite
+   place 1 重吾 1469 286.3 76.0 Sprite
+   place 1 香磷 1469 341.9 76.0 Sprite
+   place 1 涅茧利 1469 63.65 128.5 Sprite
+   place 1 奇拉比 1469 397.55 76.0 Sprite
+   place 1 player1 1473 -34.6 339.65 Sprite
+   place 1 player2 1476 28.5 297.4 Sprite
+== sprite 1480
+   place 1 魂 1469 173.8 232.5 Sprite
+   place 1 织姬 1469 116.6 232.5 Sprite
+   place 1 夜一 1469 59.4 232.5 Sprite
+   place 1 石田 1469 2.2 232.5 Sprite
+   place 1 我爱罗 1469 229.6 232.5 Sprite
+   place 1 松本 1469 344.0 232.5 Sprite
+   place 1 天天 1469 401.2 232.5 Sprite
+   place 1 手鞠 1469 286.8 232.5 Sprite
+   place 1 鼬 1469 458.4 232.5 Sprite
+   place 1 剑八 1469 -55.0 232.5 Sprite
+   place 1 自来也 1469 458.4 178.5 Sprite
+   place 1 志志雄 1469 458.4 -74.5 Sprite
+   place 1 蒂雅 1469 2.2 178.5 Sprite
+   place 1 葛力姆乔 1469 -55.0 178.5 Sprite
+   place 1 土影 1469 344.0 178.5 Sprite
+   place 1 四代 1469 401.2 178.5 Sprite
+   place 1 史塔克 1469 59.4 178.5 Sprite
+   place 1 纲手 1469 286.8 178.5 Sprite
+   place 1 牛头白一护 1469 173.8 178.5 Sprite
+   place 1 八千流 1469 116.6 178.5 Sprite
+   place 1 雏田 1469 229.6 178.5 Sprite
+   place 1 水月 1469 229.6 124.5 Sprite
+   place 1 碎蜂 1469 173.8 124.5 Sprite
+   place 1 斑 1469 458.4 124.5 Sprite
+   place 1 涅音梦 1469 116.6 124.5 Sprite
+   place 1 佐井 1469 286.8 124.5 Sprite
+   place 1 player1 1473 35.0 367.25 Sprite
+   place 1 player2 1476 10.0 369.5 Sprite
+== sprite 1501
+   place 1 - 1482 0.0 0.0 Shape
+   label 2 现世
+   label 4 流魂街
+   place 4 - 1484 None None Shape
+   label 5 双极
+   place 5 - 1486 None None Shape
+   label 6 静涎亭
+   place 6 - 1488 None None Shape
+   label 7 尸魂界通道
+   place 7 - 1490 None None Shape
+   label 15 木叶村
+   place 15 - 1492 None None Shape
+   label 16 温泉
+   place 16 - 1494 None None Shape
+   label 17 火影瀑布
+   place 17 - 1496 None None Shape
+   label 18 楼顶
+   place 18 - 1498 None None Shape
+   label 19 宇智波村
+   place 19 - 1500 None None Shape
+== sprite 1504
+   place 1 - 591 167.0 0.0 Shape
+   place 1 bg 1501 -0.45 -58.3 Sprite
+   place 1 - 1502 0.0 0.0 Shape4
+== sprite 1505
+   place 1 现世 1504 40.95 18.0 Sprite
+   place 1 流魂街 1504 40.95 77.75 Sprite
+   place 1 双极 1504 40.95 137.5 Sprite
+   place 1 静涎亭 1504 40.95 197.25 Sprite
+   place 1 尸魂界通道 1504 40.95 257.0 Sprite
+   place 1 温泉 1504 243.95 77.75 Sprite
+   place 1 火影瀑布 1504 243.95 137.5 Sprite
+   place 1 楼顶 1504 243.95 197.25 Sprite
+   place 1 宇智波村 1504 243.95 257.0 Sprite
+   place 1 木叶村 1504 243.95 18.0 Sprite
+== sprite 1506
+   place 1 xrmc 1477 69.0 -143.0 Sprite
+   place 1 - 1478 -183.65 -243.15 Shape3
+   label 20 辅助人选
+   place 20 - 1478 396.35 -243.15 Shape3
+   place 24 xrmc 1480 67.0 -143.75 Sprite
+   label 35 地图
+   place 35 xrmc 1505 53.0 -196.75 Sprite
+   place 35 - 1478 416.35 -243.15 Shape3
+== sprite 1509
+   place 1 - 535 0.0 0.0 Shape
+   place 1 - 1507 288.05 204.05 Shape
+   place 12 - 1508 0.0 0.0 Shape
+   place 14 - 591 627.45 0.0 Shape
+   place 16 - 1508 0.0 0.0 Shape
+   place 18 - 591 627.45 0.0 Shape
+   place 20 - 1508 0.0 0.0 Shape
+   place 22 - 591 627.45 0.0 Shape
+   place 24 - 1508 0.0 0.0 Shape
+== sprite 1510
+   place 2 - 535 0.0 0.0 Shape
+   label 5 KO
+   place 5 - 1509 0.0 0.0 Sprite
+== sprite 1515
+   place 1 - 1512 0.0 0.0 Shape
+   place 3 - 1514 None None Shape
+== sprite 1517
+   label 5 in
+   place 5 - 1515 -1.0 56.35 Sprite
+   place 5 - 1516 228.5 61.05 Shape3
+   label 35 out
+== sprite 1676
+   label 1 一户1
+   place 1 - 1519 0.0 0.0 Shape
+   label 2 一户2
+   place 2 - 1521 None None Shape
+   label 3 一户万解
+   place 3 - 1523 None None Shape
+   label 4 一户万解1
+   place 4 - 1525 None None Shape
+   label 5 虚护1
+   place 5 - 1527 None None Shape
+   label 6 虚护2
+   place 6 - 1529 None None Shape
+   label 7 虚护3
+   place 7 - 1531 None None Shape
+   label 8 白一护1
+   place 8 - 1533 None None Shape
+   label 9 白一护2
+   place 9 - 1535 None None Shape
+   label 10 露其亚1
+   place 10 - 1537 None None Shape
+   label 11 露其亚2
+   place 11 - 1539 None None Shape
+   label 12 恋次1
+   place 12 - 1541 None None Shape
+   label 13 恋次2
+   place 13 - 1543 None None Shape
+   label 14 恋次3
+   place 14 - 1545 None None Shape
+   label 15 日番谷1
+   place 15 - 1547 None None Shape
+   label 16 日番谷2
+   place 16 - 1549 None None Shape
+   label 17 日番谷3
+   place 17 - 1551 None None Shape
+   label 18 白哉1
+   place 18 - 1553 None None Shape
+   label 19 白哉2
+   place 19 - 1555 None None Shape
+   label 20 白哉3
+   place 20 - 1557 None None Shape
+   label 22 鸣人1
+   place 22 - 1559 None None Shape
+   label 23 鸣人2
+   place 23 - 1561 None None Shape
+   label 24 鸣人3
+   place 24 - 1563 None None Shape
+   label 25 鸣人4
+   place 25 - 1565 None None Shape
+   label 26 金鸣1
+   place 26 - 1567 None None Shape
+   label 27 金鸣2
+   place 27 - 1569 None None Shape
+   label 30 樱1
+   place 30 - 1571 None None Shape
+   label 31 樱2
+   place 31 - 1573 None None Shape
+   label 32 佐助1
+   place 32 - 1575 None None Shape
+   label 33 佐助2
+   place 33 - 1577 None None Shape
+   label 34 佐助3
+   place 34 - 1579 None None Shape
+   label 35 须佐助1
+   place 35 - 1581 None None Shape
+   label 36 须佐助2
+   place 36 - 1583 None None Shape
+   label 40 卡卡西1
+   place 40 - 1585 None None Shape
+   label 41 卡卡西2
+   place 41 - 1587 None None Shape
+   label 42 卡卡西3
+   place 42 - 1589 None None Shape
+   label 43 茶渡
+   place 43 - 1591 None None Shape
+   label 44 小李1
+   place 44 - 1593 None None Shape
+   label 45 小李2
+   place 45 - 1595 None None Shape
+   label 46 宁次1
+   place 46 - 1597 None None Shape
+   label 47 宁次2
+   place 47 - 1599 None None Shape
+   label 48 手鞠1
+   place 48 - 1601 None None Shape
+   label 49 小乌1
+   place 49 - 1603 None None Shape
+   label 50 石田1
+   place 50 - 1605 None None Shape
+   label 51 石田2
+   place 51 - 1607 None None Shape
+   label 52 石田3
+   place 52 - 1609 None None Shape
+   label 53 银1
+   place 53 - 1611 None None Shape
+   label 54 银2
+   place 54 - 1613 None None Shape
+   label 55 鼬1
+   place 55 - 1615 None None Shape
+   label 56 鼬2
+   place 56 - 1617 None None Shape
+   label 57 我爱罗1
+   place 57 - 1619 None None Shape
+   label 58 我爱罗2
+   place 58 - 1621 None None Shape
+   label 59 大蛇丸1
+   place 59 - 1623 None None Shape
+   label 60 大蛇丸2
+   place 60 - 1625 None None Shape
+   label 61 蓝染1
+   place 61 - 1627 None None Shape
+   label 62 蓝染2
+   place 62 - 1629 None None Shape
+   label 63 小南1
+   place 63 - 1631 None None Shape
+   label 64 小南2
+   place 64 - 1633 None None Shape
+   label 65 佩恩1
+   place 65 - 1635 None None Shape
+   label 66 佩恩2
+   place 66 - 1637 None None Shape
+   label 67 剑八1
+   place 67 - 1639 None None Shape
+   label 68 剑八2
+   place 68 - 1641 None None Shape
+   label 69 带土1
+   place 69 - 1643 None None Shape
+   label 70 带土2
+   place 70 - 1645 None None Shape
+   label 71 带土3
+   place 71 - 1647 None None Shape
+   label 72 一角1
+   place 72 - 1649 None None Shape
+   label 73 一角2
+   place 73 - 1651 None None Shape
+   label 74 迪达拉1
+   place 74 - 1653 None None Shape
+   label 75 迪达拉2
+   place 75 - 1655 None None Shape
+   label 76 自来也1
+   place 76 - 1657 None None Shape
+   label 77 自来也2
+   place 77 - 1659 None None Shape
+   label 78 重吾1
+   place 78 - 1661 None None Shape
+   label 79 重吾2
+   place 79 - 1663 None None Shape
+   label 80 香磷1
+   place 80 - 1665 None None Shape
+   label 81 香磷2
+   place 81 - 1667 None None Shape
+   label 82 奇拉比1
+   place 82 - 1669 None None Shape
+   label 83 奇拉比2
+   place 83 - 1671 None None Shape
+   label 84 涅浊利1
+   place 84 - 1673 None None Shape
+   label 85 涅浊利2
+   place 85 - 1675 None None Shape
+== sprite 1677
+   place 1 face 1676 -213.0 0.0 Sprite
+   label 5 in
+   label 35 out
+== sprite 1678
+   place 1 bg 1517 0.0 0.0 Sprite
+   place 1 face_p1 1677 93.45 60.95 Sprite
+   place 1 face_p2 1677 513.45 60.95 Sprite
+== sprite 1682
+   place 1 - 1681 0.0 0.0 Shape2
+== sprite 1685
+   place 1 - 516 -30.0 -75.0 Shape
+== sprite 1688
+   place 1 - 1687 0.0 0.0 Shape
+== sprite 1690
+   place 1 - 1689 0.0 0.0 Shape3
+== sprite 1693
+   place 1 - 1692 0.0 0.0 Shape
+== sprite 1697
+   place 1 - 1696 0.0 0.0 Shape
+== sprite 1700
+   place 1 - 1699 0.0 0.0 Shape
+== sprite 1704
+   place 1 - 1703 0.0 0.0 Shape
+== sprite 1708
+   place 1 - 1707 0.0 0.0 Shape
+== sprite 1711
+   place 1 - 1710 0.0 0.0 Shape
+== sprite 1715
+   place 1 - 1714 0.0 0.0 Shape
+== sprite 1717
+   place 1 - 1716 0.0 0.0 Shape
+== sprite 1721
+   place 1 - 1720 0.0 0.0 Shape
+== sprite 1725
+   place 1 - 1724 0.0 0.0 Shape
+== sprite 1728
+   place 1 - 1727 0.0 0.0 Shape
+== sprite 1732
+   place 1 - 1731 0.0 0.0 Shape
+== sprite 1736
+   place 1 - 1735 0.0 0.0 Shape
+== sprite 1738
+   place 1 bgmc 1682 0.0 -472.2 Sprite
+   place 1 - 1683 510.05 -108.05 Text
+   place 1 lyr_plr_bkeft 1684 0.0 0.0 Sprite
+   place 1 p2 1685 637.1 -25.0 Sprite
+   place 1 p1 1685 374.1 -25.0 Sprite
+   place 1 p2fz 1685 484.35 195.15 Sprite
+   place 1 p1fz 1685 392.65 196.6 Sprite
+   place 1 layer_effect 1684 0.0 0.0 Sprite
+   place 1 fgmc 1688 430.5 -225.5 Sprite
+   place 1 ban2 1690 0.25 -103.65 Sprite
+   place 1 ban3 1690 712.5 -104.65 Sprite
+   label 2 现世
+   label 4 流魂街
+   place 4 bgmc 1693 0.0 -613.25 Sprite
+   place 4 - 1694 314.2 -88.7 Text
+   place 4 fgmc 1697 486.75 -62.05 Sprite
+   place 4 ban5 1690 537.5 -125.7 Sprite
+   place 4 ban6 1690 592.65 -198.15 Sprite
+   place 4 ban7 1690 842.2 -102.4 Sprite
+   place 4 ban8 1690 849.7 -174.0 Sprite
+   label 5 双极
+   place 5 bgmc 1700 0.15 -241.45 Sprite
+   place 5 - 1701 206.5 -66.0 Text
+   place 5 ban4 1690 656.15 -221.45 Sprite
+   label 6 静涎亭
+   place 6 bgmc 1704 0.15 -320.65 Sprite
+   place 6 - 1705 341.65 -93.2 Text
+   place 6 fgmc 1708 434.1 -379.55 Sprite
+   place 6 ban6 1690 776.1 -156.2 Sprite
+   place 6 ban7 1690 784.2 -316.25 Sprite
+   place 6 ban8 1690 788.2 -419.25 Sprite
+   place 6 ban9 1690 402.15 -379.55 Sprite
+   place 6 ban10 1690 342.1 -419.55 Sprite
+   place 6 ban11 1690 349.1 -547.6 Sprite
+   place 6 ban12 1690 794.1 -547.6 Sprite
+   place 6 ban13 1690 0.15 -272.5 Sprite
+   place 6 ban14 1690 0.15 -183.5 Sprite
+   label 7 尸魂界通道
+   place 7 bgmc 1711 0.0 -320.6 Sprite
+   place 7 - 1712 474.15 -140.35 Text
+   place 7 fgmc 1715 507.9 -70.0 Sprite
+   label 15 木叶村
+   place 15 bgmc 1717 0.0 -468.2 Sprite
+   place 15 - 1718 522.35 -109.35 Text
+   place 15 ban2 1690 28.15 -137.2 Sprite
+   place 15 ban4 1690 310.85 -184.15 Sprite
+   place 15 ban5 1690 615.1 -118.2 Sprite
+   place 15 ban6 1690 801.1 -206.15 Sprite
+   place 15 ban7 1690 807.7 -129.55 Sprite
+   place 15 ban8 1690 909.85 -156.15 Sprite
+   place 15 ban11 1690 592.1 -156.15 Sprite
+   place 15 ban13 1690 499.3 -190.8 Sprite
+   place 15 ban14 1690 172.05 -163.45 Sprite
+   label 16 温泉
+   place 16 bgmc 1721 0.0 -155.4 Sprite
+   place 16 - 1722 123.25 -103.0 Text
+   place 16 fgmc 1725 2.7 -229.15 Sprite
+   place 16 ban3 1690 229.45 -155.65 Sprite
+   place 16 ban9 1690 699.9 -185.15 Sprite
+   place 16 ban10 1690 716.4 -324.25 Sprite
+   label 17 火影瀑布
+   place 17 bgmc 1728 0.0 -432.2 Sprite
+   place 17 - 1729 120.4 -83.5 Text
+   place 17 ban4 1690 14.6 -97.8 Sprite
+   place 17 ban12 1690 602.9 -125.15 Sprite
+   label 18 楼顶
+   place 18 bgmc 1732 0.0 -473.6 Sprite
+   place 18 - 1733 707.6 -83.25 Text
+   place 18 ban3 1690 78.4 -212.8 Sprite
+   place 18 ban5 1690 87.35 -309.8 Sprite
+   place 18 ban6 1690 872.55 -307.8 Sprite
+   label 19 宇智波村
+   place 19 bgmc 1736 0.0 -457.6 Sprite
+   place 19 - 1737 623.0 -87.45 Text
+   place 19 ban4 1690 765.15 -114.8 Sprite
+== sprite 1741
+   place 1 - 1740 0.0 0.0 Shape
+== sprite 1744
+   place 1 - 1743 0.0 0.0 Shape
+== sprite 1745
+   place 1 - 535 0.0 0.0 Shape
+== sprite 1746
+   label 5 colors
+   place 5 cmc 1745 2.6 -4.95 Sprite
+== sprite 1753
+   place 1 - 1750 0.0 0.0 Shape
+   place 1 - 1751 0.0 0.0 Shape4
+   place 1 namemc 1465 2.65 7.9 Sprite
+   place 1 - 1752 0.0 0.0 Shape4
+== sprite 1763
+   place 1 - 1761 0.0 0.0 Shape
+   place 5 - 1762 None None Shape
+== sprite 1764
+   place 1 - 1754 0.0 0.0 MorphShape
+   place 1 - 1756 0.0 0.0 Shape
+   place 101 - 1757 0.0 0.0 Shape
+   place 101 - 1757 0.0 0.0 Shape
+   place 102 - 1758 0.0 0.0 MorphShape
+   place 201 - 1759 None None Shape
+   place 201 - 1759 0.0 0.0 Shape
+   place 202 - 1760 0.0 0.0 MorphShape
+   place 300 - 1761 0.3 0.0 Shape
+   place 301 - 1763 0.3 0.0 Sprite
+== sprite 1773
+   place 1 - 1766 0.0 0.0 Shape
+   place 2 - 1768 None None Shape
+   place 3 - 1770 None None Shape
+   place 4 - 1772 None None Shape
+== sprite 1774
+   place 1 - 1748 43.7 -4.0 Shape2
+   place 1 tx 1753 -4.0 -4.0 Sprite
+   place 1 qt 1764 83.7 29.0 Sprite
+   place 1 bss 1773 54.7 8.0 Sprite
+== sprite 1781
+   place 1 - 1766 0.0 0.0 Shape
+   place 2 - 1776 None None Shape
+   place 3 - 1778 None None Shape
+   place 4 - 1780 None None Shape
+== sprite 1782
+   place 1 - 1748 43.7 -4.0 Shape2
+   place 1 tx 1753 -4.0 -4.0 Sprite
+   place 1 qt 1764 83.7 29.0 Sprite
+   place 1 bss 1781 54.7 8.0 Sprite
+== sprite 1785
+   place 2 - 1784 21.6 0.0 Shape
+   place 3 - 1784 0.0 0.0 Shape
+== sprite 1788
+   place 1 - 1787 0.0 0.0 Shape
+== sprite 1789
+   place 1 - 1787 0.0 0.0 Shape
+   place 2 - 1788 0.0 0.0 Sprite
+== sprite 1790
+   place 1 - 591 0.0 0.0 Shape
+== sprite 1793
+   place 1 - 1792 0.0 0.0 Shape
+== sprite 1794
+   place 1 win 1785 130.85 19.0 Sprite
+   place 1 kk 1789 0.0 0.0 Sprite
+   place 1 bar2 1790 164.95 4.1 Sprite
+   place 1 bar 1793 164.95 4.1 Sprite
+== sprite 1798
+   place 1 - 1796 0.0 0.0 Shape
+   place 1 - 1797 0.0 0.0 Shape
+   place 1 namemc 1465 10.4 10.45 Sprite
+== sprite 1810
+   place 1 - 1800 0.0 0.0 Shape
+   place 2 - 1801 None None Shape
+   place 3 - 1802 None None Shape
+   place 4 - 1803 None None Shape
+   place 5 - 1804 None None Shape
+   place 6 - 1805 None None Shape
+   place 7 - 1806 None None Shape
+   place 8 - 1807 None None Shape
+   place 9 - 1808 None None Shape
+   place 10 - 1809 None None Shape
+== sprite 1813
+   place 1 十 1810 1.65 0.0 Sprite
+   place 1 个 1810 20.4 0.0 Sprite
+   label 10 无限时
+   place 10 - 1812 0.0 0.0 Shape
+== sprite 1814
+   place 1 p1xt 1794 38.7 34.0 Sprite
+   place 1 p2xt 1794 415.2 34.0 Sprite
+   place 1 p1head 1798 -8.5 4.0 Sprite
+   place 1 p2head 1798 461.5 4.0 Sprite
+   place 1 - 1813 206.95 31.95 Sprite
+== sprite 1815
+   place 1 - 1774 632.9 402.45 Sprite
+   place 1 - 1782 -32.55 402.45 Sprite
+   place 1 - 1814 6.05 -89.1 Sprite
+   label 2 in
+   label 6 out
+== sprite 1827
+   place 1 - 1817 0.0 0.0 Shape
+   place 2 - 1818 None None Shape
+   place 3 - 1819 None None Shape
+   place 4 - 1820 None None Shape
+   place 5 - 1821 0.0 0.0 Shape2
+   place 6 - 1822 0.0 0.0 Shape
+   place 7 - 1823 None None Shape
+   place 8 - 1824 None None Shape
+   place 9 - 1825 None None Shape
+   place 10 - 1826 None None Shape
+== sprite 1828
+   place 1 个 1827 37.2 0.0 Sprite
+   place 1 十 1827 18.6 0.0 Sprite
+   place 1 百 1827 0.0 0.0 Sprite
+== sprite 1833
+   label 10 连击
+   place 10 sz 1828 40.15 29.35 Sprite
+   place 11 - 1830 115.0 27.25 Shape
+   place 11 - 1832 9.95 41.3 Shape
+== sprite 1843
+   place 2 - 1841 70.45 1.95 Shape
+== sprite 1844
+   place 2 - 1838 91.5 21.0 Shape
+   place 20 - 1843 16.0 60.25 Sprite
+== sprite 1848
+   place 2 - 1835 214.95 28.95 Shape
+   label 62 winner
+   place 62 - 1844 -296.25 -35.25 Sprite
+   label 212 drawgame
+   place 212 - 1846 -63.4 12.0 Shape
+   label 340 next
+== sprite 1857
+   place 1 - 1856 0.0 0.0 Shape
+== sprite 1858
+   place 31 - 1851 106.25 64.55 Shape
+   place 35 - 1854 197.15 64.55 Shape
+   label 93 winner
+   place 93 winmc 1844 0.0 -27.3 Sprite
+   label 240 drawgame
+   place 240 - 1857 -58.55 3.3 Sprite
+   label 384 next
+== sprite 1868
+   place 1 - 1866 0.0 0.0 Shape
+== sprite 1871
+   place 1 - 1869 0.0 0.0 Shape
+== sprite 1874
+   place 1 - 1872 0.0 0.0 Shape
+== sprite 1875
+   place 1 - 1866 20.0 19.95 Shape
+   place 6 - 1868 20.0 19.95 Sprite
+   place 7 - 1871 16.55 20.0 Sprite
+   place 8 - 1874 18.0 20.0 Sprite
+== sprite 1876
+   place 1 roundshu 1875 4.0 0.0 Sprite
+== sprite 1882
+   place 2 - 1860 33.0 -9.5 Shape
+   place 3 - 1862 33.0 -9.5 Shape
+   place 4 - 1863 33.0 -9.5 Shape
+   place 5 - 1864 33.0 -9.5 Shape
+   place 6 - 1865 33.0 -9.5 Shape
+   place 20 - 1876 193.9 -11.0 Sprite
+   place 57 - 1878 139.45 39.45 Shape
+   place 92 - 1881 136.95 37.45 Shape
+== sprite 1885
+   label 2 关
+   place 2 - 535 0.0 -160.0 Shape
+   place 2 - 535 0.0 329.95 Shape
+   place 9 - 1883 0.0 0.0 Shape2
+   label 13 关闭
+   label 20 开
+   place 20 - 535 0.0 -1.95 Shape
+   place 28 - 535 0.0 160.95 Shape
+   label 33 skipintro
+   place 33 - 535 0.0 -160.0 Shape
+   place 33 - 535 0.0 329.95 Shape
+   place 39 - 1884 0.0 0.0 Shape2
+== sprite 1890
+   place 1 - 1887 0.0 0.0 Shape
+   place 3 - 1889 None None Shape
+== sprite 1896
+   place 1 - 1895 0.0 0.0 Shape
+== sprite 1899
+   place 1 - 1898 0.0 0.0 Shape
+== sprite 1900
+   place 1 - 1893 0.0 0.0 Shape2
+   place 1 lbar 1896 245.35 160.25 Sprite
+   place 1 - 1899 159.9 162.2 Sprite
+== sprite 1983
+   label 1 一护
+   place 1 - 1904 0.0 0.0 Shape
+   label 2 一护2
+   label 3 一护万解
+   place 3 - 1906 None None Shape
+   label 4 一护虚化
+   place 4 - 1908 None None Shape
+   label 5 白一护
+   place 5 - 1910 None None Shape
+   label 6 露其雅
+   place 6 - 1912 None None Shape
+   label 7 露其雅始解
+   label 8 恋次
+   place 8 - 1914 None None Shape
+   label 9 日番谷
+   place 9 - 1916 None None Shape
+   label 10 日番谷万解
+   place 10 - 1918 None None Shape
+   label 11 白哉
+   place 11 - 1920 None None Shape
+   label 12 茶渡
+   place 12 - 1922 None None Shape
+   label 13 小乌
+   place 13 - 1924 None None Shape
+   label 14 石田
+   place 14 - 1926 None None Shape
+   label 15 银
+   place 15 - 1928 None None Shape
+   label 16 蓝染
+   place 16 - 1930 None None Shape
+   label 19 鸣人
+   place 19 - 1932 None None Shape
+   label 20 鸣人九尾
+   place 20 - 1934 None None Shape
+   label 21 鸣人九尾实体
+   label 22 仙鸣
+   place 22 - 1936 None None Shape
+   label 23 黄金鸣人
+   place 23 - 1938 None None Shape
+   label 24 樱
+   place 24 - 1940 None None Shape
+   label 25 佐助
+   place 25 - 1942 None None Shape
+   label 26 佐助须佐
+   label 27 佐助咒怨
+   place 27 - 1944 None None Shape
+   label 28 卡卡西
+   place 28 - 1946 None None Shape
+   label 29 小李
+   place 29 - 1948 None None Shape
+   label 30 宁次
+   place 30 - 1950 None None Shape
+   label 31 手鞠
+   place 31 - 1952 None None Shape
+   label 32 鼬
+   place 32 - 1954 None None Shape
+   label 33 我爱罗
+   place 33 - 1956 None None Shape
+   label 34 大蛇丸
+   place 34 - 1958 None None Shape
+   label 38 剑心
+   place 38 - 1960 None None Shape
+   label 42 佩恩
+   place 42 - 1962 None None Shape
+   label 43 小南
+   place 43 - 1964 None None Shape
+   label 44 剑八
+   place 44 - 1966 None None Shape
+   label 45 带土
+   place 45 - 1968 None None Shape
+   label 46 一角
+   place 46 - 1970 None None Shape
+   label 47 迪达拉
+   place 47 - 1972 None None Shape
+   label 48 自来也
+   place 48 - 1974 None None Shape
+   label 49 重吾
+   place 49 - 1976 None None Shape
+   label 50 香磷
+   place 50 - 1978 None None Shape
+   label 51 奇拉比
+   place 51 - 1980 None None Shape
+   label 52 涅茧利
+   place 52 - 1982 None None Shape
+== sprite 1985
+   place 1 dt 1983 -0.45 -0.5 Sprite
+   place 1 - 1984 0.0 0.0 Shape3
+== sprite 1988
+   place 1 - 1987 -8.0 -8.0 Shape
+== sprite 1989
+   place 1 - 535 14.0 -41.0 Shape
+   place 1 loadMC 1900 -128.95 179.8 Sprite
+   place 1 - 535 -10.0 -48.9 Shape
+   place 1 mm 1901 14.0 -41.0 Sprite
+   place 27 - 875 -55.0 383.3 Sprite
+   place 108 - 516 -6.05 155.3 Shape
+   label 173 skip
+   place 173 - 535 -35.0 327.4 Shape
+   place 173 - 535 -35.0 -424.6 Shape
+== sprite 1991
+   place 1 - 1990 0.0 0.0 Shape4
+== sprite 1994
+   place 1 - 1993 0.0 0.0 Shape
+== sprite 2001
+   place 1 - 2000 0.0 0.0 Shape4
+== sprite 2004
+   place 1 - 2003 0.0 0.0 Shape
+== sprite 2010
+   place 1 - 1994 150.5 -50.0 Sprite
+   place 1 - 1996 238.5 -11.75 Text
+   place 1 - 1997 211.5 32.75 Text
+   place 1 - 1998 225.55 80.25 Text
+   place 1 - 1999 0.0 0.0 Shape
+   place 1 skk 2001 162.0 55.1 Sprite
+   label 10 出招表
+   place 10 - 2004 5.0 -100.0 Sprite
+   place 10 - 2006 85.0 -48.0 EditText
+   place 10 - 2007 18.0 -90.0 Text
+   place 10 - 2009 -6.0 -105.0 Button2
+== sprite 2011
+   place 1 - 1346 33.4 -3.0 Sprite
+== sprite 2014
+   place 1 - 2013 0.0 0.0 Shape
+== sprite 2017
+   place 1 - 2016 -703.5 0.0 Shape2
+== sprite 2019
+   place 1 wintxt 2018 2.0 2.0 EditText
+== sprite 2032
+   place 5 - 2011 376.6 4.0 Sprite
+   place 5 - 833 197.7 227.05 Sprite
+   place 5 - 2014 -177.05 -33.05 Sprite
+   place 12 - 2017 -22.0 -24.0 Sprite
+   place 20 - 2019 -105.0 193.7 Sprite
+   place 20 - 2021 -8.0 104.0 Shape
+   place 24 - 2023 -88.0 94.0 Button2
+   place 24 - 875 509.8 324.0 Sprite
+   place 24 - 2027 -64.2 272.05 Button2
+   place 24 - 2031 -127.7 276.8 Button2
+== sprite 2036
+   place 1 - 2034 3.0 24.55 EditText
+   place 1 - 2035 2.0 2.0 Text
+== sprite 2049
+   place 1 - 2046 -5.0 -5.0 Shape
+   place 1 - 2047 0.0 0.0 MorphShape
+   place 1 - 2046 -5.0 -5.0 Shape
+   place 80 - 2048 0.0 0.0 Shape
+== sprite 2050
+   place 1 gl 2036 29.0 281.35 Sprite
+   place 1 - 2039 95.2 194.95 Button2
+   place 1 - 2042 288.85 195.5 Button2
+   place 1 - 2049 35.0 70.0 Sprite
+   place 1 - 535 0.0 0.0 Shape
+== sprite 2053
+   place 1 - 2052 0.0 0.0 Shape
+== sprite 2054
+   place 1 - 2053 0.0 0.0 Sprite
+== sprite 2055
+   place 1 - 2053 0.0 0.0 Sprite
+   place 41 - 2054 0.0 0.0 Sprite
+   place 130 - 2053 0.0 0.0 Sprite
+== sprite 2058
+   place 1 - 2057 0.0 0.0 Shape
+== sprite 2060
+   place 1 - 516 0.0 0.0 Shape
+   place 7 - 516 0.0 0.0 Shape
+   place 14 - 516 0.0 0.0 Shape
+== sprite 2074
+   place 1 btn 2065 355.35 158.75 Button2
+   place 1 - 2066 57.0 -24.6 Text
+   place 1 - 2067 155.1 -3.6 Text
+   place 1 - 2068 156.2 40.35 Text
+   place 1 btn2 2072 240.35 158.75 Button2
+   place 1 - 2073 150.2 114.35 Text
+== sprite 2075
+   place 1 - 2058 -177.35 67.1 Sprite
+   place 55 - 2058 -185.9 129.25 Sprite
+   place 65 - 2058 -364.85 -15.75 Sprite
+   place 70 - 2058 -387.9 85.25 Sprite
+   place 85 - 2058 -270.9 18.2 Sprite
+   place 107 - 2074 2.0 270.2 Sprite

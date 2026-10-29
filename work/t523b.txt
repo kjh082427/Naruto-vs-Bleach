@@ -1,0 +1,13 @@
+[
+xmin 325
+ymin 22
+xmax 2536
+ymax 357
+translatex 318
+][
+font 517
+height 280
+letterspacing 171
+color #000000
+y 300
+]点这里开始

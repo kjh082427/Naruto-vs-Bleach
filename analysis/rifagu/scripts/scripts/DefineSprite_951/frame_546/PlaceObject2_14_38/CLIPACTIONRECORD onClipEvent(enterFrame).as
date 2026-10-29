@@ -1,0 +1,13 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(bishaAir())
+      {
+         _parent.gotoAndPlay("空中必杀");
+      }
+      if(skill2())
+      {
+         _parent.gotoAndPlay("砍技21");
+      }
+   }
+}

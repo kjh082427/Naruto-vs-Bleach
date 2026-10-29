@@ -1,0 +1,4 @@
+if(sw == true)
+{
+   stop();
+}

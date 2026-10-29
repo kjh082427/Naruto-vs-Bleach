@@ -1,0 +1,19 @@
+{
+  "agents": {
+    "agent-1793308598458-78izfa": {
+      "agentId": "agent-1793308598458-78izfa",
+      "agentType": "researcher",
+      "name": "probe",
+      "status": "terminated",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "haiku"
+      },
+      "createdAt": "2026-10-29T21:16:38.459Z",
+      "model": "haiku",
+      "modelRoutedBy": "explicit"
+    }
+  },
+  "version": "3.0.0"
+}

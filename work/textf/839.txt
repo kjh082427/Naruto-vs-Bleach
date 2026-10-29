@@ -1,0 +1,32 @@
+[
+xmin 1
+ymin 40
+xmax 7387
+ymax 2809
+][
+font 640
+height 280
+color #000000
+y 300
+]游戏设计、游戏程序、游戏特效：剑jian[
+x 0
+y 1120
+]人物[
+font 838
+height 280
+spacingpair "制" "作" 140
+spacingpair "作" "" 140
+]制作[
+font 640
+height 280
+]：数字化流天，[
+resetspacing
+spacingpair "V" "." 33
+spacingpair "." "" -1
+]V.临界幻想，L，Azrael，影，赤炎[
+x 0
+y 1940
+]辅助人物制作：小海，主流[
+x 0
+y 2760
+]特殊贡献：灰原·[space -1]银

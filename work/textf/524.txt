@@ -1,0 +1,21 @@
+[
+xmin 680
+ymin 23
+xmax 2356
+ymax 286
+translatex 672
+][
+font 519
+height 240
+letterspacing -27
+color #666666
+y 220
+spacing "a" 37
+spacing " " 39
+spacing "e" 28
+spacingpair "s" "t" 43
+spacingpair "r" "t" 16
+spacingpair "h" "e" 23
+spacingpair "g" "a" 22
+spacingpair "m" "e" 20
+]start the game

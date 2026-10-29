@@ -1,0 +1,36 @@
+[
+xmin -2036
+ymin 13
+xmax 5056
+ymax 241
+translatex -2053
+][
+font 519
+height 200
+letterspacing -23
+color #cccccc
+y 180
+spacing "l" 15
+spacing "a" 31
+spacing "y" 27
+spacing " " 33
+spacing "i" 18
+spacing "h" 20
+spacing "o" 17
+spacing "u" 20
+spacing "r" 14
+spacing "f" 3
+spacing "e" 24
+spacing "n" 20
+spacing "d" 17
+spacing "s" 36
+spacing "!" 24
+spacingpair "P" "l" 36
+spacingpair "w" "i" 12
+spacingpair "v" "e" 25
+spacingpair "m" "o" 17
+spacingpair "T" "a" 34
+spacingpair "k" "e" 22
+spacingpair "p" "o" 17
+spacingpair "b" "l" 17
+]Play with your friends to have more fun! Take your friends as soon as possible!

@@ -1,0 +1,16 @@
+[
+xmin 9
+ymin 28
+xmax 906
+ymax 250
+][
+font 1995
+height 240
+color #cccccc
+y 220
+spacingpair "C" "a" -8
+spacingpair "a" "n" 7
+spacingpair "n" "c" -7
+spacingpair "e" "l" -6
+spacingpair "l" "" -4
+]Cancel

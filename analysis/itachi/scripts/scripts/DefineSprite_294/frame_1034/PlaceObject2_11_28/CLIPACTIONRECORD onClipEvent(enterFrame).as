@@ -1,0 +1,9 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(standup())
+      {
+         _parent.gotoAndPlay("起身");
+      }
+   }
+}

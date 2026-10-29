@@ -1,0 +1,192 @@
+00000010:    0. FileAttributes            tagId= 69 len=       4  00 00 00 00
+00000016:    1. SetBackgroundColor        tagId=  9 len=       3  ff ff ff
+0000001b:    2. SoundStreamHead2 (cid: -1) tagId= 45 len=       4  06 00 00 00
+00000021:    3. DoAction                  tagId= 12 len=     901  88 f3 00 23 00 5f 73 69 00 66 6c 61 73 68 00 67 65 6f 6d 00 43 6f 6c 6f 72 54 72 61 6e 73 66 6f ... 96 02 00 08 1b 1c 96 07 00 08 20 07 dc 05 00 00 4f 96 02 00 08 1b 1c 96 04 00 08 21 08 22 4f 00
+000003ac:    4. ShowFrame                 tagId=  1 len=       0  
+000003ae:    5. DoAction                  tagId= 12 len=      41  06 96 06 00 00 74 68 69 73 00 1c 96 0c 00 07 01 00 00 00 00 5f 72 6f 6f 74 00 1c 96 08 00 00 66 7a 63 63 58 67 00 52 17 00
+000003dd:    6. ShowFrame                 tagId=  1 len=       0  
+000003df:    7. ShowFrame                 tagId=  1 len=       0  
+000003e1:    8. DefineBitsLossless2 (chid: 1) tagId= 36 len=    1028  01 00 05 64 00 64 00 78 da ed 9c bd 6e d4 40 14 85 f3 08 29 29 b7 0b 35 55 ca 6d 90 78 05 ba 48 ... 12 4d 8e 1d b1 5f ae 91 23 8d 3f 13 35 e5 7f 2a 58 99 9d 0e 1b 5c 41 08 a1 d3 d4 6f f3 5b 4e d6
+000007eb:    9. DefineShape (chid: 2)     tagId=  2 len=      34  02 00 60 00 3e 80 00 3e 80 01 41 01 00 d9 40 00 05 00 00 00 00 10 13 d0 fa 1d 2f a1 d1 06 1d 30 60 00
+00000813:   10. DefineBitsLossless2 (chid: 3) tagId= 36 len=    1037  03 00 05 64 00 64 00 78 da ed 9c ad 8e db 40 14 85 f7 11 16 16 86 a5 b8 68 61 48 a5 be 42 d9 4a ... 2a c7 0e 7f 5e ce 91 23 95 3f f3 91 f2 1c be 56 66 d7 c3 46 ae 48 92 24 5d a7 fe 02 fe 97 34 68
+00000c26:   11. DefineShape (chid: 4)     tagId=  2 len=      34  04 00 60 00 3e 80 00 3e 80 01 41 03 00 d9 40 00 05 00 00 00 00 10 13 d0 fa 1d 2f a1 d1 06 1d 30 60 00
+00000c4e:   12. DefineBitsLossless2 (chid: 5) tagId= 36 len=    1040  05 00 05 64 00 64 00 78 da ed 9c b1 6e db 30 14 45 f3 09 19 3b 7a 73 e7 4e 19 bd 14 e8 2f 74 0b ... aa 1c 3b 7c bf 9c 23 47 2a 7f de 63 c8 33 f8 5a 99 5d 0f 1b b9 22 49 92 74 9d fa 0b f2 20 50 72
+00001064:   13. DefineShape (chid: 6)     tagId=  2 len=      34  06 00 60 00 3e 80 00 3e 80 01 41 05 00 d9 40 00 05 00 00 00 00 10 13 d0 fa 1d 2f a1 d1 06 1d 30 60 00
+0000108c:   14. DefineBitsLossless2 (chid: 7) tagId= 36 len=    1037  07 00 05 64 00 64 00 78 da ed 9c 3d 6e db 40 10 85 7d 04 97 29 dd 29 75 2a 97 6a 02 e4 0a e9 0c ... a2 ca be 23 b6 cb 39 72 a4 f2 67 3d 86 3c 7f cf cc ec 7c d8 e0 0a 42 08 9d a7 fe 02 0e 14 6f 29
+0000149f:   15. DefineShape (chid: 8)     tagId=  2 len=      34  08 00 60 00 3e 80 00 3e 80 01 41 07 00 d9 40 00 05 00 00 00 00 10 13 d0 fa 1d 2f a1 d1 06 1d 30 60 00
+000014c7:   16. DefineSprite (chid: 9)    tagId= 39 len=      65  09 00 0c 00 44 0b 06 00 00 00 86 06 06 01 00 02 00 00 40 00 40 00 40 00 85 06 03 01 00 04 00 40 ... 40 00 40 00 85 06 03 01 00 06 00 40 00 40 00 40 00 85 06 03 01 00 08 00 40 00 40 00 40 00 00 00
+000014d1:      0. SoundStreamHead2 (cid: -1) tagId= 45 len=       4  06 00 00 00
+000014d7:      1. PlaceObject2 (chid: 2, dpt: 1) tagId= 26 len=       6  06 01 00 02 00 00
+000014df:      2. ShowFrame               tagId=  1 len=       0  
+000014e1:      3. ShowFrame               tagId=  1 len=       0  
+000014e3:      4. ShowFrame               tagId=  1 len=       0  
+000014e5:      5. PlaceObject2 (chid: 4, dpt: 1) tagId= 26 len=       5  03 01 00 04 00
+000014ec:      6. ShowFrame               tagId=  1 len=       0  
+000014ee:      7. ShowFrame               tagId=  1 len=       0  
+000014f0:      8. ShowFrame               tagId=  1 len=       0  
+000014f2:      9. PlaceObject2 (chid: 6, dpt: 1) tagId= 26 len=       5  03 01 00 06 00
+000014f9:     10. ShowFrame               tagId=  1 len=       0  
+000014fb:     11. ShowFrame               tagId=  1 len=       0  
+000014fd:     12. ShowFrame               tagId=  1 len=       0  
+000014ff:     13. PlaceObject2 (chid: 8, dpt: 1) tagId= 26 len=       5  03 01 00 08 00
+00001506:     14. ShowFrame               tagId=  1 len=       0  
+00001508:     15. ShowFrame               tagId=  1 len=       0  
+0000150a:     16. ShowFrame               tagId=  1 len=       0  
+0000150e:   17. PlaceObject2 (chid: 9, dpt: 1) tagId= 26 len=      16  16 01 00 09 00 c5 66 66 b3 33 33 d0 ab 38 03 00
+00001520:   18. ShowFrame                 tagId=  1 len=       0  
+00001522:   19. ShowFrame                 tagId=  1 len=       0  
+00001524:   20. ShowFrame                 tagId=  1 len=       0  
+00001526:   21. ShowFrame                 tagId=  1 len=       0  
+00001528:   22. ShowFrame                 tagId=  1 len=       0  
+0000152a:   23. ShowFrame                 tagId=  1 len=       0  
+0000152c:   24. ShowFrame                 tagId=  1 len=       0  
+0000152e:   25. ShowFrame                 tagId=  1 len=       0  
+00001530:   26. ShowFrame                 tagId=  1 len=       0  
+00001532:   27. RemoveObject2 (dpt: 1)    tagId= 28 len=       2  01 00
+00001536:   28. DoAction                  tagId= 12 len=      63  96 0d 00 00 e5 8a a8 e4 bd 9c 00 07 01 00 00 00 1d 96 0f 00 05 01 00 58 47 5f 66 7a 62 73 00 00 70 6e 00 1c 96 0c 00 07 03 00 00 00 00 5f 72 6f 6f 74 00 1c 96 05 00 00 62 73 64 00 52 17 00
+0000157b:   29. DefineBitsLossless2 (chid: 10) tagId= 36 len=     878  0a 00 05 96 00 78 00 78 da ed dd 3f 6e 13 41 14 c0 e1 1c 21 25 65 aa 88 9a 2a a5 0b 0a 8e 40 19 ... b4 c5 86 ae ba 8d b9 fe 0e 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3c a3 07 a9 d8 c1 d7
+000018ef:   30. DefineShape (chid: 11)    tagId=  2 len=      36  0b 00 68 00 17 70 00 04 b0 00 01 41 0a 00 d9 40 00 05 00 00 00 00 10 13 d8 bb 8e d4 b0 76 51 23 b6 d4 00 00
+00001919:   31. PlaceObject2 (chid: 11, dpt: 1) tagId= 26 len=      14  06 01 00 0b 00 c5 66 66 b3 33 33 8f ac 00
+00001929:   32. ShowFrame                 tagId=  1 len=       0  
+0000192b:   33. ShowFrame                 tagId=  1 len=       0  
+0000192d:   34. DefineBitsLossless2 (chid: 12) tagId= 36 len=     922  0c 00 05 96 00 78 00 78 da ed dd 31 6e 13 41 14 87 f1 1c 21 65 ca 54 51 6a aa 94 2e 28 38 02 65 ... 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 c0 3f e4 17 6f 0d 7a cd
+00001ccd:   35. DefineShape (chid: 13)    tagId=  2 len=      36  0d 00 68 00 17 70 00 04 b0 00 01 41 0c 00 d9 40 00 05 00 00 00 00 10 13 d8 bb 8e d4 b0 76 51 23 b6 d4 00 00
+00001cf7:   36. PlaceObject2 (chid: 13, dpt: 1) tagId= 26 len=       5  03 01 00 0d 00
+00001cfe:   37. ShowFrame                 tagId=  1 len=       0  
+00001d00:   38. ShowFrame                 tagId=  1 len=       0  
+00001d02:   39. ShowFrame                 tagId=  1 len=       0  
+00001d04:   40. ShowFrame                 tagId=  1 len=       0  
+00001d06:   41. ShowFrame                 tagId=  1 len=       0  
+00001d08:   42. ShowFrame                 tagId=  1 len=       0  
+00001d0a:   43. ShowFrame                 tagId=  1 len=       0  
+00001d0c:   44. ShowFrame                 tagId=  1 len=       0  
+00001d0e:   45. ShowFrame                 tagId=  1 len=       0  
+00001d10:   46. ShowFrame                 tagId=  1 len=       0  
+00001d12:   47. ShowFrame                 tagId=  1 len=       0  
+00001d14:   48. ShowFrame                 tagId=  1 len=       0  
+00001d16:   49. ShowFrame                 tagId=  1 len=       0  
+00001d18:   50. DoAction                  tagId= 12 len=      35  96 04 00 00 70 6e 00 1c 96 0c 00 07 01 00 00 00 00 5f 72 6f 6f 74 00 1c 96 05 00 00 62 73 77 00 52 17 00
+00001d41:   51. DefineBitsLossless2 (chid: 14) tagId= 36 len=     901  0e 00 05 96 00 78 00 78 da ed dc 3f 6e d4 40 14 80 f1 1c 21 25 65 aa 88 9a 2a e5 16 14 1c 81 32 ... 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 63 f8 07 d5 d5 3b 2c
+000020cc:   52. DefineShape (chid: 15)    tagId=  2 len=      36  0f 00 68 00 17 70 00 04 b0 00 01 41 0e 00 d9 40 00 05 00 00 00 00 10 13 d8 bb 8e d4 b0 76 51 23 b6 d4 00 00
+000020f6:   53. PlaceObject2 (chid: 15, dpt: 1) tagId= 26 len=       5  03 01 00 0f 00
+000020fd:   54. DefineBitsJPEG3 (chid: 16) tagId= 35 len=     562  10 00 0b 02 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... da fb ff ff 3f 03 1a f8 0f 01 58 84 fe 63 11 02 09 42 65 fe a3 03 2c 42 ff ff 03 00 5d af 42 be
+00002335:   55. DefineShape (chid: 17)    tagId=  2 len=      41  11 00 68 00 02 f8 8d 44 a6 00 01 41 10 00 d9 40 00 05 00 00 0d 00 02 35 00 00 10 15 a0 00 46 a7 81 7c d9 78 e0 a1 36 62 00
+00002364:   56. PlaceObject2 (chid: 17, dpt: 2) tagId= 26 len=      14  06 02 00 11 00 c5 66 66 b3 33 35 19 79 89
+00002374:   57. DefineBitsJPEG3 (chid: 18) tagId= 35 len=    9944  12 00 7e 24 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 31 36 d9 78 34 1b da 71 ab 64 a3 96 c2 b9 52 fa 2e e0 5a ca 37 e3 d6 a5 08 64 1c 7f 6d b1 5a 79
+00004a52:   58. DefineShape (chid: 19)    tagId=  2 len=     253  13 00 66 0e b6 8d de 0f e0 01 41 12 00 d9 40 00 05 00 00 0c c1 db bc 00 10 0d 4b 8c e1 d2 cd 93 ... 5c 9c b5 39 e6 9d 2b 8a 39 c0 28 74 dd 9e b4 62 b4 de 18 2a ad 9f 4c d8 eb 42 5f 52 f6 70 e0 00
+00004b55:   59. PlaceObject2 (chid: 19, dpt: 3) tagId= 26 len=      14  06 03 00 13 00 c5 66 66 b3 33 2d e1 ea 40
+00004b65:   60. ShowFrame                 tagId=  1 len=       0  
+00004b67:   61. DefineShape3 (chid: 20)   tagId= 32 len=      32  14 00 60 00 29 38 00 19 50 01 00 01 01 01 00 00 10 15 8a 4e 65 5e 8a d9 e5 9a dd 0a 4f ca ca 80
+00004b8d:   62. DefineSprite (chid: 21)   tagId= 39 len=    9052  15 00 01 00 44 0b 06 00 00 00 3f 03 40 23 00 00 88 55 04 bd 00 62 65 69 64 61 00 7a 68 61 6e 74 ... 4e 4f 96 0b 00 08 bb 07 01 00 00 00 04 03 08 16 52 17 1d 00 86 06 06 01 00 14 00 00 40 00 00 00
+00004b97:      0. SoundStreamHead2 (cid: -1) tagId= 45 len=       4  06 00 00 00
+00004b9d:      1. DoAction                tagId= 12 len=    9024  88 55 04 bd 00 62 65 69 64 61 00 7a 68 61 6e 74 69 6e 67 00 63 79 00 67 61 6d 65 00 5f 78 73 63 ... 08 0d 04 03 08 ac 4e 96 02 00 08 b5 4e 4f 96 0b 00 08 bb 07 01 00 00 00 04 03 08 16 52 17 1d 00
+00006ee3:      2. PlaceObject2 (chid: 20, dpt: 1) tagId= 26 len=       6  06 01 00 14 00 00
+00006eeb:      3. ShowFrame               tagId=  1 len=       0  
+00006eef:   63. PlaceObject2 (chid: 21, dpt: 4, nm: "atm1") tagId= 26 len=     283  b6 04 00 15 00 cd 64 ce 22 3d 63 0f b2 5c 40 1c 00 61 74 6d 31 00 00 00 02 00 00 00 02 00 00 00 ... 00 08 02 08 03 1c 96 02 00 08 04 4e 47 4e 96 02 00 08 05 4e 96 02 00 08 0b 52 17 00 00 00 00 00
+00007010:   64. DefineSound (chid: 22)    tagId= 14 len=    1465  16 00 26 90 14 00 00 7d 06 ff e3 20 c0 00 00 00 02 58 01 40 00 00 30 c3 00 20 a1 7f f7 25 e2 90 ... 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 00
+000075cf:   65. StartSound (cid: 22)      tagId= 15 len=       3  16 00 00
+000075d8:   66. DefineSound (chid: 23)    tagId= 14 len=    2401  17 00 26 b0 28 00 00 7d 06 ff e3 20 c0 00 00 00 02 58 01 40 00 00 00 8c 00 02 81 80 00 50 00 14 ... 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 20 00 00
+00007f3f:   67. StartSound (cid: 23)      tagId= 15 len=       3  17 00 00
+00007f48:   68. ShowFrame                 tagId=  1 len=       0  
+00007f4a:   69. DoAction                  tagId= 12 len=      33  96 10 00 06 00 00 00 00 00 00 00 00 00 5f 72 6f 6f 74 00 1c 96 07 00 00 73 68 69 6e 65 00 52 17 00
+00007f71:   70. DefineBitsJPEG3 (chid: 24) tagId= 35 len=    1831  18 00 b4 06 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 47 99 ca 3a 67 50 fa 1d 2f 09 db 50 06 49 76 76 c1 d1 9d 8d 46 8a 2e cb 2f 69 b9 00 a3 ad b7 65
+0000869e:   71. DefineShape (chid: 25)    tagId=  2 len=      41  19 00 68 02 89 24 64 04 b0 00 01 41 18 00 d9 40 00 05 00 00 0c 00 a6 40 00 10 15 89 24 c8 1e 56 41 d1 6f 1c b3 83 a1 22 00
+000086cd:   72. PlaceObject2 (chid: 25, dpt: 2) tagId= 26 len=       5  03 02 00 19 00
+000086d4:   73. DefineBitsJPEG3 (chid: 26) tagId= 35 len=   12241  1a 00 09 2d 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 30 e4 bb 47 ed da 84 ce 95 4e f3 cf 43 ae 5e b6 b3 ab d9 88 a9 a8 70 e1 e8 bd f6 17 b1 61 99 b8
+0000b6ab:   74. DefineShape (chid: 27)    tagId=  2 len=     207  1b 00 66 18 bb 8d 52 11 20 01 41 1a 00 d9 40 00 05 00 00 0c c3 1a a4 00 10 15 65 b6 e5 f6 d0 8c ... 9d 45 c0 65 32 55 00 5d 69 7f ca 52 8f c8 d9 ff 10 58 ee 24 49 d9 4c 0e 98 80 ec 5a 07 4b c0 00
+0000b780:   75. PlaceObject2 (chid: 27, dpt: 3) tagId= 26 len=       5  03 03 00 1b 00
+0000b787:   76. ShowFrame                 tagId=  1 len=       0  
+0000b789:   77. DefineBitsLossless2 (chid: 28) tagId= 36 len=     908  1c 00 05 96 00 78 00 78 da ed dc 31 6e 13 41 14 80 61 8e 90 92 32 55 44 4d 95 d2 05 05 47 a0 8c ... 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 c0 18 fe 02 18 ca a6 ad
+0000bb1b:   78. DefineShape (chid: 29)    tagId=  2 len=      36  1d 00 68 00 17 70 00 04 b0 00 01 41 1c 00 d9 40 00 05 00 00 00 00 10 13 d8 bb 8e d4 b0 76 51 23 b6 d4 00 00
+0000bb45:   79. PlaceObject2 (chid: 29, dpt: 1) tagId= 26 len=       5  03 01 00 1d 00
+0000bb4c:   80. ShowFrame                 tagId=  1 len=       0  
+0000bb4e:   81. DefineBitsJPEG3 (chid: 30) tagId= 35 len=    4802  1e 00 e6 11 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... bc 04 0d 73 22 ef 5b 2f 04 ef 88 5e ff 42 b4 4e 9d 2e 82 dd 23 dd 6d ac e3 67 fa 00 bb 4f 23 4e
+0000ce16:   82. DefineShape (chid: 31)    tagId=  2 len=      41  1f 00 68 02 8f 8c 11 84 b0 00 01 41 1e 00 d9 40 00 05 00 00 0a 02 91 80 00 10 15 40 52 31 e8 7b ce d4 24 74 42 27 6d ee 00
+0000ce45:   83. PlaceObject2 (chid: 31, dpt: 2) tagId= 26 len=       5  03 02 00 1f 00
+0000ce4c:   84. DefineBitsJPEG3 (chid: 32) tagId= 35 len=   15184  20 00 a3 37 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 56 8c e3 b7 d7 9a ef e3 bb 83 5e c9 64 a2 fc 94 30 9d 4d 5a ca ca ca 7e bb ee fa 03 c4 5f 9b 9a
+000109a2:   85. DefineShape (chid: 33)    tagId=  2 len=     193  21 00 6e d5 54 33 97 81 12 00 01 41 20 00 d9 40 00 05 00 00 0c b5 59 78 00 10 0d 64 56 a5 e5 47 ... a6 f5 a1 0d a0 f4 c3 2f 91 08 fb 4a 2c 34 c5 b4 ba ab 11 a0 3a f8 b2 12 74 8c 96 64 74 93 70 00
+00010a69:   86. PlaceObject2 (chid: 33, dpt: 3) tagId= 26 len=       5  03 03 00 21 00
+00010a70:   87. ShowFrame                 tagId=  1 len=       0  
+00010a72:   88. ShowFrame                 tagId=  1 len=       0  
+00010a74:   89. DefineBitsLossless2 (chid: 34) tagId= 36 len=     908  22 00 05 96 00 78 00 78 da ed dc 31 6e 13 41 14 80 61 8e 90 92 32 55 44 4d 95 d2 05 05 47 a0 8c ... 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 c0 18 fe 02 18 ca a6 ad
+00010e06:   90. DefineShape (chid: 35)    tagId=  2 len=      36  23 00 68 00 17 70 00 04 b0 00 01 41 22 00 d9 40 00 05 00 00 00 00 10 13 d8 bb 8e d4 b0 76 51 23 b6 d4 00 00
+00010e30:   91. PlaceObject2 (chid: 35, dpt: 1) tagId= 26 len=       5  03 01 00 23 00
+00010e37:   92. DefineBitsJPEG3 (chid: 36) tagId= 35 len=    7632  24 00 38 1c 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 47 99 45 54 09 9b ce 36 97 64 3f bb 89 56 d2 a9 01 f4 a3 c3 e2 c6 f7 cf f3 ed fe 00 88 dc cb b3
+00012c0d:   93. DefineShape (chid: 37)    tagId=  2 len=      40  25 00 68 00 17 20 07 84 c4 00 01 41 24 00 d9 40 00 05 00 00 08 00 78 00 10 15 00 0f 1e c5 c8 76 a4 43 b2 8e 1d b6 f0 00
+00012c3b:   94. PlaceObject2 (chid: 37, dpt: 2) tagId= 26 len=       5  03 02 00 25 00
+00012c42:   95. DefineBitsJPEG3 (chid: 38) tagId= 35 len=   16279  26 00 df 3b 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 6b d6 d3 05 e5 38 a3 93 76 ed 54 26 8f 8e c3 6b 06 d2 8c 3c 59 ab 11 1f 95 98 d6 1f 78 a8 1b 29
+00016bdf:   96. DefineShape (chid: 39)    tagId=  2 len=     162  27 00 6e bc 59 33 90 01 08 00 01 41 26 00 d9 40 00 05 00 00 0c af 19 00 00 10 15 63 c2 eb 77 d4 ... 91 eb dd 52 71 35 9c 5f 6a 9c 53 7e fe 5d a7 fe 5a 70 5b d9 aa 74 65 c4 e5 8c 26 47 8d 3b 58 00
+00016c87:   97. PlaceObject2 (chid: 39, dpt: 3) tagId= 26 len=       5  03 03 00 27 00
+00016c8e:   98. ShowFrame                 tagId=  1 len=       0  
+00016c90:   99. ShowFrame                 tagId=  1 len=       0  
+00016c92:  100. DefineBitsJPEG3 (chid: 40) tagId= 35 len=   11995  28 00 00 2c 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 02 fd f8 33 19 f9 26 93 4f 22 9c ca 21 57 d7 bf 3b 90 09 64 b7 23 7b ad d4 1f fe 03 87 ea d9 dd
+00019b73:  101. DefineShape (chid: 41)    tagId=  2 len=      41  29 00 6f f1 19 f0 07 84 ce 00 01 41 28 00 d9 40 00 05 00 00 08 c4 78 00 10 15 ac f8 4c e7 b2 59 9d b6 dc ec 69 a7 6a 49 00
+00019ba2:  102. PlaceObject2 (chid: 41, dpt: 2) tagId= 26 len=       5  03 02 00 29 00
+00019ba9:  103. DefineBitsJPEG3 (chid: 42) tagId= 35 len=   14924  2a 00 43 36 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... ee f0 f5 16 f1 71 e9 ce c7 bc f6 c3 7e 04 d9 c8 c6 63 fe 46 f7 ea 78 d1 8b 2e ff 00 ad 35 f2 ee
+0001d5fb:  104. DefineShape (chid: 43)    tagId=  2 len=     113  2b 00 6e d5 1c 29 87 71 09 80 01 41 2a 00 d9 40 00 05 00 00 0c b5 48 77 00 10 15 64 2e db 67 a1 ... 66 be 70 0c b9 29 6f 98 cb 38 72 fe 72 95 06 d5 5e 9a aa 8f 2a 52 59 7a e3 09 9a 84 42 93 c0 00
+0001d672:  105. PlaceObject2 (chid: 43, dpt: 3) tagId= 26 len=       5  03 03 00 2b 00
+0001d679:  106. ShowFrame                 tagId=  1 len=       0  
+0001d67b:  107. ShowFrame                 tagId=  1 len=       0  
+0001d67d:  108. DefineBitsJPEG3 (chid: 44) tagId= 35 len=   14084  2c 00 ca 33 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... d0 d9 32 99 0e 32 9d 54 ee 9a 05 5b 3e 15 6d a9 cc 1e 6e 3a 96 4a 16 6b b9 1d 7e 00 47 0b 3e 95
+00020d87:  109. DefineShape (chid: 45)    tagId=  2 len=      42  2d 00 68 39 9c 0c 01 44 ce 00 01 41 2c 00 d9 40 00 05 00 00 09 73 05 00 00 10 15 ae 06 4c e7 b2 5c 1d b6 78 ec 69 07 6a 62 00
+00020db7:  110. PlaceObject2 (chid: 45, dpt: 2) tagId= 26 len=       5  03 02 00 2d 00
+00020dbe:  111. DefineBitsJPEG3 (chid: 46) tagId= 35 len=   12977  2e 00 52 2f 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 90 3e 78 d5 8a c1 78 95 b6 de fd 3e 63 e9 52 72 cb 43 1b 6f be ea f0 ad e7 32 7e 01 a1 2c d3 d5
+00024075:  112. DefineShape (chid: 47)    tagId=  2 len=     110  2f 00 6e d0 1c 29 90 31 09 80 01 41 2e 00 d9 40 00 05 00 00 0c b4 09 03 00 10 15 6b c7 10 67 dc ... c0 3d e4 97 5d b6 f0 f0 4b 53 b5 22 1d 94 31 9c 25 5e 16 58 a7 18 d3 c8 35 79 c8 95 3d c5 50 00
+000240e9:  113. PlaceObject2 (chid: 47, dpt: 3) tagId= 26 len=       5  03 03 00 2f 00
+000240f0:  114. ShowFrame                 tagId=  1 len=       0  
+000240f2:  115. ShowFrame                 tagId=  1 len=       0  
+000240f4:  116. DefineBitsJPEG3 (chid: 48) tagId= 35 len=   12366  30 00 5b 2d 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 74 c9 18 63 24 41 e1 b9 61 6c 7e 26 1a e1 ab c2 1b b9 ed 45 33 99 1e 32 37 26 f8 01 ca fe 7d 2c
+00027148:  117. DefineShape (chid: 49)    tagId=  2 len=      42  31 00 68 4b 1c 98 00 04 ce 00 01 41 30 00 d9 40 00 05 00 00 0a 4b 00 00 00 10 15 ae 4c 4c e7 b2 5c 1d b6 64 ec 69 07 6a 67 00
+00027178:  118. PlaceObject2 (chid: 49, dpt: 2) tagId= 26 len=       5  03 02 00 31 00
+0002717f:  119. DefineBitsJPEG3 (chid: 50) tagId= 35 len=    9085  32 00 1a 21 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 62 f5 fb c8 94 67 bf b8 5a 29 e3 ae ba d8 8b 92 0f c2 1f 92 82 96 b6 ce 95 87 de 1f 84 46 9b d5
+00029502:  120. DefineShape (chid: 51)    tagId=  2 len=     110  33 00 6e ad 1c 29 90 30 ff 80 01 41 32 00 d9 40 00 05 00 00 0c ab 49 03 00 10 15 69 1a ba e7 ba ... 04 f0 4d 83 b5 1f 9d 93 cd da 31 29 38 b2 84 51 a7 4e 48 b0 8a 6b 73 8b e7 fa ba a6 d8 50 30 00
+00029576:  121. PlaceObject2 (chid: 51, dpt: 3) tagId= 26 len=       5  03 03 00 33 00
+0002957d:  122. ShowFrame                 tagId=  1 len=       0  
+0002957f:  123. ShowFrame                 tagId=  1 len=       0  
+00029581:  124. DefineBitsJPEG3 (chid: 52) tagId= 35 len=    8579  34 00 81 1f 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 38 70 50 12 67 bc 07 30 ef e8 cd b8 79 e7 7a bc 2b 3e f1 9a 8a a0 7c d2 e8 2b f7 07 d9 20 3d 18
+0002b70a:  125. DefineShape (chid: 53)    tagId=  2 len=      42  35 00 68 bb 9c 35 fc 44 ba 00 01 41 34 00 d9 40 00 05 00 00 0b 5d df 10 00 10 15 ae 1a fe 27 b5 36 1d 94 d4 ed b2 87 62 cb 00
+0002b73a:  126. PlaceObject2 (chid: 53, dpt: 2) tagId= 26 len=       5  03 02 00 35 00
+0002b741:  127. DefineBitsJPEG3 (chid: 54) tagId= 35 len=    5957  36 00 aa 15 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 51 d9 3a 1b 56 e7 62 9d 4d bd f8 be 79 d3 96 56 0e 42 de dd c8 d3 d7 6e 07 59 ed 06 3e fc c1 85
+0002ce8c:  128. DefineShape (chid: 55)    tagId=  2 len=      93  37 00 6e b7 1c 29 91 70 ff 80 01 41 36 00 d9 40 00 05 00 00 0c ad c9 17 00 10 15 60 3e 7b e5 ba ... 76 a3 a3 b2 81 f3 05 cb 8e 4d 71 18 28 de 22 e5 45 38 e6 5d 28 e1 71 b3 ba f9 ed bd 9b 68 80 00
+0002ceef:  129. PlaceObject2 (chid: 55, dpt: 3) tagId= 26 len=       5  03 03 00 37 00
+0002cef6:  130. ShowFrame                 tagId=  1 len=       0  
+0002cef8:  131. ShowFrame                 tagId=  1 len=       0  
+0002cefa:  132. DefineBitsJPEG3 (chid: 56) tagId= 35 len=    5850  38 00 9b 15 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 1d a2 29 2a 8c ef 58 ef 5d 09 43 85 9e 30 21 84 10 42 08 45 f2 c6 65 44 f0 26 bc 00 08 3e 33 06
+0002e5da:  133. DefineShape (chid: 57)    tagId=  2 len=      42  39 00 68 d4 9b 6d fb 04 ba 00 01 41 38 00 d9 40 00 05 00 00 0b 6a 5e c0 00 10 15 ad b6 fd 87 b5 38 9d 95 9c ed b1 e7 62 99 00
+0002e60a:  134. PlaceObject2 (chid: 57, dpt: 2) tagId= 26 len=       5  03 02 00 39 00
+0002e611:  135. DefineBitsJPEG3 (chid: 58) tagId= 35 len=    3512  3a 00 c0 0c 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 42 f7 e7 f7 df 17 1a b1 b7 9a a0 73 b1 59 ea 0a f1 0b f8 79 be fb 7f 5f e3 d2 8b 37 08 4e a7 91
+0002f3cf:  136. DefineShape (chid: 59)    tagId=  2 len=      95  3b 00 6e b7 1c 29 bd 30 ff 80 01 41 3a 00 d9 40 00 05 00 00 0c ad cb d3 00 10 15 60 c2 df f6 de ... 1a 09 c6 f6 a1 75 9e 71 a5 4f cb 4d 9f c7 45 df d5 36 f1 5a e9 9e c9 aa 00 aa 04 b8 cc 03 08 00
+0002f434:  137. PlaceObject2 (chid: 59, dpt: 3) tagId= 26 len=       5  03 03 00 3b 00
+0002f43b:  138. ShowFrame                 tagId=  1 len=       0  
+0002f43d:  139. RemoveObject2 (dpt: 4)    tagId= 28 len=       2  04 00
+0002f441:  140. ShowFrame                 tagId=  1 len=       0  
+0002f443:  141. RemoveObject2 (dpt: 3)    tagId= 28 len=       2  03 00
+0002f447:  142. DefineBitsJPEG3 (chid: 60) tagId= 35 len=    3131  3c 00 6b 0b 00 00 ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 43 00 01 ... 67 07 8e c8 ea 31 01 66 e2 b8 98 e1 e0 e0 e0 e0 38 43 71 24 63 00 24 8d 80 3b e6 06 ef 68 ba 54
+00030088:  143. DefineShape (chid: 61)    tagId=  2 len=      42  3d 00 68 9d 9b 45 fb 04 ba 00 01 41 3c 00 d9 40 00 05 00 00 0b 4e de c0 00 10 15 ad a2 fd 87 b5 38 9d 94 d4 ed b1 e7 62 cb 00
+000300b8:  144. PlaceObject2 (chid: 61, dpt: 2) tagId= 26 len=       5  03 02 00 3d 00
+000300bf:  145. ShowFrame                 tagId=  1 len=       0  
+000300c1:  146. ShowFrame                 tagId=  1 len=       0  
+000300c3:  147. RemoveObject2 (dpt: 2)    tagId= 28 len=       2  02 00
+000300c7:  148. ShowFrame                 tagId=  1 len=       0  
+000300c9:  149. DoAction                  tagId= 12 len=      22  96 11 00 00 e5 8a a8 e4 bd 9c 00 06 00 00 00 00 00 00 00 00 1d 00
+000300e5:  150. ShowFrame                 tagId=  1 len=       0  
+000300e7:  151. ShowFrame                 tagId=  1 len=       0  
+000300e9:  152. ShowFrame                 tagId=  1 len=       0  
+000300eb:  153. ShowFrame                 tagId=  1 len=       0  
+000300ed:  154. ShowFrame                 tagId=  1 len=       0  
+000300ef:  155. ShowFrame                 tagId=  1 len=       0  
+000300f1:  156. ShowFrame                 tagId=  1 len=       0  
+000300f3:  157. ShowFrame                 tagId=  1 len=       0  
+000300f5:  158. ShowFrame                 tagId=  1 len=       0  
+000300f7:  159. ShowFrame                 tagId=  1 len=       0  
+000300f9:  160. ShowFrame                 tagId=  1 len=       0  
+000300fb:  161. ShowFrame                 tagId=  1 len=       0  
+000300fd:  162. ShowFrame                 tagId=  1 len=       0  
+000300ff:  163. ShowFrame                 tagId=  1 len=       0  
+00030101:  164. ShowFrame                 tagId=  1 len=       0  
+00030103:  165. ShowFrame                 tagId=  1 len=       0  
+00030105:  166. ShowFrame                 tagId=  1 len=       0  
+00030107:  167. RemoveObject2 (dpt: 1)    tagId= 28 len=       2  01 00
+0003010b:  168. DoAction                  tagId= 12 len=      40  96 06 00 00 74 68 69 73 00 1c 96 0c 00 07 01 00 00 00 00 5f 72 6f 6f 74 00 1c 96 08 00 00 66 7a 63 63 58 67 00 52 17 00
+00030139:  169. ShowFrame                 tagId=  1 len=       0  
+0003013b:  170. End                       tagId=  0 len=       0  

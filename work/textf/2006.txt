@@ -1,0 +1,19 @@
+[
+xmin -40
+ymin -40
+xmax 4739
+ymax 5550
+wordwrap 1
+multiline 1
+readonly 1
+html 1
+useoutlines 1
+font 2005
+height 240
+color #ffffffff
+align left
+leftmargin 0
+rightmargin 0
+indent 0
+leading 80
+]<p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1">A - 斩(默认J)</font></p><p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1">B - 技(默认u)</font></p><p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1">C - 必杀(默认i)</font></p><p align="left"></p><p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1"> &nbsp;A &nbsp;&nbsp;-- &nbsp;斩击 (跳跃中可)</font></p><p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1">↑+A &nbsp;-- &nbsp;技能2</font></p><p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1">↓+A &nbsp;-- &nbsp;技能3</font></p><p align="left"></p><p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1"> &nbsp;B &nbsp;&nbsp;-- &nbsp;技能1 (跳跃中可)</font></p><p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1">↑+B &nbsp;-- &nbsp;技能4</font></p><p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1">↓+B &nbsp;-- &nbsp;技能5</font></p><p align="left"></p><p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1"> &nbsp;C &nbsp;&nbsp;-- &nbsp;必杀1 (部分角色跳跃中可)</font></p><p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1">↑+C &nbsp;-- &nbsp;必杀2</font></p><p align="left"><font face="SimSun_12pt_st" size="12" color="#ffffff" letterSpacing="0.000000" kerning="1">↓+C &nbsp;-- &nbsp;超必杀 (部分角色跳跃中可)</font></p><p align="left"></p>

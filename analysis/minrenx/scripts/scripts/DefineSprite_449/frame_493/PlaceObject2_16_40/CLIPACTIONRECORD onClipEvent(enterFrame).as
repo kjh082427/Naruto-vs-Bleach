@@ -1,0 +1,13 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(magichit3())
+      {
+         _parent.gotoAndPlay("招31");
+      }
+      if(bisha())
+      {
+         _parent.gotoAndPlay("空中必杀");
+      }
+   }
+}

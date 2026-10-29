@@ -1,0 +1,15 @@
+[
+xmin -40
+ymin -40
+xmax 6979
+ymax 352
+readonly 1
+font 519
+height 280
+color #ffffffff
+align left
+leftmargin 0
+rightmargin 0
+indent 0
+leading 40
+]5dplay.net/walkthrough/game/11503.html

@@ -1,0 +1,13 @@
+[
+xmin 23
+ymin 75
+xmax 519
+ymax 443
+][
+font 517
+height 400
+color #ffffff
+y 420
+spacingpair "2" "P" 9
+spacingpair "P" "" 11
+]2P

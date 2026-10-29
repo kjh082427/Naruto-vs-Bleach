@@ -1,0 +1,11 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(magichit1())
+      {
+         _parent.gotoAndPlay("跳招");
+      }
+      moveX(_parent.speed);
+      moveY(-5);
+   }
+}

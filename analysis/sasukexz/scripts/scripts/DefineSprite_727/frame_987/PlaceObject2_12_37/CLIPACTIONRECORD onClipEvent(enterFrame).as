@@ -1,0 +1,9 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(bisha())
+      {
+         _parent.gotoAndPlay("上必杀2");
+      }
+   }
+}

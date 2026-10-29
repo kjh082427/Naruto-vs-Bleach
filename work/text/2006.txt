@@ -1,0 +1,1 @@
+A - 斩(默认J)B - 技(默认u)C - 必杀(默认i) &nbsp;A &nbsp;&nbsp;-- &nbsp;斩击 (跳跃中可)↑+A &nbsp;-- &nbsp;技能2↓+A &nbsp;-- &nbsp;技能3 &nbsp;B &nbsp;&nbsp;-- &nbsp;技能1 (跳跃中可)↑+B &nbsp;-- &nbsp;技能4↓+B &nbsp;-- &nbsp;技能5 &nbsp;C &nbsp;&nbsp;-- &nbsp;必杀1 (部分角色跳跃中可)↑+C &nbsp;-- &nbsp;必杀2↓+C &nbsp;-- &nbsp;超必杀 (部分角色跳跃中可)

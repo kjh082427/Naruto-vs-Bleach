@@ -1,0 +1,49 @@
+[
+xmin 705
+ymin -9
+xmax 6400
+ymax 2692
+][
+font 657
+height 280
+letterspacing 140
+color #ffffff
+x 1680
+y 240
+]恭贺通关[
+resetspacing
+spacingpair "!" " " 63
+spacingpair " " "" 76
+]! [
+resetspacing
+spacingpair "挑" "战" 140
+spacingpair "战" "更" 140
+spacingpair "更" "高" 140
+spacingpair "高" "难" 140
+spacingpair "难" "度" 140
+spacingpair "度" "吧" 140
+spacingpair "吧" "" 140
+]挑战更高难度吧![space 63][
+x 700
+y 1200
+]双人对战模式更好玩[
+resetspacing
+spacingpair "!" " " 63
+spacingpair " " "" 76
+]! [
+resetspacing
+spacingpair "快" "拉" 140
+spacingpair "拉" "上" 140
+spacingpair "上" "你" 140
+spacingpair "你" "的" 140
+spacingpair "的" "朋" 140
+spacingpair "朋" "友" 140
+spacingpair "友" "" 140
+]快拉上你的朋友[
+resetspacing
+spacingpair "P" "K" -27
+spacingpair "K" "" -31
+]PK吧[space 140]![space 63][
+x 2860
+y 2640
+]回头见！

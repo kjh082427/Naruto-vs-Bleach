@@ -1,0 +1,63 @@
+[
+xmin 11
+ymin -8
+xmax 2662
+ymax 3544
+][
+font 657
+height 360
+letterspacing 180
+color #ffffff
+y 300
+]增加人物：[
+letterspacing 98
+x 0
+y 700
+]     [
+resetspacing
+spacingpair "涅" "茧" 180
+spacingpair "茧" "利" 180
+spacingpair "利" "" 180
+]涅茧利[
+x 0
+y 1100
+]     [
+resetspacing
+spacingpair "奇" "拉" 180
+spacingpair "拉" "比" 180
+spacingpair "比" "" 180
+]奇拉比[
+letterspacing 180
+x 0
+y 1900
+]辅助人物：[
+letterspacing 98
+x 0
+y 2300
+]     [
+resetspacing
+spacingpair "涅" "音" 180
+spacingpair "音" "梦" 180
+spacingpair "梦" "" 180
+]涅音梦[
+x 0
+y 2700
+]     [
+resetspacing
+spacingpair "佐" "井" 180
+spacingpair "井" "" 180
+]佐井[
+x 0
+y 3100
+]     [
+resetspacing
+spacingpair "宇" "智" 180
+spacingpair "智" "波" 180
+spacingpair "波" "斑" 180
+spacingpair "斑" "" 180
+]宇智波斑[
+letterspacing 0
+x 0
+y 3500
+spacing " " 98
+]  

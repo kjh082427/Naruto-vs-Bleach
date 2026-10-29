@@ -1,0 +1,9 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(nornalhit())
+      {
+         _parent.gotoAndPlay("砍1");
+      }
+   }
+}

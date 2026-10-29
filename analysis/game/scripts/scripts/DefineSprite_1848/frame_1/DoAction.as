@@ -1,0 +1,2 @@
+stop();
+played = 0;

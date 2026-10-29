@@ -1,0 +1,17 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(skill2())
+      {
+         _parent.gotoAndPlay("砍技2");
+      }
+      if(magichit3())
+      {
+         _parent.gotoAndPlay("龙王冲");
+      }
+      if(bisha())
+      {
+         _parent.gotoAndPlay("必杀");
+      }
+   }
+}

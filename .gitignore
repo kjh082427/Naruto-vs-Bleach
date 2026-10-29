@@ -1,0 +1,6 @@
+# GitHub rejects files over 100 MB (chrome-headless-shell is 209 MB); re-download locally
+tools/chrome-headless-shell-linux64/
+# machine-specific Python environment (recreate with python -m venv tools/venv)
+tools/venv/
+__pycache__/
+*.pyc

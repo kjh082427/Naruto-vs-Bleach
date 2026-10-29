@@ -1,0 +1,21 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(bishaSuper())
+      {
+         _parent.gotoAndPlay("超必杀");
+      }
+      if(bisha())
+      {
+         _parent.gotoAndPlay("必杀");
+      }
+      if(skill1())
+      {
+         _parent.gotoAndPlay("砍技1");
+      }
+      if(magichit1())
+      {
+         _parent.gotoAndPlay("招1");
+      }
+   }
+}
