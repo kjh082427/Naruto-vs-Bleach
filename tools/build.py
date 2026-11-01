@@ -207,6 +207,7 @@ OP_UI = os.path.join(WORK, 'op/ui')
 OP_ROSTER = os.path.join(WORK, 'op/roster.json')
 OP_DIR = 'op/'  # under fighter/
 ICON_SPRITE, PORTRAIT_SPRITE, FACE_SPRITE, SELECT_SPRITE, SLOT_SPRITE = 1465, 1346, 1676, 1477, 1469
+BANNER_SPRITE = 1983  # versus-loading banners (sprite 1989 frame 11: p1xg.dt.gotoAndStop(_root.p1selt))
 TITLE_SPRITE, TITLE_BG_SHAPE = 666, 554
 TITLE_HIDE = {556, 579, 584, 585, 578, 583, 587, 589, 590, 621}  # old character art, rasengan glow, logo pieces, VS
 # select screen: 11 x 5 grid, factions as contiguous column-major runs (Bleach, Naruto, One Piece)
@@ -373,6 +374,7 @@ def add_one_piece(swf, roster):
     add_bitmap_frames(swf, ICON_SPRITE, 'icon', ids, layout)
     add_bitmap_frames(swf, PORTRAIT_SPRITE, 'portrait', ids, layout)
     add_bitmap_frames(swf, FACE_SPRITE, 'face', [lab for f in roster for lab in f['faces']], layout)
+    add_bitmap_frames(swf, BANNER_SPRITE, 'banner', ids, layout)
     layout_select_grid(swf, roster)
 
 
