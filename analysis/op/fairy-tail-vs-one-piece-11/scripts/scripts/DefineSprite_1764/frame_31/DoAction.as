@@ -1,0 +1,2 @@
+time();
+gotoAndPlay(2);

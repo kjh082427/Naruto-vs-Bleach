@@ -1,0 +1,36 @@
+onClipEvent(enterFrame){
+   if(_root.zhanting == false)
+   {
+      if(_root.game["p" + _parent.pn].mc.sw == false)
+      {
+         if(bishaSuper())
+         {
+            _parent.gotoAndPlay("超必杀");
+         }
+         if(bisha())
+         {
+            _parent.gotoAndPlay("必杀");
+         }
+         if(skill2())
+         {
+            _parent.gotoAndPlay("砍技22");
+         }
+         if(nornalhit(true))
+         {
+            _parent.gotoAndPlay("砍4");
+         }
+         if(magichit1())
+         {
+            _parent.gotoAndPlay("招12");
+         }
+         if(rush())
+         {
+            _parent.gotoAndPlay("瞬步");
+         }
+         if(dohide())
+         {
+            _parent.gotoAndPlay("起身");
+         }
+      }
+   }
+}

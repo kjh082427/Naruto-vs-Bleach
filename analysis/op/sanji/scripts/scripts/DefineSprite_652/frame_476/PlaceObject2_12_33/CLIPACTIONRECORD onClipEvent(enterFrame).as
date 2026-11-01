@@ -1,0 +1,9 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(magichit1(true))
+      {
+         _parent.gotoAndPlay("招11");
+      }
+   }
+}

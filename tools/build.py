@@ -6,7 +6,9 @@ Inputs
   game/                               pristine restored game (never modified)
   work/l10n/game_strings.json         zh->ko for script string literals (bvn-localizer)
   work/l10n/game_texts.json           {text tag id: [ko per record]} (bvn-localizer)
-  work/design/out/*.png               UI bitmaps named by character id + splash_600x400.png (game-ui-designer)
+  work/design/out/*.png               UI bitmaps named by character id + splash_600x400.png + title_bg_600x400.png
+                                      (game-ui-designer)
+  work/op/roster.json, work/op/ui/    One Piece fighters (tools/op_assets.py) + source/onepiece/blog/*.swf, *.mp3
   web/                                page template + assets copied into dist/ (index.html needs __RUFFLE_CONFIG__)
   tools/ruffle_config.json            Ruffle player config injected into index.html
 Outputs
@@ -21,7 +23,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'tools'))
-from swfpatch import Swf, Tag, bits_lossless2, parse_place_object2  # noqa: E402
+from swfpatch import Swf, Tag, bits_lossless2, parse_place_object2, place_object2  # noqa: E402
 from swftext import (bitmap_rect_shape, build_edit_text, define_text_to_sprite, empty_shape, parse_edit_text,  # noqa: E402
                      place_with_alpha)
 
@@ -198,8 +200,233 @@ MAP_NAME_FIXES['DefineSprite_1504/frame_1/DoAction.as'] = lambda t: t.replace(
     'txt.text = _name;', 'var md = _root.getMapData(_name);\ntxt.text = md.name != undefined ? md.name : _name;', 1)
 
 
-def patch_scripts(strings):
-    """Write translated copies of scripts that hold display strings; returns the import folder."""
+# --- One Piece fighters (ported from "Fairy Tail vs One Piece 1.1", same 5DPlay engine; see ANALYSIS.md §8) ----------
+
+OP_SRC = os.path.join(ROOT, 'source/onepiece/blog')
+OP_UI = os.path.join(WORK, 'op/ui')
+OP_ROSTER = os.path.join(WORK, 'op/roster.json')
+OP_DIR = 'op/'  # under fighter/
+ICON_SPRITE, PORTRAIT_SPRITE, FACE_SPRITE, SELECT_SPRITE, SLOT_SPRITE = 1465, 1346, 1676, 1477, 1469
+TITLE_SPRITE, TITLE_BG_SHAPE = 666, 554
+TITLE_HIDE = {556, 579, 584, 585, 578, 583, 587, 589, 590, 621}  # old character art, rasengan glow, logo pieces, VS
+# select screen: 11 x 5 grid, factions as contiguous column-major runs (Bleach, Naruto, One Piece)
+BLEACH_ORDER = ['一护', '一护万解', '一护2', '露其雅', '露其雅始解', '恋次', '日番谷', '日番谷万解', '白哉', '茶渡', '石田',
+                '小乌', '银', '剑八', '一角', '涅茧利', '蓝染', '剑心']
+NARUTO_ORDER = ['鸣人', '鸣人九尾', '仙鸣', '佐助', '佐助咒怨', '佐助须佐', '樱', '卡卡西', '小李', '宁次', '手鞠', '我爱罗',
+                '鼬', '大蛇丸', '自来也', '佩恩', '小南', '带土', '迪达拉', '重吾', '香磷', '奇拉比']
+GRID_COLS, GRID_ROWS, SLOT_SCALE = 11, 5, 0.86
+GRID_X0, GRID_Y0, GRID_DX, GRID_DY = -33.1, 46.85, 47.0, 46.0  # sprite 1477 local px (= screen - (76.6, 90.15))
+OP_MUSIC = ['onepiece.mp3', 'onepiece2.mp3', 'onepiece3.mp3']
+
+
+def op_roster():
+    return json.load(open(OP_ROSTER, encoding='utf-8'))['fighters'] if os.path.exists(OP_ROSTER) else []
+
+
+def as_str(s):
+    return '"' + s.replace('\\', '\\\\').replace('"', '\\"') + '"'
+
+
+def op_registry_lines(roster):
+    lines = []
+    for f in roster:
+        fields = [f'name:{as_str(f["name"])}', f'url:{as_str(OP_DIR + f["swf"])}', 'isOnePiece:true']
+        if f.get('vs'):
+            fields.append('vs:[' + ','.join(map(as_str, f['vs'])) + ']')
+        if f.get('music'):
+            fields.append(f'music:{as_str(f["music"])}')
+        fields.append('says:[' + ','.join(map(as_str, f['says'])) + ']')
+        lines.append(f'addFighterData({as_str(f["id"])},{{{",".join(fields)}}});')
+    return '\n'.join(lines)
+
+
+# frame_8 additions: the One Piece fighters call _root.shake() (screen shake), which BVN's engine lacks
+OP_ENGINE_AS = '''
+function shake(pow, holdFrame)
+{
+   if(pow == undefined)
+   {
+      pow = 6;
+   }
+   if(holdFrame == undefined)
+   {
+      holdFrame = 3;
+   }
+   _shakePow = pow;
+   _shakeDis = pow / holdFrame * 2;
+   var _loc2_ = _root.createEmptyMovieClip("shakeDriver",99990);
+   _loc2_.onEnterFrame = function()
+   {
+      _root.shakeIng();
+      if(_root._shakePow == 0)
+      {
+         this.removeMovieClip();
+      }
+   };
+}
+function shakeIng()
+{
+   if(_shakePow == 0)
+   {
+      return undefined;
+   }
+   _root._y += _shakePow;
+   if(_shakePow < 0)
+   {
+      if(_shakePow > (- _shakeDis) * 2)
+      {
+         _shakePow = 0;
+         _shakeDis = 0;
+         _root._y = 0;
+         return undefined;
+      }
+      _shakePow += _shakeDis;
+   }
+   _shakePow *= -1;
+}
+'''
+# the fighters unload themselves unless _root.HASH is the source game's value
+OP_SETTINGS_AS = 'var HASH = "5dplay_fvo";\n'
+# select screen: start the cursors on Ichigo (1P) and Naruto (2P) wherever the grid puts them
+# (BVN_SELECT_P1 / BVN_SELECT_P2 override the start fighter ids, for scripted test runs)
+SELECT_START = (os.environ.get('BVN_SELECT_P1', '一护'), os.environ.get('BVN_SELECT_P2', '鸣人'))
+SELECT_START_FIXES = [
+    ('   var _loc1_ = 5;\n   while(_loc1_ > 0)\n   {\n      if(updateXY(1,_loc1_,7))\n      {\n         break;\n      }\n'
+     '      _loc1_ = _loc1_ - 1;\n   }',
+     f'   var _loc1_ = _this["{SELECT_START[0]}"];\n   updateXY(1,int(_loc1_._x / 30),int(_loc1_._y / 30));'),
+    ('   var _loc1_ = 7;\n   while(_loc1_ < 12)\n   {\n      if(updateXY(2,_loc1_,7))\n      {\n         break;\n      }\n'
+     '      _loc1_ = _loc1_ + 1;\n   }',
+     f'   var _loc1_ = _this["{SELECT_START[1]}"];\n   updateXY(2,int(_loc1_._x / 30),int(_loc1_._y / 30));'),
+]
+
+
+def apply_fixes(text, fixes, where):
+    for old, new in fixes:
+        assert text.count(old) == 1, f'{where}: patch anchor not found once: {old[:60]!r}'
+        text = text.replace(old, new)
+    return text
+
+
+def add_bitmap_frames(swf, sprite_id, kind, names, layout):
+    """Append one labeled frame per name to a label-indexed sprite, showing work/op/ui/<kind>/<name>.png."""
+    from PIL import Image
+    new_defs = []
+    for name in names:
+        png = os.path.join(OP_UI, kind, f'{name}.png')
+        w, h = Image.open(png).size
+        bmp, shp = swf.new_id(), swf.new_id()
+        x, y = layout[kind][name]
+        new_defs += [bits_lossless2(bmp, png), bitmap_rect_shape(shp, bmp, x, y, w, h)]
+        swf.add_labeled_frame(sprite_id, name, shp)
+    swf.insert_before_define(sprite_id, new_defs)
+
+
+def layout_select_grid(swf, roster):
+    """Re-place all 55 slots of the fighter select screen in an 11x5 grid and add the One Piece slots."""
+    order = BLEACH_ORDER + NARUTO_ORDER + [f['id'] for f in roster]
+    assert len(order) <= GRID_COLS * GRID_ROWS
+    pos = {fid: (GRID_X0 + (i // GRID_ROWS) * GRID_DX, GRID_Y0 + (i % GRID_ROWS) * GRID_DY) for i, fid in enumerate(order)}
+    _, _, sp = swf.find_define(SELECT_SPRITE)
+    seen, used = set(), set()
+    for k, t in enumerate(sp.children):
+        if t.type != 26:
+            continue
+        p = parse_place_object2(t.body)
+        used.add(p['depth'])
+        name = p.get('name')
+        if name in pos:
+            sp.children[k] = place_object2(p['depth'], char=p.get('char'), name=name, raw_tail=p['tail'],
+                                           matrix=(SLOT_SCALE, 0, 0, SLOT_SCALE, *pos[name]))
+            seen.add(name)
+        elif name in ('player1', 'player2'):
+            a, b, c, d, tx, ty = p['matrix']
+            sp.children[k] = place_object2(p['depth'], char=p.get('char'), name=name, raw_tail=p['tail'],
+                                           matrix=(a * SLOT_SCALE, b, c, d * SLOT_SCALE, tx, ty))
+    missing = [fid for fid in order if fid not in seen]
+    free = (d for d in range(2, 161) if d not in used)  # below the cursors (depths 161, 165)
+    swf.first_frame_insert(SELECT_SPRITE, [place_object2(next(free), char=SLOT_SPRITE, name=fid,
+                                                          matrix=(SLOT_SCALE, 0, 0, SLOT_SCALE, *pos[fid]))
+                                           for fid in missing])
+    unplaced = sorted(set(seen) - set(order))
+    assert not unplaced, unplaced
+
+
+def restyle_title(swf, title_png):
+    """Title screen: one composed 600x400 bitmap replaces the background; old character/logo layers are hidden."""
+    bmp, blank = swf.new_id(), swf.new_id()
+    swf.insert_before_define(TITLE_SPRITE, [bits_lossless2(bmp, title_png), empty_shape(blank)])
+    swf.replace_define(TITLE_BG_SHAPE, bitmap_rect_shape(TITLE_BG_SHAPE, bmp, 0, 0, 600, 400))
+    _, _, sp = swf.find_define(TITLE_SPRITE)
+    for t in sp.children:
+        if t.type == 26:
+            p = parse_place_object2(t.body)
+            if p.get('char') in TITLE_HIDE:
+                t.body = t.body[:3] + blank.to_bytes(2, 'little') + t.body[5:]
+        elif t.type == 70 and t.body[0] & 2 and not t.body[1] & 0x18:  # PlaceObject3 with a character, no class name
+            if int.from_bytes(t.body[4:6], 'little') in TITLE_HIDE:  # the rasengan (578) is placed this way
+                t.body = t.body[:4] + blank.to_bytes(2, 'little') + t.body[6:]
+
+
+def add_one_piece(swf, roster):
+    layout = json.load(open(os.path.join(OP_UI, 'layout.json'), encoding='utf-8'))
+    ids = [f['id'] for f in roster]
+    add_bitmap_frames(swf, ICON_SPRITE, 'icon', ids, layout)
+    add_bitmap_frames(swf, PORTRAIT_SPRITE, 'portrait', ids, layout)
+    add_bitmap_frames(swf, FACE_SPRITE, 'face', [lab for f in roster for lab in f['faces']], layout)
+    layout_select_grid(swf, roster)
+
+
+HURTBOX_ANCHOR = ('   if(!_loc3_)\n   {\n      _loc3_ = getHitObj(_fzfsArray,_root.game["p" + _parent.pn + "fz"],"",_parent.fzpw);\n'
+                  '   }\n')
+HURTBOX_STG = '''function getStgHitObj()
+{
+   var _loc4_;
+   for(var _loc5_ in stgks)
+   {
+      _loc4_ = _root.game.layer_effect[stgks[_loc5_] + "_P" + _parent.pn];
+      if(_loc4_)
+      {
+         if(this.hitTest(_loc4_.mian))
+         {
+            return _loc4_.hitObj;
+         }
+      }
+   }
+}
+var stgks = ["stgk1","stgk2","stgk3","stgk4","stgk5","stgk6","stgk7","stgk8","stgk9","stgk10"];
+'''
+
+
+def build_op_fighters(roster):
+    """Copy the One Piece fighter SWFs; their hurtboxes also learn BVN's stage hits (addStgHit projectiles)."""
+    out_dir = os.path.join(DIST, 'fighter', OP_DIR)
+    os.makedirs(out_dir, exist_ok=True)
+    for f in roster:
+        name = f['swf'][:-4]
+        scripts = os.path.join(ROOT, 'analysis/op', name, 'scripts/scripts')
+        imp = os.path.join(BUILD, 'op_scripts', name)
+        shutil.rmtree(imp, ignore_errors=True)
+        for r, _, fs in os.walk(scripts):
+            for fn in fs:
+                txt = open(os.path.join(r, fn), encoding='utf-8').read()
+                if 'function getHitObj(array, player, afterFix, ppw)' not in txt or HURTBOX_ANCHOR not in txt:
+                    continue
+                fixed = txt.replace(HURTBOX_ANCHOR, HURTBOX_ANCHOR + '   if(!_loc3_)\n   {\n      _loc3_ = getStgHitObj();\n   }\n')
+                fixed = fixed.replace('      _parent.tdtime = _loc3_.hdtime / 1000 * 30;\n',
+                                      '      _parent.tdtime = _loc3_.hdtime / 1000 * 30;\n'
+                                      '      if(isNaN(_parent.tdtime))\n      {\n         _parent.tdtime = 0;\n      }\n')
+                fixed = fixed.replace('function getHitObj(array, player, afterFix, ppw)', HURTBOX_STG + 'function getHitObj(array, player, afterFix, ppw)', 1)
+                rel = os.path.relpath(os.path.join(r, fn), scripts)
+                os.makedirs(os.path.join(imp, 'scripts', os.path.dirname(rel)), exist_ok=True)
+                open(os.path.join(imp, 'scripts', rel), 'w', encoding='utf-8').write(fixed)
+        assert os.path.isdir(imp), f'{name}: hurtbox script not found'
+        ffdec_import_scripts(os.path.join(OP_SRC, f['swf']), os.path.join(out_dir, f['swf']), imp)
+    for mp3 in OP_MUSIC:
+        shutil.copy(os.path.join(OP_SRC, mp3), os.path.join(DIST, 'music', mp3))
+
+
+def patch_scripts(strings, roster):
+    """Write translated (and One Piece-extended) copies of game scripts; returns the import folder."""
     imp = os.path.join(BUILD, 'game_scripts')
     shutil.rmtree(imp, ignore_errors=True)
 
@@ -213,12 +440,18 @@ def patch_scripts(strings):
     f6 = open(os.path.join(SCRIPTS, 'frame_6/DoAction.as'), encoding='utf-8').read()
     f6 = re.sub(r'name:"([^"]*)"', lambda m: f'name:"{tr(m.group(1))}"', f6)
     f6 = re.sub(r'says:\[(.*?)\]\}', lambda m: 'says:[' + re.sub(r'"((?:[^"\\]|\\.)*)"', lambda n: f'"{tr(n.group(1))}"', m.group(1)) + ']}', f6)
+    if roster:  # One Piece registry lines (already Korean) go after the BVN fighters, before the map registry
+        first_map = re.search(r'^addMapData\(', f6, re.M).start()
+        f6 = f6[:first_map] + op_registry_lines(roster) + '\n' + f6[first_map:]
     emit('frame_6/DoAction.as', f6)
     f2 = open(os.path.join(SCRIPTS, 'frame_2/DoAction.as'), encoding='utf-8').read()
     f2 = re.sub(r'new ContextMenuItem\("([^"]*)"', lambda m: f'new ContextMenuItem("{tr(m.group(1))}"', f2)
     f2 = PERF_FIXES['frame_2/DoAction.as'](f2)
     emit('frame_2/DoAction.as', f2)
     f8 = PERF_FIXES['frame_8/DoAction.as'](open(os.path.join(SCRIPTS, 'frame_8/DoAction.as'), encoding='utf-8').read())
+    if roster:
+        f8 += OP_ENGINE_AS
+        emit('frame_7/DoAction.as', open(os.path.join(SCRIPTS, 'frame_7/DoAction.as'), encoding='utf-8').read() + OP_SETTINGS_AS)
     emit('frame_8/DoAction.as', f8)
     patched = [f6, f2]
     # other scripts with display strings only (no ids): exact quoted-literal replacement
@@ -227,6 +460,8 @@ def patch_scripts(strings):
         for zh in sorted(strings, key=len, reverse=True):
             txt = txt.replace(f'"{zh}"', f'"{strings[zh]}"')
         txt = MAP_NAME_FIXES.get(rel, lambda t: t)(txt)
+        if roster and rel == f'DefineSprite_{SELECT_SPRITE}/frame_1/DoAction.as':
+            txt = apply_fixes(txt, SELECT_START_FIXES, rel)
         emit(rel, txt)
         patched.append(txt)
     for rel, fix in MAP_NAME_FIXES.items():
@@ -241,11 +476,18 @@ def patch_scripts(strings):
 def build_game(ui_dir):
     strings = load_json('l10n/game_strings.json', {})
     texts = load_json('l10n/game_texts.json', {})
+    roster = op_roster()
     swf = Swf.load(os.path.join(GAME, 'game.swf'))
     apply_texts(swf, texts)
     splash = os.path.join(ui_dir, 'splash_600x400.png')
     if os.path.exists(splash):
         replace_splash(swf, splash)
+    title = os.path.join(ui_dir, 'title_bg_600x400.png')
+    if os.path.exists(title):
+        restyle_title(swf, title)
+    if roster:
+        add_one_piece(swf, roster)
+        build_op_fighters(roster)
     stage1 = os.path.join(BUILD, 'game_stage1.swf')
     swf.save(stage1)
     pairs = [(int(f[:-4]), os.path.join(ui_dir, f), 'lossless2') for f in sorted(os.listdir(ui_dir))
@@ -255,7 +497,7 @@ def build_game(ui_dir):
         ffdec_replace(stage1, stage2, pairs)
     else:
         shutil.copy(stage1, stage2)
-    imp, left = patch_scripts(strings)
+    imp, left = patch_scripts(strings, roster)
     ffdec_import_scripts(stage2, os.path.join(DIST, 'game.swf'), imp)
     return left
 

@@ -28,6 +28,9 @@ lossless2
 613
 /home/kjh08/work/Rea-project/work/design/out/613.png
 lossless2
+616
+/home/kjh08/work/Rea-project/work/design/out/616.png
+lossless2
 647
 /home/kjh08/work/Rea-project/work/design/out/647.png
 lossless2

@@ -1,0 +1,13 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(magichit3())
+      {
+         _parent.gotoAndPlay("招3");
+      }
+      if(jump())
+      {
+         _parent.gotoAndPlay("跳");
+      }
+   }
+}

@@ -1,0 +1,10 @@
+onClipEvent(keyDown){
+   if(Key.isDown(_root.j))
+   {
+      _parent.gotoAndPlay("skip");
+   }
+   if(Key.isDown(_root.N1))
+   {
+      _parent.gotoAndPlay("skip");
+   }
+}

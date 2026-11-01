@@ -1,0 +1,21 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(bishaUP())
+      {
+         _parent.gotoAndPlay("上必杀");
+      }
+      if(skill2())
+      {
+         _parent.gotoAndPlay("砍技2");
+      }
+      if(jump())
+      {
+         _parent.gotoAndPlay("跳");
+      }
+      if(dohide())
+      {
+         _parent.gotoAndPlay("起身");
+      }
+   }
+}

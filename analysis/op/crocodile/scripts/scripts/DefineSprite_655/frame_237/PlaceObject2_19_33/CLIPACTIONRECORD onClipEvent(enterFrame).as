@@ -1,0 +1,9 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(wankai())
+      {
+         _parent.gotoAndPlay("万解");
+      }
+   }
+}

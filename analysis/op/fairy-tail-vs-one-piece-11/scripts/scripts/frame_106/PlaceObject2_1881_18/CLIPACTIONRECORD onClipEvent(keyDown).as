@@ -1,0 +1,10 @@
+onClipEvent(keyDown){
+   if(Key.isDown(_root.yk))
+   {
+      _root.gotoAndStop("选人画面");
+   }
+   if(Key.isDown(_root.nk))
+   {
+      _root.gotoAndStop("GAMEOVER");
+   }
+}

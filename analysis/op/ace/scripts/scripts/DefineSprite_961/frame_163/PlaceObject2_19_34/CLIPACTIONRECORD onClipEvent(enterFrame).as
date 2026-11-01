@@ -1,0 +1,10 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(nornalhit(true))
+      {
+         _parent.gotoAndPlay("跳砍3");
+      }
+      moveX(3);
+   }
+}

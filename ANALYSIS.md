@@ -166,3 +166,18 @@ gjl1.k1dz = "被打"; // 상대 피격 모션 (被打 / 击飞)
 - `frame_8 shadowEffect`: 잔상 BitmapData를 페이드아웃 시 `dispose()` (기존엔 해제하지 않아 누적).
 - Ruffle `quality: "low"` (안티에일리어싱 끔). 게임 내 화질 메뉴로 높이면 다시 켜진다.
 - 페이지: 렌더 박스를 최대 900×600으로 두고 CSS transform으로 확대 (UI 디자이너 담당 `web/index.html`).
+
+## 8. 원피스 캐릭터 이식 (블리치 VS 나루토 VS 원피스)
+
+출처: https://vidkidz.tistory.com/3641 "원피스 vs 페어리테일 1.1" — 블로그 첨부 38개(`source/onepiece/blog/`, 표준 CWS, DMC 변조 없음). 스크립트는 `analysis/op/<이름>/`.
+
+- **같은 5DPlay AS2 엔진의 구버전**이다. 원피스 캐릭터 15명 모두 BVN 70개 함수 중 62개를 공유 (`tools/funcs.py` 방식 비교). 빠진 것은 보조 소환(`doZhaoHuan`), 대시 X, 투사체 피격(`getStgHitObj`) 등이라 원피스 캐릭터는 보조(O키)를 쓰지 않는다. 등록부(`addFighterData`)·선택화면(인스턴스 이름 = id)·컷인(`showFace` 라벨) 구조도 동일 → SWF를 그대로 `fighter/op/`에 두고 게임 쪽만 확장.
+- 캐릭터가 요구하는 엔진 차이: `_root.HASH == "5dplay_fvo"`가 아니면 스스로 unload → frame_7에 `HASH` 추가. `_root.shake()`(화면 흔들림, 도플라밍고) → frame_8에 `shake`/`shakeIng` 추가(빈 무비클립 onEnterFrame으로 구동). 그 외 `_root.*` 호출은 전부 BVN에 존재. 상디 SWF의 `jie`/`loadingFunc` 블록은 4399 도메인 체크이며 BVN이 `loadingFunc`를 이미 정의해 즉시 return.
+- 피격 판정: 원피스 피격 스프라이트(`function getHitObj` + `_fzfsArray`, 15명 동일)에 BVN의 `getStgHitObj`(layer_effect `stgk*_P<n>`)를 추가 — 안 하면 BVN 캐릭터 대부분이 쓰는 `addStgHit` 투사체가 원피스 캐릭터를 통과한다. FFDec `-importScript`로 각 SWF에 적용.
+- 게임 쪽 추가 (모두 `tools/build.py` → `add_one_piece`, 원본 `game/` 무수정):
+  - 아이콘 1465 / 초상 1346 / 컷인 1676에 id·라벨 프레임 추가 (`tools/op_assets.py`가 원피스 game.swf 스프라이트 1386·1570을 PNG로 뽑아 `work/op/ui/`에 크기·좌표 맞춤). 초상은 원피스판에 전신 아트가 없어 컷인 아트를 사용.
+  - 선택화면 1477: 55칸을 11×5 격자로 재배치(열 우선: 블리치 18 → 나루토 22 → 원피스 15, 슬롯 0.86배). 격자 좌표 `int(x/30), int(y/30)`가 겹치지 않게 간격 47/46px. 시작 커서는 이치고(1P)/나루토(2P) — `BVN_SELECT_P1/P2` 환경변수로 테스트용 변경 가능.
+  - 등록부: `work/op/roster.json`(한글 이름·대사, vs 목록, 컷인 라벨) → `addFighterData(..., isOnePiece:true, url:"op/<swf>")`. 맵은 지정하지 않음(원피스 맵은 미이식, BVN 맵 사용). 음악 `onepiece*.mp3` 3곡 추가.
+  - 타이틀 666: `work/design/out/title_bg_600x400.png`가 있으면 배경 554의 비트맵을 교체하고 기존 캐릭터·로고·VS 레이어(556 579 584 585 578 583 587 589 621)를 빈 도형으로 숨김.
+- 런타임 확인 (REA browser scenario, headless Chrome + Ruffle): 루피 vs 테마리 대전 진입, `fighter/op/luffy.swf` 200, 양방향 피격 확인(`ev_dfdd651…` 피격당함, `ev_9a5c7dc…` 공격 명중; 스크린샷 `work/shots/op4`, `op5`). 콘솔의 `XG_jump`/`XG_luodi` 미등록, `voice_hurt*` 사운드 없음 경고는 BVN 원본 캐릭터에서도 동일하게 나는 기존 현상.
+- REA 정적 도구(`open_binary`)는 SWF를 지원하지 않아 SWF 내부 분석은 FFDec + 프로젝트 파이썬 도구(`swfnames`, `swfdisplay`, 신규 `swfbounds`)로 수행.

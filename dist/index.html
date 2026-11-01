@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>블리치 VS 나루토 2.6 한글판</title>
-<meta name="theme-color" content="#0f1220">
+<title>블리치 VS 나루토 VS 원피스 2.6 한글판</title>
+<meta name="theme-color" content="#0f0f23">
 <link rel="preload" href="assets/gothica1-700.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="assets/hahmlet-900.woff" as="font" type="font/woff" crossorigin>
 <style>
@@ -14,10 +14,13 @@
 @font-face{font-family:"Gothic A1";src:url(assets/gothica1-700.woff) format("woff");font-weight:700;font-display:swap}
 
 :root{
-  --night:#0f1220;      /* ink thinned by night */
-  --moon:#eee9df;       /* cold light: primary text */
-  --steel:#8e97ab;      /* secondary text */
-  --ember:#f2802a;      /* warm light: 2P keys, focus, the cut */
+  --night:#0f0f23;      /* deep navy-black, the ground of the game art */
+  --moon:#eee9df;       /* moon-paper white: primary text */
+  --steel:#8e97ab;      /* secondary text (6.4:1 on --night) */
+  --ice:#a0c4e8;        /* Bleach: cold moon-white / ice blue */
+  --ember:#f97316;      /* Naruto: ember orange; also 2P keys and focus (6.7:1) */
+  --red:#f43f5e;        /* One Piece: straw-hat red (5.1:1) ... */
+  --gold:#facc15;       /* ... and straw gold */
   --seal:#be241d;       /* the edition stamp, used once */
   --line:rgba(238,233,223,.14);
   --vh:100vh;
@@ -33,7 +36,7 @@ html,body{margin:0;height:100%}
 html{font-size:16px}
 @media (min-width:1600px) and (min-height:860px){html{font-size:18px}}
 body{
-  background:linear-gradient(180deg,#171c2e 0%,var(--night) 52%,#090b12 100%) fixed;
+  background:linear-gradient(180deg,#17192f 0%,var(--night) 52%,#08080f 100%) fixed;
   color:var(--moon);
   font:500 0.8125rem/1.5 "Gothic A1","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   word-break:keep-all;overflow-wrap:anywhere;
@@ -56,6 +59,7 @@ body{
   background:#000;
   outline:1px solid var(--line);
 }
+.stage:focus-within{outline:2px solid var(--ember);outline-offset:1px}
 .stage:fullscreen{width:100%;height:100%;aspect-ratio:auto;outline:0}
 .stage::backdrop{background:#000}
 .render{position:absolute;left:0;top:0;width:900px;height:600px;transform-origin:0 0}
@@ -68,17 +72,31 @@ body{
   display:flex;flex-direction:column;gap:1.375rem;
 }
 
-/* Title lockup: the two names staggered across one cut, as on the in-game splash. */
-.lockup{margin:0;display:grid;gap:0.4375rem;font-family:"Hahmlet",serif;font-weight:900;line-height:1}
-.lockup .name{font-size:2.875rem;letter-spacing:.01em}
-.lockup .bleach{justify-self:start;margin-left:0.75rem;color:var(--moon)}
-.lockup .naruto{justify-self:end;margin-right:0.75rem;color:var(--ember)}
-.cut{display:flex;align-items:center;gap:0.5625rem;font-size:0.6875rem;letter-spacing:.14em;transform:rotate(-4.9deg)}
-.cut::before,.cut::after{content:"";flex:1;height:2px}
-.cut::before{background:var(--moon);clip-path:polygon(0 50%,100% 0,100% 100%)}
-.cut::after{background:var(--ember);clip-path:polygon(0 0,100% 50%,0 100%)}
-.edition{display:flex;justify-content:center;align-items:center;gap:0.5625rem;margin-top:0.625rem;font-size:0.9375rem}
+/* Title lockup: the three names stepped down one diagonal, as on the in-game title. Every block leans the same
+   way as the panels in the game art; each faction keeps one accent. */
+.lockup{margin:0;display:grid;gap:0.3125rem;font-family:"Hahmlet",serif;font-weight:900;line-height:1}
+.factions{display:flex;gap:5px;margin:0 0.375rem 0.875rem 0.25rem}
+.factions i{flex:1;height:5px;transform:skewX(-34deg)}
+.factions i:nth-child(1){background:var(--ice)}
+.factions i:nth-child(2){background:var(--ember)}
+.factions i:nth-child(3){background:linear-gradient(90deg,var(--red) 0 72%,var(--gold) 72%)}
+.lockup .name{position:relative;justify-self:start;font-size:2.625rem;letter-spacing:.02em;white-space:nowrap}
+.lockup .bleach{margin-left:0.125rem;color:#eef2f8;
+  background:linear-gradient(180deg,#f4f7fb 30%,var(--ice));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lockup .naruto{margin-left:2.375rem;color:var(--ember)}
+.lockup .onepiece{margin-left:4.625rem;color:var(--red)}
+.vs{position:absolute;right:100%;top:50%;margin-right:0.4375rem;transform:translateY(-46%);
+  font-size:0.6875rem;letter-spacing:.12em;color:var(--moon);-webkit-text-fill-color:var(--moon)}
+.edition{display:flex;align-items:center;gap:0.5625rem;margin:0.75rem 0 0 4.75rem;font-size:0.9375rem;color:var(--moon)}
 .seal{background:var(--seal);font-size:0.8125rem;padding:0.25rem 0.4375rem 0.1875rem;border-radius:2px;letter-spacing:.06em}
+.roster{margin:-0.5rem 0 0;font-size:0.6875rem;line-height:1.6;color:var(--steel);word-spacing:0.25rem}
+.roster b{font-weight:700;color:var(--moon)}
+.roster span{white-space:nowrap;word-spacing:0}
+.roster span::before{content:"";display:inline-block;width:0.4375rem;height:0.4375rem;margin-right:0.3125rem;
+  transform:skewX(-20deg)}
+.roster .b::before{background:var(--ice)}
+.roster .n::before{background:var(--ember)}
+.roster .o::before{background:var(--red)}
 
 /* Controls: laid out like an arcade instruction card. */
 .controls{border-top:1px solid var(--line);padding-top:1rem;display:grid;gap:0.875rem}
@@ -111,6 +129,7 @@ kbd.p2{color:var(--ember);border-color:rgba(242,128,42,.45)}
   font:700 0.875rem/1 "Gothic A1",sans-serif;color:var(--moon);background:transparent;
   border:1px solid rgba(238,233,223,.36);border-radius:0.375rem;padding:0.6875rem 0.75rem;cursor:pointer;
 }
+.fs{transition:border-color .15s,color .15s}
 .fs:hover{border-color:var(--ember);color:var(--ember)}
 .fs:focus-visible{outline:2px solid var(--ember);outline-offset:2px}
 .hint{margin:0;font-size:0.75rem;color:var(--steel);display:flex;gap:0.4375rem;align-items:baseline}
@@ -118,6 +137,8 @@ kbd.p2{color:var(--ember);border-color:rgba(242,128,42,.45)}
 .is-playing .hint{color:var(--moon)}
 .is-playing .hint::before{background:var(--ember);opacity:1}
 .credit{margin:0;font-size:0.6875rem;color:var(--steel);letter-spacing:.04em}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
 /* Portrait, narrow or very short windows: game on top at full width, card below; page scrolls. */
 @media (max-aspect-ratio:4/3),(max-width:820px),(max-height:500px){
@@ -134,11 +155,13 @@ kbd.p2{color:var(--ember);border-color:rgba(242,128,42,.45)}
 <main class="layout">
   <aside class="rail">
     <h1 class="lockup">
+      <span class="factions" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="name bleach">블리치</span>
-      <span class="cut">VS</span>
-      <span class="name naruto">나루토</span>
+      <span class="name naruto"><span class="vs">VS</span> 나루토</span>
+      <span class="name onepiece"><span class="vs">VS</span> 원피스</span>
       <span class="edition">2.6 <span class="seal">한글판</span></span>
     </h1>
+    <p class="roster"><b>55인</b> <span class="b">블리치 18</span> <span class="n">나루토 22</span> <span class="o">원피스 15</span></p>
 
     <section class="controls" aria-labelledby="controls-title">
       <div class="head">

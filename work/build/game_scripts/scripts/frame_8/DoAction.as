@@ -703,3 +703,46 @@ var chushi = function()
 var stgi = 0;
 var _menuEnabled = false;
 var koPause = false;
+
+function shake(pow, holdFrame)
+{
+   if(pow == undefined)
+   {
+      pow = 6;
+   }
+   if(holdFrame == undefined)
+   {
+      holdFrame = 3;
+   }
+   _shakePow = pow;
+   _shakeDis = pow / holdFrame * 2;
+   var _loc2_ = _root.createEmptyMovieClip("shakeDriver",99990);
+   _loc2_.onEnterFrame = function()
+   {
+      _root.shakeIng();
+      if(_root._shakePow == 0)
+      {
+         this.removeMovieClip();
+      }
+   };
+}
+function shakeIng()
+{
+   if(_shakePow == 0)
+   {
+      return undefined;
+   }
+   _root._y += _shakePow;
+   if(_shakePow < 0)
+   {
+      if(_shakePow > (- _shakeDis) * 2)
+      {
+         _shakePow = 0;
+         _shakeDis = 0;
+         _root._y = 0;
+         return undefined;
+      }
+      _shakePow += _shakeDis;
+   }
+   _shakePow *= -1;
+}

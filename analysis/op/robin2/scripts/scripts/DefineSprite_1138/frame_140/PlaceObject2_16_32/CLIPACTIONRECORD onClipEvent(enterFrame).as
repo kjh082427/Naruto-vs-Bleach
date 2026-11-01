@@ -1,0 +1,13 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(airhit(true))
+      {
+         _parent.gotoAndPlay("跳砍2");
+      }
+      if(airMagichit())
+      {
+         _parent.gotoAndPlay("跳招");
+      }
+   }
+}

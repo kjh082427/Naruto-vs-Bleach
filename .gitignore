@@ -4,3 +4,11 @@ tools/chrome-headless-shell-linux64/
 tools/venv/
 __pycache__/
 *.pyc
+# One Piece port: bulk FFDec exports, regenerable (tools/op_assets.py re-exports work/op/export when missing)
+work/op/img/
+work/op/export/
+work/op/art/bvn_shapes/
+work/op/art/bvn_shapes_2x/
+work/op/art/bvn_spr2x/
+work/op/ffdec_help.txt
+work/op_names.txt

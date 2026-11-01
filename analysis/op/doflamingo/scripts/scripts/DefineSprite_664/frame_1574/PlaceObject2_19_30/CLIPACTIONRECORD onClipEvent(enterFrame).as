@@ -1,0 +1,10 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      doStand();
+      if(nornalhit())
+      {
+         _parent.gotoAndPlay("跳砍");
+      }
+   }
+}

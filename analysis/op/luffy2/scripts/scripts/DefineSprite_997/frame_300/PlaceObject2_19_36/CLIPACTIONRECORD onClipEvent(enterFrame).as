@@ -1,0 +1,21 @@
+onClipEvent(enterFrame){
+   if(gameRunning())
+   {
+      if(skill1())
+      {
+         _parent.gotoAndPlay("砍技12");
+      }
+      if(nornalhit(true))
+      {
+         _parent.gotoAndPlay("砍3");
+      }
+      if(magichit1())
+      {
+         _parent.gotoAndPlay("招12");
+      }
+      if(dohide())
+      {
+         _parent.gotoAndPlay("起身");
+      }
+   }
+}

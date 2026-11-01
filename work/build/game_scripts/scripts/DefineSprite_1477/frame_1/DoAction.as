@@ -34,28 +34,14 @@ function init(type)
 function showP1()
 {
    p1enable = true;
-   var _loc1_ = 5;
-   while(_loc1_ > 0)
-   {
-      if(updateXY(1,_loc1_,7))
-      {
-         break;
-      }
-      _loc1_ = _loc1_ - 1;
-   }
+   var _loc1_ = _this["一护"];
+   updateXY(1,int(_loc1_._x / 30),int(_loc1_._y / 30));
 }
 function showP2()
 {
    p2enable = true;
-   var _loc1_ = 7;
-   while(_loc1_ < 12)
-   {
-      if(updateXY(2,_loc1_,7))
-      {
-         break;
-      }
-      _loc1_ = _loc1_ + 1;
-   }
+   var _loc1_ = _this["鸣人"];
+   updateXY(2,int(_loc1_._x / 30),int(_loc1_._y / 30));
 }
 function alpha50()
 {
