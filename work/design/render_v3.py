@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Splash + title art for 블리치 VS 나루토 VS 원피스 (BVN 2.6 한글판, three-anime crossover) -- v3.
+"""Splash + title art for 블리치 VS 나루토 VS 원피스 (three-anime crossover; version from /VERSION) -- v3.
 
 Run:   tools/venv/bin/python work/design/render_v3.py
 Deps:  Pillow, numpy. Deterministic (fixed seeds, no clocks). Reuses the text/raster helpers of render_ui.py (v2).
@@ -16,7 +16,7 @@ Outputs (work/design/out/):
 Art sources (work/op/art/): ichigo_title_2x.png, naruto_title_2x.png (BVN title, 2x), luffy_title.png (OP title, 1x).
 Live game elements drawn over the title (kept calm here):
   menu carousel x 200-420, y 255-395 (labels tinted (255,G,255), centred on x~304); white veil 616 at (123,230)
-  buttons 업데이트 / 다른 게임 (yellow) x 480-600, y 5-80;  "V 2.6" at (5,361);  status bar y >= 381.
+  buttons 업데이트 / 다른 게임 (yellow) x 480-600, y 5-80;  "V <version>" at (5,361);  status bar y >= 381.
 Loader (sprite 534 at x1.056 +(116.8,48.5)) draws its text at stage y ~300-375 and its bar at y 385-392, x 17-577.
 """
 import math
@@ -32,6 +32,7 @@ from render_ui import (FONTS, IMG, OUT, SHOTS, BAR_Y, MENU_SLOTS, HAH, Canvas, T
                        loader_mock, seal_mask, shape_mask, tint_menu, vramp)
 
 ROOT = Path(__file__).resolve().parents[2]
+VERSION = (ROOT / "VERSION").read_text().strip()  # project version (bumped per release)
 ART = ROOT / "work" / "op" / "art"
 W, H = 600, 400
 
@@ -288,7 +289,7 @@ def render_title(logo=True):
     cv.paint(*luffy_art().place(*LUFFY_T))
     nrgb, na = naruto_art().place(*NARUTO_T)
     cv.paint(nrgb, na * (1 - shield))
-    # calm the corner under the game's "V 2.6"
+    # calm the corner under the game's "V <version>"
     cv.paint(NIGHT_LOW, ellipse(0, 400, 120, 70) * 0.55)
 
     # --- logo
@@ -357,20 +358,17 @@ def render_splash():
     for v in vss:
         cv.paint(MOON, v.mask(W, H), 0.80)
 
-    # whispered credit (left) and the edition seal (right), both outside the loader's column
+    # whispered credit (left) and the version stamp (right), both outside the loader's column
     rea = Text("REA PROJECT", HAH(600), 8.0, ref="H", tracking=3.0).at(left=24, top=texts[0].bottom + 26)
     cv.paint(MOON, rea.mask(W, H), 0.55)
-    ver = Text("2.6", HAH(800), 13.0, ref="2", tracking=0.5)
-    han = Text("한글판", HAH(900), 12.0, tracking=1.0)
-    padx, pady, gap = 7.0, 5.0, 9.0
+    ver = Text(VERSION, HAH(900), 12.0, ref="1", tracking=0.8)
+    padx, pady = 7.0, 5.0
     right = 576.0
-    box_l = right - (han.w + 2 * padx)
-    han.at(left=box_l + padx, cy=rea.cy)
-    ver.at(right=box_l - gap, cy=rea.cy)
-    box = (box_l, han.top - pady, right, han.bottom + pady)
-    cv.paint(MOON, ver.mask(W, H), 0.94)
+    box_l = right - (ver.w + 2 * padx)
+    ver.at(left=box_l + padx, cy=rea.cy)
+    box = (box_l, ver.top - pady, right, ver.bottom + pady)
     cv.paint(SEAL, seal_mask(W, H, box, seed=31))
-    cv.paint(MOON, han.mask(W, H), 0.97)
+    cv.paint(MOON, ver.mask(W, H), 0.97)
 
     rng = np.random.default_rng(7)
     cv.rgb += rng.normal(0.0, 1.2 / 255.0, (H, W))[..., None].astype(np.float32)
@@ -424,7 +422,7 @@ def title_mock(title, veil, white_veil=False):
     f_btn = ImageFont.truetype(str(NANUM_B), 19)
     for text, yy in (("업데이트", 9), ("다른 게임", 46)):
         d.text((550, yy), text, font=f_btn, fill=(255, 255, 0), anchor="ma", stroke_width=1, stroke_fill=(0, 0, 0))
-    d.text((5, 361), "V 2.6", font=ImageFont.truetype(str(FONTS / "NanumGothic-Regular.ttf"), 12), fill=(255, 255, 255))
+    d.text((5, 361), f"V {VERSION}", font=ImageFont.truetype(str(FONTS / "NanumGothic-Regular.ttf"), 12), fill=(255, 255, 255))
     shot = Image.open(SHOTS / "ui_v2" / "03_title.png").convert("RGB").crop((282, 28, 1348, 740)).resize((W, H), Image.LANCZOS)
     m.paste(shot.crop((0, BAR_Y, W, H)), (0, BAR_Y))
     return m.convert("RGB")
@@ -466,7 +464,7 @@ def build_preview(splash, title, veil):
     blocks = [
         row([titled(sm, "(1) splash_600x400 + the game's loader line and bar (1x)"),
              titled(splash, "splash alone = intro fade card (1x)")]),
-        row([titled(tm, "(2) title_bg_600x400 + menu (veil = title_veil_616.png), buttons, V 2.6, status bar"),
+        row([titled(tm, "(2) title_bg_600x400 + menu (veil = title_veil_616.png), buttons, V <version>, status bar"),
              titled(title, "title_bg_600x400 alone (1x)")]),
         row([titled(z_title.resize((300, 200), Image.LANCZOS), "protected zones (0.5x)"),
              titled(z_splash.resize((300, 200), Image.LANCZOS), "loader zone (0.5x)"),

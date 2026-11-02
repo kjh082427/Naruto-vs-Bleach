@@ -1,0 +1,50 @@
+<!doctype html>
+<!-- Local test page (not deployed): plays the game with scripted, held key presses so headless runs don't drop
+     inputs (the game polls Key.isDown once per frame). Copy into dist/ while testing:
+       cp tools/test/autoplay.html dist/ && tools/serve.sh
+     open  http://127.0.0.1:8765/autoplay.html?seq=w16000,j,w2500,j,w3000,d*6,j ...
+     seq items: wN = wait N ms; <key>[+key][:ms][*n] = hold key(s) ms (default 140) n times with 260 ms gaps;
+     keys a-z, up/down/left/right (s+j = down+attack). document.title becomes "step i/n" and finally "done". -->
+<html lang="ko"><head><meta charset="utf-8"><title>autoplay</title>
+<style>html,body{margin:0;background:#000}#c{width:900px;height:600px}</style>
+<script>window.RufflePlayer={config:{"autoplay":"on","unmuteOverlay":"hidden","splashScreen":false,"letterbox":"on",
+"logLevel":"warn","fontSources":["fonts/NanumGothic-Regular.ttf","fonts/NanumGothic-Bold.ttf"],
+"defaultFonts":{"sans":["NanumGothic"],"serif":["NanumGothic"],"typewriter":["NanumGothic"]},"quality":"low"}};</script>
+<script src="ruffle/ruffle.js"></script></head>
+<body><div id="c"></div>
+<script>
+const KEYS = {up: ['ArrowUp', 38], down: ['ArrowDown', 40], left: ['ArrowLeft', 37], right: ['ArrowRight', 39]};
+const p = window.RufflePlayer.newest().createPlayer();
+p.style.width = '900px'; p.style.height = '600px';
+document.getElementById('c').appendChild(p);
+p.load({url: 'game.swf', base: './'});
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+function fire(type, k) {
+  const [key, code, keyCode] = KEYS[k] ? [KEYS[k][0], KEYS[k][0], KEYS[k][1]]
+                                       : [k, 'Key' + k.toUpperCase(), k.toUpperCase().charCodeAt(0)];
+  const ev = new KeyboardEvent(type, {key, code, keyCode, which: keyCode, bubbles: true, composed: true});
+  if (type === 'keydown') p.focus();  // headless runs sometimes lose focus; without it keys never reach the game
+  p.dispatchEvent(ev);
+}
+async function run() {
+  const seq = (new URLSearchParams(location.search).get('seq') || '').split(',').filter(Boolean);
+  await sleep(300); p.focus();
+  for (let i = 0; i < seq.length; i++) {
+    document.title = `step ${i + 1}/${seq.length} ${seq[i]}`;
+    const s = seq[i];
+    if (/^w\d+$/.test(s)) { await sleep(+s.slice(1)); continue; }
+    const m = s.match(/^([a-z+]+)(?::(\d+))?(?:\*(\d+))?$/);
+    if (!m) continue;
+    const keys = m[1].split('+');  // combos like s+j: press in order, release together
+    for (let n = 0; n < (+m[3] || 1); n++) {
+      for (const k of keys) { fire('keydown', k); await sleep(20); }
+      await sleep(+m[2] || 140);
+      for (const k of keys.reverse()) fire('keyup', k);
+      keys.reverse();
+      await sleep(260);
+    }
+  }
+  document.title = 'done';
+}
+run();
+</script></body></html>

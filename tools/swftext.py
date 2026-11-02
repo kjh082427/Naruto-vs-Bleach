@@ -153,15 +153,18 @@ def define_text_to_sprite(swf, text_tag, record_texts, ascent=0.86, pad_twips=60
 # --- bitmap rectangle shapes, color transforms, actions ---------------------------------------------------
 
 
-def bitmap_rect_shape(cid, bitmap_id, x_px, y_px, w_px, h_px, bitmap_px=None):
+def bitmap_rect_shape(cid, bitmap_id, x_px, y_px, w_px, h_px, bitmap_px=None, fill_px=None):
     """DefineShape covering (x,y,w,h) px with a clipped bitmap fill stretched over that rect.
 
     bitmap_px = (bw, bh) of the bitmap when it differs from (w, h) (e.g. inside a scaled sprite).
+    fill_px = (fx, fy, fw, fh): the bitmap is stretched over this rect instead, and the shape shows only the part
+    inside (x,y,w,h) (one frame of a sprite sheet).
     """
     X, Y, W, H = (round(v * 20) for v in (x_px, y_px, w_px, h_px))
-    bw, bh = bitmap_px or (w_px, h_px)
+    fx, fy, fw, fh = fill_px or (x_px, y_px, w_px, h_px)
+    bw, bh = bitmap_px or (fw, fh)
     body = struct.pack('<H', cid) + encode_rect(X, X + W, Y, Y + H)
-    body += bytes([1, 0x41]) + struct.pack('<H', bitmap_id) + encode_matrix(20.0 * w_px / bw, 0, 0, 20.0 * h_px / bh, x_px, y_px)
+    body += bytes([1, 0x41]) + struct.pack('<H', bitmap_id) + encode_matrix(20.0 * fw / bw, 0, 0, 20.0 * fh / bh, fx, fy)
     body += bytes([0])  # no line styles
     w = BitWriter()
     w.ub(1, 4); w.ub(0, 4)  # NumFillBits=1, NumLineBits=0

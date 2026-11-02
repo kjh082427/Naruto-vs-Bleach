@@ -9,11 +9,13 @@ Inputs
   work/design/out/*.png               UI bitmaps named by character id + splash_600x400.png + title_bg_600x400.png
                                       (game-ui-designer)
   work/op/roster.json, work/op/ui/    One Piece fighters (tools/op_assets.py) + source/onepiece/blog/*.swf, *.mp3
+  work/<custom>/                      custom fighters (CUSTOM_FIGHTERS: Mihawk tools/mihawk.py, Shanks tools/shanks.py)
   web/                                page template + assets copied into dist/ (index.html needs __RUFFLE_CONFIG__)
   tools/ruffle_config.json            Ruffle player config injected into index.html
 Outputs
   dist/  (game.swf, fonts, index.html, ...)
 """
+import importlib
 import json
 import os
 import re
@@ -29,9 +31,11 @@ from swftext import (bitmap_rect_shape, build_edit_text, define_text_to_sprite, 
 
 FFDEC = ['java', '-jar', os.path.join(ROOT, 'tools/ffdec/ffdec.jar')]
 GAME, DIST, WORK = (os.path.join(ROOT, p) for p in ('game', 'dist', 'work'))
+DIST = os.environ.get('BVN_DIST') or DIST  # test builds elsewhere (e.g. a scratch dir served on port 8766)
 BUILD = os.path.join(WORK, 'build')
 SCRIPTS = os.path.join(ROOT, 'analysis/game/scripts/scripts')
 CJK = re.compile(r'[㐀-鿿　-〿＀-￯]')
+VERSION = open(os.path.join(ROOT, 'VERSION')).read().strip()  # shown in game, page and splash; bumped per release
 
 def run(cmd, **kw):
     r = subprocess.run(cmd, capture_output=True, text=True, **kw)
@@ -56,7 +60,7 @@ def ffdec_import_scripts(src, dst, folder):
 # --- dist skeleton -----------------------------------------------------------------------------------------
 
 
-def prepare_dist():
+def prepare_dist(fighters=()):
     if os.path.isdir(DIST):
         shutil.rmtree(DIST)
     shutil.copytree(GAME, DIST)
@@ -70,7 +74,11 @@ def prepare_dist():
     config = json.dumps(json.load(open(os.path.join(ROOT, 'tools/ruffle_config.json'))), ensure_ascii=False)
     html = open(os.path.join(DIST, 'index.html'), encoding='utf-8').read()
     assert '__RUFFLE_CONFIG__' in html, 'web/index.html must contain the __RUFFLE_CONFIG__ placeholder'
-    open(os.path.join(DIST, 'index.html'), 'w', encoding='utf-8').write(html.replace('__RUFFLE_CONFIG__', config))
+    n_op = len(fighters)
+    for k, v in (('__RUFFLE_CONFIG__', config), ('__VERSION__', VERSION),
+                 ('__ROSTER_TOTAL__', str(len(BLEACH_ORDER) + len(NARUTO_ORDER) + n_op)), ('__ROSTER_OP__', str(n_op))):
+        html = html.replace(k, v)
+    open(os.path.join(DIST, 'index.html'), 'w', encoding='utf-8').write(html)
 
 
 # --- game.swf -----------------------------------------------------------------------------------------------
@@ -107,6 +115,8 @@ def apply_texts(swf, texts):
     """texts: {tag id: [ko per record]} for EditText (string replace) and DefineText (sprite conversion)."""
     texts = dict(texts)
     texts.update(TEXT_OVERRIDES)
+    if '658' in texts:  # "update notes" panel: version line
+        texts['658'] = [VERSION] + list(texts['658'][1:])
     if '839' in texts:
         recs = []
         for r in texts['839']:
@@ -210,18 +220,31 @@ ICON_SPRITE, PORTRAIT_SPRITE, FACE_SPRITE, SELECT_SPRITE, SLOT_SPRITE = 1465, 13
 BANNER_SPRITE = 1983  # versus-loading banners (sprite 1989 frame 11: p1xg.dt.gotoAndStop(_root.p1selt))
 TITLE_SPRITE, TITLE_BG_SHAPE = 666, 554
 TITLE_HIDE = {556, 579, 584, 585, 578, 583, 587, 589, 590, 621}  # old character art, rasengan glow, logo pieces, VS
-# select screen: 11 x 5 grid, factions as contiguous column-major runs (Bleach, Naruto, One Piece)
+# select screen: 12 x 5 grid, factions as contiguous column-major runs (Bleach, Naruto, One Piece + Mihawk)
 BLEACH_ORDER = ['一护', '一护万解', '一护2', '露其雅', '露其雅始解', '恋次', '日番谷', '日番谷万解', '白哉', '茶渡', '石田',
                 '小乌', '银', '剑八', '一角', '涅茧利', '蓝染', '剑心']
 NARUTO_ORDER = ['鸣人', '鸣人九尾', '仙鸣', '佐助', '佐助咒怨', '佐助须佐', '樱', '卡卡西', '小李', '宁次', '手鞠', '我爱罗',
                 '鼬', '大蛇丸', '自来也', '佩恩', '小南', '带土', '迪达拉', '重吾', '香磷', '奇拉比']
-GRID_COLS, GRID_ROWS, SLOT_SCALE = 11, 5, 0.86
-GRID_X0, GRID_Y0, GRID_DX, GRID_DY = -33.1, 46.85, 47.0, 46.0  # sprite 1477 local px (= screen - (76.6, 90.15))
+GRID_COLS, GRID_ROWS, SLOT_SCALE = 12, 5, 0.8
+GRID_X0, GRID_Y0, GRID_DX, GRID_DY = -40.1, 54.85, 44.0, 44.0  # sprite 1477 local px (= screen - (76.6, 90.15))
 OP_MUSIC = ['onepiece.mp3', 'onepiece2.mp3', 'onepiece3.mp3']
+# custom fighters made from a reskinned base fighter: (work/<name>/ dir and builder tools/<name>.py, extra registry
+# fields). Each joins the build once work/<name>/fighter.json and tools/<name>.py both exist.
+CUSTOM_FIGHTERS = [('mihawk', {'WKframe': 2}), ('shanks', {})]
 
 
 def op_roster():
     return json.load(open(OP_ROSTER, encoding='utf-8'))['fighters'] if os.path.exists(OP_ROSTER) else []
+
+
+def custom_entries():
+    """Registry entries of the ready custom fighters (Mihawk, Shanks ...), registered as One Piece fighters."""
+    out = []
+    for name, extra in CUSTOM_FIGHTERS:
+        spec = os.path.join(WORK, name, 'fighter.json')
+        if os.path.exists(spec) and os.path.exists(os.path.join(ROOT, 'tools', f'{name}.py')):
+            out.append(dict(json.load(open(spec, encoding='utf-8')), **extra, _name=name))
+    return out
 
 
 def as_str(s):
@@ -232,6 +255,10 @@ def op_registry_lines(roster):
     lines = []
     for f in roster:
         fields = [f'name:{as_str(f["name"])}', f'url:{as_str(OP_DIR + f["swf"])}', 'isOnePiece:true']
+        if f.get('WKframe'):
+            fields.append(f'WKframe:{f["WKframe"]}')
+        if f.get('fz'):
+            fields.append(f'fz:{as_str(f["fz"])}')
         if f.get('vs'):
             fields.append('vs:[' + ','.join(map(as_str, f['vs'])) + ']')
         if f.get('music'):
@@ -301,6 +328,89 @@ SELECT_START_FIXES = [
 ]
 
 
+# 일반 대전 (modo 1): the first stages used fixed lists (Bleach/One Piece players always met Temari first,
+# Naruto players Rukia). Draw them at random from the selectable roster instead (no repeats, skipping the player,
+# the boss and the player's rival list, which still fill the later stages); opponents without a CPU assist get one.
+RANDOM_STAGE_FIXES = [
+    ("""   if(stg < _loc3_.length)
+   {
+      if(_loc6_)
+      {
+         _loc3_ = _root.narutoStages;
+      }
+      _root.p2selt = _loc3_[stg];
+   }""", """   if(stg < _loc3_.length)
+   {
+      if(stg == 0 || _root.randStages == undefined)
+      {
+         _root.randStages = randomOpponents(_loc5_,_loc3_.length);
+      }
+      _root.p2selt = _root.randStages[stg];
+   }"""),
+    ("""   _root.p2sf = _loc2_.fz;""", """   _root.p2sf = _loc2_.fz;
+   if(_root.p2sf == undefined)
+   {
+      _root.p2sf = randomAssist();
+   }"""),
+]
+RANDOM_STAGE_AS = """
+function randomOpponents(me, n)
+{
+   var skip = {};
+   skip[_root.p1selt] = true;
+   skip[_root.bossStage] = true;
+   for(var v in me.vs)
+   {
+      skip[me.vs[v]] = true;
+   }
+   var pool = [];
+   for(var i = 0; i < _root.selectableIds.length; i++)
+   {
+      if(!skip[_root.selectableIds[i]])
+      {
+         pool.push(_root.selectableIds[i]);
+      }
+   }
+   var out = [];
+   while(out.length < n && pool.length > 0)
+   {
+      out.push(pool.splice(Math.floor(Math.random() * pool.length),1)[0]);
+   }
+   return out;
+}
+function randomAssist()
+{
+   var a = [];
+   for(var id in _root.fighterData)
+   {
+      if(_root.fighterData[id].fzurl != undefined)
+      {
+         a.push(id);
+      }
+   }
+   return a[Math.floor(Math.random() * a.length)];
+}
+"""
+
+
+# versus-loading loader (sprite 1989's loadMC): loads p1, p2, p1 assist, p2 assist with one MovieClipLoader and only
+# trace()d onLoadError, so one failed request (a server restart, a dropped connection) left the bar frozen forever.
+# Retry the failed step every 1.5 s instead; it resumes as soon as the file can be fetched again.
+LOADER_SPRITE = 1900
+LOADER_RETRY_FIXES = [
+    ('function loadError(target_mc, errorCode)\n{\n',
+     'function loadError(target_mc, errorCode)\n{\n'
+     '   clearInterval(_this.retryInt);\n   _this.retryInt = setInterval(retryLoad,1500);\n'),
+]
+LOADER_RETRY_AS = """
+function retryLoad()
+{
+   clearInterval(_this.retryInt);
+   loadSteps[loadStep]();
+}
+"""
+
+
 def apply_fixes(text, fixes, where):
     for old, new in fixes:
         assert text.count(old) == 1, f'{where}: patch anchor not found once: {old[:60]!r}'
@@ -368,6 +478,25 @@ def restyle_title(swf, title_png):
                 t.body = t.body[:4] + blank.to_bytes(2, 'little') + t.body[6:]
 
 
+def add_custom_ui(swf, mh):
+    """Icon, select portrait, loading banner and cut-ins of a custom fighter from work/<name>/ui (render_ui.py)."""
+    from PIL import Image
+    ui = os.path.join(WORK, mh['_name'], 'ui')
+    layout_path = os.path.join(ui, 'layout.json')
+    if not os.path.exists(layout_path):
+        print(f'  ! {mh["_name"]} UI art missing ({ui}): select/loading/cut-in images fall back to frame 1')
+        return
+    layout = json.load(open(layout_path, encoding='utf-8'))
+    items = [(ICON_SPRITE, mh['id'], 'icon'), (PORTRAIT_SPRITE, mh['id'], 'portrait'),
+             (BANNER_SPRITE, mh['id'], 'banner')] + [(FACE_SPRITE, lab, f) for lab, f in mh['faces'].items()]
+    for sprite, label, name in items:
+        png = os.path.join(ui, f'{name}.png')
+        w, h = Image.open(png).size
+        bmp, shp = swf.new_id(), swf.new_id()
+        swf.add_labeled_frame(sprite, label, shp)
+        swf.insert_before_define(sprite, [bits_lossless2(bmp, png), bitmap_rect_shape(shp, bmp, *layout[name], w, h)])
+
+
 def add_one_piece(swf, roster):
     layout = json.load(open(os.path.join(OP_UI, 'layout.json'), encoding='utf-8'))
     ids = [f['id'] for f in roster]
@@ -375,7 +504,6 @@ def add_one_piece(swf, roster):
     add_bitmap_frames(swf, PORTRAIT_SPRITE, 'portrait', ids, layout)
     add_bitmap_frames(swf, FACE_SPRITE, 'face', [lab for f in roster for lab in f['faces']], layout)
     add_bitmap_frames(swf, BANNER_SPRITE, 'banner', ids, layout)
-    layout_select_grid(swf, roster)
 
 
 HURTBOX_ANCHOR = ('   if(!_loc3_)\n   {\n      _loc3_ = getHitObj(_fzfsArray,_root.game["p" + _parent.pn + "fz"],"",_parent.fzpw);\n'
@@ -445,16 +573,24 @@ def patch_scripts(strings, roster):
     if roster:  # One Piece registry lines (already Korean) go after the BVN fighters, before the map registry
         first_map = re.search(r'^addMapData\(', f6, re.M).start()
         f6 = f6[:first_map] + op_registry_lines(roster) + '\n' + f6[first_map:]
+    ids = BLEACH_ORDER + NARUTO_ORDER + [f['id'] for f in roster]  # random story opponents (RANDOM_STAGE_AS)
+    f6 += '\nvar selectableIds = [' + ','.join(map(as_str, ids)) + '];\n'
     emit('frame_6/DoAction.as', f6)
+    f1 = open(os.path.join(SCRIPTS, 'frame_1/DoAction.as'), encoding='utf-8').read()
+    emit('frame_1/DoAction.as', apply_fixes(f1, [('_root.ver = "V 2.6";', f'_root.ver = "V {VERSION}";')], 'frame_1'))
     f2 = open(os.path.join(SCRIPTS, 'frame_2/DoAction.as'), encoding='utf-8').read()
     f2 = re.sub(r'new ContextMenuItem\("([^"]*)"', lambda m: f'new ContextMenuItem("{tr(m.group(1))}"', f2)
     f2 = PERF_FIXES['frame_2/DoAction.as'](f2)
     emit('frame_2/DoAction.as', f2)
     f8 = PERF_FIXES['frame_8/DoAction.as'](open(os.path.join(SCRIPTS, 'frame_8/DoAction.as'), encoding='utf-8').read())
+    f8 = apply_fixes(f8, RANDOM_STAGE_FIXES, 'frame_8 gostg') + RANDOM_STAGE_AS
     if roster:
         f8 += OP_ENGINE_AS
         emit('frame_7/DoAction.as', open(os.path.join(SCRIPTS, 'frame_7/DoAction.as'), encoding='utf-8').read() + OP_SETTINGS_AS)
     emit('frame_8/DoAction.as', f8)
+    loader = f'DefineSprite_{LOADER_SPRITE}/frame_1/DoAction.as'
+    emit(loader, apply_fixes(open(os.path.join(SCRIPTS, loader), encoding='utf-8').read(), LOADER_RETRY_FIXES, loader)
+         + LOADER_RETRY_AS)
     patched = [f6, f2]
     # other scripts with display strings only (no ids): exact quoted-literal replacement
     for rel in OTHER_STRING_SCRIPTS:
@@ -478,7 +614,8 @@ def patch_scripts(strings, roster):
 def build_game(ui_dir):
     strings = load_json('l10n/game_strings.json', {})
     texts = load_json('l10n/game_texts.json', {})
-    roster = op_roster()
+    roster, customs = op_roster(), custom_entries()
+    fighters = roster + customs
     swf = Swf.load(os.path.join(GAME, 'game.swf'))
     apply_texts(swf, texts)
     splash = os.path.join(ui_dir, 'splash_600x400.png')
@@ -490,6 +627,12 @@ def build_game(ui_dir):
     if roster:
         add_one_piece(swf, roster)
         build_op_fighters(roster)
+    for mh in customs:
+        add_custom_ui(swf, mh)
+        builder = importlib.import_module(mh['_name'])
+        print(f'  {mh["_name"]}:', builder.build(os.path.join(DIST, 'fighter', OP_DIR, mh['swf']), BUILD))
+    if fighters:
+        layout_select_grid(swf, fighters)
     stage1 = os.path.join(BUILD, 'game_stage1.swf')
     swf.save(stage1)
     pairs = [(int(f[:-4]), os.path.join(ui_dir, f), 'lossless2') for f in sorted(os.listdir(ui_dir))
@@ -499,15 +642,29 @@ def build_game(ui_dir):
         ffdec_replace(stage1, stage2, pairs)
     else:
         shutil.copy(stage1, stage2)
-    imp, left = patch_scripts(strings, roster)
+    imp, left = patch_scripts(strings, fighters)
     ffdec_import_scripts(stage2, os.path.join(DIST, 'game.swf'), imp)
     return left
 
 
+def swap_dist(new, final):
+    """Replace final/ by new/ with two renames, so a server running on final/ never sees a half-built tree."""
+    old = final + '.old'
+    shutil.rmtree(old, ignore_errors=True)
+    if os.path.isdir(final):
+        os.rename(final, old)
+    os.rename(new, final)
+    shutil.rmtree(old, ignore_errors=True)
+
+
 def main():
+    global DIST
     os.makedirs(BUILD, exist_ok=True)
-    prepare_dist()
+    final, DIST = DIST, DIST + '.new'  # build beside dist/ and swap at the end: the running server keeps working
+    prepare_dist(op_roster() + custom_entries())
     left = build_game(os.path.join(WORK, 'design/out'))
+    swap_dist(DIST, final)
+    DIST = final
     print('built', DIST)
     if left:
         print(f'{len(left)} translated strings not applied by script patching (check):', left[:10])

@@ -109,6 +109,8 @@ addFighterData("汉库克",{name:"보아 핸콕",url:"op/hancock.swf",isOnePiece
 addFighterData("巴基",{name:"버기",url:"op/buggy.swf",isOnePiece:true,music:"onepiece3.mp3",says:["돌격이다! 이 녀석들아!","발사, 버기 볼!","하하하하하하"]});
 addFighterData("克洛克",{name:"크로커다일",url:"op/crocodile.swf",isOnePiece:true,music:"onepiece3.mp3",says:["크하하하!","흥……","모래 폭풍 속으로 사라져라."]});
 addFighterData("明哥",{name:"돈키호테 도플라밍고",url:"op/doflamingo.swf",isOnePiece:true,vs:["罗","路飞2"],music:"onepiece3.mp3",says:["정점에 선 자는 선악도 새로 쓸 수 있다! 지금은 이곳만이 중립이야!","정의가 이긴다고? 당연하지. 이긴 자만이 정의니까!","그냥 떠도는 녀석과 큰일을 하기로 각오한 녀석은 얼굴부터 다르지!","약한 놈이 남의 고통에 집착해 봤자 스스로 무너질 뿐이다."]});
+addFighterData("米霍克",{name:"쥬라큘 미호크",url:"op/mihawk.swf",isOnePiece:true,WKframe:2,fz:"魂",vs:["佐罗2","香吉2"],music:"onepiece3.mp3",says:["검의 길에 끝은 없다.","그 정도 각오로 나에게 검을 겨누는 건가.","세계 최강의 검사라는 칭호, 그 무게를 보여주지.","약한 자에게 휘두를 검은 없다. 덤벼라."]});
+addFighterData("香克斯",{name:"샹크스",url:"op/shanks.swf",isOnePiece:true,fz:"魂",vs:["路飞","米霍克"],music:"onepiece.mp3",says:["이 팔은 새 시대에 걸었다.","친구에게 손대는 녀석은 용서 못 해.","싸움을 끝내러 왔다.","자, 술이나 한잔하자고."]});
 addMapData("现世",{name:"현세",frame:"现世",music:"city.mp3"});
 addMapData("流魂街",{name:"유혼가",frame:"流魂街",music:"village.mp3"});
 addMapData("双极",{name:"쌍극",frame:"双极",music:"wind.mp3"});
@@ -121,3 +123,5 @@ addMapData("楼顶",{name:"옥상",frame:"楼顶",music:"wind.mp3"});
 addMapData("宇智波村",{name:"우치하 일족",frame:"宇智波村",music:"wind.mp3"});
 var bleachMusic = "bleach.mp3";
 var narutoMusic = "naruto.mp3";
+
+var selectableIds = ["一护","一护万解","一护2","露其雅","露其雅始解","恋次","日番谷","日番谷万解","白哉","茶渡","石田","小乌","银","剑八","一角","涅茧利","蓝染","剑心","鸣人","鸣人九尾","仙鸣","佐助","佐助咒怨","佐助须佐","樱","卡卡西","小李","宁次","手鞠","我爱罗","鼬","大蛇丸","自来也","佩恩","小南","带土","迪达拉","重吾","香磷","奇拉比","路飞","路飞2","佐罗","佐罗2","香吉","香吉2","娜美","罗宾2","艾斯","罗","甚平","汉库克","巴基","克洛克","明哥","米霍克","香克斯"];

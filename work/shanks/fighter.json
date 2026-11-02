@@ -1,0 +1,16 @@
+{
+  "_doc": "Shanks registry draft. Base: Kenpachi (game/fighter/jianba.swf, sprite 514). Moves/effects pending the user's skill spec; UI from work/shanks/ui (render_ui.py), sprites from work/shanks/render_sprites.py.",
+  "id": "香克斯",
+  "swf": "shanks.swf",
+  "name": "샹크스",
+  "fz": "魂",
+  "vs": ["路飞", "米霍克"],
+  "music": "onepiece.mp3",
+  "faces": {"香克斯1": "face1", "香克斯2": "face2"},
+  "says": [
+    "이 팔은 새 시대에 걸었다.",
+    "친구에게 손대는 녀석은 용서 못 해.",
+    "싸움을 끝내러 왔다.",
+    "자, 술이나 한잔하자고."
+  ]
+}

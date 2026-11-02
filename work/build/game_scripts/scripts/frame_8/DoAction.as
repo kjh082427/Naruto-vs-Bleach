@@ -26,11 +26,11 @@ function gostg(stg)
    var _loc9_;
    if(stg < _loc3_.length)
    {
-      if(_loc6_)
+      if(stg == 0 || _root.randStages == undefined)
       {
-         _loc3_ = _root.narutoStages;
+         _root.randStages = randomOpponents(_loc5_,_loc3_.length);
       }
-      _root.p2selt = _loc3_[stg];
+      _root.p2selt = _root.randStages[stg];
    }
    else if(stg == _root.totalstage)
    {
@@ -48,6 +48,10 @@ function gostg(stg)
    }
    var _loc2_ = _root.getFighterData(_root.p2selt);
    _root.p2sf = _loc2_.fz;
+   if(_root.p2sf == undefined)
+   {
+      _root.p2sf = randomAssist();
+   }
    _root.curStage = _loc2_.map;
    var _loc7_;
    if(_loc2_.map)
@@ -703,6 +707,43 @@ var chushi = function()
 var stgi = 0;
 var _menuEnabled = false;
 var koPause = false;
+
+function randomOpponents(me, n)
+{
+   var skip = {};
+   skip[_root.p1selt] = true;
+   skip[_root.bossStage] = true;
+   for(var v in me.vs)
+   {
+      skip[me.vs[v]] = true;
+   }
+   var pool = [];
+   for(var i = 0; i < _root.selectableIds.length; i++)
+   {
+      if(!skip[_root.selectableIds[i]])
+      {
+         pool.push(_root.selectableIds[i]);
+      }
+   }
+   var out = [];
+   while(out.length < n && pool.length > 0)
+   {
+      out.push(pool.splice(Math.floor(Math.random() * pool.length),1)[0]);
+   }
+   return out;
+}
+function randomAssist()
+{
+   var a = [];
+   for(var id in _root.fighterData)
+   {
+      if(_root.fighterData[id].fzurl != undefined)
+      {
+         a.push(id);
+      }
+   }
+   return a[Math.floor(Math.random() * a.length)];
+}
 
 function shake(pow, holdFrame)
 {

@@ -1,0 +1,32 @@
+{
+ "voices": [
+  77,
+  80,
+  140,
+  219,
+  345,
+  422,
+  522,
+  568,
+  595,
+  621,
+  728,
+  762,
+  797,
+  820,
+  947,
+  1039,
+  1111,
+  1158,
+  1159,
+  1259,
+  1307,
+  1314,
+  1331,
+  1361,
+  1394,
+  1470,
+  1632
+ ],
+ "_doc": "Ichigo voice clips in yihu.swf (classified by spectrogram: harmonic speech bands); muted in mihawk.swf"
+}

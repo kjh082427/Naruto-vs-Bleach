@@ -12,3 +12,22 @@ work/op/art/bvn_shapes_2x/
 work/op/art/bvn_spr2x/
 work/op/ffdec_help.txt
 work/op_names.txt
+# build staging (tools/build.py builds dist.new/ and swaps it with dist/)
+/dist.new/
+/dist.old/
+# custom fighters: reference videos (over GitHub's 100 MB limit) and what is regenerated from them or from FFDec
+*.mp4
+work/*/ref/
+work/*/frames/
+# custom fighter build scratch (tools/fighter_builder.py intermediates, experiments)
+work/build/mihawk_*
+work/build/shanks_*
+work/build/bisect*
+work/build/pad[01].swf
+work/build/fbtest/
+work/build/mh_snd/
+work/build/mh_verify/
+work/build/v_verify/
+work/build/last_build.log
+# raw REA capture bundles (one is 160 MB); the screenshots next to them are kept
+work/shots/evidence_*.json

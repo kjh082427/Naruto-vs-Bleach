@@ -1,0 +1,16 @@
+{
+  "_doc": "Dracule Mihawk registry entry (tools/build.py add_mihawk). SWF built by tools/mihawk.py from game/fighter/yihu.swf (Bankai form, WKframe 2). UI bitmaps from work/mihawk/ui (work/mihawk/render_ui.py); faces = showFace labels used by the patched SWF -> ui file.",
+  "id": "米霍克",
+  "swf": "mihawk.swf",
+  "name": "쥬라큘 미호크",
+  "fz": "魂",
+  "vs": ["佐罗2", "香吉2"],
+  "music": "onepiece3.mp3",
+  "faces": {"米霍克1": "face1", "米霍克2": "face2"},
+  "says": [
+    "검의 길에 끝은 없다.",
+    "그 정도 각오로 나에게 검을 겨누는 건가.",
+    "세계 최강의 검사라는 칭호, 그 무게를 보여주지.",
+    "약한 자에게 휘두를 검은 없다. 덤벼라."
+  ]
+}

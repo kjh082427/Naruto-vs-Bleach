@@ -1,0 +1,7965 @@
+{
+ "6": {
+  "labels": [
+   "站立",
+   "瞬步",
+   "招2"
+  ],
+  "legs": [
+   "knee y=62.6 floor=73 feet=3",
+   "knee y=62.6 floor=73 feet=2",
+   "knee y=62.6 floor=73 feet=2",
+   "knee y=62.6 floor=73 feet=2"
+  ],
+  "cape_arms": "523px to cape, chest 189, forearm 4",
+  "waist": [
+   [
+    [
+     4.0,
+     57.0
+    ],
+    [
+     15.0,
+     57.0
+    ],
+    [
+     23.0,
+     52.0
+    ],
+    [
+     25.0,
+     49.5
+    ],
+    [
+     46.0,
+     49.5
+    ]
+   ],
+   [
+    [
+     42.0,
+     57.0
+    ],
+    [
+     53.0,
+     57.0
+    ],
+    [
+     61.0,
+     52.0
+    ],
+    [
+     63.0,
+     49.5
+    ],
+    [
+     84.0,
+     49.5
+    ]
+   ],
+   [
+    [
+     80.0,
+     57.0
+    ],
+    [
+     91.0,
+     57.0
+    ],
+    [
+     99.0,
+     52.0
+    ],
+    [
+     101.0,
+     49.5
+    ],
+    [
+     122.0,
+     49.5
+    ]
+   ],
+   [
+    [
+     121.0,
+     57.0
+    ],
+    [
+     132.0,
+     57.0
+    ],
+    [
+     140.0,
+     52.0
+    ],
+    [
+     142.0,
+     49.5
+    ],
+    [
+     163.0,
+     49.5
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     30.0,
+     23.4
+    ],
+    "hc": [
+     27.2,
+     18.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   },
+   {
+    "fc": [
+     68.0,
+     23.4
+    ],
+    "hc": [
+     65.2,
+     18.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   },
+   {
+    "fc": [
+     106.0,
+     23.4
+    ],
+    "hc": [
+     103.2,
+     18.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   },
+   {
+    "fc": [
+     147.0,
+     23.2
+    ],
+    "hc": [
+     144.2,
+     18.5
+    ],
+    "hair_px": 96,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto-per-head[32, 32, 32, 32]",
+   "swords": [
+    {
+     "guard": [
+      19.8,
+      54.5
+     ],
+     "tip": [
+      43.4,
+      62.2
+     ],
+     "blade": 33.3
+    },
+    {
+     "guard": [
+      57.8,
+      54.5
+     ],
+     "tip": [
+      81.4,
+      62.2
+     ],
+     "blade": 33.3
+    },
+    {
+     "guard": [
+      95.8,
+      54.5
+     ],
+     "tip": [
+      119.4,
+      62.2
+     ],
+     "blade": 33.3
+    },
+    {
+     "guard": [
+      136.8,
+      54.5
+     ],
+     "tip": [
+      160.4,
+      62.2
+     ],
+     "blade": 33.3
+    }
+   ]
+  },
+  "arm": [
+   "poly cape 18px",
+   "poly cape 16px",
+   "poly cape 18px",
+   "poly cape 20px"
+  ],
+  "scale": 2
+ },
+ "14": {
+  "labels": [
+   "走"
+  ],
+  "cape_arms": "126px to cape, chest 0, forearm 1",
+  "waist": [
+   [
+    [
+     38.3,
+     57.7
+    ],
+    [
+     98.3,
+     57.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     68.3,
+     42.3
+    ],
+    "hc": [
+     65.2,
+     36.3
+    ],
+    "hair_px": 94,
+    "long_hair_px": 33
+   }
+  ],
+  "sword": {
+   "source": "auto(30)",
+   "swords": [
+    {
+     "guard": [
+      44.8,
+      47.5
+     ],
+     "tip": [
+      68.1,
+      55.8
+     ],
+     "blade": 33.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "16": {
+  "labels": [
+   "走"
+  ],
+  "cape_arms": "103px to cape, chest 0, forearm 1",
+  "waist": [
+   [
+    [
+     38.3,
+     56.7
+    ],
+    [
+     98.3,
+     56.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     68.3,
+     42.3
+    ],
+    "hc": [
+     65.2,
+     36.3
+    ],
+    "hair_px": 94,
+    "long_hair_px": 33
+   }
+  ],
+  "sword": {
+   "source": "auto(30)",
+   "swords": [
+    {
+     "guard": [
+      44.8,
+      47.5
+     ],
+     "tip": [
+      68.1,
+      55.8
+     ],
+     "blade": 33.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "18": {
+  "labels": [
+   "走"
+  ],
+  "cape_arms": "98px to cape, chest 0, forearm 1",
+  "waist": [
+   [
+    [
+     38.3,
+     56.7
+    ],
+    [
+     98.3,
+     56.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     68.3,
+     42.3
+    ],
+    "hc": [
+     65.2,
+     36.3
+    ],
+    "hair_px": 94,
+    "long_hair_px": 33
+   }
+  ],
+  "sword": {
+   "source": "auto(30)",
+   "swords": [
+    {
+     "guard": [
+      44.8,
+      47.5
+     ],
+     "tip": [
+      68.1,
+      55.8
+     ],
+     "blade": 33.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "20": {
+  "labels": [
+   "走"
+  ],
+  "cape_arms": "87px to cape, chest 0, forearm 3",
+  "waist": [
+   [
+    [
+     38.3,
+     57.2
+    ],
+    [
+     98.3,
+     57.2
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     68.3,
+     42.3
+    ],
+    "hc": [
+     65.2,
+     36.3
+    ],
+    "hair_px": 94,
+    "long_hair_px": 33
+   }
+  ],
+  "sword": {
+   "source": "auto(30)",
+   "swords": [
+    {
+     "guard": [
+      44.8,
+      47.5
+     ],
+     "tip": [
+      68.1,
+      55.8
+     ],
+     "blade": 33.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "22": {
+  "labels": [
+   "走"
+  ],
+  "cape_arms": "178px to cape, chest 0, forearm 1",
+  "waist": [
+   [
+    [
+     38.3,
+     57.7
+    ],
+    [
+     98.3,
+     57.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     68.3,
+     42.3
+    ],
+    "hc": [
+     65.2,
+     36.3
+    ],
+    "hair_px": 94,
+    "long_hair_px": 33
+   }
+  ],
+  "sword": {
+   "source": "auto(30)",
+   "swords": [
+    {
+     "guard": [
+      44.8,
+      47.5
+     ],
+     "tip": [
+      68.1,
+      55.8
+     ],
+     "blade": 33.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "24": {
+  "labels": [
+   "走"
+  ],
+  "cape_arms": "125px to cape, chest 0, forearm 1",
+  "waist": [
+   [
+    [
+     38.3,
+     56.7
+    ],
+    [
+     98.3,
+     56.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     68.3,
+     42.3
+    ],
+    "hc": [
+     65.2,
+     36.3
+    ],
+    "hair_px": 94,
+    "long_hair_px": 33
+   }
+  ],
+  "sword": {
+   "source": "auto(30)",
+   "swords": [
+    {
+     "guard": [
+      44.8,
+      47.5
+     ],
+     "tip": [
+      68.1,
+      55.8
+     ],
+     "blade": 33.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "26": {
+  "labels": [
+   "走"
+  ],
+  "cape_arms": "101px to cape, chest 0, forearm 1",
+  "waist": [
+   [
+    [
+     38.3,
+     56.7
+    ],
+    [
+     98.3,
+     56.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     68.3,
+     42.3
+    ],
+    "hc": [
+     65.2,
+     36.3
+    ],
+    "hair_px": 94,
+    "long_hair_px": 33
+   }
+  ],
+  "sword": {
+   "source": "auto(30)",
+   "swords": [
+    {
+     "guard": [
+      44.8,
+      47.5
+     ],
+     "tip": [
+      68.1,
+      55.8
+     ],
+     "blade": 33.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "28": {
+  "labels": [
+   "走"
+  ],
+  "cape_arms": "87px to cape, chest 0, forearm 3",
+  "waist": [
+   [
+    [
+     38.3,
+     57.2
+    ],
+    [
+     98.3,
+     57.2
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     68.3,
+     42.3
+    ],
+    "hc": [
+     65.2,
+     36.3
+    ],
+    "hair_px": 94,
+    "long_hair_px": 33
+   }
+  ],
+  "sword": {
+   "source": "auto(30)",
+   "swords": [
+    {
+     "guard": [
+      44.8,
+      47.5
+     ],
+     "tip": [
+      68.1,
+      55.8
+     ],
+     "blade": 33.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "31": {
+  "labels": [
+   "瞬步"
+  ],
+  "legs": [
+   "knee y=64.2 floor=75 feet=2"
+  ],
+  "cape_arms": "95px to cape, chest 51, forearm 21",
+  "waist": [
+   [
+    [
+     22.0,
+     58.1
+    ],
+    [
+     33.0,
+     58.1
+    ],
+    [
+     41.0,
+     53.1
+    ],
+    [
+     43.0,
+     50.6
+    ],
+    [
+     64.0,
+     50.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     48.0,
+     24.5
+    ],
+    "hc": [
+     44.9,
+     19.3
+    ],
+    "hair_px": 87,
+    "long_hair_px": 23
+   }
+  ],
+  "sword": {
+   "source": "auto(29)",
+   "swords": [
+    {
+     "guard": [
+      37.8,
+      55.2
+     ],
+     "tip": [
+      62.4,
+      63.6
+     ],
+     "blade": 35.0
+    }
+   ]
+  },
+  "arm": [
+   "poly cape 18px"
+  ],
+  "scale": 2
+ },
+ "33": {
+  "labels": [
+   "瞬步"
+  ],
+  "legs": [
+   "knee y=63.3 floor=75 feet=3"
+  ],
+  "cape_arms": "81px to cape, chest 54, forearm 26",
+  "waist": [
+   [
+    [
+     21.9,
+     56.8
+    ],
+    [
+     32.9,
+     56.8
+    ],
+    [
+     40.9,
+     51.8
+    ],
+    [
+     42.9,
+     49.3
+    ],
+    [
+     63.9,
+     49.3
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     47.9,
+     23.2
+    ],
+    "hc": [
+     44.9,
+     18.1
+    ],
+    "hair_px": 86,
+    "long_hair_px": 28
+   }
+  ],
+  "sword": {
+   "source": "auto(24)",
+   "swords": [
+    {
+     "guard": [
+      38.5,
+      55.5
+     ],
+     "tip": [
+      62.4,
+      63.6
+     ],
+     "blade": 34.0
+    }
+   ]
+  },
+  "arm": [
+   "poly cape 16px"
+  ],
+  "scale": 2
+ },
+ "35": {
+  "labels": [
+   "瞬步"
+  ],
+  "mode": "luma",
+  "kind": "effect",
+  "scale": 2
+ },
+ "37": {
+  "labels": [
+   "跳"
+  ],
+  "legs": [
+   "knee y=68.2 floor=75 feet=2"
+  ],
+  "cape_arms": "33px to cape, chest 15, forearm 20",
+  "waist": [
+   [
+    [
+     22.9,
+     60.1
+    ],
+    [
+     82.9,
+     60.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     52.9,
+     44.2
+    ],
+    "hc": [
+     50.2,
+     39.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      42.0,
+      55.5
+     ],
+     "tip": [
+      70.0,
+      53.5
+     ],
+     "blade": 37.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (55, 63): 44px"
+  ],
+  "scale": 2
+ },
+ "39": {
+  "labels": [
+   "跳",
+   "跳2"
+  ],
+  "cape_arms": "90px to cape, chest 39, forearm 22",
+  "waist": [
+   [
+    [
+     26.9,
+     52.1
+    ],
+    [
+     86.9,
+     52.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     56.9,
+     29.2
+    ],
+    "hc": [
+     54.2,
+     24.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      37.0,
+      39.5
+     ],
+     "tip": [
+      55.0,
+      47.5
+     ],
+     "blade": 26.2
+    }
+   ]
+  },
+  "arm": [
+   "blob (68, 44): 38px"
+  ],
+  "scale": 2
+ },
+ "42": {
+  "labels": [
+   "落",
+   "落2"
+  ],
+  "cape_arms": "133px to cape, chest 67, forearm 28",
+  "waist": [
+   [
+    [
+     21.9,
+     53.6
+    ],
+    [
+     81.9,
+     53.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     51.9,
+     33.2
+    ],
+    "hc": [
+     49.2,
+     28.4
+    ],
+    "hair_px": 92,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      33.0,
+      41.5
+     ],
+     "tip": [
+      51.0,
+      42.5
+     ],
+     "blade": 23.8
+    }
+   ]
+  },
+  "arm": [
+   "blob (69, 42): 42px"
+  ],
+  "scale": 2
+ },
+ "44": {
+  "labels": [
+   "落",
+   "落2"
+  ],
+  "cape_arms": "143px to cape, chest 72, forearm 24",
+  "waist": [
+   [
+    [
+     22.0,
+     53.6
+    ],
+    [
+     82.0,
+     53.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     52.0,
+     33.1
+    ],
+    "hc": [
+     49.2,
+     28.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 26
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      33.0,
+      41.5
+     ],
+     "tip": [
+      51.0,
+      42.5
+     ],
+     "blade": 23.8
+    }
+   ]
+  },
+  "arm": [
+   "blob (69, 42): 43px"
+  ],
+  "scale": 2
+ },
+ "46": {
+  "labels": [
+   "落",
+   "落2"
+  ],
+  "cape_arms": "143px to cape, chest 72, forearm 24",
+  "waist": [
+   [
+    [
+     22.0,
+     53.6
+    ],
+    [
+     82.0,
+     53.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     52.0,
+     33.1
+    ],
+    "hc": [
+     49.2,
+     28.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 26
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      33.0,
+      41.5
+     ],
+     "tip": [
+      51.0,
+      42.5
+     ],
+     "blade": 23.8
+    }
+   ]
+  },
+  "arm": [
+   "blob (69, 42): 43px"
+  ],
+  "scale": 2
+ },
+ "48": {
+  "labels": [
+   "落地"
+  ],
+  "legs": [
+   "knee y=63.6 floor=69 feet=2"
+  ],
+  "cape_arms": "32px to cape, chest 16, forearm 0",
+  "waist": [
+   [
+    [
+     23.0,
+     56.6
+    ],
+    [
+     83.0,
+     56.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     53.0,
+     43.1
+    ],
+    "hc": [
+     50.2,
+     38.4
+    ],
+    "hair_px": 97,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(18)",
+   "swords": [
+    {
+     "guard": [
+      48.2,
+      56.2
+     ],
+     "tip": [
+      75.4,
+      47.4
+     ],
+     "blade": 38.5
+    }
+   ]
+  },
+  "arm": [
+   "blob (51, 64): 46px"
+  ],
+  "scale": 2
+ },
+ "50": {
+  "labels": [
+   "落地"
+  ],
+  "legs": [
+   "knee y=63.2 floor=70 feet=2"
+  ],
+  "cape_arms": "86px to cape, chest 21, forearm 24",
+  "waist": [
+   [
+    [
+     22.9,
+     54.6
+    ],
+    [
+     82.9,
+     54.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     52.9,
+     38.2
+    ],
+    "hc": [
+     50.2,
+     33.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      27.0,
+      41.0
+     ],
+     "tip": [
+      14.5,
+      57.5
+     ],
+     "blade": 27.6
+    }
+   ]
+  },
+  "arm": [
+   "blob (65, 52): 38px"
+  ],
+  "scale": 2
+ },
+ "52": {
+  "labels": [
+   "落地"
+  ],
+  "legs": [
+   "knee y=63.2 floor=70 feet=2"
+  ],
+  "cape_arms": "86px to cape, chest 21, forearm 24",
+  "waist": [
+   [
+    [
+     22.9,
+     54.6
+    ],
+    [
+     82.9,
+     54.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     52.9,
+     38.2
+    ],
+    "hc": [
+     50.2,
+     33.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      27.0,
+      41.0
+     ],
+     "tip": [
+      14.5,
+      57.5
+     ],
+     "blade": 27.6
+    }
+   ]
+  },
+  "arm": [
+   "blob (65, 52): 38px"
+  ],
+  "scale": 2
+ },
+ "56": {
+  "labels": [
+   "跳砍",
+   "上必杀"
+  ],
+  "cape_arms": "39px to cape, chest 93, forearm 1",
+  "waist": [
+   [
+    [
+     30.1,
+     50.0
+    ],
+    [
+     90.1,
+     50.0
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     60.1,
+     26.0
+    ],
+    "hc": [
+     56.4,
+     20.6
+    ],
+    "hair_px": 100,
+    "long_hair_px": 29
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      62.0,
+      26.0
+     ],
+     "tip": [
+      36.0,
+      19.5
+     ],
+     "blade": 36.1
+    }
+   ]
+  },
+  "arm": [
+   "blob (54, 42): 31px"
+  ],
+  "scale": 2
+ },
+ "58": {
+  "labels": [
+   "跳砍",
+   "上必杀"
+  ],
+  "cape_arms": "94px to cape, chest 82, forearm 12",
+  "waist": [
+   [
+    [
+     29.4,
+     54.7
+    ],
+    [
+     89.4,
+     54.7
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 1599,
+  "heads": [
+   {
+    "fc": [
+     59.4,
+     29.3
+    ],
+    "hc": [
+     58.2,
+     23.1
+    ],
+    "hair_px": 91,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      55.0,
+      52.0
+     ],
+     "tip": [
+      56.5,
+      80.0
+     ],
+     "blade": 37.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (68, 41): 17px"
+  ],
+  "scale": 2
+ },
+ "61": {
+  "labels": [
+   "跳砍",
+   "上必杀"
+  ],
+  "cape_arms": "194px to cape, chest 93, forearm 9",
+  "waist": [
+   [
+    [
+     29.4,
+     55.7
+    ],
+    [
+     89.4,
+     55.7
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 908,
+  "heads": [
+   {
+    "fc": [
+     59.4,
+     29.3
+    ],
+    "hc": [
+     57.7,
+     23.6
+    ],
+    "hair_px": 93,
+    "long_hair_px": 26
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      43.0,
+      30.5
+     ],
+     "tip": [
+      12.0,
+      25.5
+     ],
+     "blade": 42.6
+    }
+   ]
+  },
+  "arm": [
+   "poly cut 108px"
+  ],
+  "scale": 2
+ },
+ "63": {
+  "labels": [
+   "跳砍",
+   "上必杀"
+  ],
+  "cape_arms": "95px to cape, chest 22, forearm 22",
+  "waist": [
+   [
+    [
+     28.9,
+     41.6
+    ],
+    [
+     88.9,
+     41.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     58.9,
+     23.2
+    ],
+    "hc": [
+     56.2,
+     18.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(22)",
+   "swords": [
+    {
+     "guard": [
+      40.2,
+      29.2
+     ],
+     "tip": [
+      15.9,
+      23.1
+     ],
+     "blade": 33.6
+    }
+   ]
+  },
+  "arm": [
+   "blob (58, 32): 38px"
+  ],
+  "scale": 2
+ },
+ "65": {
+  "labels": [
+   "跳砍",
+   "上必杀"
+  ],
+  "cape_arms": "101px to cape, chest 45, forearm 20",
+  "waist": [
+   [
+    [
+     29.9,
+     46.1
+    ],
+    [
+     89.9,
+     46.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     59.9,
+     26.2
+    ],
+    "hc": [
+     57.2,
+     21.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      40.5,
+      34.0
+     ],
+     "tip": [
+      22.5,
+      48.0
+     ],
+     "blade": 30.5
+    }
+   ]
+  },
+  "arm": [
+   "blob (67, 37): 28px"
+  ],
+  "scale": 2
+ },
+ "67": {
+  "labels": [
+   "跳砍",
+   "上必杀"
+  ],
+  "cape_arms": "101px to cape, chest 45, forearm 20",
+  "waist": [
+   [
+    [
+     29.9,
+     46.1
+    ],
+    [
+     89.9,
+     46.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     59.9,
+     26.2
+    ],
+    "hc": [
+     57.2,
+     21.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      40.5,
+      34.0
+     ],
+     "tip": [
+      22.5,
+      48.0
+     ],
+     "blade": 30.5
+    }
+   ]
+  },
+  "arm": [
+   "blob (67, 37): 28px"
+  ],
+  "scale": 2
+ },
+ "69": {
+  "labels": [
+   "跳招"
+  ],
+  "cape_arms": "46px to cape, chest 56, forearm 1",
+  "waist": [
+   [
+    [
+     -2.0,
+     44.5
+    ],
+    [
+     58.0,
+     44.5
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     28.0,
+     23.0
+    ],
+    "hc": [
+     25.1,
+     18.0
+    ],
+    "hair_px": 99,
+    "long_hair_px": 26
+   }
+  ],
+  "sword": {
+   "source": "auto(21)",
+   "swords": [
+    {
+     "guard": [
+      42.5,
+      31.5
+     ],
+     "tip": [
+      40.8,
+      5.7
+     ],
+     "blade": 34.8
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "71": {
+  "labels": [
+   "跳招"
+  ],
+  "cape_arms": "86px to cape, chest 13, forearm 0",
+  "waist": [
+   [
+    [
+     6.3,
+     44.8
+    ],
+    [
+     66.3,
+     44.8
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     36.3,
+     22.6
+    ],
+    "hc": [
+     31.9,
+     17.8
+    ],
+    "hair_px": 93,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "auto(22)",
+   "swords": [
+    {
+     "guard": [
+      43.5,
+      19.5
+     ],
+     "tip": [
+      24.0,
+      0.2
+     ],
+     "blade": 37.0
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "74": {
+  "labels": [
+   "跳招"
+  ],
+  "cape_arms": "50px to cape, chest 59, forearm 0",
+  "waist": [
+   [
+    [
+     0.2,
+     46.8
+    ],
+    [
+     60.2,
+     46.8
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     30.2,
+     26.6
+    ],
+    "hc": [
+     27.0,
+     21.9
+    ],
+    "hair_px": 100,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      33.0,
+      11.0
+     ],
+     "tip": [
+      9.0,
+      8.5
+     ],
+     "blade": 32.4
+    }
+   ]
+  },
+  "arm": [
+   "blob (38, 25): 5px"
+  ],
+  "scale": 2
+ },
+ "77": {
+  "labels": [
+   "跳招"
+  ],
+  "cape_arms": "85px to cape, chest 9, forearm 12",
+  "waist": [
+   [
+    [
+     8.0,
+     46.1
+    ],
+    [
+     68.0,
+     46.1
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 356,
+  "heads": [
+   {
+    "fc": [
+     38.0,
+     25.1
+    ],
+    "hc": [
+     35.1,
+     20.9
+    ],
+    "hair_px": 97,
+    "long_hair_px": 26
+   }
+  ],
+  "sword": {
+   "source": "auto(22)",
+   "swords": [
+    {
+     "guard": [
+      44.5,
+      35.5
+     ],
+     "tip": [
+      69.2,
+      21.8
+     ],
+     "blade": 38.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "79": {
+  "labels": [
+   "跳招20"
+  ],
+  "cape_arms": "18px to cape, chest 34, forearm 18",
+  "waist": [
+   [
+    [
+     2.4,
+     47.3
+    ],
+    [
+     62.4,
+     47.3
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 647,
+  "heads": [
+   {
+    "fc": [
+     32.4,
+     27.5
+    ],
+    "hc": [
+     31.1,
+     22.4
+    ],
+    "hair_px": 90,
+    "long_hair_px": 21
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      28.0,
+      40.5
+     ],
+     "tip": [
+      44.0,
+      9.0
+     ],
+     "blade": 48.1
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "81": {
+  "labels": [
+   "跳招20"
+  ],
+  "mode": "eq(跳招20)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "83": {
+  "labels": [
+   "跳招20"
+  ],
+  "mode": "eq(跳招20)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "85": {
+  "labels": [
+   "跳招20"
+  ],
+  "mode": "eq(跳招20)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "87": {
+  "labels": [
+   "跳招20"
+  ],
+  "mode": "eq(跳招20)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "89": {
+  "labels": [
+   "跳招20"
+  ],
+  "mode": "eq(跳招20)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "91": {
+  "labels": [
+   "跳招20"
+  ],
+  "mode": "eq(跳招20)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "93": {
+  "labels": [
+   "跳招20"
+  ],
+  "mode": "eq(跳招20)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "95": {
+  "labels": [
+   "跳招20"
+  ],
+  "mode": "eq(跳招20)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "97": {
+  "labels": [
+   "跳招20"
+  ],
+  "mode": "eq(跳招20)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "99": {
+  "labels": [
+   "跳招20"
+  ],
+  "mode": "eq(跳招20)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "102": {
+  "labels": [
+   "跳招3"
+  ],
+  "cape_arms": "49px to cape, chest 15, forearm 0",
+  "waist": [
+   [
+    [
+     6.4,
+     51.8
+    ],
+    [
+     66.4,
+     51.8
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 340,
+  "heads": [
+   {
+    "fc": [
+     36.4,
+     36.5
+    ],
+    "hc": [
+     35.0,
+     31.4
+    ],
+    "hair_px": 89,
+    "long_hair_px": 19
+   }
+  ],
+  "sword": {
+   "source": "auto(13)",
+   "swords": [
+    {
+     "guard": [
+      36.0,
+      49.0
+     ],
+     "tip": [
+      58.2,
+      26.0
+     ],
+     "blade": 43.4
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "104": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 901,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "106": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 1727,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "108": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 2151,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "111": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 2293,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "113": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 2401,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "115": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 2520,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "117": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 2573,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "119": {
+  "labels": [
+   "跳招3"
+  ],
+  "legs": [
+   "knee y=60.6 floor=66 feet=1"
+  ],
+  "cape_arms": "7px to cape, chest 15, forearm 11",
+  "waist": [
+   [
+    [
+     6.9,
+     54.1
+    ],
+    [
+     66.9,
+     54.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     36.9,
+     41.2
+    ],
+    "hc": [
+     34.2,
+     36.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(15)",
+   "swords": [
+    {
+     "guard": [
+      32.8,
+      54.2
+     ],
+     "tip": [
+      57.3,
+      47.1
+     ],
+     "blade": 34.3
+    }
+   ]
+  },
+  "arm": [
+   "blob (36, 62): 27px"
+  ],
+  "scale": 2
+ },
+ "121": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 2561,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "123": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 2412,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "125": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 2109,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "127": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 1650,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "129": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 1185,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "131": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 689,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "133": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 379,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "135": {
+  "labels": [
+   "跳招3"
+  ],
+  "dust_kept": 122,
+  "mode": "eq(跳招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "137": {
+  "labels": [
+   "跳招3"
+  ],
+  "legs": [
+   "knee y=60.6 floor=66 feet=1"
+  ],
+  "cape_arms": "7px to cape, chest 15, forearm 11",
+  "waist": [
+   [
+    [
+     6.9,
+     54.1
+    ],
+    [
+     66.9,
+     54.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     36.9,
+     41.2
+    ],
+    "hc": [
+     34.2,
+     36.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(15)",
+   "swords": [
+    {
+     "guard": [
+      32.8,
+      54.2
+     ],
+     "tip": [
+      57.3,
+      47.1
+     ],
+     "blade": 34.3
+    }
+   ]
+  },
+  "arm": [
+   "blob (36, 62): 27px"
+  ],
+  "scale": 2
+ },
+ "139": {
+  "labels": [
+   "砍1",
+   "超必杀",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=91.8 floor=99 feet=2"
+  ],
+  "cape_arms": "30px to cape, chest 19, forearm 0",
+  "waist": [
+   [
+    [
+     55.8,
+     82.0
+    ],
+    [
+     115.8,
+     82.0
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     85.8,
+     64.0
+    ],
+    "hc": [
+     83.3,
+     58.8
+    ],
+    "hair_px": 92,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      88.0,
+      64.0
+     ],
+     "tip": [
+      55.0,
+      58.5
+     ],
+     "blade": 45.4
+    }
+   ]
+  },
+  "arm": [
+   "blob (72, 75): 13px"
+  ],
+  "scale": 2
+ },
+ "141": {
+  "labels": [
+   "砍1",
+   "超必杀",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=91.3 floor=99 feet=2"
+  ],
+  "cape_arms": "31px to cape, chest 16, forearm 8",
+  "waist": [
+   [
+    [
+     61.8,
+     81.5
+    ],
+    [
+     121.8,
+     81.5
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 292,
+  "heads": [
+   {
+    "fc": [
+     91.8,
+     64.0
+    ],
+    "hc": [
+     88.9,
+     59.2
+    ],
+    "hair_px": 94,
+    "long_hair_px": 28
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      99.0,
+      74.5
+     ],
+     "tip": [
+      124.0,
+      76.0
+     ],
+     "blade": 33.7
+    }
+   ]
+  },
+  "arm": [
+   "blob (74, 73): 4px"
+  ],
+  "scale": 2
+ },
+ "144": {
+  "labels": [
+   "砍1",
+   "超必杀",
+   "超必杀1"
+  ],
+  "legs": [
+   "skipped"
+  ],
+  "cape_arms": "42px to cape, chest 6, forearm 23",
+  "waist": [
+   [
+    [
+     57.9,
+     82.1
+    ],
+    [
+     117.9,
+     82.1
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 757,
+  "heads": [
+   {
+    "fc": [
+     87.9,
+     65.2
+    ],
+    "hc": [
+     85.2,
+     60.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      62.0,
+      72.0
+     ],
+     "tip": [
+      36.0,
+      79.0
+     ],
+     "blade": 36.3
+    }
+   ]
+  },
+  "arm": [
+   "blob (95, 78): 37px"
+  ],
+  "scale": 2
+ },
+ "146": {
+  "labels": [
+   "砍1",
+   "超必杀",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=91.8 floor=99 feet=2"
+  ],
+  "cape_arms": "105px to cape, chest 1, forearm 20",
+  "waist": [
+   [
+    [
+     54.9,
+     82.6
+    ],
+    [
+     114.9,
+     82.6
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 154,
+  "heads": [
+   {
+    "fc": [
+     84.9,
+     65.2
+    ],
+    "hc": [
+     82.2,
+     60.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(20)",
+   "swords": [
+    {
+     "guard": [
+      64.2,
+      72.2
+     ],
+     "tip": [
+      35.5,
+      65.0
+     ],
+     "blade": 39.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (89, 75): 42px"
+  ],
+  "scale": 2
+ },
+ "148": {
+  "labels": [
+   "砍1",
+   "超必杀",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=91.8 floor=99 feet=2"
+  ],
+  "cape_arms": "105px to cape, chest 1, forearm 21",
+  "waist": [
+   [
+    [
+     54.9,
+     82.6
+    ],
+    [
+     114.9,
+     82.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     84.9,
+     65.2
+    ],
+    "hc": [
+     82.2,
+     60.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(26)",
+   "swords": [
+    {
+     "guard": [
+      64.2,
+      72.2
+     ],
+     "tip": [
+      35.5,
+      65.0
+     ],
+     "blade": 39.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (89, 75): 42px"
+  ],
+  "scale": 2
+ },
+ "150": {
+  "labels": [
+   "砍1",
+   "超必杀",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=91.8 floor=99 feet=2"
+  ],
+  "cape_arms": "84px to cape, chest 17, forearm 25",
+  "waist": [
+   [
+    [
+     51.9,
+     82.6
+    ],
+    [
+     111.9,
+     82.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     81.9,
+     65.2
+    ],
+    "hc": [
+     79.2,
+     60.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      60.0,
+      74.0
+     ],
+     "tip": [
+      47.0,
+      90.0
+     ],
+     "blade": 27.5
+    }
+   ]
+  },
+  "arm": [
+   "blob (89, 78): 35px"
+  ],
+  "scale": 2
+ },
+ "152": {
+  "labels": [
+   "砍1",
+   "超必杀"
+  ],
+  "legs": [
+   "knee y=91.8 floor=99 feet=2"
+  ],
+  "cape_arms": "84px to cape, chest 17, forearm 25",
+  "waist": [
+   [
+    [
+     51.9,
+     82.6
+    ],
+    [
+     111.9,
+     82.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     81.9,
+     65.2
+    ],
+    "hc": [
+     79.2,
+     60.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      60.0,
+      74.0
+     ],
+     "tip": [
+      47.0,
+      90.0
+     ],
+     "blade": 27.5
+    }
+   ]
+  },
+  "arm": [
+   "blob (89, 78): 35px"
+  ],
+  "scale": 2
+ },
+ "154": {
+  "labels": [
+   "砍2",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=76.8 floor=84 feet=2"
+  ],
+  "cape_arms": "43px to cape, chest 18, forearm 23",
+  "waist": [
+   [
+    [
+     42.2,
+     68.0
+    ],
+    [
+     102.2,
+     68.0
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     72.2,
+     50.9
+    ],
+    "hc": [
+     69.7,
+     46.3
+    ],
+    "hair_px": 87,
+    "long_hair_px": 22
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      52.0,
+      47.0
+     ],
+     "tip": [
+      36.0,
+      53.5
+     ],
+     "blade": 22.8
+    }
+   ]
+  },
+  "arm": [
+   "blob (84, 64): 31px"
+  ],
+  "scale": 2
+ },
+ "156": {
+  "labels": [
+   "砍2",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=75.9 floor=84 feet=2"
+  ],
+  "cape_arms": "95px to cape, chest 0, forearm 0",
+  "waist": [
+   [
+    [
+     45.2,
+     65.6
+    ],
+    [
+     105.2,
+     65.6
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 358,
+  "heads": [
+   {
+    "fc": [
+     75.2,
+     46.2
+    ],
+    "hc": [
+     69.7,
+     43.5
+    ],
+    "hair_px": 56,
+    "long_hair_px": 29
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      76.5,
+      31.0
+     ],
+     "tip": [
+      72.0,
+      19.0
+     ],
+     "blade": 19.6
+    }
+   ]
+  },
+  "arm": [
+   "blob (88, 63): 31px"
+  ],
+  "scale": 2
+ },
+ "158": {
+  "labels": [
+   "砍2",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=76.3 floor=84 feet=2"
+  ],
+  "cape_arms": "82px to cape, chest 36, forearm 7",
+  "waist": [
+   [
+    [
+     48.8,
+     66.9
+    ],
+    [
+     108.8,
+     66.9
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 959,
+  "heads": [
+   {
+    "fc": [
+     78.8,
+     49.9
+    ],
+    "hc": [
+     76.2,
+     44.7
+    ],
+    "hair_px": 95,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      82.0,
+      71.0
+     ],
+     "tip": [
+      100.0,
+      74.0
+     ],
+     "blade": 24.1
+    }
+   ]
+  },
+  "arm": [
+   "blob (88, 65): 31px"
+  ],
+  "scale": 2
+ },
+ "160": {
+  "labels": [
+   "砍2",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=76.3 floor=84 feet=2"
+  ],
+  "cape_arms": "84px to cape, chest 41, forearm 7",
+  "waist": [
+   [
+    [
+     48.7,
+     67.0
+    ],
+    [
+     108.7,
+     67.0
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 222,
+  "heads": [
+   {
+    "fc": [
+     78.7,
+     49.9
+    ],
+    "hc": [
+     76.2,
+     44.8
+    ],
+    "hair_px": 93,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      82.0,
+      71.0
+     ],
+     "tip": [
+      103.0,
+      77.0
+     ],
+     "blade": 29.2
+    }
+   ]
+  },
+  "arm": [
+   "blob (88, 65): 31px"
+  ],
+  "scale": 2
+ },
+ "162": {
+  "labels": [
+   "砍2",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=76.3 floor=84 feet=2"
+  ],
+  "cape_arms": "85px to cape, chest 34, forearm 6",
+  "waist": [
+   [
+    [
+     47.8,
+     66.9
+    ],
+    [
+     107.8,
+     66.9
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     77.8,
+     49.9
+    ],
+    "hc": [
+     75.2,
+     44.7
+    ],
+    "hair_px": 97,
+    "long_hair_px": 28
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      79.0,
+      70.0
+     ],
+     "tip": [
+      106.0,
+      82.5
+     ],
+     "blade": 35.2
+    }
+   ]
+  },
+  "arm": [
+   "blob (87, 65): 31px"
+  ],
+  "scale": 2
+ },
+ "164": {
+  "labels": [
+   "砍2"
+  ],
+  "legs": [
+   "knee y=76.8 floor=84 feet=2"
+  ],
+  "cape_arms": "52px to cape, chest 16, forearm 24",
+  "waist": [
+   [
+    [
+     43.0,
+     68.1
+    ],
+    [
+     103.0,
+     68.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     73.0,
+     51.1
+    ],
+    "hc": [
+     70.1,
+     47.0
+    ],
+    "hair_px": 97,
+    "long_hair_px": 23
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      64.0,
+      70.0
+     ],
+     "tip": [
+      89.0,
+      77.0
+     ],
+     "blade": 34.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (82, 64): 28px"
+  ],
+  "scale": 2
+ },
+ "166": {
+  "labels": [
+   "砍2"
+  ],
+  "legs": [
+   "knee y=76.8 floor=84 feet=2"
+  ],
+  "cape_arms": "52px to cape, chest 16, forearm 24",
+  "waist": [
+   [
+    [
+     43.0,
+     68.1
+    ],
+    [
+     103.0,
+     68.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     73.0,
+     51.1
+    ],
+    "hc": [
+     70.1,
+     47.0
+    ],
+    "hair_px": 97,
+    "long_hair_px": 23
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      64.0,
+      70.0
+     ],
+     "tip": [
+      89.0,
+      77.0
+     ],
+     "blade": 34.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (82, 64): 28px"
+  ],
+  "scale": 2
+ },
+ "168": {
+  "labels": [
+   "砍3",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=110.8 floor=118 feet=2"
+  ],
+  "cape_arms": "32px to cape, chest 20, forearm 0",
+  "waist": [
+   [
+    [
+     54.9,
+     101.8
+    ],
+    [
+     114.9,
+     101.8
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     84.9,
+     84.7
+    ],
+    "hc": [
+     82.3,
+     79.2
+    ],
+    "hair_px": 96,
+    "long_hair_px": 29
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      89.0,
+      98.5
+     ],
+     "tip": [
+      110.0,
+      106.0
+     ],
+     "blade": 29.8
+    }
+   ]
+  },
+  "arm": [
+   "blob (68, 94): 12px"
+  ],
+  "scale": 2
+ },
+ "171": {
+  "labels": [
+   "砍3",
+   "砍技22",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=109.9 floor=118 feet=2"
+  ],
+  "cape_arms": "19px to cape, chest 43, forearm 0",
+  "waist": [
+   [
+    [
+     53.6,
+     99.9
+    ],
+    [
+     113.6,
+     99.9
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 355,
+  "heads": [
+   {
+    "fc": [
+     83.6,
+     80.9
+    ],
+    "hc": [
+     80.0,
+     76.8
+    ],
+    "hair_px": 103,
+    "long_hair_px": 26
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      90.0,
+      89.0
+     ],
+     "tip": [
+      106.0,
+      104.0
+     ],
+     "blade": 29.3
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "173": {
+  "labels": [
+   "砍3",
+   "砍技22",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=110.8 floor=118 feet=2"
+  ],
+  "cape_arms": "74px to cape, chest 18, forearm 0",
+  "waist": [
+   [
+    [
+     50.1,
+     102.0
+    ],
+    [
+     110.1,
+     102.0
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 1078,
+  "heads": [
+   {
+    "fc": [
+     80.1,
+     85.1
+    ],
+    "hc": [
+     79.4,
+     78.8
+    ],
+    "hair_px": 69,
+    "long_hair_px": 17
+   }
+  ],
+  "sword": {
+   "source": "auto(26)",
+   "swords": [
+    {
+     "guard": [
+      69.2,
+      78.2
+     ],
+     "tip": [
+      55.3,
+      43.9
+     ],
+     "blade": 50.4
+    }
+   ]
+  },
+  "arm": [
+   "blob (87, 97): 39px"
+  ],
+  "scale": 2
+ },
+ "175": {
+  "labels": [
+   "砍3",
+   "砍技22",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=110.8 floor=118 feet=3"
+  ],
+  "cape_arms": "93px to cape, chest 18, forearm 0",
+  "waist": [
+   [
+    [
+     47.9,
+     102.1
+    ],
+    [
+     107.9,
+     102.1
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 374,
+  "heads": [
+   {
+    "fc": [
+     77.9,
+     85.2
+    ],
+    "hc": [
+     75.2,
+     80.4
+    ],
+    "hair_px": 94,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(22)",
+   "swords": [
+    {
+     "guard": [
+      59.2,
+      87.8
+     ],
+     "tip": [
+      31.9,
+      76.7
+     ],
+     "blade": 39.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (89, 93): 31px"
+  ],
+  "scale": 2
+ },
+ "177": {
+  "labels": [
+   "砍3",
+   "砍技22",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=110.8 floor=118 feet=3"
+  ],
+  "cape_arms": "81px to cape, chest 23, forearm 0",
+  "waist": [
+   [
+    [
+     46.9,
+     102.1
+    ],
+    [
+     106.9,
+     102.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     76.9,
+     85.2
+    ],
+    "hc": [
+     74.2,
+     80.4
+    ],
+    "hair_px": 94,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(29)",
+   "swords": [
+    {
+     "guard": [
+      58.9,
+      87.9
+     ],
+     "tip": [
+      28.3,
+      73.0
+     ],
+     "blade": 46.2
+    }
+   ]
+  },
+  "arm": [
+   "blob (86, 93): 30px"
+  ],
+  "scale": 2
+ },
+ "179": {
+  "labels": [
+   "砍3",
+   "砍技22"
+  ],
+  "legs": [
+   "knee y=111.2 floor=118 feet=2"
+  ],
+  "cape_arms": "86px to cape, chest 21, forearm 24",
+  "waist": [
+   [
+    [
+     46.9,
+     102.6
+    ],
+    [
+     106.9,
+     102.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     76.9,
+     86.2
+    ],
+    "hc": [
+     74.2,
+     81.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      51.0,
+      91.0
+     ],
+     "tip": [
+      38.0,
+      105.0
+     ],
+     "blade": 25.3
+    }
+   ]
+  },
+  "arm": [
+   "blob (89, 100): 38px"
+  ],
+  "scale": 2
+ },
+ "181": {
+  "labels": [
+   "砍3"
+  ],
+  "legs": [
+   "knee y=111.2 floor=118 feet=2"
+  ],
+  "cape_arms": "86px to cape, chest 21, forearm 24",
+  "waist": [
+   [
+    [
+     46.9,
+     102.6
+    ],
+    [
+     106.9,
+     102.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     76.9,
+     86.2
+    ],
+    "hc": [
+     74.2,
+     81.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      51.0,
+      91.0
+     ],
+     "tip": [
+      38.0,
+      105.0
+     ],
+     "blade": 25.3
+    }
+   ]
+  },
+  "arm": [
+   "blob (89, 100): 38px"
+  ],
+  "scale": 2
+ },
+ "183": {
+  "labels": [
+   "砍技1"
+  ],
+  "cape_arms": "167px to cape, chest 61, forearm 0",
+  "waist": [
+   [
+    [
+     2.0,
+     52.2
+    ],
+    [
+     62.0,
+     52.2
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     32.0,
+     29.5
+    ],
+    "hc": [
+     29.2,
+     24.1
+    ],
+    "hair_px": 94,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "auto(26)",
+   "swords": [
+    {
+     "guard": [
+      39.2,
+      8.5
+     ],
+     "tip": [
+      14.7,
+      1.5
+     ],
+     "blade": 34.3
+    }
+   ]
+  },
+  "arm": [
+   "blob (33, 41): 41px"
+  ],
+  "scale": 2
+ },
+ "185": {
+  "labels": [
+   "砍技1"
+  ],
+  "cape_arms": "78px to cape, chest 28, forearm 5",
+  "waist": [
+   [
+    [
+     18.8,
+     31.9
+    ],
+    [
+     78.8,
+     31.9
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 208,
+  "heads": [
+   {
+    "fc": [
+     48.8,
+     14.9
+    ],
+    "hc": [
+     46.2,
+     9.7
+    ],
+    "hair_px": 93,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "auto(27)",
+   "swords": [
+    {
+     "guard": [
+      51.0,
+      36.0
+     ],
+     "tip": [
+      84.5,
+      30.1
+     ],
+     "blade": 46.2
+    }
+   ]
+  },
+  "arm": [
+   "blob (26, 9): 23px",
+   "poly cut 101px"
+  ],
+  "scale": 2
+ },
+ "187": {
+  "labels": [
+   "砍技1"
+  ],
+  "mode": "eq(砍技1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "190": {
+  "labels": [
+   "砍技1"
+  ],
+  "mode": "eq(砍技1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "193": {
+  "labels": [
+   "砍技1"
+  ],
+  "mode": "eq(砍技1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "195": {
+  "labels": [
+   "砍技1",
+   "招1"
+  ],
+  "cape_arms": "78px to cape, chest 28, forearm 5",
+  "waist": [
+   [
+    [
+     18.8,
+     31.9
+    ],
+    [
+     78.8,
+     31.9
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     48.8,
+     14.9
+    ],
+    "hc": [
+     46.2,
+     9.7
+    ],
+    "hair_px": 93,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "auto(24)",
+   "swords": [
+    {
+     "guard": [
+      51.0,
+      36.0
+     ],
+     "tip": [
+      73.1,
+      42.3
+     ],
+     "blade": 30.8
+    }
+   ]
+  },
+  "arm": [
+   "blob (25, 9): 23px",
+   "poly cut 101px"
+  ],
+  "scale": 2
+ },
+ "197": {
+  "labels": [
+   "砍技1"
+  ],
+  "mode": "eq(砍技1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "199": {
+  "labels": [
+   "砍技1"
+  ],
+  "mode": "eq(砍技1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "201": {
+  "labels": [
+   "砍技2"
+  ],
+  "legs": [
+   "knee y=100.2 floor=107 feet=2"
+  ],
+  "cape_arms": "73px to cape, chest 13, forearm 0",
+  "waist": [
+   [
+    [
+     52.9,
+     92.1
+    ],
+    [
+     112.9,
+     92.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     82.9,
+     76.2
+    ],
+    "hc": [
+     80.2,
+     71.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(11)",
+   "swords": [
+    {
+     "guard": [
+      61.8,
+      79.8
+     ],
+     "tip": [
+      62.8,
+      107.3
+     ],
+     "blade": 27.7
+    }
+   ]
+  },
+  "arm": [
+   "blob (91, 90): 23px"
+  ],
+  "scale": 2
+ },
+ "203": {
+  "labels": [
+   "砍技2"
+  ],
+  "legs": [
+   "knee y=100.7 floor=107 feet=2"
+  ],
+  "cape_arms": "45px to cape, chest 7, forearm 20",
+  "waist": [
+   [
+    [
+     54.9,
+     92.7
+    ],
+    [
+     114.9,
+     92.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     84.9,
+     77.3
+    ],
+    "hc": [
+     82.2,
+     72.4
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(14)",
+   "swords": [
+    {
+     "guard": [
+      66.0,
+      79.5
+     ],
+     "tip": [
+      57.8,
+      102.1
+     ],
+     "blade": 29.8
+    }
+   ]
+  },
+  "arm": [
+   "blob (87, 88): 27px"
+  ],
+  "scale": 2
+ },
+ "205": {
+  "labels": [
+   "砍技2"
+  ],
+  "legs": [
+   "knee y=100.7 floor=107 feet=2"
+  ],
+  "cape_arms": "42px to cape, chest 7, forearm 10",
+  "waist": [
+   [
+    [
+     55.9,
+     93.2
+    ],
+    [
+     115.9,
+     93.2
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     85.9,
+     78.3
+    ],
+    "hc": [
+     83.2,
+     73.4
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      70.0,
+      83.5
+     ],
+     "tip": [
+      59.5,
+      103.0
+     ],
+     "blade": 27.3
+    }
+   ]
+  },
+  "arm": [
+   "blob (89, 89): 25px"
+  ],
+  "scale": 2
+ },
+ "207": {
+  "labels": [
+   "砍技2",
+   "砍技21"
+  ],
+  "cape_arms": "24px to cape, chest 2, forearm 0",
+  "waist": [
+   [
+    [
+     23.8,
+     30.5
+    ],
+    [
+     83.8,
+     30.5
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     53.8,
+     15.1
+    ],
+    "hc": [
+     49.2,
+     8.5
+    ],
+    "hair_px": 75,
+    "long_hair_px": 30
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": []
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "209": {
+  "labels": [
+   "砍技21"
+  ],
+  "legs": [
+   "knee y=99.2 floor=106 feet=1"
+  ],
+  "cape_arms": "29px to cape, chest 7, forearm 20",
+  "waist": [
+   [
+    [
+     53.0,
+     90.6
+    ],
+    [
+     113.0,
+     90.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     83.0,
+     74.2
+    ],
+    "hc": [
+     85.8,
+     69.4
+    ],
+    "hair_px": 96,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "auto(13)",
+   "swords": [
+    {
+     "guard": [
+      66.5,
+      82.5
+     ],
+     "tip": [
+      49.0,
+      87.2
+     ],
+     "blade": 24.0
+    }
+   ]
+  },
+  "arm": [
+   "blob (79, 86): 32px"
+  ],
+  "scale": 2
+ },
+ "211": {
+  "labels": [
+   "砍技21"
+  ],
+  "legs": [
+   "knee y=100.6 floor=106 feet=2"
+  ],
+  "cape_arms": "17px to cape, chest 1, forearm 0",
+  "waist": [
+   [
+    [
+     44.3,
+     89.6
+    ],
+    [
+     104.3,
+     89.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     74.3,
+     72.2
+    ],
+    "hc": [
+     71.2,
+     67.0
+    ],
+    "hair_px": 99,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      62.0,
+      77.0
+     ],
+     "tip": [
+      43.0,
+      95.0
+     ],
+     "blade": 35.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "213": {
+  "labels": [
+   "砍技21"
+  ],
+  "legs": [
+   "knee y=100.6 floor=106 feet=2"
+  ],
+  "cape_arms": "28px to cape, chest 12, forearm 9",
+  "waist": [
+   [
+    [
+     67.4,
+     93.7
+    ],
+    [
+     127.4,
+     93.7
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 1273,
+  "heads": [
+   {
+    "fc": [
+     97.4,
+     80.4
+    ],
+    "hc": [
+     94.6,
+     74.6
+    ],
+    "hair_px": 94,
+    "long_hair_px": 37
+   }
+  ],
+  "sword": {
+   "source": "auto(11)",
+   "swords": [
+    {
+     "guard": [
+      95.5,
+      95.0
+     ],
+     "tip": [
+      129.3,
+      106.0
+     ],
+     "blade": 38.3
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "217": {
+  "labels": [
+   "砍技21"
+  ],
+  "legs": [
+   "knee y=101.2 floor=107 feet=2"
+  ],
+  "cape_arms": "24px to cape, chest 3, forearm 17",
+  "waist": [
+   [
+    [
+     67.3,
+     94.3
+    ],
+    [
+     127.3,
+     94.3
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 31,
+  "heads": [
+   {
+    "fc": [
+     97.3,
+     80.6
+    ],
+    "hc": [
+     94.5,
+     75.1
+    ],
+    "hair_px": 96,
+    "long_hair_px": 35
+   }
+  ],
+  "sword": {
+   "source": "auto(28)",
+   "swords": [
+    {
+     "guard": [
+      99.5,
+      99.5
+     ],
+     "tip": [
+      127.3,
+      107.2
+     ],
+     "blade": 31.5
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "219": {
+  "labels": [
+   "砍技21"
+  ],
+  "legs": [
+   "knee y=100.6 floor=106 feet=1"
+  ],
+  "cape_arms": "7px to cape, chest 3, forearm 18",
+  "waist": [
+   [
+    [
+     67.3,
+     94.3
+    ],
+    [
+     127.3,
+     94.3
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     97.3,
+     80.7
+    ],
+    "hc": [
+     94.6,
+     75.0
+    ],
+    "hair_px": 95,
+    "long_hair_px": 37
+   }
+  ],
+  "sword": {
+   "source": "auto(28)",
+   "swords": [
+    {
+     "guard": [
+      99.5,
+      99.5
+     ],
+     "tip": [
+      129.4,
+      106.4
+     ],
+     "blade": 41.5
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "221": {
+  "labels": [
+   "砍技21"
+  ],
+  "legs": [
+   "knee y=100.6 floor=106 feet=1"
+  ],
+  "cape_arms": "7px to cape, chest 3, forearm 18",
+  "waist": [
+   [
+    [
+     67.3,
+     94.3
+    ],
+    [
+     127.3,
+     94.3
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     97.3,
+     80.7
+    ],
+    "hc": [
+     94.6,
+     75.0
+    ],
+    "hair_px": 95,
+    "long_hair_px": 37
+   }
+  ],
+  "sword": {
+   "source": "auto(28)",
+   "swords": [
+    {
+     "guard": [
+      99.5,
+      99.5
+     ],
+     "tip": [
+      129.4,
+      106.4
+     ],
+     "blade": 41.5
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "223": {
+  "labels": [
+   "砍技22",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=93.2 floor=100 feet=1"
+  ],
+  "cape_arms": "19px to cape, chest 13, forearm 0",
+  "waist": [
+   [
+    [
+     53.5,
+     85.5
+    ],
+    [
+     113.5,
+     85.5
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     83.5,
+     69.9
+    ],
+    "hc": [
+     85.8,
+     64.1
+    ],
+    "hair_px": 88,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(26)",
+   "swords": [
+    {
+     "guard": [
+      63.0,
+      76.8
+     ],
+     "tip": [
+      39.0,
+      83.6
+     ],
+     "blade": 33.6
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "225": {
+  "labels": [
+   "砍技22",
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=96.0 floor=101 feet=2"
+  ],
+  "cape_arms": "21px to cape, chest 3, forearm 0",
+  "waist": [
+   [
+    [
+     61.8,
+     84.3
+    ],
+    [
+     121.8,
+     84.3
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     91.8,
+     66.5
+    ],
+    "hc": [
+     88.2,
+     61.6
+    ],
+    "hair_px": 95,
+    "long_hair_px": 36
+   }
+  ],
+  "sword": {
+   "source": "auto(25)",
+   "swords": [
+    {
+     "guard": [
+      79.8,
+      70.9
+     ],
+     "tip": [
+      55.8,
+      77.8
+     ],
+     "blade": 33.6
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "227": {
+  "labels": [
+   "招1"
+  ],
+  "legs": [
+   "knee y=54.7 floor=61 feet=2"
+  ],
+  "cape_arms": "47px to cape, chest 0, forearm 0",
+  "waist": [
+   [
+    [
+     -10.0,
+     37.1
+    ],
+    [
+     50.0,
+     37.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     20.0,
+     12.1
+    ],
+    "hc": [
+     16.8,
+     8.3
+    ],
+    "hair_px": 121,
+    "long_hair_px": 48
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": []
+  },
+  "arm": [
+   "blob (7, 29): 4px",
+   "poly cape 15px"
+  ],
+  "scale": 2
+ },
+ "229": {
+  "labels": [
+   "招1"
+  ],
+  "legs": [
+   "knee y=45.5 floor=55 feet=2"
+  ],
+  "cape_arms": "47px to cape, chest 0, forearm 0",
+  "waist": [
+   [
+    [
+     -7.1,
+     34.1
+    ],
+    [
+     52.9,
+     34.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     22.9,
+     12.2
+    ],
+    "hc": [
+     20.4,
+     7.5
+    ],
+    "hair_px": 122,
+    "long_hair_px": 51
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": []
+  },
+  "arm": [
+   "blob (5, 19): 11px",
+   "poly cape 51px"
+  ],
+  "scale": 2
+ },
+ "231": {
+  "labels": [
+   "招1"
+  ],
+  "legs": [
+   "knee y=46.0 floor=55 feet=1"
+  ],
+  "cape_arms": "39px to cape, chest 49, forearm 0",
+  "waist": [
+   [
+    [
+     -0.8,
+     35.3
+    ],
+    [
+     59.2,
+     35.3
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     29.2,
+     14.7
+    ],
+    "hc": [
+     26.5,
+     8.8
+    ],
+    "hair_px": 93,
+    "long_hair_px": 33
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      26.0,
+      17.0
+     ],
+     "tip": [
+      52.0,
+      15.5
+     ],
+     "blade": 35.1
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "234": {
+  "labels": [
+   "招1"
+  ],
+  "mode": "eq(招1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "236": {
+  "labels": [
+   "招1"
+  ],
+  "legs": [
+   "knee y=43.5 floor=53 feet=1"
+  ],
+  "cape_arms": "63px to cape, chest 32, forearm 1",
+  "waist": [
+   [
+    [
+     5.4,
+     32.5
+    ],
+    [
+     65.4,
+     32.5
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     35.4,
+     14.9
+    ],
+    "hc": [
+     32.7,
+     9.1
+    ],
+    "hair_px": 95,
+    "long_hair_px": 34
+   }
+  ],
+  "sword": {
+   "source": "auto(27)",
+   "swords": [
+    {
+     "guard": [
+      57.5,
+      22.0
+     ],
+     "tip": [
+      85.4,
+      20.0
+     ],
+     "blade": 37.8
+    }
+   ]
+  },
+  "arm": [
+   "blob (28, 21): 107px"
+  ],
+  "scale": 2
+ },
+ "239": {
+  "labels": [
+   "招1"
+  ],
+  "mode": "eq(招1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "241": {
+  "labels": [
+   "招1"
+  ],
+  "mode": "eq(招1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "243": {
+  "labels": [
+   "招1"
+  ],
+  "mode": "eq(招1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "245": {
+  "labels": [
+   "招2"
+  ],
+  "legs": [
+   "knee y=52.2 floor=63 feet=2"
+  ],
+  "cape_arms": "33px to cape, chest 51, forearm 10",
+  "waist": [
+   [
+    [
+     15.0,
+     38.7
+    ],
+    [
+     75.0,
+     38.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     45.0,
+     13.4
+    ],
+    "hc": [
+     42.2,
+     8.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(30)",
+   "swords": [
+    {
+     "guard": [
+      20.8,
+      19.8
+     ],
+     "tip": [
+      0.5,
+      9.9
+     ],
+     "blade": 30.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "247": {
+  "labels": [
+   "招2"
+  ],
+  "legs": [
+   "knee y=54.0 floor=63 feet=1"
+  ],
+  "cape_arms": "90px to cape, chest 32, forearm 0",
+  "waist": [
+   [
+    [
+     -7.0,
+     38.7
+    ],
+    [
+     53.0,
+     38.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     23.0,
+     13.4
+    ],
+    "hc": [
+     20.2,
+     8.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(6)",
+   "swords": [
+    {
+     "guard": [
+      11.5,
+      18.0
+     ],
+     "tip": [
+      1.6,
+      19.4
+     ],
+     "blade": 19.6
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "250": {
+  "labels": [
+   "招21",
+   "开场"
+  ],
+  "legs": [
+   "knee y=52.6 floor=63 feet=2"
+  ],
+  "cape_arms": "115px to cape, chest 49, forearm 4",
+  "waist": [
+   [
+    [
+     -7.0,
+     47.0
+    ],
+    [
+     4.0,
+     47.0
+    ],
+    [
+     12.0,
+     42.0
+    ],
+    [
+     14.0,
+     39.5
+    ],
+    [
+     35.0,
+     39.5
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     19.0,
+     13.4
+    ],
+    "hc": [
+     16.2,
+     8.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(32)",
+   "swords": [
+    {
+     "guard": [
+      8.8,
+      44.5
+     ],
+     "tip": [
+      32.4,
+      52.2
+     ],
+     "blade": 33.3
+    }
+   ]
+  },
+  "arm": [
+   "poly cape 18px"
+  ],
+  "scale": 2
+ },
+ "252": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "254": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "256": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "258": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "260": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "262": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "264": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "266": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "268": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "270": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "272": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "274": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "276": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "278": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "280": {
+  "labels": [
+   "招21"
+  ],
+  "mode": "eq(招21)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "285": {
+  "labels": [
+   "招3"
+  ],
+  "legs": [
+   "knee y=79.8 floor=87 feet=2"
+  ],
+  "cape_arms": "89px to cape, chest 0, forearm 0",
+  "waist": [
+   [
+    [
+     15.6,
+     60.6
+    ],
+    [
+     75.6,
+     60.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     45.6,
+     33.2
+    ],
+    "hc": [
+     42.4,
+     28.7
+    ],
+    "hair_px": 125,
+    "long_hair_px": 49
+   }
+  ],
+  "sword": {
+   "source": "none",
+   "swords": []
+  },
+  "arm": [
+   "blob (37, 51): 15px"
+  ],
+  "scale": 2
+ },
+ "287": {
+  "labels": [
+   "招3"
+  ],
+  "legs": [
+   "knee y=76.7 floor=87 feet=2"
+  ],
+  "cape_arms": "114px to cape, chest 0, forearm 0",
+  "waist": [
+   [
+    [
+     18.5,
+     63.9
+    ],
+    [
+     78.5,
+     63.9
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     48.5,
+     39.8
+    ],
+    "hc": [
+     45.4,
+     34.7
+    ],
+    "hair_px": 119,
+    "long_hair_px": 47
+   }
+  ],
+  "sword": {
+   "source": "none",
+   "swords": []
+  },
+  "arm": [
+   "blob (32, 45): 20px"
+  ],
+  "scale": 2
+ },
+ "289": {
+  "labels": [
+   "招3"
+  ],
+  "legs": [
+   "knee y=75.2 floor=86 feet=1"
+  ],
+  "cape_arms": "132px to cape, chest 113, forearm 0",
+  "waist": [
+   [
+    [
+     13.4,
+     62.0
+    ],
+    [
+     73.4,
+     62.0
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 2630,
+  "heads": [
+   {
+    "fc": [
+     43.4,
+     37.0
+    ],
+    "hc": [
+     40.2,
+     32.1
+    ],
+    "hair_px": 95,
+    "long_hair_px": 28
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      49.0,
+      13.0
+     ],
+     "tip": [
+      71.0,
+      6.0
+     ],
+     "blade": 30.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (34, 53): 10px"
+  ],
+  "scale": 2
+ },
+ "291": {
+  "labels": [
+   "招3"
+  ],
+  "mode": "eq(招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "293": {
+  "labels": [
+   "招3"
+  ],
+  "mode": "eq(招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "295": {
+  "labels": [
+   "招3"
+  ],
+  "mode": "eq(招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "297": {
+  "labels": [
+   "招3"
+  ],
+  "mode": "eq(招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "299": {
+  "labels": [
+   "招3"
+  ],
+  "mode": "eq(招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "301": {
+  "labels": [
+   "招3"
+  ],
+  "mode": "eq(招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "303": {
+  "labels": [
+   "招3"
+  ],
+  "mode": "eq(招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "305": {
+  "labels": [
+   "招3"
+  ],
+  "mode": "eq(招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "307": {
+  "labels": [
+   "招3"
+  ],
+  "mode": "eq(招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "309": {
+  "labels": [
+   "招3"
+  ],
+  "mode": "eq(招3)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "312": {
+  "labels": [
+   "招3"
+  ],
+  "legs": [
+   "knee y=74.7 floor=85 feet=1"
+  ],
+  "cape_arms": "148px to cape, chest 121, forearm 0",
+  "waist": [
+   [
+    [
+     13.2,
+     61.6
+    ],
+    [
+     73.2,
+     61.6
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 1627,
+  "heads": [
+   {
+    "fc": [
+     43.2,
+     37.3
+    ],
+    "hc": [
+     40.2,
+     32.1
+    ],
+    "hair_px": 98,
+    "long_hair_px": 30
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      49.0,
+      13.0
+     ],
+     "tip": [
+      71.0,
+      6.0
+     ],
+     "blade": 30.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (34, 53): 7px"
+  ],
+  "scale": 2
+ },
+ "314": {
+  "labels": [
+   "招3"
+  ],
+  "legs": [
+   "knee y=75.2 floor=86 feet=1"
+  ],
+  "cape_arms": "132px to cape, chest 113, forearm 0",
+  "waist": [
+   [
+    [
+     13.4,
+     62.0
+    ],
+    [
+     73.4,
+     62.0
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 158,
+  "heads": [
+   {
+    "fc": [
+     43.4,
+     37.0
+    ],
+    "hc": [
+     40.2,
+     32.1
+    ],
+    "hair_px": 95,
+    "long_hair_px": 28
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      49.0,
+      13.0
+     ],
+     "tip": [
+      71.0,
+      6.0
+     ],
+     "blade": 30.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (34, 53): 10px"
+  ],
+  "scale": 2
+ },
+ "316": {
+  "labels": [
+   "招3"
+  ],
+  "legs": [
+   "knee y=74.7 floor=85 feet=1"
+  ],
+  "cape_arms": "148px to cape, chest 121, forearm 0",
+  "waist": [
+   [
+    [
+     13.2,
+     61.6
+    ],
+    [
+     73.2,
+     61.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     43.2,
+     37.3
+    ],
+    "hc": [
+     40.2,
+     32.1
+    ],
+    "hair_px": 98,
+    "long_hair_px": 30
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      49.0,
+      13.0
+     ],
+     "tip": [
+      71.0,
+      6.0
+     ],
+     "blade": 30.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (34, 53): 7px"
+  ],
+  "scale": 2
+ },
+ "318": {
+  "labels": [
+   "招3"
+  ],
+  "legs": [
+   "knee y=74.7 floor=85 feet=1"
+  ],
+  "cape_arms": "148px to cape, chest 121, forearm 0",
+  "waist": [
+   [
+    [
+     13.2,
+     61.6
+    ],
+    [
+     73.2,
+     61.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     43.2,
+     37.3
+    ],
+    "hc": [
+     40.2,
+     32.1
+    ],
+    "hair_px": 98,
+    "long_hair_px": 30
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      49.0,
+      13.0
+     ],
+     "tip": [
+      71.0,
+      6.0
+     ],
+     "blade": 30.9
+    }
+   ]
+  },
+  "arm": [
+   "blob (34, 53): 7px"
+  ],
+  "scale": 2
+ },
+ "320": {
+  "labels": [
+   "必杀"
+  ],
+  "legs": [
+   "knee y=98.2 floor=105 feet=2"
+  ],
+  "cape_arms": "32px to cape, chest 7, forearm 16",
+  "waist": [
+   [
+    [
+     21.6,
+     90.1
+    ],
+    [
+     81.6,
+     90.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     51.6,
+     74.2
+    ],
+    "hc": [
+     50.4,
+     69.1
+    ],
+    "hair_px": 81,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "auto(19)",
+   "swords": [
+    {
+     "guard": [
+      31.5,
+      69.0
+     ],
+     "tip": [
+      17.0,
+      78.8
+     ],
+     "blade": 23.1
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "322": {
+  "labels": [
+   "必杀"
+  ],
+  "legs": [
+   "knee y=98.7 floor=105 feet=2"
+  ],
+  "cape_arms": "91px to cape, chest 7, forearm 0",
+  "waist": [
+   [
+    [
+     28.4,
+     90.7
+    ],
+    [
+     88.4,
+     90.7
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 2560,
+  "heads": [
+   {
+    "fc": [
+     58.4,
+     75.3
+    ],
+    "hc": [
+     55.5,
+     69.8
+    ],
+    "hair_px": 96,
+    "long_hair_px": 34
+   }
+  ],
+  "sword": {
+   "source": "none",
+   "swords": []
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "324": {
+  "labels": [
+   "必杀"
+  ],
+  "mode": "eq(必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "327": {
+  "labels": [
+   "必杀"
+  ],
+  "legs": [
+   "knee y=93.5 floor=98 feet=1"
+  ],
+  "cape_arms": "10px to cape, chest 12, forearm 14",
+  "waist": [
+   [
+    [
+     22.9,
+     88.1
+    ],
+    [
+     82.9,
+     88.1
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 2997,
+  "heads": [
+   {
+    "fc": [
+     52.9,
+     77.2
+    ],
+    "hc": [
+     50.2,
+     72.1
+    ],
+    "hair_px": 94,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(7)",
+   "swords": [
+    {
+     "guard": [
+      35.0,
+      90.0
+     ],
+     "tip": [
+      20.6,
+      88.0
+     ],
+     "blade": 19.6
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "329": {
+  "labels": [
+   "必杀"
+  ],
+  "mode": "eq(必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "331": {
+  "labels": [
+   "必杀"
+  ],
+  "legs": [
+   "knee y=96.6 floor=102 feet=1"
+  ],
+  "cape_arms": "26px to cape, chest 17, forearm 0",
+  "waist": [
+   [
+    [
+     22.9,
+     90.1
+    ],
+    [
+     82.9,
+     90.1
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 1614,
+  "heads": [
+   {
+    "fc": [
+     52.9,
+     77.2
+    ],
+    "hc": [
+     50.2,
+     72.1
+    ],
+    "hair_px": 94,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(9)",
+   "swords": [
+    {
+     "guard": [
+      35.0,
+      90.7
+     ],
+     "tip": [
+      21.9,
+      87.4
+     ],
+     "blade": 19.6
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "333": {
+  "labels": [
+   "必杀"
+  ],
+  "mode": "eq(必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "335": {
+  "labels": [
+   "必杀"
+  ],
+  "mode": "eq(必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "337": {
+  "labels": [
+   "必杀"
+  ],
+  "legs": [
+   "no feet"
+  ],
+  "cape_arms": "56px to cape, chest 29, forearm 0",
+  "waist": [
+   [
+    [
+     22.9,
+     98.6
+    ],
+    [
+     82.9,
+     98.6
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 538,
+  "heads": [
+   {
+    "fc": [
+     52.9,
+     77.2
+    ],
+    "hc": [
+     50.4,
+     72.3
+    ],
+    "hair_px": 85,
+    "long_hair_px": 15
+   }
+  ],
+  "sword": {
+   "source": "auto(10)",
+   "swords": [
+    {
+     "guard": [
+      34.1,
+      89.2
+     ],
+     "tip": [
+      27.6,
+      107.1
+     ],
+     "blade": 19.5
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "339": {
+  "labels": [
+   "必杀"
+  ],
+  "mode": "eq(必杀)",
+  "kind": "effect",
+  "scale": 1
+ },
+ "341": {
+  "labels": [
+   "必杀"
+  ],
+  "legs": [
+   "knee y=100.7 floor=107 feet=2"
+  ],
+  "cape_arms": "35px to cape, chest 17, forearm 21",
+  "waist": [
+   [
+    [
+     22.9,
+     92.6
+    ],
+    [
+     82.9,
+     92.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     52.9,
+     77.2
+    ],
+    "hc": [
+     50.2,
+     72.1
+    ],
+    "hair_px": 94,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(19)",
+   "swords": [
+    {
+     "guard": [
+      34.7,
+      90.4
+     ],
+     "tip": [
+      19.8,
+      103.8
+     ],
+     "blade": 25.7
+    }
+   ]
+  },
+  "arm": [
+   "blob (44, 88): 26px"
+  ],
+  "scale": 2
+ },
+ "344": {
+  "labels": [
+   "必杀"
+  ],
+  "legs": [
+   "knee y=100.7 floor=107 feet=2"
+  ],
+  "cape_arms": "35px to cape, chest 17, forearm 21",
+  "waist": [
+   [
+    [
+     22.9,
+     92.6
+    ],
+    [
+     82.9,
+     92.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     52.9,
+     77.2
+    ],
+    "hc": [
+     50.2,
+     72.1
+    ],
+    "hair_px": 94,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(19)",
+   "swords": [
+    {
+     "guard": [
+      34.7,
+      90.4
+     ],
+     "tip": [
+      19.8,
+      103.8
+     ],
+     "blade": 25.7
+    }
+   ]
+  },
+  "arm": [
+   "blob (44, 88): 26px"
+  ],
+  "scale": 2
+ },
+ "346": {
+  "labels": [
+   "必杀"
+  ],
+  "mode": "eq(必杀)",
+  "kind": "effect",
+  "scale": 1
+ },
+ "349": {
+  "labels": [
+   "上必杀"
+  ],
+  "cape_arms": "85px to cape, chest 17, forearm 25",
+  "waist": [
+   [
+    [
+     7.9,
+     30.6
+    ],
+    [
+     67.9,
+     30.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     37.9,
+     13.2
+    ],
+    "hc": [
+     35.2,
+     8.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      17.0,
+      21.0
+     ],
+     "tip": [
+      2.0,
+      37.0
+     ],
+     "blade": 29.3
+    }
+   ]
+  },
+  "arm": [
+   "blob (45, 26): 35px"
+  ],
+  "scale": 2
+ },
+ "351": {
+  "labels": [
+   "上必杀"
+  ],
+  "cape_arms": "26px to cape, chest 31, forearm 0",
+  "waist": [
+   [
+    [
+     7.1,
+     30.5
+    ],
+    [
+     67.1,
+     30.5
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     37.1,
+     14.0
+    ],
+    "hc": [
+     33.9,
+     8.7
+    ],
+    "hair_px": 105,
+    "long_hair_px": 33
+   }
+  ],
+  "sword": {
+   "source": "auto(16)",
+   "swords": [
+    {
+     "guard": [
+      26.0,
+      24.0
+     ],
+     "tip": [
+      5.9,
+      43.5
+     ],
+     "blade": 37.8
+    }
+   ]
+  },
+  "arm": [
+   "blob (41, 25): 21px"
+  ],
+  "scale": 2
+ },
+ "353": {
+  "labels": [
+   "上必杀"
+  ],
+  "cape_arms": "90px to cape, chest 39, forearm 22",
+  "waist": [
+   [
+    [
+     -0.1,
+     36.1
+    ],
+    [
+     59.9,
+     36.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     29.9,
+     13.2
+    ],
+    "hc": [
+     27.2,
+     8.4
+    ],
+    "hair_px": 95,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      11.0,
+      21.0
+     ],
+     "tip": [
+      28.0,
+      30.0
+     ],
+     "blade": 25.5
+    }
+   ]
+  },
+  "arm": [
+   "blob (41, 28): 38px"
+  ],
+  "scale": 2
+ },
+ "355": {
+  "labels": [
+   "上必杀"
+  ],
+  "cape_arms": "53px to cape, chest 34, forearm 0",
+  "waist": [
+   [
+    [
+     12.5,
+     55.2
+    ],
+    [
+     72.5,
+     55.2
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 1115,
+  "heads": [
+   {
+    "fc": [
+     42.5,
+     34.4
+    ],
+    "hc": [
+     40.3,
+     31.5
+    ],
+    "hair_px": 112,
+    "long_hair_px": 22
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": []
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "357": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "359": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "361": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "363": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "365": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "367": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "369": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "371": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "373": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "375": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "377": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "379": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "381": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "383": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "385": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "387": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "389": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "391": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "393": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "395": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "397": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "399": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "401": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "403": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "405": {
+  "labels": [
+   "上必杀",
+   "超必杀1"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "408": {
+  "labels": [
+   "上必杀"
+  ],
+  "cape_arms": "117px to cape, chest 49, forearm 0",
+  "waist": [
+   [
+    [
+     17.4,
+     56.0
+    ],
+    [
+     77.4,
+     56.0
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 1272,
+  "heads": [
+   {
+    "fc": [
+     47.4,
+     31.1
+    ],
+    "hc": [
+     44.6,
+     26.9
+    ],
+    "hair_px": 109,
+    "long_hair_px": 29
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": []
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "410": {
+  "labels": [
+   "上必杀"
+  ],
+  "cape_arms": "74px to cape, chest 50, forearm 0",
+  "waist": [
+   [
+    [
+     18.5,
+     53.2
+    ],
+    [
+     78.5,
+     53.2
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 1193,
+  "heads": [
+   {
+    "fc": [
+     48.5,
+     28.4
+    ],
+    "hc": [
+     46.3,
+     25.5
+    ],
+    "hair_px": 112,
+    "long_hair_px": 22
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": []
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "412": {
+  "labels": [
+   "上必杀"
+  ],
+  "cape_arms": "69px to cape, chest 8, forearm 0",
+  "waist": [
+   [
+    [
+     15.4,
+     56.0
+    ],
+    [
+     75.4,
+     56.0
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 1437,
+  "heads": [
+   {
+    "fc": [
+     45.4,
+     35.1
+    ],
+    "hc": [
+     42.6,
+     30.8
+    ],
+    "hair_px": 108,
+    "long_hair_px": 29
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": []
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "414": {
+  "labels": [
+   "上必杀"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "416": {
+  "labels": [
+   "上必杀"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "418": {
+  "labels": [
+   "上必杀"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "420": {
+  "labels": [
+   "上必杀"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "422": {
+  "labels": [
+   "上必杀"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "424": {
+  "labels": [
+   "上必杀"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "426": {
+  "labels": [
+   "上必杀"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "428": {
+  "labels": [
+   "上必杀"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "430": {
+  "labels": [
+   "上必杀"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "432": {
+  "labels": [
+   "上必杀"
+  ],
+  "mode": "eq(上必杀)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "435": {
+  "labels": [
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=67.3 floor=75 feet=2"
+  ],
+  "cape_arms": "89px to cape, chest 16, forearm 0",
+  "waist": [
+   [
+    [
+     8.8,
+     57.9
+    ],
+    [
+     68.8,
+     57.9
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 1023,
+  "heads": [
+   {
+    "fc": [
+     38.8,
+     40.9
+    ],
+    "hc": [
+     36.2,
+     35.7
+    ],
+    "hair_px": 95,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "auto(8)",
+   "swords": [
+    {
+     "guard": [
+      46.0,
+      61.5
+     ],
+     "tip": [
+      68.2,
+      51.9
+     ],
+     "blade": 32.5
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "437": {
+  "labels": [
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=41.4 floor=49 feet=2"
+  ],
+  "cape_arms": "90px to cape, chest 17, forearm 0",
+  "waist": [
+   [
+    [
+     8.7,
+     32.0
+    ],
+    [
+     68.7,
+     32.0
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 289,
+  "heads": [
+   {
+    "fc": [
+     38.7,
+     14.9
+    ],
+    "hc": [
+     36.2,
+     9.8
+    ],
+    "hair_px": 92,
+    "long_hair_px": 26
+   }
+  ],
+  "sword": {
+   "source": "auto(24)",
+   "swords": [
+    {
+     "guard": [
+      43.5,
+      38.0
+     ],
+     "tip": [
+      79.1,
+      33.0
+     ],
+     "blade": 49.0
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "439": {
+  "labels": [
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=41.4 floor=49 feet=2"
+  ],
+  "cape_arms": "80px to cape, chest 14, forearm 11",
+  "waist": [
+   [
+    [
+     7.8,
+     31.9
+    ],
+    [
+     67.8,
+     31.9
+    ]
+   ]
+  ],
+  "kind": "combined",
+  "trail_px": 93,
+  "heads": [
+   {
+    "fc": [
+     37.8,
+     14.9
+    ],
+    "hc": [
+     35.2,
+     9.7
+    ],
+    "hair_px": 97,
+    "long_hair_px": 28
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      42.0,
+      36.0
+     ],
+     "tip": [
+      70.0,
+      47.0
+     ],
+     "blade": 37.8
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "441": {
+  "labels": [
+   "超必杀1"
+  ],
+  "kind": "character",
+  "drawn": "haki release pose (procedural)",
+  "phase": 0.0,
+  "offset_err": 0.2,
+  "scale": 2
+ },
+ "443": {
+  "labels": [
+   "超必杀1"
+  ],
+  "kind": "character",
+  "drawn": "haki release pose (procedural)",
+  "phase": 1.0,
+  "offset_err": 0.2,
+  "scale": 2
+ },
+ "445": {
+  "labels": [
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=68.2 floor=75 feet=2"
+  ],
+  "cape_arms": "41px to cape, chest 12, forearm 0",
+  "waist": [
+   [
+    [
+     5.7,
+     60.4
+    ],
+    [
+     65.7,
+     60.4
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     35.7,
+     44.8
+    ],
+    "hc": [
+     33.0,
+     39.2
+    ],
+    "hair_px": 90,
+    "long_hair_px": 23
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      30.0,
+      63.0
+     ],
+     "tip": [
+      52.0,
+      38.0
+     ],
+     "blade": 45.2
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "447": {
+  "labels": [
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=68.7 floor=75 feet=2"
+  ],
+  "cape_arms": "3px to cape, chest 22, forearm 2",
+  "waist": [
+   [
+    [
+     7.5,
+     59.3
+    ],
+    [
+     67.5,
+     59.3
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     37.5,
+     42.6
+    ],
+    "hc": [
+     34.9,
+     37.5
+    ],
+    "hair_px": 95,
+    "long_hair_px": 19
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      47.0,
+      41.0
+     ],
+     "tip": [
+      70.0,
+      23.0
+     ],
+     "blade": 39.5
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "449": {
+  "labels": [
+   "超必杀1"
+  ],
+  "mode": "eq(超必杀1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "451": {
+  "labels": [
+   "超必杀1"
+  ],
+  "mode": "eq(超必杀1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "453": {
+  "labels": [
+   "超必杀1"
+  ],
+  "mode": "eq(超必杀1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "455": {
+  "labels": [
+   "超必杀1"
+  ],
+  "mode": "eq(超必杀1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "457": {
+  "labels": [
+   "超必杀1"
+  ],
+  "mode": "eq(超必杀1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "459": {
+  "labels": [
+   "超必杀1"
+  ],
+  "mode": "eq(超必杀1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "461": {
+  "labels": [
+   "超必杀1"
+  ],
+  "mode": "eq(超必杀1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "463": {
+  "labels": [
+   "超必杀1"
+  ],
+  "mode": "eq(超必杀1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "465": {
+  "labels": [
+   "超必杀1"
+  ],
+  "mode": "eq(超必杀1)",
+  "kind": "effect",
+  "scale": 2
+ },
+ "469": {
+  "labels": [
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=67.3 floor=75 feet=2"
+  ],
+  "cape_arms": "58px to cape, chest 36, forearm 0",
+  "waist": [
+   [
+    [
+     6.6,
+     57.9
+    ],
+    [
+     66.6,
+     57.9
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     36.6,
+     39.8
+    ],
+    "hc": [
+     34.0,
+     35.7
+    ],
+    "hair_px": 106,
+    "long_hair_px": 18
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      47.0,
+      42.0
+     ],
+     "tip": [
+      60.0,
+      26.0
+     ],
+     "blade": 27.5
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "471": {
+  "labels": [
+   "超必杀1"
+  ],
+  "legs": [
+   "knee y=67.3 floor=75 feet=2"
+  ],
+  "cape_arms": "32px to cape, chest 47, forearm 1",
+  "waist": [
+   [
+    [
+     5.0,
+     57.6
+    ],
+    [
+     65.0,
+     57.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     35.0,
+     39.2
+    ],
+    "hc": [
+     32.2,
+     34.5
+    ],
+    "hair_px": 96,
+    "long_hair_px": 26
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      41.0,
+      53.0
+     ],
+     "tip": [
+      57.0,
+      37.0
+     ],
+     "blade": 30.3
+    }
+   ]
+  },
+  "arm": [
+   "blob (32, 53): 18px"
+  ],
+  "scale": 2
+ },
+ "474": {
+  "labels": [
+   "招换",
+   "胜利"
+  ],
+  "legs": [
+   "knee y=70.2 floor=81 feet=2",
+   "knee y=70.7 floor=81 feet=3",
+   "knee y=70.7 floor=81 feet=2"
+  ],
+  "cape_arms": "144px to cape, chest 145, forearm 27",
+  "waist": [
+   [
+    [
+     -2.0,
+     65.0
+    ],
+    [
+     9.0,
+     65.0
+    ],
+    [
+     17.0,
+     60.0
+    ],
+    [
+     19.0,
+     57.5
+    ],
+    [
+     40.0,
+     57.5
+    ]
+   ],
+   [
+    [
+     53.0,
+     56.7
+    ],
+    [
+     113.0,
+     56.7
+    ]
+   ],
+   [
+    [
+     96.0,
+     56.7
+    ],
+    [
+     156.0,
+     56.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     24.0,
+     31.4
+    ],
+    "hc": [
+     21.2,
+     26.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   },
+   {
+    "fc": [
+     83.0,
+     31.4
+    ],
+    "hc": [
+     80.2,
+     26.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   },
+   {
+    "fc": [
+     126.0,
+     31.4
+    ],
+    "hc": [
+     123.2,
+     26.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      10.5,
+      62.5
+     ],
+     "tip": [
+      35.0,
+      68.5
+     ],
+     "blade": 33.9
+    },
+    {
+     "guard": [
+      59.5,
+      36.5
+     ],
+     "tip": [
+      38.0,
+      27.5
+     ],
+     "blade": 31.2
+    },
+    {
+     "guard": [
+      114.0,
+      35.5
+     ],
+     "tip": [
+      144.0,
+      37.0
+     ],
+     "blade": 40.7
+    }
+   ]
+  },
+  "arm": [
+   "poly cape 18px",
+   "poly cape 18px",
+   "poly cape 18px"
+  ],
+  "scale": 2
+ },
+ "477": {
+  "labels": [
+   "防御"
+  ],
+  "legs": [
+   "knee y=70.2 floor=81 feet=2"
+  ],
+  "cape_arms": "21px to cape, chest 30, forearm 4",
+  "waist": [
+   [
+    [
+     21.0,
+     56.7
+    ],
+    [
+     81.0,
+     56.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     51.0,
+     31.4
+    ],
+    "hc": [
+     48.2,
+     26.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(37)",
+   "swords": [
+    {
+     "guard": [
+      46.9,
+      44.9
+     ],
+     "tip": [
+      59.2,
+      80.2
+     ],
+     "blade": 38.8
+    }
+   ]
+  },
+  "arm": [
+   "blob (51, 43): 35px"
+  ],
+  "scale": 2
+ },
+ "479": {
+  "labels": [
+   "防御2"
+  ],
+  "legs": [
+   "knee y=70.2 floor=81 feet=2"
+  ],
+  "cape_arms": "43px to cape, chest 46, forearm 0",
+  "waist": [
+   [
+    [
+     21.0,
+     56.6
+    ],
+    [
+     81.0,
+     56.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     51.0,
+     31.1
+    ],
+    "hc": [
+     48.2,
+     26.5
+    ],
+    "hair_px": 97,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(26)",
+   "swords": [
+    {
+     "guard": [
+      59.0,
+      40.9
+     ],
+     "tip": [
+      65.3,
+      66.1
+     ],
+     "blade": 35.0
+    }
+   ]
+  },
+  "arm": [
+   "blob (52, 44): 21px"
+  ],
+  "scale": 2
+ },
+ "481": {
+  "labels": [
+   "防御2",
+   "防住"
+  ],
+  "legs": [
+   "knee y=70.2 floor=81 feet=2"
+  ],
+  "cape_arms": "43px to cape, chest 46, forearm 0",
+  "waist": [
+   [
+    [
+     21.0,
+     56.6
+    ],
+    [
+     81.0,
+     56.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     51.0,
+     31.1
+    ],
+    "hc": [
+     48.2,
+     26.5
+    ],
+    "hair_px": 97,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(26)",
+   "swords": [
+    {
+     "guard": [
+      59.0,
+      40.9
+     ],
+     "tip": [
+      65.3,
+      66.1
+     ],
+     "blade": 35.0
+    }
+   ]
+  },
+  "arm": [
+   "blob (52, 44): 21px"
+  ],
+  "scale": 2
+ },
+ "483": {
+  "labels": [
+   "被打"
+  ],
+  "cape_arms": "72px to cape, chest 6, forearm 20",
+  "waist": [
+   [
+    [
+     -10.9,
+     29.1
+    ],
+    [
+     49.1,
+     29.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     19.1,
+     13.3
+    ],
+    "hc": [
+     21.8,
+     8.1
+    ],
+    "hair_px": 93,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(14)",
+   "swords": [
+    {
+     "guard": [
+      5.2,
+      30.4
+     ],
+     "tip": [
+      8.5,
+      43.5
+     ],
+     "blade": 19.6
+    }
+   ]
+  },
+  "arm": [
+   "blob (37, 23): 24px"
+  ],
+  "scale": 2
+ },
+ "485": {
+  "labels": [
+   "被打"
+  ],
+  "cape_arms": "43px to cape, chest 12, forearm 28",
+  "waist": [
+   [
+    [
+     -6.2,
+     27.2
+    ],
+    [
+     53.8,
+     27.2
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     23.8,
+     13.4
+    ],
+    "hc": [
+     21.2,
+     8.1
+    ],
+    "hair_px": 91,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      15.0,
+      30.0
+     ],
+     "tip": [
+      34.0,
+      40.0
+     ],
+     "blade": 28.7
+    }
+   ]
+  },
+  "arm": [
+   "blob (34, 22): 20px"
+  ],
+  "scale": 2
+ },
+ "487": {
+  "labels": [
+   "被打"
+  ],
+  "cape_arms": "54px to cape, chest 17, forearm 20",
+  "waist": [
+   [
+    [
+     -9.9,
+     28.6
+    ],
+    [
+     50.1,
+     28.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     20.1,
+     13.2
+    ],
+    "hc": [
+     22.8,
+     8.1
+    ],
+    "hair_px": 95,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      7.0,
+      27.0
+     ],
+     "tip": [
+      24.0,
+      40.0
+     ],
+     "blade": 28.6
+    }
+   ]
+  },
+  "arm": [
+   "blob (33, 31): 8px"
+  ],
+  "scale": 2
+ },
+ "489": {
+  "labels": [
+   "击飞"
+  ],
+  "cape_arms": "53px to cape, chest 2, forearm 0",
+  "waist": [
+   [
+    [
+     24.0,
+     0.0
+    ],
+    [
+     34.0,
+     40.0
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     14.3,
+     5.6
+    ],
+    "hc": [
+     8.8,
+     8.5
+    ],
+    "hair_px": 88,
+    "long_hair_px": 21
+   }
+  ],
+  "sword": {
+   "source": "auto(18)",
+   "swords": [
+    {
+     "guard": [
+      24.3,
+      27.4
+     ],
+     "tip": [
+      36.1,
+      39.7
+     ],
+     "blade": 22.4
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "492": {
+  "labels": [
+   "击落地"
+  ],
+  "cape_arms": "28px to cape, chest 36, forearm 0",
+  "waist": [
+   [
+    [
+     42.5,
+     37.7
+    ],
+    [
+     53.5,
+     54.4
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     33.4,
+     59.0
+    ],
+    "hc": [
+     29.0,
+     62.6
+    ],
+    "hair_px": 91,
+    "long_hair_px": 22
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": []
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "494": {
+  "labels": [
+   "击落地"
+  ],
+  "cape_arms": "7px to cape, chest 0, forearm 0",
+  "waist": [
+   [
+    [
+     51.0,
+     46.0
+    ],
+    [
+     51.0,
+     70.0
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     35.2,
+     59.3
+    ],
+    "hc": [
+     29.3,
+     62.2
+    ],
+    "hair_px": 82,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": []
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "496": {
+  "labels": [
+   "击落地"
+  ],
+  "cape_arms": "7px to cape, chest 0, forearm 0",
+  "waist": [
+   [
+    [
+     51.0,
+     46.0
+    ],
+    [
+     51.0,
+     70.0
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     35.2,
+     59.3
+    ],
+    "hc": [
+     29.3,
+     62.2
+    ],
+    "hair_px": 82,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": []
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "498": {
+  "labels": [
+   "击落地",
+   "起身"
+  ],
+  "legs": [
+   "knee y=64.2 floor=71 feet=2"
+  ],
+  "cape_arms": "53px to cape, chest 40, forearm 22",
+  "waist": [
+   [
+    [
+     20.0,
+     55.6
+    ],
+    [
+     80.0,
+     55.6
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     50.0,
+     39.2
+    ],
+    "hc": [
+     47.2,
+     34.1
+    ],
+    "hair_px": 95,
+    "long_hair_px": 26
+   }
+  ],
+  "sword": {
+   "source": "auto(9)",
+   "swords": [
+    {
+     "guard": [
+      32.6,
+      52.4
+     ],
+     "tip": [
+      39.4,
+      71.2
+     ],
+     "blade": 20.3
+    }
+   ]
+  },
+  "arm": [
+   "blob (62, 48): 16px"
+  ],
+  "scale": 2
+ },
+ "500": {
+  "labels": [
+   "击落地",
+   "起身",
+   "失败"
+  ],
+  "legs": [
+   "knee y=68.0 floor=73 feet=3"
+  ],
+  "cape_arms": "93px to cape, chest 11, forearm 0",
+  "waist": [
+   [
+    [
+     29.8,
+     62.1
+    ],
+    [
+     89.8,
+     62.1
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     59.8,
+     50.3
+    ],
+    "hc": [
+     57.2,
+     45.1
+    ],
+    "hair_px": 92,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(12)",
+   "swords": [
+    {
+     "guard": [
+      40.8,
+      41.8
+     ],
+     "tip": [
+      30.0,
+      62.1
+     ],
+     "blade": 30.8
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "502": {
+  "labels": [
+   "击落地",
+   "起身"
+  ],
+  "legs": [
+   "knee y=66.6 floor=72 feet=2"
+  ],
+  "cape_arms": "59px to cape, chest 13, forearm 24",
+  "waist": [
+   [
+    [
+     22.9,
+     59.7
+    ],
+    [
+     82.9,
+     59.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     52.9,
+     46.3
+    ],
+    "hc": [
+     50.2,
+     41.1
+    ],
+    "hair_px": 94,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      33.0,
+      52.0
+     ],
+     "tip": [
+      20.0,
+      47.0
+     ],
+     "blade": 19.6
+    }
+   ]
+  },
+  "arm": [
+   "blob (62, 58): 21px"
+  ],
+  "scale": 2
+ },
+ "504": {
+  "labels": [
+   "击落地",
+   "起身"
+  ],
+  "legs": [
+   "knee y=66.6 floor=72 feet=2"
+  ],
+  "cape_arms": "59px to cape, chest 13, forearm 24",
+  "waist": [
+   [
+    [
+     22.9,
+     59.7
+    ],
+    [
+     82.9,
+     59.7
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     52.9,
+     46.3
+    ],
+    "hc": [
+     50.2,
+     41.1
+    ],
+    "hair_px": 94,
+    "long_hair_px": 27
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": [
+    {
+     "guard": [
+      33.0,
+      52.0
+     ],
+     "tip": [
+      20.0,
+      47.0
+     ],
+     "blade": 19.6
+    }
+   ]
+  },
+  "arm": [
+   "blob (62, 58): 21px"
+  ],
+  "scale": 2
+ },
+ "507": {
+  "labels": [
+   "开场"
+  ],
+  "legs": [
+   "knee y=52.6 floor=63 feet=2"
+  ],
+  "cape_arms": "116px to cape, chest 49, forearm 0",
+  "waist": [
+   [
+    [
+     -10.0,
+     47.0
+    ],
+    [
+     1.0,
+     47.0
+    ],
+    [
+     9.0,
+     42.0
+    ],
+    [
+     11.0,
+     39.5
+    ],
+    [
+     32.0,
+     39.5
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     16.0,
+     13.4
+    ],
+    "hc": [
+     13.2,
+     8.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "annotated",
+   "swords": []
+  },
+  "arm": [
+   "poly cape 18px"
+  ],
+  "scale": 2
+ },
+ "509": {
+  "labels": [
+   "开场"
+  ],
+  "legs": [
+   "knee y=52.2 floor=63 feet=2"
+  ],
+  "cape_arms": "44px to cape, chest 57, forearm 0",
+  "waist": [
+   [
+    [
+     -11.0,
+     46.7
+    ],
+    [
+     0.0,
+     46.7
+    ],
+    [
+     8.0,
+     41.7
+    ],
+    [
+     10.0,
+     39.2
+    ],
+    [
+     31.0,
+     39.2
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     15.0,
+     13.1
+    ],
+    "hc": [
+     12.2,
+     8.5
+    ],
+    "hair_px": 97,
+    "long_hair_px": 25
+   }
+  ],
+  "sword": {
+   "source": "auto(26)",
+   "swords": [
+    {
+     "guard": [
+      23.0,
+      22.9
+     ],
+     "tip": [
+      29.3,
+      48.1
+     ],
+     "blade": 35.0
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ },
+ "511": {
+  "labels": [
+   "开场"
+  ],
+  "legs": [
+   "knee y=52.6 floor=63 feet=2"
+  ],
+  "cape_arms": "29px to cape, chest 70, forearm 0",
+  "waist": [
+   [
+    [
+     -11.0,
+     47.0
+    ],
+    [
+     0.0,
+     47.0
+    ],
+    [
+     8.0,
+     42.0
+    ],
+    [
+     10.0,
+     39.5
+    ],
+    [
+     31.0,
+     39.5
+    ]
+   ]
+  ],
+  "kind": "character",
+  "trail_px": 0,
+  "heads": [
+   {
+    "fc": [
+     15.0,
+     13.4
+    ],
+    "hc": [
+     12.2,
+     8.5
+    ],
+    "hair_px": 93,
+    "long_hair_px": 24
+   }
+  ],
+  "sword": {
+   "source": "auto(34)",
+   "swords": [
+    {
+     "guard": [
+      19.5,
+      26.0
+     ],
+     "tip": [
+      43.2,
+      32.7
+     ],
+     "blade": 33.1
+    }
+   ]
+  },
+  "arm": [
+   "none"
+  ],
+  "scale": 2
+ }
+}
