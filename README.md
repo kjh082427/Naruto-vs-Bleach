@@ -1,6 +1,6 @@
 # 블리치 VS 나루토 VS 원피스 2.6 한글판
 
-## ▶ [지금 플레이하기](https://kjh082427.github.io/Naruto-vs-Bleach/)
+## ▶ [플레이](https://kjh082427.github.io/Naruto-vs-Bleach/)
 
 [![전투 화면 — 클릭하면 게임이 실행됩니다](https://raw.githubusercontent.com/kjh082427/Naruto-vs-Bleach/main/docs/screenshots/battle.jpg)](https://kjh082427.github.io/Naruto-vs-Bleach/)
 
