@@ -6,7 +6,8 @@ Inputs  game/fighter/yihu.swf            base fighter (form 2 = Bankai, sprite 1
         work/mihawk/sprites/<id>.png      reskinned bitmaps (work/mihawk/render_sprites.py)
         work/mihawk/sprites_purple/<id>.png  violet-trail copies of the 跳招2 bitmaps, used by the grounded S+J
         work/mihawk/voices.json, silence.mp3  Ichigo's voice clips (spectrogram-classified) are replaced by silence
-Moves   J 砍1→砍2→砍3→砍4→砍5→砍1 (砍4/砍5 are new labels composed from 招3 / 上必杀 frames)
+Moves   J 砍1→砍2→砍3; hidden J J J then W+J W+J (within 1 s) → 砍4→砍5 (new labels composed from 招3 / 上必杀
+        frames); J after 砍5 → 砍1
         W+J 砍技2, S+J 冲砍 (new, grounded 跳招2), U 招1→招12, W+U 砍技1 (launcher), S+U 招2 (short dash slash),
         air U / air S+U 跳招→跳招2 (plunge + blue landing slash), I and W+I 必杀, S+I 超必杀, O 招换; 万解 disabled.
 New labels are appended to sprite 1180 by copying source frame ranges: each part first restores the source's
@@ -42,15 +43,18 @@ def move(k):
     return f'if(_root.zhanting == false)\n{{\n   _parent._x += {DIR} * Math.round(speed * {k});\n}}\n'
 
 
-def chain(label):
-    return f'if({LIVE})\n{{\n   if({JPRESS})\n   {{\n      gotoAndPlay("{label}");\n   }}\n}}\n'
+WJPRESS = '(_parent.useAI ? attran < 110 : kis(斩) && kis(上))'  # W+J
+
+
+def chain(label, press=JPRESS):
+    return f'if({LIVE})\n{{\n   if({press})\n   {{\n      gotoAndPlay("{label}");\n   }}\n}}\n'
 
 
 END = 'gotoAndStop("站立");\nplay();\n'
 START = '动作 = 1;\nql += 5;\n'
 
 
-def scripts(n, start_extra='', moves=(), k=0.25, idle_at=None, chain_to=None, chain_from=None):
+def scripts(n, start_extra='', moves=(), k=0.25, idle_at=None, chain_to=None, chain_from=None, press=JPRESS):
     """Per-frame AS for a new n-frame move (1-based offsets)."""
     out = {i: '' for i in range(1, n + 1)}
     out[1] += START + start_extra
@@ -60,7 +64,7 @@ def scripts(n, start_extra='', moves=(), k=0.25, idle_at=None, chain_to=None, ch
         out[idle_at] += '动作 = 0;\n'
     if chain_to:
         for i in range(chain_from, n):
-            out[i] += chain(chain_to)
+            out[i] += chain(chain_to, press)
     out[n] += END
     return {i: s for i, s in out.items() if s}
 
@@ -68,8 +72,8 @@ def scripts(n, start_extra='', moves=(), k=0.25, idle_at=None, chain_to=None, ch
 # label, parts (inclusive source frame ranges of sprite 1180), hitbox renames, frame scripts
 SEGMENTS = [
     ('砍4', [(425, 441)], {'zh3atm': 'k4atm'},
-     scripts(17, moves=range(2, 8), k=0.25, start_extra='', idle_at=12, chain_to='砍5', chain_from=11)
-     | {8: '_root.shine(0);\n'}),
+     scripts(17, moves=range(2, 8), k=0.25, start_extra='', idle_at=12, chain_to='砍5', chain_from=11, press=WJPRESS)
+     | {8: '_root.shine(0);\n', 17: 'mhJ4 = getTimer();\n' + END}),
     ('砍5', [(547, 560), (604, 611)], {'sbsatm': 'k5atm'},
      scripts(22, start_extra='_root.shine(0);\n', moves=range(1, 13), k=0.3, idle_at=15, chain_to='砍1', chain_from=13)),
     ('冲砍', [(151, 164)], {'tzatm': 'sbsatm'},
@@ -122,15 +126,26 @@ DARK_EDITS = {
     811: [('_root.touchFloorEffect(_parent);', LIGHTEN + '_root.touchFloorEffect(_parent);')],  # 击落地
 }
 
+# Hidden J4/J5 (user 2026-11-03: J J J, then W+J W+J within 1 s -> the 4th and 5th slashes; plain W+J stays 砍技2):
+# 砍3's late window takes W+J to 砍4, and 砍3's last frame stamps mhJ3 = getTimer(); 砍4 takes W+J to 砍5 in its
+# window and stamps mhJ4 on its last frame. Standing W+J within 1000 ms of a stamp goes to 砍5 / 砍4 instead of 砍技2.
+W_J = '   if(skill2())\n   {\n      _parent.gotoAndPlay("砍技2");\n   }\n'
+W_J_HIDDEN = ('   if(skill2())\n   {\n      if(getTimer() - _parent.mhJ4 < 1000)\n      {\n         _parent.mhJ4 = 0;\n'
+              '         _parent.gotoAndPlay("砍5");\n      }\n      else if(getTimer() - _parent.mhJ3 < 1000)\n      {\n'
+              '         _parent.mhJ3 = 0;\n         _parent.gotoAndPlay("砍4");\n      }\n      else\n      {\n'
+              '         _parent.gotoAndPlay("砍技2");\n      }\n   }\n')
+
 # edits to existing scripts (exported paths of the FFDec script dump), applied as exact text replacements
 LABEL_REMAP = [('gotoAndPlay("砍技1")', 'gotoAndPlay("@冲砍")'), ('gotoAndPlay("招3")', 'gotoAndPlay("@砍技1")'),
                ('gotoAndPlay("上必杀")', 'gotoAndPlay("@必杀")')]  # S+J, W+U, W+I (the '@' keeps steps apart)
 SCRIPT_EDITS = {
-    f'DefineSprite_{CONTROLLER}/frame_1/DoAction.as': [  # no transformation into the hollow form
-        ('return _parent.ql >= 300 && _parent.kis(_parent.斩) && _parent.kis(_parent.跳);', 'return false;')],
-    'DefineSprite_1180/frame_219/PlaceObject2_651_34/CLIPACTIONRECORD onClipEvent(enterFrame).as': [  # 砍3 → 砍4
-        ('   if(gameRunning())\n   {\n', '   if(gameRunning())\n   {\n      if(nornalhit(true))\n      {\n'
-         '         _parent.gotoAndPlay("砍4");\n      }\n')],
+    f'DefineSprite_{CONTROLLER}/frame_1/DoAction.as': [  # no transformation into the hollow form; hidden J4/J5
+        ('return _parent.ql >= 300 && _parent.kis(_parent.斩) && _parent.kis(_parent.跳);', 'return false;'),
+        (W_J, W_J_HIDDEN), (W_J, W_J_HIDDEN)],  # doStand, doAllAction
+    'DefineSprite_1180/frame_219/PlaceObject2_651_34/CLIPACTIONRECORD onClipEvent(enterFrame).as': [  # 砍3 W+J → 砍4
+        ('   if(gameRunning())\n   {\n', '   if(gameRunning())\n   {\n      if(skill2())\n      {\n'
+         '         _parent.mhJ3 = 0;\n         _parent.gotoAndPlay("砍4");\n      }\n')],
+    'DefineSprite_1180/frame_230/DoAction.as': [('gotoAndStop("站立");', 'mhJ3 = getTimer();\ngotoAndStop("站立");')],
     'DefineSprite_1180/frame_351/PlaceObject2_651_33/CLIPACTIONRECORD onClipEvent(enterFrame).as': [  # S+U: short dash
         ('_parent.speed * 6.5', '_parent.speed * 3'), ('_parent.speed * 6.5', '_parent.speed * 3')],
     'DefineSprite_1180/frame_461/DoAction.as': [('"一户1"', '"米霍克1"')],

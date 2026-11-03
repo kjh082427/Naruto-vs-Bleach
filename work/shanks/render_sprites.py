@@ -49,7 +49,9 @@ pixels kept.  Colours come from the 2x palette; hair strands / sheen, cape rim
 light and floor-cape folds, pants cel shading are drawn procedurally at 2x;
 Gryphon is rasterised directly at 2x; trails and effects use a bilinear ramp field
 (RAMP_LEVELS steps) inside a label-magnified silhouette.
-S+U "Haki release" bitmaps 441 / 443 are drawn from scratch (draw_haki_pose).
+S+U "Haki release" bitmaps 441 / 443 are traced from the user's reference model sheet
+(" Shanks/샹크스 모델링2.png", front view, cape spread) with hand-coded fixes and a
+hand-pixelled head (draw_haki_pose).
 """
 from __future__ import annotations
 
@@ -1893,286 +1895,401 @@ def render2x(PL, dyn, tfield, geo, specs, sword_hand, heads, hair_new):
 
 
 # ==========================================================================
-# v3: S+U "Haki release" pose (bitmaps 441 / 443), drawn from scratch
+# v3.1: S+U "Haki release" pose (bitmaps 441 / 443) from the reference model sheet
 # ==========================================================================
 # 441 and 443 alternate at depth 27 (shapes 442 / 444, 超必杀1 frames 863-888)
-# while the Conqueror's Haki dome bursts around him.  Kenpachi's sword-blur
-# streaks are gone: Shanks stands planted facing front, chest out, the cape blown
-# wide to both sides, hair lifted by the pressure, Gryphon held low in his right
-# hand.  The two bitmaps are two flutter phases of the same pose (cape hem and
-# hair tips whip between them).  Figure coordinates: 1x px, x from the body's
-# centre line (screen right = his left), y from the top of bitmap 441's canvas;
-# the shapes place 443's canvas 2.7 px right of 441's.
-HAKI_POSE = {441: dict(phase=0.0, dx=0.0), 443: dict(phase=1.0, dx=-2.7)}
-HAKI_CX = 22.6                     # body centre line, 441 canvas x
-HAKI_DY = -1.0                     # figure y -> canvas y (sandal outline on the last row, like the original)
-HAKI_SS = 4                        # supersampling over the 2x grid
-HK_RIM = (122, 16, 38)             # crimson rim light from the Haki dome
-(P_NONE, P_CAPE, P_LIN, P_PANTS, P_SASH, P_SHIRT, P_SKIN, P_FACE, P_HAIR, P_SANDAL, P_SLEEVE,
- P_HAND) = range(12)
+# while the Conqueror's Haki dome bursts around him: Shanks planted facing front,
+# the black cape blown out to both sides, Gryphon held low in his right hand.
+# The body is traced from the user's reference (" Shanks/샹크스 모델링2.png": front
+# view, cape spread, same pose apart from the sword arm):
+#   * its 34-colour palette is mapped to materials + tone values (HK_IDX), the
+#     checker background is flood-filled away, outlines go to the nearest material;
+#   * hand-coded fixes in reference pixels (_hk_reference): the raised sword arm and
+#     the sheathed sword are erased (the cape over his right shoulder is redrawn),
+#     the cape covers his right shoulder / upper arm and the forearm comes out of it
+#     in a white sleeve (as in the other v3 sprites), shirt tucked into a red sash
+#     knotted at his right hip, flat sandals; the reference head is cleared;
+#   * the cape (outer + lining) is blown outward and fluttered per phase (_hk_warp:
+#     displacement grows away from the body, legs and feet never move);
+#   * area-weighted reduction to the 2x grid (coverage argmax per material, mean
+#     tone per material) and quantisation to the v3 palette tone bands; specks are
+#     merged (denoise_labels); 1 px inner lines on the part behind, 2 px outline;
+#   * the head is a hand-pixelled 2x template (HK_HEAD, one per phase: hair tips),
+#     front glare, subtle scar marks over his left eye; Gryphon is rasterised as in
+#     the other sprites (sword_spec / raster_sword) with the fist drawn over the grip.
+# 443's shape sits 2.7 px right of 441's: its canvas origin is compensated (dx) so
+# the figure (feet) stays in place; the residual (offset_err, 0.2 2x px per frame) comes
+# from the 2x grid.
+HK_REF = ROOT.parent.parent / " Shanks" / "샹크스 모델링2.png"
+HAKI_POSE = {441: dict(phase=0, dx=0.0), 443: dict(phase=1, dx=-2.7)}
+HAKI_CX = 22.6                     # body centre line (between the feet), 441 canvas x (1x px)
+HK_S = 0.2652                      # 2x px per reference px (figure 124 2x px tall, head 17: 1/7.3)
+HK_UC = 197.8                      # reference x of the body centre line
+HK_VB = 487.0                      # reference y of the sandal soles
+HK_RIM = (122, 16, 38)             # crimson rim light from the Haki dome on the cape edges
+HK_PADW = 64                       # reference maps padded by this much before the cape is blown out
+# cape blow (reference px): outward push, lift of the outer hems, downward stretch per px below
+# the waist (floor length), flutter amplitude across / along
+HK_BLOW = (20.0, 14.0, 0.17, 8.0, 9.0)
+(M_BG, M_CAPE, M_LIN, M_SHIRT, M_SKIN, M_HAIR, M_PANTS, M_SASH, M_SANDAL, M_LINE, M_ERASE) = range(11)
+# reference palette index -> (material, tone 0 dark .. 1 light; nan = no tone: pattern / lines)
+HK_IDX = {2: (M_CAPE, 0.0), 11: (M_CAPE, 0.5), 5: (M_CAPE, 1.0), 3: (M_LIN, 0.0), 4: (M_LIN, 1.0),
+          29: (M_SHIRT, 1.0), 0: (M_SHIRT, 1.0), 1: (M_SHIRT, 0.95), 8: (M_SHIRT, 0.85),
+          24: (M_SHIRT, 0.62), 22: (M_SHIRT, 0.48), 9: (M_SHIRT, 0.3), 28: (M_SHIRT, 0.1),
+          7: (M_SKIN, 1.0), 20: (M_SKIN, 0.7), 12: (M_SKIN, 0.4), 25: (M_SKIN, 0.2),
+          30: (M_PANTS, 1.0), 13: (M_PANTS, 0.75), 19: (M_PANTS, 0.45), 6: (M_PANTS, 0.15),
+          14: (M_PANTS, np.nan), 15: (M_PANTS, np.nan), 18: (M_PANTS, np.nan), 21: (M_PANTS, np.nan),
+          27: (M_HAIR, 0.8), 26: (M_HAIR, 0.4), 16: (M_HAIR, 0.1), 10: (M_LINE, np.nan), 17: (M_LINE, np.nan),
+          23: (M_ERASE, np.nan), 31: (M_ERASE, np.nan), 32: (M_ERASE, np.nan), 33: (M_ERASE, np.nan)}
+HK_FILL = [M_BG, M_CAPE, M_LIN, M_SHIRT, M_SKIN, M_PANTS, M_SASH, M_SANDAL, M_HAIR]
+# tone bands per material: (thresholds, paint labels), tone smoothing sigma (reference px)
+HK_BANDS = {M_CAPE: ([0.3, 0.72], [L_CAPE1, L_CAPE2, L_CAPE3], 1.2),
+            M_LIN: ([0.5], [L_LIN0, L_LIN1], 1.5),
+            M_SHIRT: ([0.4, 0.72], [L_SH0, L_SH1, L_SH2], 2.6),
+            M_SKIN: ([0.45, 0.8], [L_SK0, L_SK1, L_SK2], 1.5),
+            M_PANTS: ([0.3, 0.55, 0.9], [L_PA0, L_PA1, L_PA2, L_PA3], 3.0),
+            M_SASH: ([0.5], [L_SASH0, L_SASH1], 1.0),
+            M_SANDAL: ([0.5], [L_SAN0, L_SAN1], 1.0)}
+# depth order: an inner line goes on the pixel of the part behind
+HK_RANK = {M_BG: 0, M_LIN: 1, M_CAPE: 2, M_PANTS: 3, M_SKIN: 4, M_SHIRT: 5, M_SASH: 6, M_SANDAL: 7, M_HAIR: 8}
+# head template (2x px): column 9 = face centre line, row 16 = chin
+HK_HEAD_RGB = {"d": HAIR_T[0], "h": HAIR_T[1], "H": HAIR_T[2], "L": HAIR_T[3], "W": HAIR_T[4],
+               "k": SKIN_T[0], "s": SKIN_T[1], "S": SKIN_T[2], "f": FEAT_C, "e": (40, 22, 14),
+               "x": (166, 92, 78), "m": (120, 70, 56), "J": (120, 74, 56), "n": (176, 122, 98)}
+HK_HEAD = {
+    0: [".......hh..h.......",
+        ".....hhHHhdHhh.....",
+        "....hHHLLhLLHHh....",
+        "...hHHLWLhLLWHHh...",
+        "..hHHLLLLhHLLLHHh..",
+        "..hHHHLLhHHHHHHHh..",
+        "..hHHHhSSShHHHHHh..",
+        "..hHHhkSSSSxhHHhh..",
+        "..hHhkffSSSfffhHh..",
+        "..hHhkfefSfefhhHh..",
+        "..hHhkSSSSSxSxhHh..",
+        ".hhHhkSSSnSSxshHhh.",
+        ".hHHhhkSSkkSskhHHh.",
+        "hHhd.hkSSSSSkh.dhHh",
+        "hh..hhkSkmkSkhh..hh",
+        "h...h.JkSSSkJ.h...h",
+        "......JkssskJ......",
+        ".......JkkkJ.......",
+        ".......kkkkk.......",
+        ".......kkkkk......."],
+    1: ["......hh...h.......",
+        ".....hhHHhdHhh.....",
+        "....hHHLLhLLHHh....",
+        "...hHHLWLhLLWHHh...",
+        "..hHHLLLLhHLLLHHh..",
+        "..hHHHLLhHHHHHHHh..",
+        "..hHHHhSSShHHHHHh..",
+        "..hHHhkSSSSxhHHhh..",
+        "..hHhkffSSSfffhHh..",
+        "..hHhkfefSfefhhHh..",
+        ".hhHhkSSSSSxSxhHhh.",
+        ".hHHhkSSSnSSxshHHh.",
+        "hHhhhhkSSkkSskhhhHh",
+        "hhd..hkSSSSSkh..dhh",
+        "h...hhkSkmkSkhh...h",
+        "....h.JkSSSkJ.h....",
+        "......JkssskJ......",
+        ".......JkkkJ.......",
+        ".......kkkkk.......",
+        ".......kkkkk......."],
+}
+HK_HEAD_C = (9, 16)                # template (col, row) placed on the reference chin
+HK_CHIN = (172.0, 86.0)            # reference chin
+HK_FIST = (84.0, 219.0)            # reference centre of his right fist
+_HK_CACHE = {}
 
 
-class _Canvas:
-    """Label + part canvas at 2x * HAKI_SS, coordinates in 1x figure units."""
-
-    def __init__(self, x0, y0, w, h):
-        self.x0, self.y0 = x0, y0
-        self.f = SCALE * HAKI_SS
-        self.lab = Image.new("L", (int(w * self.f), int(h * self.f)), L_BG)
-        self.part = Image.new("L", self.lab.size, P_NONE)
-        self.dl, self.dp = ImageDraw.Draw(self.lab), ImageDraw.Draw(self.part)
-
-    def xy(self, pts):
-        return [((x - self.x0) * self.f, (y - self.y0) * self.f) for x, y in pts]
-
-    def poly(self, pts, lab, part=None):
-        q = self.xy(pts)
-        self.dl.polygon(q, fill=lab)
-        if part is not None:
-            self.dp.polygon(q, fill=part)
-
-    def ellipse(self, cx, cy, rx, ry, lab, part=None):
-        q = self.xy([(cx - rx, cy - ry), (cx + rx, cy + ry)])
-        self.dl.ellipse(q, fill=lab)
-        if part is not None:
-            self.dp.ellipse(q, fill=part)
-
-    def capsule(self, p0, p1, r, lab, part=None):
-        p0, p1 = np.array(p0, float), np.array(p1, float)
-        d = unit(p1 - p0)
-        n = np.array([-d[1], d[0]]) * r
-        self.poly([p0 + n, p1 + n, p1 - n, p0 - n], lab, part)
-        self.ellipse(p0[0], p0[1], r, r, lab, part)
-        self.ellipse(p1[0], p1[1], r, r, lab, part)
-
-    def line(self, pts, lab, width=1.0):
-        """Thin line, width in 2x px."""
-        self.dl.line(self.xy(pts), fill=lab, width=max(1, int(round(width * HAKI_SS))), joint="curve")
-
-    def reduce(self):
-        """Majority label per HAKI_SS x HAKI_SS block -> 2x label and part maps."""
-        out = []
-        for im in (self.lab, self.part):
-            a = np.array(im)
-            h, w = a.shape[0] // HAKI_SS, a.shape[1] // HAKI_SS
-            a = a[:h * HAKI_SS, :w * HAKI_SS].reshape(h, HAKI_SS, w, HAKI_SS)
-            best = np.full((h, w), -1)
-            lab = np.zeros((h, w), np.int16)
-            for v in np.unique(a):
-                c = (a == v).sum(axis=(1, 3))
-                k = c > best
-                best[k] = c[k]
-                lab[k] = v
-            out.append(lab)
-        return out
+def _hk_poly(shape, pts):
+    im = Image.new("L", (shape[1], shape[0]), 0)
+    ImageDraw.Draw(im).polygon([(float(x), float(y)) for x, y in pts], fill=1)
+    return np.array(im, bool)
 
 
-def _wing(s, ph):
-    """Cape wing on the screen-left side (s = -1) or right (s = +1), flutter phase ph in 0..1."""
-    def P(x, y):
-        return (s * x, y)
-    lift = 3.6 * ph
-    out_ = 1.6 * ph
-    outer = [P(4.6, 15.6), P(9.0, 17.0), P(14.5, 19.6 - lift), P(19.6 + out_ * 0.5, 23.6 - lift),
-             P(24.0 + out_, 29.6 - lift * 0.8), P(26.0 + out_, 36.6 - lift * 0.5), P(25.4 + out_ * 0.6, 43.0 - ph)]
-    hem = [P(22.6 + out_, 46.8 - 0.6 * ph), P(24.6 - 1.4 * ph, 51.0 + 2.0 * ph), P(20.8, 53.6 - 1.2 * ph),
-           P(21.0 - 1.6 * ph, 59.4 - 2.2 * ph), P(17.4 + 0.8 * ph, 56.6 + 1.0 * ph), P(15.6 + ph, 61.6 - 2.4 * ph),
-           P(12.6, 58.4 + ph), P(10.2, 61.0)]
-    inner = [P(9.4, 50.0), P(9.0, 40.0), P(8.6, 30.0), P(7.6, 21.0)]
-    lining = [P(26.0, 43.0)] + hem[:4] + [P(19.0, 49.0 - ph), P(22.8, 41.0)]
-    return outer + hem + inner, lining
+def _hk_strip(shape, p0, p1, r):
+    p0, p1 = np.array(p0, float), np.array(p1, float)
+    n = unit(p1 - p0)
+    n = np.array([-n[1], n[0]]) * r
+    return _hk_poly(shape, [p0 + n, p1 + n, p1 - n, p0 - n])
 
 
-def _hair(ph, flip=False):
-    """Front hair silhouette: parted crown, locks framing the face, tips lifted by the pressure."""
-    def side(s, q):
-        u = 1.0 - q
-        return [(s * 3.4, 3.6), (s * 5.4, 4.6), (s * 6.6, 6.6), (s * (8.4 + 0.5 * u), 7.6 - 1.4 * u),
-                (s * 6.9, 9.4), (s * (8.8 + 0.5 * q), 12.0 - 1.2 * q), (s * 6.8, 12.8),
-                (s * (8.2 + 0.4 * u), 16.6 - 1.2 * u), (s * 5.8, 15.6), (s * 4.6, 17.8), (s * 3.9, 14.0),
-                (s * 3.6, 10.6), (s * 3.0, 8.4)]
-    left = side(-1.0, ph)
-    right = side(1.0, 1.0 - ph)
-    crown = [(-1.6, 3.2), (-0.6, 1.8 + 0.5 * ph), (0.4, 3.0), (1.6, 1.7 + 0.5 * (1 - ph)), (2.4, 3.2)]
-    fringe = [(2.4, 7.4), (1.2, 8.6), (0.6, 7.0), (-0.6, 7.2), (-1.8, 9.0), (-2.6, 7.6)]
-    return list(reversed(left)) + crown + right + fringe
+def _hk_ellipse(shape, cx, cy, rx, ry):
+    vv, uu = np.mgrid[0:shape[0], 0:shape[1]]
+    return ((uu + 0.5 - cx) / rx) ** 2 + ((vv + 0.5 - cy) / ry) ** 2 <= 1.0
+
+
+def _hk_fill(M, T, hole, allowed):
+    """hole pixels take material and tone of the nearest pixel whose material is allowed."""
+    src = np.isin(M, allowed) & ~hole
+    idx = ndi.distance_transform_edt(~src, return_distances=False, return_indices=True)
+    M[hole] = M[idx[0][hole], idx[1][hole]]
+    T[hole] = T[idx[0][hole], idx[1][hole]]
+
+
+def _hk_paint(M, T, sel, m, t):
+    M[sel] = m
+    T[sel] = t
+
+
+def _hk_reference():
+    """Material + tone maps of the edited reference (reference pixels)."""
+    if "ref" in _HK_CACHE:
+        return _HK_CACHE["ref"]
+    im = Image.open(HK_REF)
+    p = np.array(im)
+    sh = p.shape
+    vv, uu = np.mgrid[0:sh[0], 0:sh[1]]
+    # checker background (white / light grey): flood fill from the border + big enclosed holes
+    bgc = np.isin(p, [0, 1])
+    lab, n = ndi.label(bgc)
+    sizes = ndi.sum(bgc, lab, range(1, n + 1))
+    objs = ndi.find_objects(lab)
+    keep = set(np.unique(np.concatenate([lab[0], lab[-1], lab[:, 0], lab[:, -1]]))) - {0}
+    keep |= {i + 1 for i in range(n) if sizes[i] >= 100 or (sizes[i] >= 12 and objs[i][0].start > 300)}
+    bg = np.isin(lab, sorted(keep))
+    M = np.zeros(sh, np.int16)
+    T = np.full(sh, np.nan, np.float32)
+    for i, (m, t) in HK_IDX.items():
+        sel = (p == i) & ~bg
+        M[sel] = m
+        T[sel] = t
+    M[bg] = M_BG
+    M[(M == M_HAIR) & (vv > 150)] = M_SASH
+    sand = ((vv > 438) & np.isin(M, [M_PANTS, M_HAIR])) | ((vv > 445) & (M == M_LINE))
+    M[sand] = M_SANDAL
+    # white halo specks of the cut-out (outside the shirt) -> outline
+    sm = M == M_SHIRT
+    lab, n = ndi.label(sm)
+    if n:
+        sizes = ndi.sum(sm, lab, range(1, n + 1))
+        M[np.isin(lab, np.nonzero(sizes < 200)[0] + 1)] = M_LINE
+    # ---- erase the raised sword arm and the sheathed sword
+    arm = _hk_poly(sh, [(38, 40), (75, 36), (84, 62), (86, 90), (100, 104), (121, 106), (128, 118),
+                        (126, 140), (100, 142), (64, 146), (50, 140), (40, 110)])
+    bow = _hk_poly(sh, [(20, 0), (60, 0), (64, 40), (62, 130), (40, 140), (20, 120)])
+    E = (M == M_ERASE) | arm | bow | _hk_strip(sh, (86, 126), (122, 202), 6.5)
+    scab = _hk_strip(sh, (146, 280), (208, 436), 8.0)
+    capeul = _hk_poly(sh, [(140, 60), (100, 80), (84, 92), (72, 104), (64, 120), (60, 140), (57, 152),
+                           (130, 152), (130, 60)])
+    M[E | scab] = M_ERASE
+    _hk_fill(M, T, E & capeul, [M_CAPE, M_LIN])
+    M[E & ~capeul & (vv < 150) & (uu < 100)] = M_BG
+    _hk_fill(M, T, scab & (M == M_ERASE), [M_BG, M_LIN, M_PANTS, M_SKIN])
+    _hk_fill(M, T, M == M_ERASE, HK_FILL)
+    _hk_fill(M, T, M == M_LINE, HK_FILL)
+    # the reference head is cleared (drawn from HK_HEAD at 2x)
+    hz = (vv < 89) & (np.abs(uu - 172) < 34) & np.isin(M, [M_HAIR, M_SKIN])
+    M[hz] = M_ERASE
+    _hk_fill(M, T, hz, [M_BG, M_CAPE, M_LIN, M_SHIRT])
+    # ---- shirt tucked into a red sash, its knotted end hanging at his right hip
+    below = (M == M_SHIRT) & (vv > 219)
+    M[below] = M_ERASE
+    _hk_fill(M, T, below, [M_PANTS, M_CAPE, M_LIN])
+    M[M == M_SASH] = M_PANTS
+    P = lambda pts: _hk_poly(sh, pts)
+    _hk_paint(M, T, P([(106, 208), (150, 210), (198, 211), (198, 221), (150, 221), (108, 223)]), M_SASH, 1.0)
+    _hk_paint(M, T, P([(108, 219), (150, 218), (198, 218), (198, 221), (150, 222), (108, 224)]), M_SASH, 0.0)
+    _hk_paint(M, T, P([(106, 208), (118, 208), (121, 216), (124, 230), (114, 233), (108, 222)]), M_SASH, 1.0)
+    _hk_paint(M, T, P([(114, 223), (121, 222), (124, 230), (115, 233)]), M_SASH, 0.0)
+    # ---- sandals: the reference's foot silhouette, flat sole + toe strap
+    M[M == M_SANDAL] = M_SKIN
+    T[(M == M_SKIN) & (vv > 430)] = 0.7
+    _hk_paint(M, T, P([(80, 474), (118, 471), (150, 466), (151, 474), (140, 481), (118, 486), (92, 487),
+                       (81, 483)]), M_SANDAL, 0.0)
+    _hk_paint(M, T, P([(100, 458), (126, 451), (150, 447), (150, 455), (126, 460), (102, 466)]), M_SANDAL, 1.0)
+    _hk_paint(M, T, P([(258, 472), (285, 472), (304, 473), (304, 479), (296, 484), (270, 485), (259, 480)]),
+              M_SANDAL, 0.0)
+    _hk_paint(M, T, P([(256, 452), (284, 452), (288, 461), (259, 461)]), M_SANDAL, 1.0)
+    # ---- the cape over his right shoulder and upper arm (the collar stays)
+    collar = (M == M_LIN) & (uu > 128) & (vv < 100)
+    sel = P([(142, 60), (100, 80), (84, 92), (72, 104), (64, 120), (62, 138), (70, 150), (88, 158),
+             (106, 160), (120, 154), (124, 136), (127, 112), (134, 90)]) & ~collar
+    _hk_paint(M, T, sel, M_CAPE, 0.0)
+    _hk_paint(M, T, P([(118, 72), (100, 81), (84, 93), (72, 106), (66, 122), (74, 112), (88, 99), (104, 88),
+                       (122, 80)]) & ~collar, M_CAPE, 1.0)
+    _hk_paint(M, T, P([(118, 120), (124, 112), (124, 136), (120, 154), (112, 158), (116, 140)]), M_CAPE, 0.5)
+    # forearm out of the cape: white sleeve, rolled cuff, fist
+    _hk_paint(M, T, P([(90, 152), (114, 155), (108, 172), (98, 196), (96, 205), (72, 204), (78, 186),
+                       (86, 166)]), M_SHIRT, 0.85)
+    _hk_paint(M, T, P([(90, 152), (97, 153), (90, 170), (82, 190), (78, 204), (72, 204), (78, 186),
+                       (86, 166)]), M_SHIRT, 0.5)
+    _hk_paint(M, T, P([(70, 194), (99, 196), (98, 208), (69, 206)]), M_SHIRT, 0.55)
+    _hk_paint(M, T, P([(70, 194), (99, 196), (99, 199), (70, 197)]), M_SHIRT, 0.2)
+    fx, fy = HK_FIST
+    fist = _hk_ellipse(sh, fx, fy, 12.5, 11)
+    _hk_paint(M, T, fist, M_SKIN, 0.7)
+    T[fist & ~_hk_ellipse(sh, fx + 2, fy - 3, 11, 10)] = 0.35
+    _HK_CACHE["ref"] = (M, T)
+    return M, T
+
+
+def _hk_warp(M, T, ph, blow=HK_BLOW):
+    """The cape (outer + lining) blown outward by the Haki pressure, flutter phase ph
+    (0 / 1, the two sides in opposite phase); everything else stays.  The maps are
+    padded by HK_PADW reference px (the cape spreads beyond the reference image)."""
+    PW = HK_PADW
+    M = np.pad(M, PW, constant_values=M_BG)
+    T = np.pad(T, PW, constant_values=np.nan)
+    H, W = M.shape
+    vv, uu = np.mgrid[0:H, 0:W].astype(np.float32)
+    vv -= PW
+    uu -= PW
+    out_, lift, stretch, fl_x, fl_y = blow
+    uc, core = 175.0, 75.0
+    sg = np.where(uu >= uc, 1.0, -1.0)
+    w = np.clip((np.abs(uu - uc) - core) / 60.0, 0, 1)
+    g = np.clip((vv - 110) / 150.0, 0, 1)
+    gh = np.clip((vv - 290) / 100.0, 0, 1)
+    phase = math.pi * (ph + np.where(sg > 0, 0.0, 1.0))
+    dx = sg * w * g * (out_ + fl_x * np.sin(2 * math.pi * vv / 120.0 + phase))
+    dy = (-lift * w ** 2 * g + fl_y * w * gh * np.sin(2 * math.pi * uu / 70.0 + phase)
+          + stretch * np.clip(vv - 250, 0, None))
+    su = np.clip(np.round(uu + PW - dx).astype(int), 0, W - 1)
+    sv = np.clip(np.round(vv + PW - dy).astype(int), 0, H - 1)
+    cape = np.isin(M, [M_CAPE, M_LIN])
+    Mw, Tw = M[sv, su], T[sv, su]
+    M2 = np.where(cape, M_BG, M).astype(np.int16)
+    T2 = np.where(cape, np.nan, T).astype(np.float32)
+    put = np.isin(Mw, [M_CAPE, M_LIN]) & (M2 == M_BG)
+    M2[put] = Mw[put]
+    T2[put] = Tw[put]
+    return M2, T2
+
+
+def _hk_reduce(M, T, u0, v0, W2, H2):
+    """Reference maps -> 2x grid (W2 x H2, origin at reference (u0, v0)): material by
+    largest (slightly smoothed) coverage, tone label from the mean tone of the material."""
+    P = int(math.ceil(max(0.0, -u0, -v0, u0 + W2 / HK_S - M.shape[1], v0 + H2 / HK_S - M.shape[0]))) + 4
+    M = np.pad(M, P, constant_values=M_BG)
+    T = np.pad(T, P, constant_values=np.nan)
+    box = (u0 + P, v0 + P, u0 + P + W2 / HK_S, v0 + P + H2 / HK_S)
+
+    def red(a):
+        return np.array(Image.fromarray(a.astype(np.float32), "F").resize((W2, H2), Image.BOX, box=box))
+    # the body wins against everything behind it taken together (cape + lining +
+    # background), so its pixels do not depend on the cape's flutter phase
+    cov = {int(m): red(ndi.gaussian_filter((M == m).astype(np.float32), 1.0)) for m in np.unique(M)}
+    back = [m for m in (M_BG, M_LIN, M_CAPE) if m in cov]
+    body = [m for m in sorted(cov) if m not in back]
+    L = np.array(back, np.int16)[np.argmax(np.stack([cov[m] for m in back]), 0)]
+    if body:
+        bs = np.stack([cov[m] for m in body])
+        win = bs.max(0) > sum(cov[m] for m in back)
+        L[win] = np.array(body, np.int16)[np.argmax(bs, 0)][win]
+    PL = np.zeros((H2, W2), np.int16)
+    for m, (th, labs, sig) in HK_BANDS.items():
+        sel = L == m
+        if not sel.any():
+            continue
+        tv = (M == m) & np.isfinite(T)
+        num = red(ndi.gaussian_filter(np.where(tv, T, 0).astype(np.float32), sig))
+        den = red(ndi.gaussian_filter(tv.astype(np.float32), sig))
+        t = np.where(den > 1e-4, num / np.maximum(den, 1e-4), 0.5)
+        PL[sel] = np.array(labs, np.int16)[np.digitize(t[sel], th)]
+    PL[L == M_HAIR] = L_HAIR
+    return L, denoise_labels(PL)
 
 
 def draw_haki_pose(bid, a0, rep):
     cfg = HAKI_POSE[bid]
     ph = cfg["phase"]
-    cx = HAKI_CX + cfg["dx"]                    # body centre in this bitmap's canvas
     h0, w0 = a0.shape[:2]
-    # generous canvas in figure units (x from the centre line, y from the canvas top)
-    X0, Y0, X1, Y1 = -30.0, -4.0, 30.0, 66.0
-    cv = _Canvas(X0, Y0, X1 - X0, Y1 - Y0)
-    # ---- cape: wings behind, lining on the billowing hems
-    for s, q in ((-1, ph), (1, 1.0 - ph)):
-        wing, lining = _wing(s, q)
-        cv.poly(wing, L_CAPE2, P_CAPE)
-        cv.poly(lining, L_LIN1, P_LIN)
-    # back panel between the wings (behind the legs)
-    cv.poly([(-9.4, 50.0), (-7.6, 21.0), (7.6, 21.0), (9.4, 50.0), (8.0, 60.0), (0, 58.5), (-8.0, 60.0)],
-            L_CAPE1, P_CAPE)
-    # ---- legs and feet
-    for s in (-1, 1):
-        cv.capsule((s * 5.0, 49.0), (s * 6.3, 61.0), 1.3, L_SK1, P_SKIN)
-        cv.capsule((s * 5.5, 50.5), (s * 6.6, 60.5), 0.45, L_SK0)
-        cv.ellipse(s * 6.9, 62.2, 2.2, 1.15, L_SK1, P_SKIN)
-        cv.poly([(s * 4.4, 62.9), (s * 9.3, 62.9), (s * 9.1, 64.0), (s * 4.6, 64.0)], L_SAN0, P_SANDAL)
-        cv.poly([(s * 5.0, 61.1), (s * 8.6, 61.3), (s * 8.4, 62.0), (s * 5.2, 61.9)], L_SAN1, P_SANDAL)
-    # ---- 3/4 pants
-    pants = [(-5.6, 34.6), (5.6, 34.6), (8.0, 39.6), (8.8, 45.4), (8.4, 49.8), (2.4, 50.0), (1.8, 44.4),
-             (0.0, 41.6), (-1.8, 44.4), (-2.4, 50.0), (-8.4, 49.8), (-8.8, 45.4), (-8.0, 39.6)]
-    cv.poly(pants, L_PA2, P_PANTS)
-    for s in (-1, 1):
-        cv.poly([(s * 7.6, 39.8), (s * 8.6, 45.4), (s * 8.3, 49.6), (s * 6.8, 49.6), (s * 7.2, 44.6),
-                 (s * 6.6, 40.0)], L_PA1)
-        cv.poly([(s * 2.3, 46.0), (s * 2.1, 49.8), (s * 3.4, 49.8), (s * 3.2, 46.0)], L_PA1)
-        cv.ellipse(s * 4.7, 41.8, 1.1, 3.0, L_PA3)
-        cv.poly([(s * 2.4, 48.6), (s * 8.4, 48.4), (s * 8.4, 50.0), (s * 2.4, 50.0)], L_PA0)
-    cv.poly([(-1.2, 35.4), (1.2, 35.4), (0.4, 41.0), (-0.4, 41.0)], L_PA1)
-    # ---- torso: open white shirt, bare chest V
-    cv.poly([(-5.4, 18.4), (5.4, 18.4), (5.8, 33.6), (-5.8, 33.6)], L_SH2, P_SHIRT)
-    for s in (-1, 1):
-        cv.poly([(s * 5.4, 18.4), (s * 5.8, 33.6), (s * 4.4, 33.6), (s * 4.3, 22.0)], L_SH1)
-        cv.poly([(s * 2.0, 26.0), (s * 1.2, 30.4), (s * 2.4, 33.0), (s * 3.2, 28.0)], L_SH1)
-    cv.poly([(-2.9, 17.4), (2.9, 17.4), (2.0, 23.2), (0.0, 30.0), (-2.0, 23.2)], L_SK1, P_SKIN)
-    cv.poly([(-2.4, 17.6), (2.4, 17.6), (1.2, 20.6), (-1.2, 20.6)], L_SK2)
-    for s in (-1, 1):
-        cv.line([(s * 0.5, 22.8), (s * 1.6, 23.3), (s * 2.0, 22.6)], L_SK0, 1.0)
-    cv.line([(0.0, 23.6), (0.0, 28.4)], L_SK0, 1.0)
-    # sash with the knot at his left hip
-    cv.poly([(-6.0, 32.4), (6.0, 32.4), (6.2, 35.2), (-6.2, 35.2)], L_SASH1, P_SASH)
-    cv.poly([(-6.2, 34.4), (6.2, 34.4), (6.2, 35.2), (-6.2, 35.2)], L_SASH0)
-    cv.poly([(4.0, 34.0), (6.4, 33.6), (7.4, 38.6), (6.2, 39.4), (5.2, 36.0)], L_SASH1, P_SASH)
-    cv.poly([(5.8, 36.2), (7.0, 38.4), (6.2, 39.4)], L_SASH0)
-    # ---- the cape over both shoulders, front edges down the sides of the torso
-    for s in (-1, 1):
-        cv.poly([(s * 2.8, 17.6), (s * 6.0, 17.2), (s * 9.4, 19.4), (s * 10.0, 23.4), (s * 9.2, 30.0),
-                 (s * 8.8, 34.0), (s * 6.4, 33.2), (s * 5.2, 26.0), (s * 4.6, 20.2)], L_CAPE2, P_CAPE)
-        cv.poly([(s * 9.4, 19.6), (s * 10.0, 23.4), (s * 9.2, 30.0), (s * 8.8, 34.0), (s * 8.0, 33.6),
-                 (s * 8.6, 24.0)], L_CAPE1)
-        cv.poly([(s * 3.2, 17.4), (s * 5.4, 17.0), (s * 7.2, 18.2), (s * 5.4, 18.8)], L_CAPE3)
-        # standing collar (its lining shows inside)
-        cv.poly([(s * 2.6, 17.8), (s * 3.6, 12.4), (s * 5.8, 13.2), (s * 6.4, 17.6)], L_CAPE2, P_CAPE)
-        cv.poly([(s * 3.0, 17.4), (s * 3.8, 13.4), (s * 4.6, 13.8), (s * 4.0, 17.6)], L_LIN1, P_LIN)
-    # ---- sword arm (his right, screen left): forearm out of the cape, rolled white sleeve
-    cv.capsule((-9.6, 25.0), (-11.4, 30.4), 2.1, L_SH2, P_SLEEVE)
-    cv.capsule((-10.6, 26.4), (-12.4, 30.4), 0.75, L_SH1)
-    cv.capsule((-10.0, 30.6), (-12.8, 30.6), 0.95, L_SH1)              # rolled cuff
-    cv.capsule((-11.6, 31.6), (-12.3, 33.6), 1.3, L_SK1, P_HAND)
-    cv.ellipse(-12.6, 35.0, 2.0, 1.8, L_SK1, P_HAND)
-    cv.ellipse(-13.4, 35.6, 0.9, 0.9, L_SK0)
-    cv.line([(-11.4, 34.2), (-11.6, 35.8)], L_SK0, 1.0)                 # knuckles
-    # cape edge back over the upper arm
-    cv.poly([(-6.0, 17.2), (-9.4, 19.2), (-11.4, 22.6), (-12.2, 25.8), (-10.8, 26.6), (-9.0, 26.8),
-             (-7.8, 26.0), (-7.6, 21.0)], L_CAPE2, P_CAPE)
-    cv.poly([(-11.4, 22.6), (-12.2, 25.8), (-10.8, 26.6), (-10.6, 24.6)], L_CAPE1)
-    # ---- neck and head
-    cv.capsule((0.0, 14.2), (0.0, 18.0), 1.75, L_SK1, P_SKIN)
-    cv.poly([(-1.75, 15.6), (1.75, 15.6), (1.6, 16.8), (-1.6, 16.8)], L_SK0)
-    face = [(-3.3, 9.0), (-3.2, 12.8), (-2.2, 15.2), (-0.8, 16.2), (0.8, 16.2), (2.2, 15.2), (3.2, 12.8),
-            (3.3, 9.0), (2.6, 7.0), (0.0, 6.4), (-2.6, 7.0)]
-    cv.poly(face, L_SK1, P_FACE)
-    cv.poly([(-1.6, 8.0), (1.6, 8.0), (1.2, 12.8), (0.0, 13.6), (-1.2, 12.8)], L_SK2)
-    for s in (-1, 1):
-        cv.poly([(s * 3.3, 9.0), (s * 3.2, 12.8), (s * 2.2, 15.2), (s * 1.8, 14.6), (s * 2.6, 12.4)], L_SK0)
-        cv.line([(s * 0.5, 10.3), (s * 1.4, 9.6), (s * 2.7, 9.3)], L_FEAT, 1.2)          # frowning brows
-        cv.poly([(s * 0.7, 10.8), (s * 2.3, 10.7), (s * 2.1, 11.4), (s * 0.9, 11.4)], L_FEAT)  # eyes
-        cv.poly([(s * 1.2, 10.9), (s * 1.8, 10.9), (s * 1.8, 11.3), (s * 1.2, 11.3)], L_EYE)
-    cv.line([(0.4, 11.6), (0.5, 12.9), (0.0, 13.2)], L_SK0, 1.0)                          # nose
-    cv.ellipse(0.0, 14.5, 1.05, 0.55, L_FEAT)                                               # shouting
-    cv.poly([(-0.8, 14.1), (0.8, 14.1), (0.6, 14.4), (-0.6, 14.4)], L_SK2)
-    # ---- hair
-    cv.poly(_hair(ph), L_HAIR, P_HAIR)
-    # ---- reduce to 2x
-    L2, part = cv.reduce()
-    H2, W2 = L2.shape
-    k = cv.f / HAKI_SS                           # 2x px per 1x unit
-    yy, xx = np.mgrid[0:H2, 0:W2]
-    fx = (xx + 0.5) / k + X0                      # figure coordinates of the 2x pixel centres
-    fy = (yy + 0.5) / k + Y0
+    k = SCALE
+    M, T = _hk_warp(*_hk_reference(), ph)
+    # 2x working grid: figure x = 0 (body centre line) at column XW, sandal soles end at row YW
+    XW, YW, W2, H2 = 72, 136, 150, 146
+    u0, v0 = HK_UC - XW / HK_S, HK_VB - YW / HK_S
+    L, PL = _hk_reduce(M, T, u0 + HK_PADW, v0 + HK_PADW, W2, H2)
+    # small enclosed background holes (left by the erased sword) and specks of any
+    # part (<= 4 px) take the surrounding part
+    hole = np.zeros(L.shape, bool)
+    for m_, mx in [(None, 20)] + [(m, 4) for m in HK_RANK if m != M_BG]:
+        mk = ndi.binary_fill_holes(L != M_BG) & (L == M_BG) if m_ is None else L == m_
+        lab, n = ndi.label(mk)
+        if n:
+            hole |= np.isin(lab, np.nonzero(ndi.sum(mk, lab, range(1, n + 1)) <= mx)[0] + 1)
+    if hole.any():
+        idx = ndi.distance_transform_edt(hole, return_distances=False, return_indices=True)
+        L[hole] = L[idx[0][hole], idx[1][hole]]
+        PL[hole] = PL[idx[0][hole], idx[1][hole]]
+
+    def at(u, v):                                   # reference -> 2x grid
+        return (u - u0) * HK_S, (v - v0) * HK_S
     out = np.zeros((H2, W2, 4), np.uint8)
     for lab, rgb in LABEL_RGB.items():
-        out[L2 == lab] = (*rgb, 255)
-    fig = part != P_NONE
-    # cape: folds radiating from the shoulders, crimson rim light on the outer edges
-    cape = (part == P_CAPE) & np.isin(L2, [L_CAPE1, L_CAPE2])
-    for s in (-1, 1):
-        sh = np.array([s * 6.5, 18.0])
-        th = np.arctan2(fy - sh[1], s * (fx - sh[0]))
-        r = np.hypot(fx - sh[0], fy - sh[1])
-        f = (th * 9.0 / np.pi + 0.04 * r + 0.3 * ph * s) % 1.0
-        side_m = cape & (s * fx > 8.0) & (r > 5.0)
-        out[side_m & (f < 0.12)] = (*CAPE_T[0], 255)
-        out[side_m & (f > 0.45) & (f < 0.55)] = (*CAPE_T[3], 255)
-    edge = fig & ~ndi.binary_erosion(fig, iterations=1)
-    out[(part == P_CAPE) & edge & (np.abs(fx) > 9.0) & (fy < 50)] = (*HK_RIM, 255)
-    lin = part == P_LIN
-    out[lin & (fy > 0) & ~ndi.binary_erosion(lin, iterations=2) & (np.abs(fx) > 9)] = (*LIN_T[0], 255)
-    # hair: strands from the parting, sheen on the crown, dark tips, crimson rim
-    hm = part == P_HAIR
-    th = np.arctan2(fx - 0.3, -(fy - 3.0))
-    r = np.hypot(fx - 0.3, fy - 3.0)
-    f = (th * 8.0 / np.pi + 0.05 * r) % 1.0
-    out[hm & (fy < 7.0) & (r > 1.4) & (r < 4.0) & (f > 0.3)] = (*HAIR_T[3], 255)
-    out[hm & (fy < 6.0) & (r > 1.8) & (r < 3.2) & (f > 0.55) & (f < 0.8)] = (*HAIR_T[4], 255)
-    out[hm & (np.abs(fx) > 7.0)] = (*HAIR_T[1], 255)
-    out[hm & (f < 0.14) & (r > 2.0)] = (*HAIR_T[1], 255)
-    out[hm & ndi.binary_dilation(part == P_FACE, iterations=1)] = (*HAIR_T[1], 255)
-    out[hm & ~ndi.binary_erosion(hm, iterations=1)] = (*HAIR_T[0], 255)
-    # internal lines (1 px) between parts, outer outline (2 px) around the figure
-    pr, pd = np.roll(part, -1, 1), np.roll(part, -1, 0)
-    line = fig & (((part != pr) & (pr != P_NONE)) | ((part != pd) & (pd != P_NONE)))
-    soft = {(P_FACE, P_HAIR), (P_HAIR, P_FACE), (P_SKIN, P_FACE), (P_FACE, P_SKIN), (P_SHIRT, P_SKIN),
-            (P_SKIN, P_SHIRT), (P_LIN, P_CAPE), (P_CAPE, P_LIN), (P_SLEEVE, P_HAND), (P_HAND, P_SLEEVE)}
-    pair_r = np.array([[(int(a), int(b)) in soft for a, b in zip(r1, r2)] for r1, r2 in zip(part, pr)])
-    pair_d = np.array([[(int(a), int(b)) in soft for a, b in zip(r1, r2)] for r1, r2 in zip(part, pd)])
-    hard = fig & ((((part != pr) & (pr != P_NONE)) & ~pair_r) | (((part != pd) & (pd != P_NONE)) & ~pair_d))
-    out[line & ~hard] = (*SKIN_T[0], 255)
-    out[line & ~hard & ((part == P_HAIR) | (pr == P_HAIR) | (pd == P_HAIR))] = (*HAIR_T[0], 255)
-    out[line & ~hard & ((part == P_LIN) | (pr == P_LIN) | (pd == P_LIN))] = (*CAPE_T[0], 255)
-    out[hard] = (*OUTLINE, 255)
+        out[PL == lab] = (*rgb, 255)
+    # ---- head template on the reference chin
+    head = np.zeros((H2, W2, 4), np.uint8)
+    hm = np.zeros((H2, W2), bool)
+    cx, cy = at(*HK_CHIN)
+    x0, y0 = int(math.floor(cx)) - HK_HEAD_C[0], int(round(cy)) - HK_HEAD_C[1]
+    for r, row in enumerate(HK_HEAD[ph]):
+        for c, ch in enumerate(row):
+            if ch != ".":
+                head[y0 + r, x0 + c] = (*HK_HEAD_RGB[ch], 255)
+                hm[y0 + r, x0 + c] = True
+                L[y0 + r, x0 + c] = M_HAIR if ch in "dhHLW" else M_SKIN
+    # ---- inner lines (on the part behind), outline, crimson rim on the outer cape edges
+    rk = np.zeros(L.shape, np.int16)
+    for m, r_ in HK_RANK.items():
+        rk[L == m] = r_
+    fig = L != M_BG
+    line = np.zeros(L.shape, bool)
+    for dy, dx in N4:
+        nb, nr = shift(L, dy, dx, M_BG), shift(rk, dy, dx, 0)
+        line |= fig & (nb != M_BG) & (nb != L) & (nr > rk)
+    out[line, :3] = OUTLINE
+    out[line & (L == M_LIN), :3] = CAPE_T[0]
+    soft = np.zeros(L.shape, bool)
+    for dy, dx in N4:
+        soft |= shift(L, dy, dx, M_BG) == M_SHIRT
+    out[line & (L == M_SKIN) & soft, :3] = SKIN_T[0]
     ring = ndi.binary_dilation(fig, iterations=2) & ~fig
+    xx = np.arange(W2)[None, :] + 0.5 - XW
+    edge = (L == M_CAPE) & ndi.binary_dilation(ring, iterations=1) & (np.abs(xx) > 16) & ~line
+    out[edge, :3] = HK_RIM
     out[ring] = (*OUTLINE, 255)
-    out[ring, 3] = 255
-    # ---- Gryphon held low in the right hand (fist over the grip)
+    out[hm] = head[hm]
+    # ---- Gryphon held low in his right hand, fist over the grip
+    hx, hy = at(*HK_FIST)
     d = unit((-0.36, 0.93))
-    G = np.array([-12.6, 35.0]) + d * 2.4
-    P = sword_spec(G, G + d * 25.0, 1.0, dict(len=25.0))
-    P = dict(P, G=P["G"] - [X0, Y0], T=P["T"] - [X0, Y0], H=P["H"] - [X0, Y0])
+    G = np.array([hx, hy]) / k + d * 2.0
+    P = dict(sword_spec(G, G + d * 25.0, 1.0, dict(len=25.0)), Lg=4.6)
     swm = np.zeros((H2, W2), bool)
     swc = np.zeros((H2, W2, 4), np.uint8)
     bowm = np.zeros((H2, W2), bool)
-    part_s, col, x0, y0 = raster_sword(scale_spec(P, k))
-    paste_window(swm, swc, part_s, col, x0, y0)
-    paste_window(bowm, np.zeros((H2, W2, 4), np.uint8), part_s, col, x0, y0, only=[SW_BOW])
-    hand = (part == P_HAND) & ~bowm
+    part_s, col, sx0, sy0 = raster_sword(scale_spec(P, k))
+    paste_window(swm, swc, part_s, col, sx0, sy0)
+    paste_window(bowm, np.zeros((H2, W2, 4), np.uint8), part_s, col, sx0, sy0, only=[SW_BOW])
+    yy, xx2 = np.mgrid[0:H2, 0:W2]
+    fist = (L == M_SKIN) & (np.hypot(xx2 + 0.5 - hx, yy + 0.5 - hy) < 3.9) & ~bowm
     pre = out.copy()
     out[swm] = swc[swm]
-    out[hand] = pre[hand]
-    # ---- crop to this bitmap's canvas (+ padding where the figure needs room)
+    out[fist] = pre[fist]
+    # ---- crop to this bitmap's canvas: figure x = 0 at canvas x HAKI_CX + dx (1x),
+    # the last outline row on the canvas' last row
     al = out[..., 3] > 0
     ys, xs = np.nonzero(al)
-    # canvas x of figure coordinate u: u + cx; 2x pixel column j covers figure x X0 + j / k
-    bx0 = (xs.min() / k + X0) + cx
-    bx1 = ((xs.max() + 1) / k + X0) + cx
-    by0 = (ys.min() / k + Y0) + HAKI_DY
-    by1 = ((ys.max() + 1) / k + Y0) + HAKI_DY
-    pad = [max(0, int(math.ceil(-bx0))), max(0, int(math.ceil(-by0))),
-           max(0, int(math.ceil(bx1 - w0))), max(0, int(math.ceil(by1 - h0)))]
-    Wc, Hc = (w0 + pad[0] + pad[2]) * SCALE, (h0 + pad[1] + pad[3]) * SCALE
+    if ys.min() == 0 or xs.min() == 0 or ys.max() == H2 - 1 or xs.max() == W2 - 1:
+        raise SystemExit(f"{bid}: the haki pose touches its working grid border, enlarge XW / YW / W2 / H2")
+    cxc = (HAKI_CX + cfg["dx"]) * k                # 2x canvas column of figure x = 0
+    oxi = XW - int(round(cxc))                     # canvas col j <-> grid col j + oxi (before padding)
+    oyi = np.nonzero((L == M_SANDAL).any(1))[0].max() + 2 - (h0 * k - 1)   # sole outline on the last row
+    pad = [max(0, int(math.ceil((oxi - xs.min()) / k))), max(0, int(math.ceil((oyi - ys.min()) / k))),
+           max(0, int(math.ceil((xs.max() + 1 - oxi - w0 * k) / k))),
+           max(0, int(math.ceil((ys.max() + 1 - oyi - h0 * k) / k)))]
+    Wc, Hc = (w0 + pad[0] + pad[2]) * k, (h0 + pad[1] + pad[3]) * k
     res = np.zeros((Hc, Wc, 4), np.uint8)
-    # canvas 2x pixel (i, j) <-> figure 2x pixel (i + oy, j + ox)
-    ox = (-pad[0] - cx - X0) * k
-    oy = (-pad[1] - Y0 - HAKI_DY) * k
-    oxi, oyi = int(round(ox)), int(round(oy))
-    sy0, sx0 = max(0, oyi), max(0, oxi)
-    sy1, sx1 = min(H2, oyi + Hc), min(W2, oxi + Wc)
-    res[sy0 - oyi:sy1 - oyi, sx0 - oxi:sx1 - oxi] = out[sy0:sy1, sx0:sx1]
-    rep.update(kind="character", drawn="haki release pose (procedural)", phase=ph,
-               offset_err=round(abs(ox - oxi) + abs(oy - oyi), 2))
+    gx, gy = oxi - pad[0] * k, oyi - pad[1] * k    # canvas (0, 0) in grid pixels
+    sy0, sx0 = max(0, gy), max(0, gx)
+    sy1, sx1 = min(H2, gy + Hc), min(W2, gx + Wc)
+    res[sy0 - gy:sy1 - gy, sx0 - gx:sx1 - gx] = out[sy0:sy1, sx0:sx1]
+    rep.update(kind="character", drawn="haki release pose (from the reference model sheet)", phase=ph,
+               offset_err=round(abs(cxc - round(cxc)), 2))
     return res, pad
 
 

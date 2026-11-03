@@ -6565,8 +6565,8 @@
    "超必杀1"
   ],
   "kind": "character",
-  "drawn": "haki release pose (procedural)",
-  "phase": 0.0,
+  "drawn": "haki release pose (from the reference model sheet)",
+  "phase": 0,
   "offset_err": 0.2,
   "scale": 2
  },
@@ -6575,8 +6575,8 @@
    "超必杀1"
   ],
   "kind": "character",
-  "drawn": "haki release pose (procedural)",
-  "phase": 1.0,
+  "drawn": "haki release pose (from the reference model sheet)",
+  "phase": 1,
   "offset_err": 0.2,
   "scale": 2
  },
