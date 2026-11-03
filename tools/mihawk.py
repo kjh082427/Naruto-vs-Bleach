@@ -43,7 +43,17 @@ def move(k):
     return f'if(_root.zhanting == false)\n{{\n   _parent._x += {DIR} * Math.round(speed * {k});\n}}\n'
 
 
-WJPRESS = '(_parent.useAI ? attran < 110 : kis(斩) && kis(上))'  # W+J
+WJPRESS = '(_parent.useAI ? attran < 110 : mhQ || kis(斩) && kis(上))'  # W+J (held now, or pressed earlier: mhQ)
+# Input buffer for the hidden J4/J5: the game only polls held keys, and 砍3's / 砍4's W+J windows open late (frame 219 /
+# offset 11), so a W+J tapped early in the swing used to be lost (user report: the 5th W+J often did nothing). From
+# the start of 砍3 / 砍4 a watcher clip sets mhQ on each new W+J press (both keys down after not both down); the windows
+# take mhQ like a held W+J. Every (re)start clears mhQ, and the watcher dies after 1.5 s. Players only (AI: attran).
+WJ_BUF = ('mhQ = false;\nif(!_parent.useAI)\n{\n   var w = this.createEmptyMovieClip("mhBufW",16001);\n'
+          '   w.t = getTimer();\n   w.up = !(kis(斩) && kis(上));\n   w.onEnterFrame = function()\n   {\n'
+          '      var m = this._parent;\n      if(getTimer() - this.t > 1500)\n      {\n         m.mhQ = false;\n'
+          '         this.removeMovieClip();\n         return undefined;\n      }\n'
+          '      var wj = m.kis(m.斩) && m.kis(m.上);\n      if(wj && this.up)\n      {\n         m.mhQ = true;\n      }\n'
+          '      this.up = !wj;\n   };\n}\n')
 
 
 def chain(label, press=JPRESS):
@@ -70,12 +80,18 @@ def scripts(n, start_extra='', moves=(), k=0.25, idle_at=None, chain_to=None, ch
 
 
 # label, parts (inclusive source frame ranges of sprite 1180), hitbox renames, frame scripts
+def more(d, extra):
+    """Frame scripts d with extra code appended to some frames."""
+    return {i: d.get(i, '') + extra.get(i, '') for i in sorted(set(d) | set(extra))}
+
+
 SEGMENTS = [
-    ('砍4', [(425, 441)], {'zh3atm': 'k4atm'},
-     scripts(17, moves=range(2, 8), k=0.25, start_extra='', idle_at=12, chain_to='砍5', chain_from=11, press=WJPRESS)
-     | {8: '_root.shine(0);\n', 17: 'mhJ4 = getTimer();\n' + END}),
+    ('砍4', [(425, 441)], {'zh3atm': 'k4atm'},  # frame 3 clears the J J J stamp (see W_J_HIDDEN)
+     more(scripts(17, moves=range(2, 8), k=0.25, start_extra=WJ_BUF, idle_at=12, chain_to='砍5', chain_from=11,
+                  press=WJPRESS) | {17: 'mhJ4 = getTimer();\n' + END}, {3: 'mhJ3 = 0;\n', 8: '_root.shine(0);\n'})),
     ('砍5', [(547, 560), (604, 611)], {'sbsatm': 'k5atm'},
-     scripts(22, start_extra='_root.shine(0);\n', moves=range(1, 13), k=0.3, idle_at=15, chain_to='砍1', chain_from=13)),
+     more(scripts(22, start_extra='_root.shine(0);\n', moves=range(1, 13), k=0.3, idle_at=15, chain_to='砍1',
+                  chain_from=13), {3: 'mhJ4 = 0;\n'})),
     ('冲砍', [(151, 164)], {'tzatm': 'sbsatm'},
      scripts(14, moves=range(1, 7), k=2.2, idle_at=8)),
 ]
@@ -129,10 +145,13 @@ DARK_EDITS = {
 # Hidden J4/J5 (user 2026-11-03: J J J, then W+J W+J within 1 s -> the 4th and 5th slashes; plain W+J stays 砍技2):
 # 砍3's late window takes W+J to 砍4, and 砍3's last frame stamps mhJ3 = getTimer(); 砍4 takes W+J to 砍5 in its
 # window and stamps mhJ4 on its last frame. Standing W+J within 1000 ms of a stamp goes to 砍5 / 砍4 instead of 砍技2.
+# Both windows also take a W+J pressed earlier in the swing (WJ_BUF / mhQ above). The stamps are cleared on frame 3 of
+# 砍4 / 砍5, not here: the stand loop's last frame (8: gotoAndStop("站立")) can undo the jump in the same tick, and the
+# controller then decides again on the next frame, which must give the same move (it gave 砍技2 when this cleared them).
 W_J = '   if(skill2())\n   {\n      _parent.gotoAndPlay("砍技2");\n   }\n'
-W_J_HIDDEN = ('   if(skill2())\n   {\n      if(getTimer() - _parent.mhJ4 < 1000)\n      {\n         _parent.mhJ4 = 0;\n'
+W_J_HIDDEN = ('   if(skill2())\n   {\n      if(getTimer() - _parent.mhJ4 < 1000)\n      {\n'
               '         _parent.gotoAndPlay("砍5");\n      }\n      else if(getTimer() - _parent.mhJ3 < 1000)\n      {\n'
-              '         _parent.mhJ3 = 0;\n         _parent.gotoAndPlay("砍4");\n      }\n      else\n      {\n'
+              '         _parent.gotoAndPlay("砍4");\n      }\n      else\n      {\n'
               '         _parent.gotoAndPlay("砍技2");\n      }\n   }\n')
 
 # edits to existing scripts (exported paths of the FFDec script dump), applied as exact text replacements
@@ -143,8 +162,9 @@ SCRIPT_EDITS = {
         ('return _parent.ql >= 300 && _parent.kis(_parent.斩) && _parent.kis(_parent.跳);', 'return false;'),
         (W_J, W_J_HIDDEN), (W_J, W_J_HIDDEN)],  # doStand, doAllAction
     'DefineSprite_1180/frame_219/PlaceObject2_651_34/CLIPACTIONRECORD onClipEvent(enterFrame).as': [  # 砍3 W+J → 砍4
-        ('   if(gameRunning())\n   {\n', '   if(gameRunning())\n   {\n      if(skill2())\n      {\n'
-         '         _parent.mhJ3 = 0;\n         _parent.gotoAndPlay("砍4");\n      }\n')],
+        ('   if(gameRunning())\n   {\n', '   if(gameRunning())\n   {\n      if(skill2() || _parent.mhQ)\n      {\n'
+         '         _parent.mhQ = false;\n         _parent.gotoAndPlay("砍4");\n      }\n')],
+    'DefineSprite_1180/frame_211/DoAction.as': [('动作 = 1;', '动作 = 1;\n' + WJ_BUF)],  # 砍3 start: W+J buffer
     'DefineSprite_1180/frame_230/DoAction.as': [('gotoAndStop("站立");', 'mhJ3 = getTimer();\ngotoAndStop("站立");')],
     'DefineSprite_1180/frame_351/PlaceObject2_651_33/CLIPACTIONRECORD onClipEvent(enterFrame).as': [  # S+U: short dash
         ('_parent.speed * 6.5', '_parent.speed * 3'), ('_parent.speed * 6.5', '_parent.speed * 3')],

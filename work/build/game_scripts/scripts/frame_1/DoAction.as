@@ -13,7 +13,7 @@ function showCommt()
 function goLink(url)
 {
 }
-_root.ver = "V 1.2";
+_root.ver = "V 1.3";
 _root.date_ver = "2016/6/23";
 var adType;
 var wudi = false;

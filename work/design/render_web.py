@@ -31,6 +31,8 @@ def page_text():
     body = re.sub(r"<script>.*?</script>", lambda m: " ".join(re.findall(r'"([^"]*)"', m.group(0))), body, flags=re.S)
     body = re.sub(r'\b(?:aria-label|title)="([^"]*)"', r">\1<", body)
     text = html.unescape(re.sub(r"<[^>]+>", " ", body))
+    for js in sorted(WEB.glob("*.js")):  # page scripts (netplay.js) put their own UI text on the page
+        text += " " + " ".join(re.findall(r"'([^'\n]*)'", js.read_text(encoding="utf-8")))
     lockup = re.search(r'<h1 class="lockup">(.*?)</h1>', src, re.S).group(1)
     lockup = html.unescape(re.sub(r"<[^>]+>", " ", lockup))
     return text, lockup

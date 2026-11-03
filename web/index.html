@@ -138,6 +138,35 @@ kbd.p2{color:var(--ember);border-color:rgba(242,128,42,.45)}
 .is-playing .hint::before{background:var(--ember);opacity:1}
 .credit{margin:0;font-size:0.6875rem;color:var(--steel);letter-spacing:.04em}
 
+/* 원격 2P (web/netplay.js): data-state idle | hosting | host-live | joining | guest-live */
+.remote{border-top:1px solid var(--line);padding-top:1rem;display:grid;gap:0.625rem;align-content:start}
+.remote[data-state="idle"] .rp-room,.remote:not([data-state="idle"]) .rp-idle{display:none}
+.rp-idle,.rp-room{display:grid;grid-template-columns:minmax(0,1fr);gap:0.5rem}
+.rp-join{display:flex;gap:0.375rem;margin:0}
+.rp-join .fs{flex:none}
+.rp-join input{
+  flex:1 1 0;width:0;min-width:0;padding:0.5625rem 0.625rem;
+  font:700 0.875rem/1 "Gothic A1",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--moon);
+  background:rgba(238,233,223,.05);border:1px solid rgba(238,233,223,.36);border-radius:0.375rem;
+}
+.rp-join input::placeholder{color:var(--steel);letter-spacing:.04em}
+.rp-join input:focus-visible{outline:2px solid var(--ember);outline-offset:1px}
+.rp-code{display:flex;align-items:baseline;justify-content:space-between;gap:0.5rem}
+.rp-code b{font:700 1.375rem/1 "Gothic A1",sans-serif;letter-spacing:.14em;color:var(--gold)}
+.remote[data-state$="-live"] .rp-code b{color:var(--ember)}
+.rp-ping{font-size:0.6875rem;color:var(--steel);white-space:nowrap}
+.rp-btns{display:flex;gap:0.375rem}
+.rp-btns .fs{flex:1;padding:0.5625rem 0.5rem}
+.remote:not([data-state="hosting"]):not([data-state="host-live"]) #rp-copy{display:none}
+.rp-status{margin:0;font-size:0.75rem;color:var(--steel)}
+.rp-status:empty{display:none}
+.rp-status.bad{color:var(--red)}
+.rp-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+.rp-cover{position:absolute;inset:0;margin:0;padding:1rem;display:grid;place-content:center;gap:0.5rem;text-align:center;
+  font-size:0.9375rem;color:var(--steel)}
+.rp-cover[hidden]{display:none}
+.rp-cover b{font-size:1.5rem;letter-spacing:.14em;color:var(--gold)}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
 /* Portrait, narrow or very short windows: game on top at full width, card below; page scrolls. */
@@ -147,7 +176,7 @@ kbd.p2{color:var(--ember);border-color:rgba(242,128,42,.45)}
   .stage{order:-1;width:min(100%, calc((var(--vh) - 2 * var(--pad)) * 1.5))}
   .rail{width:min(100%,47.5rem);max-height:none;overflow:visible;
     display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));column-gap:var(--gap)}
-  .controls,.actions{border-top:0;padding-top:0}
+  .controls,.actions,.remote{border-top:0;padding-top:0}
 }
 </style>
 </head>
@@ -186,6 +215,28 @@ kbd.p2{color:var(--ember);border-color:rgba(242,128,42,.45)}
       </dl>
     </section>
 
+    <section class="remote" id="remote" data-state="idle" aria-labelledby="remote-title">
+      <div class="head">
+        <h2 id="remote-title">원격 2P</h2>
+        <span class="legend">멀리 있는 친구와 1:1</span>
+      </div>
+      <div class="rp-idle">
+        <button class="fs" id="rp-host" type="button">방 만들기</button>
+        <form class="rp-join" id="rp-join">
+          <input id="rp-code" name="code" maxlength="6" placeholder="방 코드 6자리" autocomplete="off" spellcheck="false" aria-label="방 코드">
+          <button class="fs" type="submit">참가</button>
+        </form>
+      </div>
+      <div class="rp-room">
+        <div class="rp-code"><b id="rp-room-code"></b><span class="rp-ping" id="rp-ping"></span></div>
+        <div class="rp-btns">
+          <button class="fs" id="rp-copy" type="button">링크 복사</button>
+          <button class="fs" id="rp-leave" type="button">나가기</button>
+        </div>
+      </div>
+      <p class="rp-status" id="rp-status" role="status"></p>
+    </section>
+
     <section class="actions">
       <button class="fs" id="fullscreen" type="button" title="Esc로 돌아옵니다">전체 화면</button>
       <p class="hint" id="hint" role="status">게임 화면을 한 번 클릭하면 키보드가 연결됩니다.</p>
@@ -193,10 +244,27 @@ kbd.p2{color:var(--ember);border-color:rgba(242,128,42,.45)}
     </section>
   </aside>
 
-  <div class="stage" id="stage"><div class="render" id="render"></div></div>
+  <div class="stage" id="stage"><div class="render" id="render"></div><p class="rp-cover" id="rp-cover" hidden></p></div>
 </main>
 
-<script>window.RufflePlayer={config:__RUFFLE_CONFIG__};</script>
+<script>window.RufflePlayer={config:__RUFFLE_CONFIG__};
+// Audio tap for 원격 2P: whatever Ruffle plays into an AudioContext's speakers is also routed into a
+// MediaStream (window.__bvnAudioTaps), which netplay.js sends to the guest. Must run before ruffle.js.
+(function(){
+  if(!window.AudioNode||!window.AudioContext)return;
+  const connect=AudioNode.prototype.connect,taps=new WeakMap();
+  window.__bvnAudioTaps=[];
+  AudioNode.prototype.connect=function(dest){
+    const r=connect.apply(this,arguments);
+    if(dest instanceof AudioDestinationNode&&dest.context.createMediaStreamDestination){
+      let tap=taps.get(dest.context);
+      if(!tap){tap=dest.context.createMediaStreamDestination();taps.set(dest.context,tap);window.__bvnAudioTaps.push(tap)}
+      connect.call(this,tap);
+    }
+    return r;
+  };
+})();
+</script>
 <script src="ruffle/ruffle.js"></script>
 <script>
 const stage=document.getElementById("stage");
@@ -219,26 +287,42 @@ window.addEventListener("resize",refit);
 document.addEventListener("fullscreenchange",refit);
 if(window.ResizeObserver)new ResizeObserver(refit).observe(stage);
 
-const p=window.RufflePlayer.newest().createPlayer();
-p.style.width="100%";p.style.height="100%";
-render.appendChild(p);
-p.load({url:"game.swf",base:"./"}).then(()=>{window.__loaded=true});
-
 const hint=document.getElementById("hint");
+let p=null,hintLock=false;
 function playing(on){
+  if(hintLock)return;
   document.body.classList.toggle("is-playing",on);
   hint.textContent=on?"키보드 연결됨. 게임 밖을 클릭하면 끊깁니다.":"게임 화면을 한 번 클릭하면 키보드가 연결됩니다.";
 }
-p.addEventListener("focusin",()=>playing(true));
-p.addEventListener("focusout",()=>playing(false));
-stage.addEventListener("pointerdown",()=>playing(true));
+function startGame(){
+  p=window.RufflePlayer.newest().createPlayer();
+  p.style.width="100%";p.style.height="100%";
+  render.appendChild(p);
+  p.load({url:"game.swf",base:"./"}).then(()=>{window.__loaded=true});
+  p.addEventListener("focusin",()=>playing(true));
+  p.addEventListener("focusout",()=>playing(false));
+}
+// A 원격 2P invite link (#join=CODE) opens the page as a guest: the guest only watches the host's game,
+// so the local game is not started at all.
+if(!/join=[A-Za-z0-9]{6}/.test(location.hash))startGame();
+else hint.textContent="원격 2P 초대 링크로 열었어요. ‘원격 2P’의 ‘참가’를 누르세요.";
+stage.addEventListener("pointerdown",()=>{if(p)playing(true)});
 // Fullscreen the stage, not the player: the render box keeps its <=900px layout and is scaled up,
 // so fullscreen stays as fast as windowed play. Ruffle's own enterFullscreen() is the fallback.
 document.getElementById("fullscreen").addEventListener("click",()=>{
-  const done=()=>{if(p.focus)p.focus()};
-  if(stage.requestFullscreen)stage.requestFullscreen({navigationUI:"hide"}).then(done,()=>p.enterFullscreen());
-  else p.enterFullscreen();
+  const done=()=>{if(p&&p.focus)p.focus()};
+  if(stage.requestFullscreen)stage.requestFullscreen({navigationUI:"hide"}).then(done,()=>p&&p.enterFullscreen());
+  else if(p)p.enterFullscreen();
 });
+// Page contract for web/netplay.js (원격 2P).
+window.BVN={
+  stage,
+  player:()=>p,
+  dropPlayer(){if(p){p.remove();p=null}render.style.display="none"},
+  setHint(text){hintLock=true;document.body.classList.add("is-playing");hint.textContent=text},
+};
 </script>
+<script src="vendor/peerjs-1.5.5.min.js"></script>
+<script src="netplay.js"></script>
 </body>
 </html>
