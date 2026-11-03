@@ -36,12 +36,17 @@
   if (!box || !window.BVN) return;
   const ui = {
     host: $('rp-host'), form: $('rp-join'), input: $('rp-code'), code: $('rp-room-code'),
-    copy: $('rp-copy'), leave: $('rp-leave'), status: $('rp-status'), ping: $('rp-ping'), cover: $('rp-cover'),
+    copy: $('rp-copy'), leave: $('rp-leave'), status: $('rp-status'), ping: $('rp-ping'), keyDot: $('rp-key'), cover: $('rp-cover'),
   };
   // message over the empty game screen of a guest page (invite link, connecting, disconnected); null hides it
   const cover = (title, line) => {
     ui.cover.hidden = !title;
     ui.cover.replaceChildren(...(title ? [Object.assign(document.createElement('b'), {textContent: title}), line] : []));
+  };
+  let dotTimer = 0;
+  const blink = () => {  // shows on both sides that a key went through (guest: sent, host: received)
+    ui.keyDot.hidden = false; ui.keyDot.classList.add('on');
+    clearTimeout(dotTimer); dotTimer = setTimeout(() => ui.keyDot.classList.remove('on'), 300);
   };
   const state = s => { box.dataset.state = s; };
   const say = (text, bad) => { ui.status.textContent = text; ui.status.classList.toggle('bad', !!bad); };
@@ -168,7 +173,7 @@
       c.on('open', () => {
         log('host conn open ' + c.peer);
         state('host-live');
-        say('연결됐어요! 메뉴에서 ‘VS 사람’을 고르세요. 상대가 2P예요. 이 창을 내리거나 탭을 바꾸면 상대 화면도 멈춰요.');
+        say('연결됐어요! 메뉴에서 ‘VS 사람’을 고르세요(‘일반 대전’은 컴퓨터와 싸우는 모드라 상대가 못 들어와요). 이 창을 내리거나 탭을 바꾸면 상대 화면도 멈춰요.');
         sendScreen(c.peer);
         startPing(c);
         const p = BVN.player();
@@ -176,7 +181,7 @@
       });
       c.on('data', m => {
         if (!m || typeof m !== 'object') return;
-        if ('k' in m) press(m.k, !!m.d);
+        if ('k' in m) { blink(); press(m.k, !!m.d); }
         else if ('up' in m) releaseAll();
         else onPingMsg(c, m);
       });
@@ -202,13 +207,14 @@
   let video = null, sound = null;
   function send(m) { if (conn && conn.open) conn.send(m); }
   function key(e, isDown) {
-    if (box.dataset.state !== 'guest-live' || e.target === ui.input) return;
+    if (box.dataset.state !== 'guest-live') return;  // (the code box is hidden while live, so typing there is not an issue)
     const k = GUEST[e.code];
     if (!k) return;
     e.preventDefault();
     if (e.repeat || (isDown ? down.has(k) : !down.has(k))) return;
     isDown ? down.add(k) : down.delete(k);
     send({k, d: isDown ? 1 : 0});
+    blink();
   }
   addEventListener('keydown', e => key(e, true), true);
   addEventListener('keyup', e => key(e, false), true);
@@ -293,7 +299,7 @@
         showVideo(s);
         state('guest-live');
         BVN.setHint('키보드는 방장 게임의 2P로 들어가요. 1P 키(WASD, J K L U I O) 그대로 누르면 돼요.');
-        say('연결됐어요! 내 키보드가 2P예요. 방장이 ‘VS 사람’을 고르면 캐릭터를 고르세요.');
+        say('연결됐어요! 내 키보드가 2P예요. 키를 누르면 위 ‘● 입력’이 깜박여요. 방장이 메뉴에서 ‘VS 사람’을 골라야 2P로 함께 싸울 수 있어요(‘일반 대전’은 컴퓨터와 싸우는 모드).');
       });
     });
     peer.on('error', e => {
