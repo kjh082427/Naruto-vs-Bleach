@@ -136,6 +136,10 @@
     if (pc) pc.addEventListener('connectionstatechange', () => {
       log('host pc ' + pc.connectionState);
       if (pc.connectionState === 'connected') tuneSender(pc);
+      if (pc.connectionState === 'failed') {
+        say('상대와 화면 연결에 실패했어요(네트워크가 막혀 있을 수 있어요). 나가기 후 새 방으로 다시 시도하거나 다른 네트워크(예: 휴대폰 핫스팟)를 써 보세요.', true);
+        if (conn && conn.open) conn.send({fail: 1});
+      }
     });
     // Sound goes in a call of its own: sent in the same stream, the receiver holds the video back to keep it
     // in sync with the (slower) audio, which measured +250 ms of picture delay.
@@ -183,6 +187,7 @@
         if (!m || typeof m !== 'object') return;
         if ('k' in m) { blink(); press(m.k, !!m.d); }
         else if ('up' in m) releaseAll();
+        else if ('need' in m) { log('host resend screen'); hangUp(); sendScreen(c.peer); }  // guest got no picture: call again
         else onPingMsg(c, m);
       });
       const gone = () => {
@@ -263,9 +268,31 @@
     peer.on('open', () => {
       const c = peer.connect(PREFIX + code, {reliable: true});
       conn = c;
-      c.on('open', () => { log('guest conn open'); say('화면을 받는 중…'); startPing(c); });
+      c.on('open', () => {
+        log('guest conn open');
+        say('방장 화면을 받는 중…');
+        startPing(c);
+        let tries = 0;
+        const wait = setInterval(() => {  // no picture yet: ask the host to call again, then explain
+          if (conn !== c || video) return clearInterval(wait);
+          if (++tries <= 3) c.send({need: 1});
+          const why = '방장 화면이 아직 안 와요. 방장이 게임 탭을 앞에 띄워 두었는지, 같은 PC의 다른 탭이 아닌지 확인해 주세요. 계속 안 되면 나가기 후 새 방으로 다시 시도하세요.';
+          say(why, true);
+          if (!BVN.player()) cover(code, why);
+        }, 8000);
+      });
       c.on('data', m => {
         if (!m || typeof m !== 'object') return;
+        if (m.fail) {
+          const why = '방장과 화면 연결에 실패했어요(네트워크 문제). 다른 네트워크(예: 휴대폰 핫스팟)로 다시 시도해 보세요.';
+          say(why, true);
+          if (!BVN.player()) cover(code, why);
+          return;
+        }
+        if ('hidden' in m) {
+          say(m.hidden ? '방장 창이 가려져 있어서 화면이 멈춰요. 방장이 게임 탭을 앞으로 가져오면 다시 나와요.' : '연결됐어요! 내 키보드가 2P예요.', !!m.hidden);
+          return;
+        }
         if (m.full) {
           reset();
           state('idle');
@@ -330,6 +357,10 @@
     if (guest) { location.href = location.href.split('#')[0]; return; }  // reload the page with its own game
     state('idle');
     say('');
+  });
+  document.addEventListener('visibilitychange', () => {  // a hidden host tab stops drawing, so the guest's picture freezes
+    if (conn && conn.open && box.dataset.state === 'host-live') conn.send({hidden: document.hidden ? 1 : 0});
+    if (document.hidden && box.dataset.state === 'host-live') log('host tab hidden');
   });
   addEventListener('pagehide', reset);
 
