@@ -249,7 +249,7 @@ kbd.p2{color:var(--ember);border-color:rgba(242,128,42,.45)}
   <div class="stage" id="stage"><div class="render" id="render"></div><p class="rp-cover" id="rp-cover" hidden></p></div>
 </main>
 
-<script>window.RufflePlayer={config:{"autoplay": "on", "unmuteOverlay": "hidden", "splashScreen": false, "letterbox": "on", "logLevel": "warn", "fontSources": ["fonts/NanumGothic-Regular.ttf", "fonts/NanumGothic-Bold.ttf"], "defaultFonts": {"sans": ["NanumGothic"], "serif": ["NanumGothic"], "typewriter": ["NanumGothic"]}, "quality": "low"}};
+<script>window.RufflePlayer={config:{"autoplay": "on", "unmuteOverlay": "hidden", "splashScreen": false, "letterbox": "on", "logLevel": "warn", "fontSources": ["fonts/NanumGothic-Regular.ttf", "fonts/NanumGothic-Bold.ttf"], "defaultFonts": {"sans": ["NanumGothic"], "serif": ["NanumGothic"], "typewriter": ["NanumGothic"]}, "quality": "low", "allowScriptAccess": true}};
 // Audio tap for 원격 2P: whatever Ruffle plays into an AudioContext's speakers is also routed into a
 // MediaStream (window.__bvnAudioTaps), which netplay.js sends to the guest. Must run before ruffle.js.
 (function(){
