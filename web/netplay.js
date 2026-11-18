@@ -6,8 +6,12 @@
 // (arrows + numpad 1-6) and dispatches them on its Ruffle player.
 //
 // Matchmaking: PeerJS's free public broker (0.peerjs.com) finds the host by room code (peer id PREFIX + code).
-// NAT: PeerJS's default ICE servers (Google STUN + PeerJS's free TURN). Once connected, traffic is browser to
-// browser (or via that TURN when a direct path is impossible).
+// NAT: Google + Cloudflare STUN (ICE below). No TURN relay: PeerJS's free TURN hosts are gone from DNS (checked
+// 2026-11-18) and no free relay works without an account, so two strict NATs (symmetric) cannot connect.
+// Once connected, traffic is browser to browser.
+//
+// On join, the host's game jumps straight to VS 사람 character select (player.bvnVsHuman(), an ExternalInterface
+// callback that tools/build.py adds to game.swf), so both people see the same select screen at once.
 //
 // Page contract (index.html): window.BVN = {player(), dropPlayer(), stage, setHint(text)};
 // #remote section with data-state idle|hosting|host-live|joining|guest-live and the rp-* elements below.
@@ -16,6 +20,7 @@
   const PREFIX = 'bvnvs-rea-2p-';
   const ALPHA = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';  // no 0/O/1/I
   const CODE_RE = /^[A-Z2-9]{6}$/;
+  const OPTS = {config: {iceServers: [{urls: 'stun:stun.l.google.com:19302'}, {urls: 'stun:stun.cloudflare.com:3478'}]}};
   // host-side 2P keys: [code, key, keyCode, location]
   const P2 = {
     up: ['ArrowUp', 'ArrowUp', 38, 0], down: ['ArrowDown', 'ArrowDown', 40, 0],
@@ -54,7 +59,7 @@
   window.__rp = {log: []};  // test hook: connection events, last RTT
   const log = s => { window.__rp.log.push(Math.round(performance.now()) + ' ' + s); };
 
-  let peer = null, conn = null, calls = [], pingTimer = 0;
+  let peer = null, conn = null, calls = [], pingTimer = 0, vsTimer = 0;
 
   function makeCode() {
     const r = crypto.getRandomValues(new Uint8Array(6));
@@ -86,6 +91,7 @@
   // object is no longer current (else e.g. the host's 'disconnected' handler re-registers a room being closed).
   function reset() {
     clearInterval(pingTimer);
+    clearInterval(vsTimer);
     hangUp();
     const c = conn, p = peer;
     conn = peer = null;
@@ -148,13 +154,39 @@
     if (sound.getAudioTracks().length) calls.push(peer.call(guestId, sound, {metadata: {kind: 'audio'}}));
   }
 
+  // Put the host's game on VS 사람 character select. The callback answers false while the game is still loading,
+  // so retry until it says yes; then tell the guest.
+  const LIVE_MSG = '연결됐어요! 둘 다 캐릭터 선택 화면이에요. 내 키보드가 1P, 상대가 2P예요. 이 창을 내리거나 탭을 바꾸면 상대 화면도 멈춰요.';
+  function startVs(c) {
+    clearInterval(vsTimer);
+    let tries = 0;
+    const go = () => {
+      if (conn !== c) return clearInterval(vsTimer);
+      const p = BVN.player();
+      let ok = false;
+      try { ok = !!(p && typeof p.bvnVsHuman === 'function' && p.bvnVsHuman()); } catch (e) { log('vs ' + e); }
+      if (ok) {
+        clearInterval(vsTimer);
+        log('host vs select');
+        say(LIVE_MSG);
+        if (document.activeElement !== p) p.focus({preventScroll: true});
+        c.send({vs: 1});
+      } else if (++tries === 60) {  // ~30 s: old cached game.swf without the callback, or it never finished loading
+        clearInterval(vsTimer);
+        say('연결됐어요! 메뉴에서 ‘VS 사람’을 고르세요(자동으로 넘어가지 못했어요).', true);
+      }
+    };
+    vsTimer = setInterval(go, 500);
+    go();
+  }
+
   function host() {
     reset();
     const code = makeCode();
     state('hosting');
     ui.code.textContent = code;
     say('방을 만드는 중…');
-    const me = peer = new Peer(PREFIX + code);
+    const me = peer = new Peer(PREFIX + code, OPTS);
     peer.on('open', () => {
       log('host open ' + code);
       say('코드나 링크를 상대에게 보내 주세요. 상대가 들어오면 바로 연결돼요.');
@@ -177,11 +209,10 @@
       c.on('open', () => {
         log('host conn open ' + c.peer);
         state('host-live');
-        say('연결됐어요! 메뉴에서 ‘VS 사람’을 고르세요(‘일반 대전’은 컴퓨터와 싸우는 모드라 상대가 못 들어와요). 이 창을 내리거나 탭을 바꾸면 상대 화면도 멈춰요.');
+        say('연결됐어요! 캐릭터 선택 화면으로 넘어가는 중…');
         sendScreen(c.peer);
         startPing(c);
-        const p = BVN.player();
-        if (p) p.focus({preventScroll: true});
+        startVs(c);
       });
       c.on('data', m => {
         if (!m || typeof m !== 'object') return;
@@ -197,6 +228,7 @@
         hangUp();
         conn = null;
         clearInterval(pingTimer);
+        clearInterval(vsTimer);
         showPing(null);
         state('hosting');
         say('상대가 나갔어요. 같은 코드로 다시 들어올 수 있어요.');
@@ -209,7 +241,10 @@
   // ---- guest -------------------------------------------------------------------------------------------------
 
   const down = new Set();
-  let video = null, sound = null;
+  let video = null, sound = null, vsOn = false;
+  const GUEST_MSG = () => vsOn
+    ? '연결됐어요! 둘 다 캐릭터 선택 화면이에요. 내 키보드가 2P예요(WASD 이동, J K L U I O 기술). 키를 누르면 위 ‘● 입력’이 깜박여요.'
+    : '연결됐어요! 내 키보드가 2P예요. 방장 게임이 캐릭터 선택 화면으로 넘어가는 중이에요.';
   function send(m) { if (conn && conn.open) conn.send(m); }
   function key(e, isDown) {
     if (box.dataset.state !== 'guest-live') return;  // (the code box is hidden while live, so typing there is not an issue)
@@ -260,11 +295,12 @@
     const code = String(raw || '').trim().toUpperCase();
     if (!CODE_RE.test(code)) { say('방 코드는 영문·숫자 6자예요.', true); ui.input.focus(); return; }
     reset();
+    vsOn = false;
     state('joining');
     ui.code.textContent = code;
     say('방에 연결하는 중…');
     if (!BVN.player()) cover(code, '방에 연결하는 중…');
-    peer = new Peer();
+    peer = new Peer(OPTS);
     peer.on('open', () => {
       const c = peer.connect(PREFIX + code, {reliable: true});
       conn = c;
@@ -289,8 +325,13 @@
           if (!BVN.player()) cover(code, why);
           return;
         }
+        if (m.vs) {
+          vsOn = true;
+          if (box.dataset.state === 'guest-live') say(GUEST_MSG());
+          return;
+        }
         if ('hidden' in m) {
-          say(m.hidden ? '방장 창이 가려져 있어서 화면이 멈춰요. 방장이 게임 탭을 앞으로 가져오면 다시 나와요.' : '연결됐어요! 내 키보드가 2P예요.', !!m.hidden);
+          say(m.hidden ? '방장 창이 가려져 있어서 화면이 멈춰요. 방장이 게임 탭을 앞으로 가져오면 다시 나와요.' : GUEST_MSG(), !!m.hidden);
           return;
         }
         if (m.full) {
@@ -326,7 +367,7 @@
         showVideo(s);
         state('guest-live');
         BVN.setHint('키보드는 방장 게임의 2P로 들어가요. 1P 키(WASD, J K L U I O) 그대로 누르면 돼요.');
-        say('연결됐어요! 내 키보드가 2P예요. 키를 누르면 위 ‘● 입력’이 깜박여요. 방장이 메뉴에서 ‘VS 사람’을 골라야 2P로 함께 싸울 수 있어요(‘일반 대전’은 컴퓨터와 싸우는 모드).');
+        say(GUEST_MSG());
       });
     });
     peer.on('error', e => {

@@ -193,6 +193,24 @@ PERF_FIXES = {  # measured with tools/perf/perf.html (title screen, 900x600): se
         '      if(this._alpha <= 0)\n      {\n         this.removeMovieClip();',
         '      if(this._alpha <= 0)\n      {\n         this.bmp.dispose();\n         this.removeMovieClip();', 1),
 }
+# 원격 2P (web/netplay.js): the host page calls player.bvnVsHuman() when a guest joins, so both land on VS 사람
+# character select. Same variables as the title's VS 사람 button (sprite 600 frame 15); clearint as when a VS match
+# ends. Returns false until the game has loaded (frame 10 sets isload). Needs Ruffle allowScriptAccess.
+NET_VS_AS = """
+flash.external.ExternalInterface.addCallback("bvnVsHuman",null,function()
+{
+   if(!_root.isload)
+   {
+      return false;
+   }
+   _root.clearint();
+   _root.p1cpu = false;
+   _root.p2cpu = false;
+   _root.modo = 3;
+   _root.gotoAndStop("选人画面");
+   return true;
+});
+"""
 OTHER_STRING_SCRIPTS = [
     'DefineSprite_1477/frame_1/DoAction.as', 'DefineSprite_1480/frame_1/DoAction.as', 'DefineSprite_1505/frame_1/DoAction.as',
     'DefineSprite_620/frame_1/PlaceObject2_619_28/CLIPACTIONRECORD onClipEvent(enterFrame).as',
@@ -580,7 +598,7 @@ def patch_scripts(strings, roster):
     emit('frame_1/DoAction.as', apply_fixes(f1, [('_root.ver = "V 2.6";', f'_root.ver = "V {VERSION}";')], 'frame_1'))
     f2 = open(os.path.join(SCRIPTS, 'frame_2/DoAction.as'), encoding='utf-8').read()
     f2 = re.sub(r'new ContextMenuItem\("([^"]*)"', lambda m: f'new ContextMenuItem("{tr(m.group(1))}"', f2)
-    f2 = PERF_FIXES['frame_2/DoAction.as'](f2)
+    f2 = PERF_FIXES['frame_2/DoAction.as'](f2) + NET_VS_AS
     emit('frame_2/DoAction.as', f2)
     f8 = PERF_FIXES['frame_8/DoAction.as'](open(os.path.join(SCRIPTS, 'frame_8/DoAction.as'), encoding='utf-8').read())
     f8 = apply_fixes(f8, RANDOM_STAGE_FIXES, 'frame_8 gostg') + RANDOM_STAGE_AS

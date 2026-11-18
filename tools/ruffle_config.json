@@ -19,5 +19,6 @@
       "NanumGothic"
     ]
   },
-  "quality": "low"
+  "quality": "low",
+  "allowScriptAccess": true
 }

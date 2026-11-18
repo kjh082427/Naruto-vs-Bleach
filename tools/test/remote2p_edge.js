@@ -6,7 +6,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const t0 = Date.now();
 const L = s => console.log(((Date.now() - t0) / 1000).toFixed(1) + ' ' + s);
 (async () => {
-  const browser = await chromium.launch({ headless: true, args: ['--autoplay-policy=no-user-gesture-required'] });
+  const browser = await chromium.launch({ headless: true, executablePath: process.env.PW_EXE, args: ['--autoplay-policy=no-user-gesture-required'] });
   const page = async () => (await browser.newContext({ viewport: { width: 1280, height: 720 } })).newPage();
   const st = async pg => (await pg.getAttribute('#remote', 'data-state')) + ' | ' + (await pg.textContent('#rp-status'));
   const live = (pg, s, ms = 30000) => pg.waitForFunction(s => document.getElementById('remote').dataset.state === s, s, { timeout: ms });
